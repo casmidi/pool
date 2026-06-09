@@ -45,3 +45,4 @@ discord-signals.json
 data/*.json
 data/*.jsonl
 data/intelligence/*.jsonl
+data/
