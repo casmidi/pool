@@ -131,7 +131,7 @@ POOL MEMORY: Past losses or problems → strong skip signal.
 DEPLOY RULES:
 - COMPOUNDING: Use the deploy amount from the goal EXACTLY. Do NOT default to a smaller number.
 - bins_below = round(config.strategy.minBinsBelow + (candidate volatility/5)*(config.strategy.maxBinsBelow-config.strategy.minBinsBelow)) clamped to [minBinsBelow,maxBinsBelow]. Volatility must be a positive number; 0/unknown means skip.
-- Use amount_y only, keep amount_x=0 and bins_above=0.
+- Use amount_y only, keep amount_x=0 and bins_above=10.
 - Bin steps must be [80-125].
 - Pick ONE pool only when conviction is real. If only one weak candidate survives, skip and explain why none qualify.
 
@@ -141,7 +141,16 @@ ${weightsSummary ? `${weightsSummary}\nPrioritize candidates whose strongest att
     basePrompt += `
 Your goal: Manage positions to maximize total Fee + PnL yield.
 
-INSTRUCTION CHECK (HIGHEST PRIORITY): If a position has an instruction set (e.g. "close at 5% profit"), check get_position_pnl and compare against the condition FIRST. If the condition IS MET → close immediately. No further analysis, no hesitation. BIAS TO HOLD does NOT apply when an instruction condition is met.
+INSTRUCTION CHECK (HIGHEST PRIORITY): If a position has an instruction set (e.g. "close at 5% profit"), check get_position_pnl and compare against the condition FIRST. If the condition IS MET → close immediately. No further analysis, no hesitation. 
+ADAPTIVE SHADOW V2 CONTEXT:
+- The Shadow V2 engine simulates alternative entry strategies (widen_shift_up, wait_5m_recheck, second_chance_queue) for every position.
+- If the summary shows "adaptive_best_route: wait_5m_recheck" with positive "adaptive_best_impact_sol", it means WAITING before closing losing positions has historically been profitable.
+- When adaptive impact is positive, be more PATIENT with OOR positions — the price often returns within 5 minutes.
+- When adaptive impact is negative or zero, close normally per the deterministic rules.
+- DO NOT close positions purely because of temporary OOR status if adaptive data suggests waiting.
+- Always verify current PnL data via get_position_pnl before making any close decision.
+
+BIAS TO HOLD does NOT apply when an instruction condition is met.
 
 BIAS TO HOLD: Unless an instruction fires, a pool is dying, volume has collapsed, or yield has vanished, hold.
 

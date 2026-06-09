@@ -11,6 +11,7 @@
 
 import fs from "fs";
 import { log } from "./logger.js";
+import { filterValidTrainingRecords } from "./lib/training_record.js";
 
 const WEIGHTS_FILE = "./signal-weights.json";
 
@@ -113,7 +114,8 @@ export function recalculateWeights(perfData, cfg = {}) {
   cutoff.setDate(cutoff.getDate() - windowDays);
   const cutoffISO = cutoff.toISOString();
 
-  const recent = perfData.filter((p) => {
+  const validPerf = filterValidTrainingRecords(perfData);
+  const recent = validPerf.filter((p) => {
     const ts = p.recorded_at || p.closed_at || p.deployed_at;
     return ts && ts >= cutoffISO;
   });
@@ -127,8 +129,8 @@ export function recalculateWeights(perfData, cfg = {}) {
   const wins   = recent.filter((p) => (p.pnl_usd ?? 0) > 0);
   const losses = recent.filter((p) => (p.pnl_usd ?? 0) <= 0);
 
-  if (wins.length === 0 || losses.length === 0) {
-    log("signal_weights", `Need both wins (${wins.length}) and losses (${losses.length}) to compute lift, skipping`);
+  if (wins.length < 3 || losses.length < 3) {
+    log("signal_weights", `Need at least 3 wins (${wins.length}) and 3 losses (${losses.length}) to compute lift, skipping`);
     return { changes: [], weights };
   }
 
@@ -266,9 +268,14 @@ function computeCategoricalLift(signal, wins, losses, minSamples) {
 function extractNumeric(signal, entries) {
   const vals = [];
   for (const entry of entries) {
-    const snap = entry.signal_snapshot;
-    if (!snap) continue;
-    const v = snap[signal];
+    const snap = entry.signal_snapshot || {};
+    const direct = entry[signal];
+    const aliases = {
+      fee_tvl_ratio: entry.fee_active_tvl_ratio,
+      holder_count: entry.holders,
+      smart_wallets_present: entry.smart_money_buy,
+    };
+    const v = snap[signal] ?? direct ?? aliases[signal];
     if (v != null && typeof v === "number" && isFinite(v)) vals.push(v);
   }
   return vals;
@@ -304,6 +311,28 @@ export function getWeightsSummary() {
   }
 
   return lines.join("\n");
+}
+
+/** Return raw weights object (for external consumers). */
+export function getWeights() {
+  return loadWeights().weights || { ...DEFAULT_WEIGHTS };
+}
+
+/**
+ * Map signal-weights.json keys → pool-scorer applyDarwinWeights() format.
+ * Allows the Darwinian learning system to influence pool-scorer rankings.
+ */
+export function getDarwinScorerWeights() {
+  const w = getWeights();
+  return {
+    fee_yield_signal:    w.fee_tvl_ratio         ?? 1.0,
+    volume_signal:       w.volume                ?? 1.0,
+    organic_signal:      w.organic_score         ?? 1.0,
+    holder_signal:       w.holder_count          ?? 1.0,
+    smart_money_signal:  w.smart_wallets_present ?? 1.0,
+    discord_signal:      1.0,  // not yet tracked in signal-weights
+    trend_signal:        1.0,  // not yet tracked in signal-weights
+  };
 }
 
 function interpretWeight(val) {

@@ -1,0 +1,87 @@
+{
+  "trace_id": "BABYTROLL-SOL_2026_06_08_18_19_10",
+  "pool": "BABYTROLL-SOL",
+  "created_at": "2026-06-08T18:19:10.542Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-08T18:19:10.542Z",
+      "metrics": {
+        "fee_tvl": 0.7786,
+        "organic": 74,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 3.5783,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-08T18:19:10.542Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-08T18:19:10.542Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-08T18:19:10.542Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.010998635916831524,
+      "bins_above": null,
+      "bins_below": 64,
+      "volatility_used": 3.5783,
+      "timing": null,
+      "range_width": 65,
+      "exact": {
+        "active_bin": -566,
+        "lower_bin": -630,
+        "upper_bin": -566,
+        "bin_step": 80,
+        "amount_sol": 2.527
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-08T19:53:54.770Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 0.8,
+      "minutes_since_entry": 94,
+      "active_bin": -565,
+      "entry_bin": -566,
+      "lower_bin": -630,
+      "upper_bin": -566
+    },
+    {
+      "stage": "exit",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-08T19:53:54.770Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 4.69,
+      "duration_minutes": 94,
+      "fees_earned": 0.119063436,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-08T19:53:54.803Z"
+}

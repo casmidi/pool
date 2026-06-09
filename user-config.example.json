@@ -5,6 +5,7 @@
   "llmApiKey": "",
   "llmModel": "minimax/minimax-m2.7",
   "dryRun": true,
+  "dry_run_wallet": 0.5,
 
   "deployAmountSol": 0.5,
   "maxPositions": 3,
@@ -24,7 +25,7 @@
   "minTvl": 10000,
   "maxTvl": 150000,
   "minVolume": 500,
-  "minOrganic": 60,
+  "minOrganic": 70,
   "minQuoteOrganic": 60,
   "minHolders": 500,
   "minMcap": 150000,

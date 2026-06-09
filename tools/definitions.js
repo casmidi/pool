@@ -137,7 +137,7 @@ HARD RULES:
 - Volatility must be positive. If volatility is 0, null, or missing, do not deploy.
 - Range must cover at least 35 total bins. Never deploy 1-bin/tiny ranges.
 - For single-side SOL deploys (amount_y only, amount_x=0), do not request upside exposure:
-  use bins_below only, keep bins_above=0, and the upper bin will be pinned to the current active bin.
+  use bins_below for downward range and bins_above=10 for upward range coverage. The range will span both sides of the active bin.
 
 Guidelines (only when user hasn't specified):
 - Strategy: use the active strategy's lp_strategy field (bid_ask or spot)
@@ -175,7 +175,7 @@ WARNING: This executes a real on-chain transaction. Check DRY_RUN mode.`,
           },
           bins_above: {
             type: "number",
-            description: "Number of bins above the current active bin. Keep this at 0 for single-side SOL deploys. Only use this for dual-sided or explicit upside-exposure deploys."
+            description: "Number of bins above the current active bin. Use bins_above=10 for single-side SOL deploys to provide upward range coverage. Higher values (up to 20) for volatile tokens. Only set to 0 for very low-volatility pairs."
           },
           downside_pct: {
             type: "number",
@@ -671,6 +671,72 @@ Server note: study data is cached and refreshed every 30 minutes.`,
   {
     type: "function",
     function: {
+      name: "get_master_strategies",
+      description: `Show learned Master Strategy Database patterns from copied top-wallet DLMM positions.
+Use this to inspect which range buckets are currently considered profitable and how many samples support them.`,
+      parameters: {
+        type: "object",
+        properties: {
+          limit: {
+            type: "number",
+            description: "Maximum strategies to return. Default 10."
+          },
+          min_score: {
+            type: "number",
+            description: "Optional minimum quality score filter."
+          }
+        }
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
+      name: "get_daily_improvement_report",
+      description: `Generate the daily auto-improvement report from realized closes.
+This returns profitability metrics, tuning suggestions, and copied-wallet blacklist/downrank actions.`,
+      parameters: {
+        type: "object",
+        properties: {
+          days: {
+            type: "number",
+            description: "Lookback window in days. Default 1."
+          }
+        }
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
+      name: "apply_daily_improvement_tuning",
+      description: `Preview or apply bounded auto-improvement tuning from realized closes.
+This can adjust only approved profitability/risk keys such as minPoolScore, minActivePct, minNetEVPct, maxDeployVolatility, outOfRangeWaitMinutes, and deployAmountSol.`,
+      parameters: {
+        type: "object",
+        properties: {
+          days: {
+            type: "number",
+            description: "Lookback window in days. Default 1."
+          },
+          dry_run: {
+            type: "boolean",
+            description: "When true, preview changes without writing user-config.json. Default true."
+          },
+          force: {
+            type: "boolean",
+            description: "Apply even if auto-tune was already applied today. Default false."
+          }
+        }
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
       name: "clear_lessons",
       description: `Remove lessons from memory. Use when the user asks to erase lessons, or when lessons contain bad data (e.g. bug-caused -100% PnL records).
 
@@ -1011,7 +1077,272 @@ Use when you observe something worth remembering about a specific pool:
     }
   },
 
+  // ═══════════════════════════════════════════
+  //  INTELLIGENCE FUSION TOOLS
+  // ═══════════════════════════════════════════
+  {
+    type: "function",
+    function: {
+      name: "fuse_wallet_data",
+      description: `Aggregate wallet data from ALL available data sources (GMGN, Helius, Dune, fallback chain).
+
+Runs providers in parallel, merges data with priority: GMGN > Helius > Dune > Fallback.
+Returns fused PnL, positions, activity metrics, risk profile, and token holdings.
+
+Use this to get the most complete wallet picture possible — combines multiple
+on-chain data APIs into one normalized result.`,
+      parameters: {
+        type: "object",
+        properties: {
+          wallet_address: {
+            type: "string",
+            description: "Solana wallet address (base58) to research"
+          },
+          force_refresh: {
+            type: "boolean",
+            description: "Bypass cache and fetch fresh data (default: false)"
+          }
+        },
+        required: ["wallet_address"]
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
+      name: "fuse_multiple_wallets",
+      description: `Fuse data for multiple wallets in parallel.
+
+Aggregates wallet intelligence from all providers for up to 20 wallets at once.
+More efficient than calling fuse_wallet_data repeatedly for batch research.`,
+      parameters: {
+        type: "object",
+        properties: {
+          wallet_addresses: {
+            type: "array",
+            items: { type: "string" },
+            description: "Array of Solana wallet addresses (base58)"
+          },
+          force_refresh: {
+            type: "boolean",
+            description: "Bypass cache and fetch fresh data"
+          }
+        },
+        required: ["wallet_addresses"]
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
+      name: "get_provider_status",
+      description: `Get the current availability status of all intelligence data providers.
+
+Returns which providers (GMGN, Helius, Dune, Fallback) have working API keys,
+rate limit status, and any recent errors.
+
+Use this to diagnose why certain wallet data might be incomplete.`,
+      parameters: {
+        type: "object",
+        properties: {}
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
+      name: "get_top_performer_candidates",
+      description: `Fetch and fuse top LP performer candidates from multiple sources.
+
+Aggregates wallet addresses from:
+- Tracked smart wallets
+- Dune Analytics LP leaderboard
+- Existing ranking database
+
+Then fuses full intelligence data for each candidate.
+Use this as the data source for wallet selection and copy trading decisions.`,
+      parameters: {
+        type: "object",
+        properties: {
+          count: {
+            type: "number",
+            description: "Number of top candidates to return (default 20)"
+          },
+          force_refresh: {
+            type: "boolean",
+            description: "Bypass cache and fetch fresh data"
+          }
+        }
+      }
+    }
+  },
+
+  // ═══════════════════════════════════════════
+  //  RANKING TOOLS
+  // ═══════════════════════════════════════════
+  {
+    type: "function",
+    function: {
+      name: "run_ranking_cycle",
+      description: `Run the full wallet ranking cycle: fetch scores, rank, and persist results.
+
+Fetches on-chain performance data (Birdeye, LPAgent, GMGN, Helius) for tracked smart wallets,
+scores each wallet on multiple dimensions, ranks them, and saves the results to the ranking database.
+
+Use this to:
+- Get an up-to-date list of top-performing tracked wallets
+- Discover new wallets to watch from signals
+- Refresh the ranking database with fresh scores
+
+Returns the top N ranked wallets with their scores and metadata.`,
+      parameters: {
+        type: "object",
+        properties: {
+          mode: {
+            type: "string",
+            enum: ["auto_top_10", "all"],
+            description: "'auto_top_10' = rank and keep top 10, 'all' = keep all tracked wallets"
+          },
+          count: {
+            type: "number",
+            description: "Number of top wallets to return (default 10)"
+          }
+        }
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
+      name: "score_wallet",
+      description: `Score a single wallet address quickly for a snapshot assessment.
+Fetches the wallet's performance data and returns a score breakdown.
+Use this when the user asks about a specific wallet or wants a quick check.`,
+      parameters: {
+        type: "object",
+        properties: {
+          wallet_address: {
+            type: "string",
+            description: "The Solana wallet address (base58) to score"
+          }
+        },
+        required: ["wallet_address"]
+      }
+    }
+  },
+
+  // ═══════════════════════════════════════════
+  //  ADVANCED SCORING TOOLS (Multi-Layer Scoring Engine)
+  // ═══════════════════════════════════════════
+  {
+    type: "function",
+    function: {
+      name: "score_wallet_advanced",
+      description: `Advanced wallet performance scoring with configurable strategy mode.
+
+Scores a wallet on 6 factor groups (PnL, Risk, Activity, Liquidity, Momentum, Fingerprint)
+using the Multi-Layer Scoring Engine with weighted profiles.
+
+Strategy modes:
+  conservative — Safety-first: prioritizes capital preservation and consistent returns
+  balanced     — Default: even mix of growth and risk management
+  aggressive   — Growth-first: prioritizes PnL, momentum, and high fee generation
+  momentum     — Trend-following: prioritizes recent streaks, hot wallets, PnL trend
+  hybrid       — Adaptive: weights shift based on detected market regime
+
+Returns full factor breakdown with scores, weights, contributions, grade, and risk profile.`,
+      parameters: {
+        type: "object",
+        properties: {
+          wallet_address: { type: "string", description: "Solana wallet address (base58) to score" },
+          mode: {
+            type: "string",
+            enum: ["conservative", "balanced", "aggressive", "momentum", "hybrid"],
+            description: "Scoring strategy mode (default: balanced)"
+          }
+        },
+        required: ["wallet_address"]
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
+      name: "select_top_wallets",
+      description: `Intelligently select the top N wallets from ranking data.
+
+Uses the Dynamic Selection Engine which:
+- Scores all candidate wallets using advanced multi-layer factors
+- Filters by minimum score threshold (excludes poor performers)
+- Enforces whitelist (always include) and blacklist (always exclude)
+- Detects performance decay (auto-exclude declining wallets)
+- Checks pairwise correlation for redundancy detection
+- Sorts by score and returns top N
+
+Strategy modes apply different weight profiles to selection.`,
+      parameters: {
+        type: "object",
+        properties: {
+          count: { type: "number", description: "Number of top wallets to select (default: 10)" },
+          mode: {
+            type: "string",
+            enum: ["conservative", "balanced", "aggressive", "momentum", "hybrid"],
+            description: "Scoring strategy mode (default: balanced)"
+          },
+          min_score: { type: "number", description: "Minimum score threshold to include (default: 20)" },
+          auto_exclude_decaying: { type: "boolean", description: "Auto-exclude wallets with performance decay (default: true)" }
+        }
+      }
+    }
+  },
+
   // ─── Token Blacklist ────────────────────────────────────────────
+
+  {
+    type: "function",
+    function: {
+      name: "run_copy_engine",
+      description: `Scan the top-ranked LP wallets, inspect their open Meteora DLMM positions, and produce explainable copy signals.
+
+The copy engine monitors top wallet positions, applies the decision layer, deduplicates recent signals, and returns COPY/HOLD/SKIP diagnostics with suggested deploy args for COPY signals.`,
+      parameters: {
+        type: "object",
+        properties: {
+          count: { type: "number", description: "Number of top wallets to scan" },
+          mode: {
+            type: "string",
+            enum: ["conservative", "balanced", "aggressive", "momentum", "hybrid", "auto_top_10"],
+            description: "Ranking/scoring mode to use"
+          },
+          force_ranking: { type: "boolean", description: "Refresh ranking before scanning wallets" }
+        }
+      }
+    }
+  },
+
+  {
+    type: "function",
+    function: {
+      name: "get_copy_signals",
+      description: "Return recent copy-engine signals generated from top wallet DLMM position monitoring.",
+      parameters: {
+        type: "object",
+        properties: {
+          limit: { type: "number", description: "Maximum number of recent signals to return" },
+          action: {
+            type: "string",
+            enum: ["COPY", "HOLD", "SKIP"],
+            description: "Optional action filter"
+          }
+        }
+      }
+    }
+  },
 
   {
     type: "function",
@@ -1108,6 +1439,36 @@ Blacklisted tokens are filtered BEFORE the LLM even sees pool candidates.`,
       parameters: {
         type: "object",
         properties: {}
+      }
+    }
+  },
+  {
+    type: "function",
+    function: {
+      name: "close_all_positions",
+      description: `Emergency flatten: close ALL open positions immediately.
+Use ONLY for:
+- Portfolio-wide emergency (extreme market event, system malfunction, operator panic)
+- Deliberate full exit from all active LP positions
+
+Each position is closed in sequence (claim fees then withdraw liquidity).
+Positions that fail individually are skipped — partial flatten is possible.
+Returns a summary of closed vs failed positions.
+
+WARNING: This executes multiple real on-chain transactions. Cannot be undone.`,
+      parameters: {
+        type: "object",
+        properties: {
+          reason: {
+            type: "string",
+            description: "Why all positions are being closed. Required — e.g. 'emergency market event', 'manual operator flatten'."
+          },
+          skip_swap: {
+            type: "boolean",
+            description: "Set to true to skip auto-swap of base tokens back to SOL for all positions. Default: false."
+          }
+        },
+        required: ["reason"]
       }
     }
   },

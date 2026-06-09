@@ -1,0 +1,87 @@
+{
+  "trace_id": "unc-SOL_2026_06_06_08_31_08",
+  "pool": "unc-SOL",
+  "created_at": "2026-06-06T08:31:08.465Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-06T08:31:08.465Z",
+      "metrics": {
+        "fee_tvl": 0.4396,
+        "organic": 73,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 2.1545,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-06T08:31:08.465Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-06T08:31:08.465Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-06T08:31:08.465Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.024792087795535017,
+      "bins_above": null,
+      "bins_below": 50,
+      "volatility_used": 2.1545,
+      "timing": null,
+      "range_width": 51,
+      "exact": {
+        "active_bin": -464,
+        "lower_bin": -514,
+        "upper_bin": -464,
+        "bin_step": 80,
+        "amount_sol": 0.132
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-06T09:01:37.807Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 0.8,
+      "minutes_since_entry": 30,
+      "active_bin": -463,
+      "entry_bin": -464,
+      "lower_bin": -514,
+      "upper_bin": -464
+    },
+    {
+      "stage": "exit",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-06T14:17:03.356Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_take-profit",
+      "pnl_pct": 6.01,
+      "duration_minutes": 345,
+      "fees_earned": 0.013030917,
+      "exit_side": null
+    }
+  ],
+  "updated_at": "2026-06-06T14:17:03.385Z"
+}

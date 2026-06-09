@@ -1,0 +1,87 @@
+{
+  "trace_id": "Magpie-SOL_2026_06_08_08_01_35",
+  "pool": "Magpie-SOL",
+  "created_at": "2026-06-08T08:01:35.542Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "Magpie-SOL",
+      "timestamp": "2026-06-08T08:01:35.542Z",
+      "metrics": {
+        "fee_tvl": 0.5431,
+        "organic": 83,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 3.9463,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "Magpie-SOL",
+      "timestamp": "2026-06-08T08:01:35.542Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "Magpie-SOL",
+      "timestamp": "2026-06-08T08:01:35.542Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "Magpie-SOL",
+      "timestamp": "2026-06-08T08:01:35.542Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.01512725439191538,
+      "bins_above": null,
+      "bins_below": 66,
+      "volatility_used": 3.9463,
+      "timing": null,
+      "range_width": 67,
+      "exact": {
+        "active_bin": -526,
+        "lower_bin": -592,
+        "upper_bin": -526,
+        "bin_step": 80,
+        "amount_sol": 2.386
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "Magpie-SOL",
+      "timestamp": "2026-06-08T08:05:20.887Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 2.42,
+      "minutes_since_entry": 3,
+      "active_bin": -523,
+      "entry_bin": -526,
+      "lower_bin": -592,
+      "upper_bin": -526
+    },
+    {
+      "stage": "exit",
+      "pool": "Magpie-SOL",
+      "timestamp": "2026-06-08T09:08:44.658Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 2.81,
+      "duration_minutes": 67,
+      "fees_earned": 0.067578186,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-08T09:08:44.686Z"
+}

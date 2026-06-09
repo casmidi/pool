@@ -1,0 +1,95 @@
+{
+  "trace_id": "JTVO-SOL_2026_06_04_02_00_50",
+  "pool": "JTVO-SOL",
+  "created_at": "2026-06-04T02:00:50.865Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "JTVO-SOL",
+      "timestamp": "2026-06-04T02:00:50.865Z",
+      "metrics": {
+        "fee_tvl": 1.2503,
+        "organic": 74,
+        "wallet_score": null,
+        "confidence": 0.7472,
+        "volatility": 2.4211,
+        "alpha": "PASS"
+      },
+      "decision": "COPY",
+      "why_pass": [
+        "Wallet score 74 >= 50",
+        "Range quality 50% ok",
+        "Fee/TVL 1.2503 ok",
+        "Organic 74% ok",
+        "Volatility 2.4211 ok",
+        "In range ok",
+        "All quality checks passed"
+      ],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "JTVO-SOL",
+      "timestamp": "2026-06-04T02:00:50.865Z",
+      "score": 74,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": 0.7472
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "JTVO-SOL",
+      "timestamp": "2026-06-04T02:00:50.865Z",
+      "momentum_state": "MOMENTUM_BREAKOUT_UP",
+      "predicted_direction": "UPWARD",
+      "wait_minutes": 5,
+      "timing_action": "WAIT_5_MIN",
+      "range_action": "WIDEN_AND_SHIFT_UP",
+      "risk_level": "CRITICAL",
+      "oor_prediction": "NO_DEPLOY_OR_SANDBOX_ONLY"
+    },
+    {
+      "stage": "deploy",
+      "pool": "JTVO-SOL",
+      "timestamp": "2026-06-04T02:00:50.865Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.000012191142410609112,
+      "bins_above": 0,
+      "bins_below": 69,
+      "volatility_used": 2.4211,
+      "timing": "WAIT_5_MIN",
+      "range_width": 70,
+      "exact": {
+        "active_bin": -1420,
+        "lower_bin": -1489,
+        "upper_bin": -1420,
+        "bin_step": 80,
+        "amount_sol": 0.21
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "JTVO-SOL",
+      "timestamp": "2026-06-04T02:09:07.081Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 3.24,
+      "minutes_since_entry": 8,
+      "active_bin": -1416,
+      "entry_bin": -1420,
+      "lower_bin": -1489,
+      "upper_bin": -1420
+    },
+    {
+      "stage": "exit",
+      "pool": "JTVO-SOL",
+      "timestamp": "2026-06-04T03:19:16.983Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 3.02,
+      "duration_minutes": 78,
+      "fees_earned": 0.006852628,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-04T03:19:17.010Z"
+}

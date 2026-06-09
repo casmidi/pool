@@ -1,0 +1,95 @@
+{
+  "trace_id": "RKC-SOL_2026_06_03_15_52_31",
+  "pool": "RKC-SOL",
+  "created_at": "2026-06-03T15:52:31.286Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "RKC-SOL",
+      "timestamp": "2026-06-03T15:52:31.286Z",
+      "metrics": {
+        "fee_tvl": 0.2591,
+        "organic": 79,
+        "wallet_score": null,
+        "confidence": 0.775,
+        "volatility": 1.9883,
+        "alpha": "PASS"
+      },
+      "decision": "COPY",
+      "why_pass": [
+        "Wallet score 79 >= 50",
+        "Range quality 50% ok",
+        "Fee/TVL 0.2591 ok",
+        "Organic 79% ok",
+        "Volatility 1.9883 ok",
+        "In range ok",
+        "All quality checks passed"
+      ],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "RKC-SOL",
+      "timestamp": "2026-06-03T15:52:31.286Z",
+      "score": 79,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": 0.775
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "RKC-SOL",
+      "timestamp": "2026-06-03T15:52:31.286Z",
+      "momentum_state": "MOMENTUM_BREAKOUT_UP",
+      "predicted_direction": "UPWARD",
+      "wait_minutes": 5,
+      "timing_action": "WAIT_5_MIN",
+      "range_action": "WIDEN_AND_SHIFT_UP",
+      "risk_level": "CRITICAL",
+      "oor_prediction": "NO_DEPLOY_OR_SANDBOX_ONLY"
+    },
+    {
+      "stage": "deploy",
+      "pool": "RKC-SOL",
+      "timestamp": "2026-06-03T15:52:31.286Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.020637839221382365,
+      "bins_above": 0,
+      "bins_below": 69,
+      "volatility_used": 1.9883,
+      "timing": "WAIT_5_MIN",
+      "range_width": 70,
+      "exact": {
+        "active_bin": -390,
+        "lower_bin": -459,
+        "upper_bin": -390,
+        "bin_step": 100,
+        "amount_sol": 0.219
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "RKC-SOL",
+      "timestamp": "2026-06-03T16:21:36.321Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 29,
+      "active_bin": -389,
+      "entry_bin": -390,
+      "lower_bin": -459,
+      "upper_bin": -390
+    },
+    {
+      "stage": "exit",
+      "pool": "RKC-SOL",
+      "timestamp": "2026-06-03T20:09:06.572Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 2.93,
+      "duration_minutes": 256,
+      "fees_earned": 0.006913878,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-03T20:09:06.670Z"
+}

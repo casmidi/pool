@@ -1,0 +1,95 @@
+{
+  "trace_id": "unc-SOL_2026_06_03_04_10_40",
+  "pool": "unc-SOL",
+  "created_at": "2026-06-03T04:10:40.198Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-03T04:10:40.198Z",
+      "metrics": {
+        "fee_tvl": 0.232,
+        "organic": 75,
+        "wallet_score": null,
+        "confidence": 0.7537,
+        "volatility": 2.2787,
+        "alpha": "PASS"
+      },
+      "decision": "COPY",
+      "why_pass": [
+        "Wallet score 75 >= 50",
+        "Range quality 50% ok",
+        "Fee/TVL 0.232 ok",
+        "Organic 75% ok",
+        "Volatility 2.2787 ok",
+        "In range ok",
+        "All quality checks passed"
+      ],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-03T04:10:40.198Z",
+      "score": 75,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": 0.7537
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-03T04:10:40.198Z",
+      "momentum_state": "MOMENTUM_BREAKOUT_UP",
+      "predicted_direction": "UPWARD",
+      "wait_minutes": 5,
+      "timing_action": "WAIT_5_MIN",
+      "range_action": "WIDEN_AND_SHIFT_UP",
+      "risk_level": "CRITICAL",
+      "oor_prediction": "NO_DEPLOY_OR_SANDBOX_ONLY"
+    },
+    {
+      "stage": "deploy",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-03T04:10:40.198Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.01875834319868466,
+      "bins_above": 0,
+      "bins_below": 69,
+      "volatility_used": 2.2787,
+      "timing": "WAIT_5_MIN",
+      "range_width": 70,
+      "exact": {
+        "active_bin": -499,
+        "lower_bin": -568,
+        "upper_bin": -499,
+        "bin_step": 80,
+        "amount_sol": 0.201
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-03T04:15:35.662Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 0.8,
+      "minutes_since_entry": 4,
+      "active_bin": -498,
+      "entry_bin": -499,
+      "lower_bin": -568,
+      "upper_bin": -499
+    },
+    {
+      "stage": "exit",
+      "pool": "unc-SOL",
+      "timestamp": "2026-06-03T04:41:05.807Z",
+      "result": "LOSS",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": -0.15,
+      "duration_minutes": 30,
+      "fees_earned": 0.000209335,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-03T04:41:05.825Z"
+}

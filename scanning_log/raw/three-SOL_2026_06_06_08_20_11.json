@@ -1,0 +1,87 @@
+{
+  "trace_id": "three-SOL_2026_06_06_08_20_11",
+  "pool": "three-SOL",
+  "created_at": "2026-06-06T08:20:11.223Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-06T08:20:11.223Z",
+      "metrics": {
+        "fee_tvl": 0.3511,
+        "organic": 86,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 1.6138,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-06T08:20:11.223Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-06T08:20:11.223Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-06T08:20:11.223Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.06501858091749113,
+      "bins_above": null,
+      "bins_below": 46,
+      "volatility_used": 1.6138,
+      "timing": null,
+      "range_width": 47,
+      "exact": {
+        "active_bin": -343,
+        "lower_bin": -389,
+        "upper_bin": -343,
+        "bin_step": 80,
+        "amount_sol": 0.173
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-06T08:28:01.694Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 0.8,
+      "minutes_since_entry": 7,
+      "active_bin": -342,
+      "entry_bin": -343,
+      "lower_bin": -389,
+      "upper_bin": -343
+    },
+    {
+      "stage": "exit",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-06T08:50:32.916Z",
+      "result": "LOSS",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": -0.18,
+      "duration_minutes": 30,
+      "fees_earned": 0.000330171,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-06T08:50:32.925Z"
+}

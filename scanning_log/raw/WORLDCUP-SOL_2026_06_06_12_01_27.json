@@ -1,0 +1,87 @@
+{
+  "trace_id": "WORLDCUP-SOL_2026_06_06_12_01_27",
+  "pool": "WORLDCUP-SOL",
+  "created_at": "2026-06-06T12:01:27.181Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-06T12:01:27.181Z",
+      "metrics": {
+        "fee_tvl": 0.3733,
+        "organic": 87,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 1.2419,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-06T12:01:27.181Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-06T12:01:27.181Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-06T12:01:27.181Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.12130222249842895,
+      "bins_above": null,
+      "bins_below": 46,
+      "volatility_used": 1.2419,
+      "timing": null,
+      "range_width": 47,
+      "exact": {
+        "active_bin": -212,
+        "lower_bin": -258,
+        "upper_bin": -212,
+        "bin_step": 100,
+        "amount_sol": 0.202
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-06T12:06:04.928Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 4,
+      "active_bin": -211,
+      "entry_bin": -212,
+      "lower_bin": -258,
+      "upper_bin": -212
+    },
+    {
+      "stage": "exit",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-06T12:38:37.766Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": 0.04,
+      "duration_minutes": 37,
+      "fees_earned": 0.000734123,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-06T12:38:37.840Z"
+}

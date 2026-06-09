@@ -77,6 +77,31 @@ Deploys a new LP position. All safety checks apply.
 Output: { success, position, pool_name, txs, price_range, bin_step }
 \`\`\`
 
+### meridian master-strategies [--limit 10]
+Shows learned top-wallet DLMM range patterns currently used to improve deploy ranges.
+\`\`\`
+Output: { observations, strategies, topStrategies: [...] }
+\`\`\`
+
+### meridian optimize-backtest --file pools.json
+Runs grid-search + walk-forward optimization over historical pool snapshots.
+\`\`\`
+Input file: [{ name, address, snapshots: [{ timestamp, poolScore, fee_active_tvl_ratio, volatility, active_bin, price_change_pct }] }]
+Output: { grid, walkForward }
+\`\`\`
+
+### meridian daily-report
+Builds the auto-improvement report from realized closes and tags underperforming copied wallets.
+\`\`\`
+Output: { summary, suggestions, walletActions }
+\`\`\`
+
+### meridian auto-tune [--apply]
+Preview or apply bounded auto-improvement tuning from realized closes.
+\`\`\`
+Output: { applied, changes, report }
+\`\`\`
+
 ### meridian claim --position <addr>
 Claims accumulated swap fees for a position.
 \`\`\`
@@ -214,8 +239,12 @@ Starts the autonomous agent with cron jobs (management + screening).
 --silent      Suppress Telegram notifications for this run
 `;
 
-fs.mkdirSync(meridianDir, { recursive: true });
-fs.writeFileSync(path.join(meridianDir, "SKILL.md"), SKILL_MD);
+try {
+  fs.mkdirSync(meridianDir, { recursive: true });
+  fs.writeFileSync(path.join(meridianDir, "SKILL.md"), SKILL_MD);
+} catch {
+  // CLI commands should keep working even when the home skill cache is read-only.
+}
 
 // ─── Parse args ───────────────────────────────────────────────────
 const argv = process.argv.slice(2);
@@ -253,6 +282,7 @@ const { values: flags } = parseArgs({
     "dry-run":    { type: "boolean" },
     "silent":     { type: "boolean" },
     limit:        { type: "string" },
+    file:         { type: "string" },
   },
   allowPositionals: true,
   strict: false,
@@ -451,6 +481,61 @@ switch (subcommand) {
   }
 
   // ── claim ────────────────────────────────────────────────────────
+  case "master-strategies": {
+    const { getMasterStrategyDbSummary } = await import("./strategies/master-strategy-db.js");
+    const limit = flags.limit ? parseInt(flags.limit) : 10;
+    const summary = getMasterStrategyDbSummary();
+    out({
+      ...summary,
+      topStrategies: (summary.topStrategies || []).slice(0, limit),
+    });
+    break;
+  }
+
+  case "optimize-backtest": {
+    if (!flags.file) die("Usage: meridian optimize-backtest --file <historical-pools.json>");
+    const { config } = await import("./config.js");
+    const { gridSearchBacktest, walkForwardOptimize } = await import("./backtesting/optimizer.js");
+    const pools = JSON.parse(fs.readFileSync(path.resolve(flags.file), "utf8"));
+    if (!Array.isArray(pools)) die("Backtest file must contain an array of pools");
+    const baseConfig = {
+      initialBalanceSol: flags.amount ? Number(flags.amount) : 10,
+      deployAmountSol: Number(config.management?.deployAmountSol ?? 0.1),
+      maxPositions: Number(config.risk?.maxPositions ?? 3),
+      outOfRangeWaitMinutes: Number(config.management?.outOfRangeWaitMinutes ?? 30),
+      minScoreThreshold: Number(config.screening?.minPoolScore ?? 55),
+      minBinsBelow: Number(config.strategy?.minBinsBelow ?? 35),
+      timeframe: config.screening?.timeframe ?? "5m",
+    };
+    const grid = await gridSearchBacktest(pools, baseConfig, {
+      maxRuns: Number(config.backtesting?.optimizerMaxRuns ?? 240),
+      topN: flags.limit ? Number(flags.limit) : 10,
+    });
+    const walkForward = await walkForwardOptimize(pools, baseConfig, {
+      maxRuns: Number(config.backtesting?.optimizerMaxRuns ?? 240),
+      folds: Number(config.backtesting?.walkForwardFolds ?? 3),
+      trainRatio: Number(config.backtesting?.walkForwardTrainRatio ?? 0.6),
+      topN: 5,
+    });
+    out({ grid, walkForward });
+    break;
+  }
+
+  case "daily-report": {
+    const { generateDailyImprovementReport } = await import("./monitoring/auto-improvement.js");
+    out(generateDailyImprovementReport({ days: flags.limit ? Number(flags.limit) : 1 }));
+    break;
+  }
+
+  case "auto-tune": {
+    const { applyDailyImprovementSuggestions } = await import("./monitoring/auto-improvement.js");
+    out(applyDailyImprovementSuggestions({
+      days: flags.limit ? Number(flags.limit) : 1,
+      dryRun: !argv.includes("--apply"),
+    }));
+    break;
+  }
+
   case "claim": {
     if (!flags.position) die("Usage: meridian claim --position <addr>");
     const { executeTool } = await import("./tools/executor.js");
@@ -599,6 +684,58 @@ switch (subcommand) {
     const history = getPerformanceHistory({ hours: 999999, limit });
     const summary = getPerformanceSummary();
     out({ summary, ...history });
+    break;
+  }
+
+  // ── rank ─────────────────────────────────────────────────────────
+  case "rank": {
+    const { runRankingCycle } = await import("./ranking/top-performers.js");
+    const mode = flags.mode || "auto_top_10";
+    const count = flags.limit ? parseInt(flags.limit) : 10;
+    const result = await runRankingCycle({ mode, count });
+    // If basic ranking returns empty but advanced scoring is available, use it
+    if (!result?.top?.length && result?.snapshot?.wallets?.length) {
+      try {
+        const { rankWalletsAdvanced } = await import("./scoring/composite-scorer.js");
+        const { selectTopWallets } = await import("./scoring/dynamic-selection.js");
+        const ranked = rankWalletsAdvanced(result.snapshot.wallets, flags.advMode || flags.mode || "balanced");
+        const selection = selectTopWallets(ranked, { topN: count, mode: flags.advMode || flags.mode || "balanced" });
+        out({ advanced: true, mode: flags.advMode || "balanced", ...selection });
+        break;
+      } catch { /* fallback */ }
+    }
+    out(result || { message: "Ranking cycle completed" });
+    break;
+  }
+
+  // ── rank-score ────────────────────────────────────────────────────
+  case "rank-score": {
+    const wallet = flags.wallet || argv.find((a, i) => !a.startsWith("-") && i > 0 && a !== "rank-score");
+    if (!wallet) die("Usage: meridian rank-score --wallet <addr> [--mode balanced]");
+    // Try advanced scoring first
+    try {
+      const { rankWalletsAdvanced } = await import("./scoring/composite-scorer.js");
+      const { getWeightProfile } = await import("./scoring/weight-profiles.js");
+      const profile = getWeightProfile(flags.mode || "balanced");
+      const scored = rankWalletsAdvanced([{ address: wallet, label: wallet.slice(0, 8) }], flags.mode || "balanced", profile.thresholds);
+      out({ wallet, advanced: true, mode: flags.mode || "balanced", score: scored[0] });
+      break;
+    } catch { /* fallback */ }
+    const { scoreWalletShort } = await import("./ranking/top-performers.js");
+    out(await scoreWalletShort(wallet));
+    break;
+  }
+
+  // ── rank-modes ─────────────────────────────────────────────────────
+  case "rank-modes": {
+    try {
+      const { getAvailableModes, getWeightProfile } = await import("./scoring/weight-profiles.js");
+      const modes = getAvailableModes();
+      const info = modes.map(m => ({ mode: m, ...getWeightProfile(m) }));
+      out({ modes: info });
+    } catch (e) {
+      out({ modes: ["conservative", "balanced", "aggressive", "momentum"], error: e.message });
+    }
     break;
   }
 

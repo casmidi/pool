@@ -1,0 +1,67 @@
+{
+  "trace_id": "WORLDCUP-SOL_2026_06_09_21_01_27",
+  "pool": "WORLDCUP-SOL",
+  "created_at": "2026-06-09T21:01:27.887Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T21:01:27.887Z",
+      "metrics": {
+        "fee_tvl": 0.0207,
+        "organic": 89,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 1.4072,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T21:01:27.887Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T21:01:27.887Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T21:01:27.887Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.13135292504001317,
+      "bins_above": null,
+      "bins_below": 48,
+      "volatility_used": 1.4072,
+      "timing": null,
+      "range_width": 49,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -204,
+        "lower_bin": -252,
+        "upper_bin": -204,
+        "bin_step": 100,
+        "amount_sol": 0.531
+      }
+    }
+  ],
+  "updated_at": "2026-06-09T21:01:27.919Z"
+}

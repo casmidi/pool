@@ -27,6 +27,32 @@ function sanitizeStoredText(text, maxLen = MAX_INSTRUCTION_LENGTH) {
   return cleaned || null;
 }
 
+function dynamicExitConfig(pos, positionData, mgmtConfig) {
+  const regime = String(
+    positionData.market_regime?.regime ||
+    positionData.market_regime ||
+    pos.market_regime?.regime ||
+    pos.market_regime ||
+    ""
+  ).toUpperCase();
+  const cfg = { ...mgmtConfig };
+  if (regime.includes("HIGH_VOLATILITY")) {
+    if (cfg.stopLossPct != null) cfg.stopLossPct = Math.max(Number(cfg.stopLossPct), -12);
+    if (cfg.takeProfitPct != null) cfg.takeProfitPct = Math.max(2, Number(cfg.takeProfitPct) * 0.75);
+    if (cfg.outOfRangeWaitMinutes != null) cfg.outOfRangeWaitMinutes = Math.max(8, Math.round(Number(cfg.outOfRangeWaitMinutes) * 0.6));
+  } else if (regime.includes("TRENDING_DOWN")) {
+    if (cfg.stopLossPct != null) cfg.stopLossPct = Math.max(Number(cfg.stopLossPct), -10);
+    if (cfg.outOfRangeWaitMinutes != null) cfg.outOfRangeWaitMinutes = Math.max(5, Math.round(Number(cfg.outOfRangeWaitMinutes) * 0.5));
+  } else if (regime.includes("TRENDING_UP")) {
+    if (cfg.takeProfitPct != null) cfg.takeProfitPct = Number(cfg.takeProfitPct) * 1.25;
+    if (cfg.trailingDropPct != null) cfg.trailingDropPct = Number(cfg.trailingDropPct) * 1.2;
+  } else if (regime.includes("SIDEWAYS")) {
+    if (cfg.outOfRangeWaitMinutes != null) cfg.outOfRangeWaitMinutes = Math.round(Number(cfg.outOfRangeWaitMinutes) * 1.25);
+    if (cfg.minAgeBeforeYieldCheck != null) cfg.minAgeBeforeYieldCheck = Math.round(Number(cfg.minAgeBeforeYieldCheck) * 1.5);
+  }
+  return cfg;
+}
+
 function load() {
   if (!fs.existsSync(STATE_FILE)) {
     return { positions: {}, recentEvents: [], lastUpdated: null };
@@ -48,6 +74,37 @@ function save(state) {
   }
 }
 
+/**
+ * Persist the wallet address so the dashboard can find it
+ * even after the INIT log line scrolls out of recent logs.
+ */
+export function saveWalletAddress(address) {
+  if (!address) return;
+  const state = load();
+  state.walletAddress = address;
+  save(state);
+}
+
+/**
+ * Heartbeat for dashboard.
+ * Updates lastUpdated even if no positions/candidates exist.
+ */
+export function touchState(meta = {}) {
+  const state = load();
+
+  if (!state.positions) state.positions = {};
+  if (!state.recentEvents) state.recentEvents = [];
+
+  state.lastScreening = {
+    ts: new Date().toISOString(),
+    ...meta,
+  };
+
+  save(state);
+
+  log("state", "Dashboard heartbeat updated");
+}
+
 // ─── Position Registry ─────────────────────────────────────────
 
 /**
@@ -66,6 +123,8 @@ export function trackPosition({
   volatility,
   fee_tvl_ratio,
   organic_score,
+  market_regime,
+  alpha_edge,
   initial_value_usd,
   signal_snapshot = null,
 }) {
@@ -84,6 +143,8 @@ export function trackPosition({
     fee_tvl_ratio,
     initial_fee_tvl_24h: fee_tvl_ratio,
     organic_score,
+    market_regime: market_regime || null,
+    alpha_edge: alpha_edge || null,
     initial_value_usd,
     signal_snapshot: signal_snapshot || null,
     deployed_at: new Date().toISOString(),
@@ -365,6 +426,7 @@ export function updatePnlAndCheckExits(position_address, positionData, mgmtConfi
   const state = load();
   const pos = state.positions[position_address];
   if (!pos || pos.closed) return null;
+  mgmtConfig = dynamicExitConfig(pos, positionData, mgmtConfig);
 
   if (pos.confirmed_trailing_exit_until) {
     if (new Date(pos.confirmed_trailing_exit_until).getTime() > Date.now() && pos.confirmed_trailing_exit_reason) {

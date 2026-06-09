@@ -1,0 +1,96 @@
+{
+  "trace_id": "grail-SOL_2026_06_09_18_01_23",
+  "pool": "grail-SOL",
+  "created_at": "2026-06-09T18:01:23.872Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T18:01:23.872Z",
+      "metrics": {
+        "fee_tvl": 0.0585,
+        "organic": 81,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 0.5745,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T18:01:23.872Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T18:01:23.872Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T18:01:23.872Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.013453805725063385,
+      "bins_above": null,
+      "bins_below": 44,
+      "volatility_used": 0.5745,
+      "timing": null,
+      "range_width": 45,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -433,
+        "lower_bin": -477,
+        "upper_bin": -433,
+        "bin_step": 100,
+        "amount_sol": 0.397
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T18:08:23.879Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 6,
+      "active_bin": -432,
+      "entry_bin": -433,
+      "lower_bin": -477,
+      "upper_bin": -433,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    },
+    {
+      "stage": "exit",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T18:32:53.923Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": 0.08,
+      "duration_minutes": 31,
+      "fees_earned": 0.000929411,
+      "exit_side": "above",
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T18:32:53.960Z"
+}

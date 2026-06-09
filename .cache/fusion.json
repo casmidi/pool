@@ -1,0 +1,7328 @@
+{
+  "fused:top-candidates": {
+    "value": [
+      {
+        "address": "AuDS1jWvD2StHgkFfFUYaxa4rKQCjAqGayNSC1feixrV",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "AuDS1jWvD2StHgkFfFUYaxa4rKQCjAqGayNSC1feixrV",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037912881,
+          "fusionTimeMs": 12666
+        }
+      },
+      {
+        "address": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037916903,
+          "fusionTimeMs": 16676
+        }
+      },
+      {
+        "address": "BSiGcAJ7Xm1Pt4Rjhqkx8MsuStgLmTuaUiGitB9PT5cC",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "BSiGcAJ7Xm1Pt4Rjhqkx8MsuStgLmTuaUiGitB9PT5cC",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910861,
+          "fusionTimeMs": 10626
+        }
+      },
+      {
+        "address": "EBpRY1g5SzRKmJV4ESc6oUzctXyLE1ohrDh3twmcss8c",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "EBpRY1g5SzRKmJV4ESc6oUzctXyLE1ohrDh3twmcss8c",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910864,
+          "fusionTimeMs": 10622
+        }
+      },
+      {
+        "address": "68DbUyRNYGFwd9W3FAfHvLY4qfSJ263gjtuseeW4r2Mu",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "68DbUyRNYGFwd9W3FAfHvLY4qfSJ263gjtuseeW4r2Mu",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910866,
+          "fusionTimeMs": 10616
+        }
+      },
+      {
+        "address": "CKs7WHryW6Esk7S65h2Syts8WbL1anW6YBpYBUuehkVc",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "CKs7WHryW6Esk7S65h2Syts8WbL1anW6YBpYBUuehkVc",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910869,
+          "fusionTimeMs": 10611
+        }
+      },
+      {
+        "address": "jikaXZ4fJrtnk1j1vkWK3PKYV3XPS77qnKJPwQfSwuR",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "jikaXZ4fJrtnk1j1vkWK3PKYV3XPS77qnKJPwQfSwuR",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910872,
+          "fusionTimeMs": 10605
+        }
+      },
+      {
+        "address": "4848WiHrYFb3WMEapoAUxvdRfaqoaJK6jbNZywVLPpev",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "4848WiHrYFb3WMEapoAUxvdRfaqoaJK6jbNZywVLPpev",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910874,
+          "fusionTimeMs": 10600
+        }
+      },
+      {
+        "address": "J71kArL2oBeepNf7VNVtMDXVXRVWDo1kj9RjaR1n4N7B",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "J71kArL2oBeepNf7VNVtMDXVXRVWDo1kj9RjaR1n4N7B",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910877,
+          "fusionTimeMs": 10596
+        }
+      },
+      {
+        "address": "FmfExTQXmMS8tQkxXDSTUjso4Q5uRppdC6xQjgaPJAVM",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "FmfExTQXmMS8tQkxXDSTUjso4Q5uRppdC6xQjgaPJAVM",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911157,
+          "fusionTimeMs": 10869
+        }
+      },
+      {
+        "address": "ALtWFdkrvAkrVbGfTuyiqkmzWhSW3tZfUb42gvru7Ttm",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "ALtWFdkrvAkrVbGfTuyiqkmzWhSW3tZfUb42gvru7Ttm",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910883,
+          "fusionTimeMs": 10588
+        }
+      },
+      {
+        "address": "2u6hXJHajGFQ6KZxydktjyuBCiC9MQc9J4Kz877JTa5t",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "2u6hXJHajGFQ6KZxydktjyuBCiC9MQc9J4Kz877JTa5t",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910888,
+          "fusionTimeMs": 10586
+        }
+      },
+      {
+        "address": "H8zG1GJ4V3q8TaGoyqpbq65Ld255ykkmB72eVYXHdP3c",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "H8zG1GJ4V3q8TaGoyqpbq65Ld255ykkmB72eVYXHdP3c",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910891,
+          "fusionTimeMs": 10582
+        }
+      },
+      {
+        "address": "8imzzbo6fam19TR5R1NsJKme3MU1amoNnLbzgmEte9Uw",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "8imzzbo6fam19TR5R1NsJKme3MU1amoNnLbzgmEte9Uw",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910895,
+          "fusionTimeMs": 10572
+        }
+      },
+      {
+        "address": "DirJ256qSVzwnrcL8smxLfBh8mfqE33qpKi8NKL1WTod",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "DirJ256qSVzwnrcL8smxLfBh8mfqE33qpKi8NKL1WTod",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910898,
+          "fusionTimeMs": 10568
+        }
+      },
+      {
+        "address": "8AVKCPdydSyrhQKUpfYUKmuAHsLXdnWi4fnHjys6iZ4a",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "8AVKCPdydSyrhQKUpfYUKmuAHsLXdnWi4fnHjys6iZ4a",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910902,
+          "fusionTimeMs": 10565
+        }
+      },
+      {
+        "address": "D86JWXiGJjWTLLVsDn6MGqiSpVBbtC87ycSwWSzptiKo",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "D86JWXiGJjWTLLVsDn6MGqiSpVBbtC87ycSwWSzptiKo",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910906,
+          "fusionTimeMs": 10561
+        }
+      },
+      {
+        "address": "6FhA9nrAbLR7JVeH6jJqj4Dx9HGgFE3WuHBZN2AmpBic",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "6FhA9nrAbLR7JVeH6jJqj4Dx9HGgFE3WuHBZN2AmpBic",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910910,
+          "fusionTimeMs": 10556
+        }
+      },
+      {
+        "address": "EmeMjmVQBtbX1tLpoFTFmLwRZxHQT78WncSxPYYyo8qk",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "EmeMjmVQBtbX1tLpoFTFmLwRZxHQT78WncSxPYYyo8qk",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910914,
+          "fusionTimeMs": 10552
+        }
+      },
+      {
+        "address": "FNiErXtY1L1eLBpbrtRvbFhUqhKTeopBiVeJJEKASC4V",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "FNiErXtY1L1eLBpbrtRvbFhUqhKTeopBiVeJJEKASC4V",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910917,
+          "fusionTimeMs": 10549
+        }
+      },
+      {
+        "address": "8mHJ3Qo2edSrX9dptN2TtdnW1oZdyhX4hpMWm7fH6ubN",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "8mHJ3Qo2edSrX9dptN2TtdnW1oZdyhX4hpMWm7fH6ubN",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910921,
+          "fusionTimeMs": 10545
+        }
+      },
+      {
+        "address": "GKydKqAVkbLnJ3LcVfsftoPTP1qLNdkvBgy3xio8Uq4j",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "GKydKqAVkbLnJ3LcVfsftoPTP1qLNdkvBgy3xio8Uq4j",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910925,
+          "fusionTimeMs": 10543
+        }
+      },
+      {
+        "address": "8GMQjWF7PD76NMf9pTJaeaKKynaykd88Y864rTf3ojYD",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "8GMQjWF7PD76NMf9pTJaeaKKynaykd88Y864rTf3ojYD",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910929,
+          "fusionTimeMs": 10540
+        }
+      },
+      {
+        "address": "3kg9StbbAGCivucYX9HDdVRDvhRgfX11cfvy3AAQd9ae",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "3kg9StbbAGCivucYX9HDdVRDvhRgfX11cfvy3AAQd9ae",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910932,
+          "fusionTimeMs": 10537
+        }
+      },
+      {
+        "address": "ApfkwW6NyWY84qvQf7ZghFxK3maSwESjLnPRozX5Qp2i",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "ApfkwW6NyWY84qvQf7ZghFxK3maSwESjLnPRozX5Qp2i",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910936,
+          "fusionTimeMs": 10534
+        }
+      },
+      {
+        "address": "XB23QJLwiQVaMKVusjrrsg6M1BCdhBo859AQV3eKGgq",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "XB23QJLwiQVaMKVusjrrsg6M1BCdhBo859AQV3eKGgq",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910939,
+          "fusionTimeMs": 10529
+        }
+      },
+      {
+        "address": "GnuGGWDsPaLgn2H7gxBqF9m6zx7zMph2PXPDZWKJMW5k",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "GnuGGWDsPaLgn2H7gxBqF9m6zx7zMph2PXPDZWKJMW5k",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910943,
+          "fusionTimeMs": 10525
+        }
+      },
+      {
+        "address": "8ryctvNwpJTuuap3wuNTfcyEx4DjSuXvhGXSDHNaU8sQ",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "8ryctvNwpJTuuap3wuNTfcyEx4DjSuXvhGXSDHNaU8sQ",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910946,
+          "fusionTimeMs": 10522
+        }
+      },
+      {
+        "address": "2pCAzckKN8gRupMNgSHvQabAcNrZE6g2fWetaGyX2WjP",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "2pCAzckKN8gRupMNgSHvQabAcNrZE6g2fWetaGyX2WjP",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910949,
+          "fusionTimeMs": 10518
+        }
+      },
+      {
+        "address": "8yLYmaTVFSWBW3UfiadjbeJXzHfXtS9vwFCUFFP118SF",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "8yLYmaTVFSWBW3UfiadjbeJXzHfXtS9vwFCUFFP118SF",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910953,
+          "fusionTimeMs": 10516
+        }
+      },
+      {
+        "address": "4kJW4MBu24jP5vtiT4ZN3GtNdiT6YVBWzmvw3GWLVqMH",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "4kJW4MBu24jP5vtiT4ZN3GtNdiT6YVBWzmvw3GWLVqMH",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910956,
+          "fusionTimeMs": 10512
+        }
+      },
+      {
+        "address": "7mVBckB8eN2LrArghKWfd56kzQh4uVNbdvD2AyBVcQwe",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "7mVBckB8eN2LrArghKWfd56kzQh4uVNbdvD2AyBVcQwe",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910960,
+          "fusionTimeMs": 10509
+        }
+      },
+      {
+        "address": "3Kd75rpqhUyX5R6293iHcpLU5DNcTQwHQ9czenghL4eY",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "3Kd75rpqhUyX5R6293iHcpLU5DNcTQwHQ9czenghL4eY",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910963,
+          "fusionTimeMs": 10505
+        }
+      },
+      {
+        "address": "266YQsvLM4ZBRRDKcuPSeEPzbsNPY1WpBaffzqsK5bcQ",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "266YQsvLM4ZBRRDKcuPSeEPzbsNPY1WpBaffzqsK5bcQ",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910967,
+          "fusionTimeMs": 10503
+        }
+      },
+      {
+        "address": "4v79XyJsTeiqZiZCpGjQPRHm3zZewtb23RRSy9hebAB9",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "4v79XyJsTeiqZiZCpGjQPRHm3zZewtb23RRSy9hebAB9",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910970,
+          "fusionTimeMs": 10499
+        }
+      },
+      {
+        "address": "ExgPnMDbbQGFZ8qccsEgd2oyEfFapFSN1yC9RHHYaWZp",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "ExgPnMDbbQGFZ8qccsEgd2oyEfFapFSN1yC9RHHYaWZp",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910974,
+          "fusionTimeMs": 10497
+        }
+      },
+      {
+        "address": "GVHMQJeKcUZJdZr5ZNjSTJLCTqCbpDGcMZPy4WCU8jve",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "GVHMQJeKcUZJdZr5ZNjSTJLCTqCbpDGcMZPy4WCU8jve",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910977,
+          "fusionTimeMs": 10493
+        }
+      },
+      {
+        "address": "AAJs9m5L1Fiw3UBhEfgfurbs3PcJ6Kr7LdxDvGMCSbqE",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "AAJs9m5L1Fiw3UBhEfgfurbs3PcJ6Kr7LdxDvGMCSbqE",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910983,
+          "fusionTimeMs": 10489
+        }
+      },
+      {
+        "address": "6yZqneWX5nLAfA5M2dDqQpLdsEZngxb4PtZicgPBdGKU",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "6yZqneWX5nLAfA5M2dDqQpLdsEZngxb4PtZicgPBdGKU",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910986,
+          "fusionTimeMs": 10479
+        }
+      },
+      {
+        "address": "CmZpMHxTjZs2v17uhQ7umx6PnhzTsNK39A4YDkjy27QK",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "CmZpMHxTjZs2v17uhQ7umx6PnhzTsNK39A4YDkjy27QK",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910990,
+          "fusionTimeMs": 10472
+        }
+      },
+      {
+        "address": "4JdqRKjg5VLRZe93f1YJQhbeaoZ5ZJEvvY9YDpzwKgsj",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "4JdqRKjg5VLRZe93f1YJQhbeaoZ5ZJEvvY9YDpzwKgsj",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910993,
+          "fusionTimeMs": 10464
+        }
+      },
+      {
+        "address": "EVsaww5U1sFiSARz8MkwUVJbvsjgYELRshZxmnDEwWZN",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "EVsaww5U1sFiSARz8MkwUVJbvsjgYELRshZxmnDEwWZN",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037910997,
+          "fusionTimeMs": 10459
+        }
+      },
+      {
+        "address": "cmBw5mZgoodbu6aA4h23yTCVin6VovZq5Kp6zXAn2xf",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "cmBw5mZgoodbu6aA4h23yTCVin6VovZq5Kp6zXAn2xf",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911001,
+          "fusionTimeMs": 10448
+        }
+      },
+      {
+        "address": "9zoXFnQK4FC387EFmWvek8J5Dru7uDvAi4S5ECUQ7Re6",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "9zoXFnQK4FC387EFmWvek8J5Dru7uDvAi4S5ECUQ7Re6",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911005,
+          "fusionTimeMs": 10439
+        }
+      },
+      {
+        "address": "Gotpbt5m5kmHtn1hJsUpLyXrehBF6UFpHqwnqFCndgPR",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "Gotpbt5m5kmHtn1hJsUpLyXrehBF6UFpHqwnqFCndgPR",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911008,
+          "fusionTimeMs": 10433
+        }
+      },
+      {
+        "address": "795ieE5FALdgzthAJM3bwK4PcsrT6W9xpsYUt2qnFY8b",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "795ieE5FALdgzthAJM3bwK4PcsrT6W9xpsYUt2qnFY8b",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911067,
+          "fusionTimeMs": 10483
+        }
+      },
+      {
+        "address": "6kxJzfnCs3cRW4Ge8WTPoCqv5i3AH7TNveWHAikiwYPv",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "6kxJzfnCs3cRW4Ge8WTPoCqv5i3AH7TNveWHAikiwYPv",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911016,
+          "fusionTimeMs": 10423
+        }
+      },
+      {
+        "address": "7nFvn17KkPdhJc2iNdJrmnjYdVue8dvfNh4XBfaCfgoB",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "7nFvn17KkPdhJc2iNdJrmnjYdVue8dvfNh4XBfaCfgoB",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911020,
+          "fusionTimeMs": 10421
+        }
+      },
+      {
+        "address": "81QcgksRC9wNjvMMHkd2rm8ajUtKKGJM4nWYdzckdHcz",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "81QcgksRC9wNjvMMHkd2rm8ajUtKKGJM4nWYdzckdHcz",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911023,
+          "fusionTimeMs": 10418
+        }
+      },
+      {
+        "address": "5T8kwe1jvwQoBWcfNGvdzYbmXjQBcXgNRaTYp7o9NkF5",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "5T8kwe1jvwQoBWcfNGvdzYbmXjQBcXgNRaTYp7o9NkF5",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911027,
+          "fusionTimeMs": 10416
+        }
+      },
+      {
+        "address": "Ds2FF5bR2EBS99PwzWmmzxLQ9pKYiRRYWYCkcurUhQ5k",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "Ds2FF5bR2EBS99PwzWmmzxLQ9pKYiRRYWYCkcurUhQ5k",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911030,
+          "fusionTimeMs": 10410
+        }
+      },
+      {
+        "address": "97ayJ8tYtZ9W2yQmULYg7CbmDx3rWCnATzu6uo2G3E9W",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "97ayJ8tYtZ9W2yQmULYg7CbmDx3rWCnATzu6uo2G3E9W",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911034,
+          "fusionTimeMs": 10407
+        }
+      },
+      {
+        "address": "AfX26HZxp2Wkp6bnkQcTu3Eq4PYAeR5C7dtdTemtCSLm",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "AfX26HZxp2Wkp6bnkQcTu3Eq4PYAeR5C7dtdTemtCSLm",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911038,
+          "fusionTimeMs": 10404
+        }
+      },
+      {
+        "address": "CArye8hudThg2QSQ7nrgcxDY2kgdxx4cybVKkdcADUSC",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "CArye8hudThg2QSQ7nrgcxDY2kgdxx4cybVKkdcADUSC",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911042,
+          "fusionTimeMs": 10398
+        }
+      },
+      {
+        "address": "7WBgYsXhnB5MjvV1tqW7XHh7nUg652GXRFG37WKcnCux",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "7WBgYsXhnB5MjvV1tqW7XHh7nUg652GXRFG37WKcnCux",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911048,
+          "fusionTimeMs": 10398
+        }
+      },
+      {
+        "address": "96hdcndTARFNUxrJMX4Mna3jkoewajysGu9rHxp6Ud2C",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "96hdcndTARFNUxrJMX4Mna3jkoewajysGu9rHxp6Ud2C",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911051,
+          "fusionTimeMs": 10392
+        }
+      },
+      {
+        "address": "Ay1qZCJBUKqZBkC2ENUiVmPGD8Hy7jZsNMEbAS6hVYbr",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "Ay1qZCJBUKqZBkC2ENUiVmPGD8Hy7jZsNMEbAS6hVYbr",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911055,
+          "fusionTimeMs": 10390
+        }
+      },
+      {
+        "address": "3Wqrcymogz84zuwVrt13jhzCWogqMj89ufZeJtF1HR27",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "3Wqrcymogz84zuwVrt13jhzCWogqMj89ufZeJtF1HR27",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911058,
+          "fusionTimeMs": 10386
+        }
+      },
+      {
+        "address": "FCq93Y44tfLcnFZo8HXKDmz77fhVWiQWAKLiqsSQGqEj",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "FCq93Y44tfLcnFZo8HXKDmz77fhVWiQWAKLiqsSQGqEj",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911062,
+          "fusionTimeMs": 10383
+        }
+      },
+      {
+        "address": "5ghUXGD9VHqtHR1HCUNDdqxGnVGs7DWkX8Zz9X11G36N",
+        "label": null,
+        "type": "unknown",
+        "confidence": 50,
+        "data": {
+          "address": "5ghUXGD9VHqtHR1HCUNDdqxGnVGs7DWkX8Zz9X11G36N",
+          "label": null,
+          "type": "unknown",
+          "confidence": 50,
+          "pnl": {
+            "7d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "30d": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "all": {
+              "pnlUsd": null,
+              "roiPct": null,
+              "winRate": null
+            },
+            "sharpeRatio": null,
+            "maxDrawdown": null,
+            "source": "gmgn"
+          },
+          "positions": [],
+          "openPositionCount": 0,
+          "activity": {
+            "totalTransactions": 0,
+            "lpTransactions": 0,
+            "recent24h": 0,
+            "uniqueTokens": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0,
+            "positionsHeld": 0
+          },
+          "risk": {
+            "totalTransactions": 0,
+            "recentActivity24h": 0,
+            "uniqueTokens": 0,
+            "lpTransactions": 0,
+            "deposits": 0,
+            "withdrawals": 0,
+            "swaps": 0
+          },
+          "tokens": [],
+          "sources": {
+            "gmgn": true,
+            "helius": true,
+            "dune": false,
+            "fallback": false
+          },
+          "fetchedAt": 1781037911066,
+          "fusionTimeMs": 10380
+        }
+      }
+    ],
+    "expiresAt": 1781038516904,
+    "cachedAt": 1781037916904
+  },
+  "fused:wallet:CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb": {
+    "value": {
+      "address": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037916903,
+      "fusionTimeMs": 16676
+    },
+    "expiresAt": 1781038216903,
+    "cachedAt": 1781037916903
+  },
+  "fused:wallet:AuDS1jWvD2StHgkFfFUYaxa4rKQCjAqGayNSC1feixrV": {
+    "value": {
+      "address": "AuDS1jWvD2StHgkFfFUYaxa4rKQCjAqGayNSC1feixrV",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037912881,
+      "fusionTimeMs": 12666
+    },
+    "expiresAt": 1781038212881,
+    "cachedAt": 1781037912881
+  },
+  "fused:wallet:FmfExTQXmMS8tQkxXDSTUjso4Q5uRppdC6xQjgaPJAVM": {
+    "value": {
+      "address": "FmfExTQXmMS8tQkxXDSTUjso4Q5uRppdC6xQjgaPJAVM",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911157,
+      "fusionTimeMs": 10869
+    },
+    "expiresAt": 1781038211157,
+    "cachedAt": 1781037911157
+  },
+  "fused:wallet:795ieE5FALdgzthAJM3bwK4PcsrT6W9xpsYUt2qnFY8b": {
+    "value": {
+      "address": "795ieE5FALdgzthAJM3bwK4PcsrT6W9xpsYUt2qnFY8b",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911067,
+      "fusionTimeMs": 10483
+    },
+    "expiresAt": 1781038211067,
+    "cachedAt": 1781037911067
+  },
+  "fused:wallet:5ghUXGD9VHqtHR1HCUNDdqxGnVGs7DWkX8Zz9X11G36N": {
+    "value": {
+      "address": "5ghUXGD9VHqtHR1HCUNDdqxGnVGs7DWkX8Zz9X11G36N",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911066,
+      "fusionTimeMs": 10380
+    },
+    "expiresAt": 1781038211066,
+    "cachedAt": 1781037911066
+  },
+  "fused:wallet:FCq93Y44tfLcnFZo8HXKDmz77fhVWiQWAKLiqsSQGqEj": {
+    "value": {
+      "address": "FCq93Y44tfLcnFZo8HXKDmz77fhVWiQWAKLiqsSQGqEj",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911062,
+      "fusionTimeMs": 10383
+    },
+    "expiresAt": 1781038211062,
+    "cachedAt": 1781037911062
+  },
+  "fused:wallet:3Wqrcymogz84zuwVrt13jhzCWogqMj89ufZeJtF1HR27": {
+    "value": {
+      "address": "3Wqrcymogz84zuwVrt13jhzCWogqMj89ufZeJtF1HR27",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911058,
+      "fusionTimeMs": 10386
+    },
+    "expiresAt": 1781038211058,
+    "cachedAt": 1781037911058
+  },
+  "fused:wallet:Ay1qZCJBUKqZBkC2ENUiVmPGD8Hy7jZsNMEbAS6hVYbr": {
+    "value": {
+      "address": "Ay1qZCJBUKqZBkC2ENUiVmPGD8Hy7jZsNMEbAS6hVYbr",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911055,
+      "fusionTimeMs": 10390
+    },
+    "expiresAt": 1781038211055,
+    "cachedAt": 1781037911055
+  },
+  "fused:wallet:96hdcndTARFNUxrJMX4Mna3jkoewajysGu9rHxp6Ud2C": {
+    "value": {
+      "address": "96hdcndTARFNUxrJMX4Mna3jkoewajysGu9rHxp6Ud2C",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911051,
+      "fusionTimeMs": 10392
+    },
+    "expiresAt": 1781038211051,
+    "cachedAt": 1781037911051
+  },
+  "fused:wallet:7WBgYsXhnB5MjvV1tqW7XHh7nUg652GXRFG37WKcnCux": {
+    "value": {
+      "address": "7WBgYsXhnB5MjvV1tqW7XHh7nUg652GXRFG37WKcnCux",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911048,
+      "fusionTimeMs": 10398
+    },
+    "expiresAt": 1781038211048,
+    "cachedAt": 1781037911048
+  },
+  "fused:wallet:CArye8hudThg2QSQ7nrgcxDY2kgdxx4cybVKkdcADUSC": {
+    "value": {
+      "address": "CArye8hudThg2QSQ7nrgcxDY2kgdxx4cybVKkdcADUSC",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911042,
+      "fusionTimeMs": 10398
+    },
+    "expiresAt": 1781038211042,
+    "cachedAt": 1781037911042
+  },
+  "fused:wallet:AfX26HZxp2Wkp6bnkQcTu3Eq4PYAeR5C7dtdTemtCSLm": {
+    "value": {
+      "address": "AfX26HZxp2Wkp6bnkQcTu3Eq4PYAeR5C7dtdTemtCSLm",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911038,
+      "fusionTimeMs": 10404
+    },
+    "expiresAt": 1781038211038,
+    "cachedAt": 1781037911038
+  },
+  "fused:wallet:97ayJ8tYtZ9W2yQmULYg7CbmDx3rWCnATzu6uo2G3E9W": {
+    "value": {
+      "address": "97ayJ8tYtZ9W2yQmULYg7CbmDx3rWCnATzu6uo2G3E9W",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911034,
+      "fusionTimeMs": 10407
+    },
+    "expiresAt": 1781038211034,
+    "cachedAt": 1781037911034
+  },
+  "fused:wallet:Ds2FF5bR2EBS99PwzWmmzxLQ9pKYiRRYWYCkcurUhQ5k": {
+    "value": {
+      "address": "Ds2FF5bR2EBS99PwzWmmzxLQ9pKYiRRYWYCkcurUhQ5k",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911030,
+      "fusionTimeMs": 10410
+    },
+    "expiresAt": 1781038211030,
+    "cachedAt": 1781037911030
+  },
+  "fused:wallet:5T8kwe1jvwQoBWcfNGvdzYbmXjQBcXgNRaTYp7o9NkF5": {
+    "value": {
+      "address": "5T8kwe1jvwQoBWcfNGvdzYbmXjQBcXgNRaTYp7o9NkF5",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911027,
+      "fusionTimeMs": 10416
+    },
+    "expiresAt": 1781038211027,
+    "cachedAt": 1781037911027
+  },
+  "fused:wallet:81QcgksRC9wNjvMMHkd2rm8ajUtKKGJM4nWYdzckdHcz": {
+    "value": {
+      "address": "81QcgksRC9wNjvMMHkd2rm8ajUtKKGJM4nWYdzckdHcz",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911023,
+      "fusionTimeMs": 10418
+    },
+    "expiresAt": 1781038211023,
+    "cachedAt": 1781037911023
+  },
+  "fused:wallet:7nFvn17KkPdhJc2iNdJrmnjYdVue8dvfNh4XBfaCfgoB": {
+    "value": {
+      "address": "7nFvn17KkPdhJc2iNdJrmnjYdVue8dvfNh4XBfaCfgoB",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911020,
+      "fusionTimeMs": 10421
+    },
+    "expiresAt": 1781038211020,
+    "cachedAt": 1781037911020
+  },
+  "fused:wallet:6kxJzfnCs3cRW4Ge8WTPoCqv5i3AH7TNveWHAikiwYPv": {
+    "value": {
+      "address": "6kxJzfnCs3cRW4Ge8WTPoCqv5i3AH7TNveWHAikiwYPv",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911016,
+      "fusionTimeMs": 10423
+    },
+    "expiresAt": 1781038211016,
+    "cachedAt": 1781037911016
+  },
+  "fused:wallet:Gotpbt5m5kmHtn1hJsUpLyXrehBF6UFpHqwnqFCndgPR": {
+    "value": {
+      "address": "Gotpbt5m5kmHtn1hJsUpLyXrehBF6UFpHqwnqFCndgPR",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911008,
+      "fusionTimeMs": 10433
+    },
+    "expiresAt": 1781038211008,
+    "cachedAt": 1781037911008
+  },
+  "fused:wallet:9zoXFnQK4FC387EFmWvek8J5Dru7uDvAi4S5ECUQ7Re6": {
+    "value": {
+      "address": "9zoXFnQK4FC387EFmWvek8J5Dru7uDvAi4S5ECUQ7Re6",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911005,
+      "fusionTimeMs": 10439
+    },
+    "expiresAt": 1781038211005,
+    "cachedAt": 1781037911005
+  },
+  "fused:wallet:cmBw5mZgoodbu6aA4h23yTCVin6VovZq5Kp6zXAn2xf": {
+    "value": {
+      "address": "cmBw5mZgoodbu6aA4h23yTCVin6VovZq5Kp6zXAn2xf",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037911001,
+      "fusionTimeMs": 10448
+    },
+    "expiresAt": 1781038211001,
+    "cachedAt": 1781037911001
+  },
+  "fused:wallet:EVsaww5U1sFiSARz8MkwUVJbvsjgYELRshZxmnDEwWZN": {
+    "value": {
+      "address": "EVsaww5U1sFiSARz8MkwUVJbvsjgYELRshZxmnDEwWZN",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910997,
+      "fusionTimeMs": 10459
+    },
+    "expiresAt": 1781038210997,
+    "cachedAt": 1781037910997
+  },
+  "fused:wallet:4JdqRKjg5VLRZe93f1YJQhbeaoZ5ZJEvvY9YDpzwKgsj": {
+    "value": {
+      "address": "4JdqRKjg5VLRZe93f1YJQhbeaoZ5ZJEvvY9YDpzwKgsj",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910993,
+      "fusionTimeMs": 10464
+    },
+    "expiresAt": 1781038210993,
+    "cachedAt": 1781037910993
+  },
+  "fused:wallet:CmZpMHxTjZs2v17uhQ7umx6PnhzTsNK39A4YDkjy27QK": {
+    "value": {
+      "address": "CmZpMHxTjZs2v17uhQ7umx6PnhzTsNK39A4YDkjy27QK",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910990,
+      "fusionTimeMs": 10472
+    },
+    "expiresAt": 1781038210990,
+    "cachedAt": 1781037910990
+  },
+  "fused:wallet:6yZqneWX5nLAfA5M2dDqQpLdsEZngxb4PtZicgPBdGKU": {
+    "value": {
+      "address": "6yZqneWX5nLAfA5M2dDqQpLdsEZngxb4PtZicgPBdGKU",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910986,
+      "fusionTimeMs": 10479
+    },
+    "expiresAt": 1781038210986,
+    "cachedAt": 1781037910986
+  },
+  "fused:wallet:AAJs9m5L1Fiw3UBhEfgfurbs3PcJ6Kr7LdxDvGMCSbqE": {
+    "value": {
+      "address": "AAJs9m5L1Fiw3UBhEfgfurbs3PcJ6Kr7LdxDvGMCSbqE",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910983,
+      "fusionTimeMs": 10489
+    },
+    "expiresAt": 1781038210983,
+    "cachedAt": 1781037910983
+  },
+  "fused:wallet:GVHMQJeKcUZJdZr5ZNjSTJLCTqCbpDGcMZPy4WCU8jve": {
+    "value": {
+      "address": "GVHMQJeKcUZJdZr5ZNjSTJLCTqCbpDGcMZPy4WCU8jve",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910977,
+      "fusionTimeMs": 10493
+    },
+    "expiresAt": 1781038210977,
+    "cachedAt": 1781037910977
+  },
+  "fused:wallet:ExgPnMDbbQGFZ8qccsEgd2oyEfFapFSN1yC9RHHYaWZp": {
+    "value": {
+      "address": "ExgPnMDbbQGFZ8qccsEgd2oyEfFapFSN1yC9RHHYaWZp",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910974,
+      "fusionTimeMs": 10497
+    },
+    "expiresAt": 1781038210974,
+    "cachedAt": 1781037910974
+  },
+  "fused:wallet:4v79XyJsTeiqZiZCpGjQPRHm3zZewtb23RRSy9hebAB9": {
+    "value": {
+      "address": "4v79XyJsTeiqZiZCpGjQPRHm3zZewtb23RRSy9hebAB9",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910970,
+      "fusionTimeMs": 10499
+    },
+    "expiresAt": 1781038210970,
+    "cachedAt": 1781037910970
+  },
+  "fused:wallet:266YQsvLM4ZBRRDKcuPSeEPzbsNPY1WpBaffzqsK5bcQ": {
+    "value": {
+      "address": "266YQsvLM4ZBRRDKcuPSeEPzbsNPY1WpBaffzqsK5bcQ",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910967,
+      "fusionTimeMs": 10503
+    },
+    "expiresAt": 1781038210967,
+    "cachedAt": 1781037910967
+  },
+  "fused:wallet:3Kd75rpqhUyX5R6293iHcpLU5DNcTQwHQ9czenghL4eY": {
+    "value": {
+      "address": "3Kd75rpqhUyX5R6293iHcpLU5DNcTQwHQ9czenghL4eY",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910963,
+      "fusionTimeMs": 10505
+    },
+    "expiresAt": 1781038210963,
+    "cachedAt": 1781037910963
+  },
+  "fused:wallet:7mVBckB8eN2LrArghKWfd56kzQh4uVNbdvD2AyBVcQwe": {
+    "value": {
+      "address": "7mVBckB8eN2LrArghKWfd56kzQh4uVNbdvD2AyBVcQwe",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910960,
+      "fusionTimeMs": 10509
+    },
+    "expiresAt": 1781038210960,
+    "cachedAt": 1781037910960
+  },
+  "fused:wallet:4kJW4MBu24jP5vtiT4ZN3GtNdiT6YVBWzmvw3GWLVqMH": {
+    "value": {
+      "address": "4kJW4MBu24jP5vtiT4ZN3GtNdiT6YVBWzmvw3GWLVqMH",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910956,
+      "fusionTimeMs": 10512
+    },
+    "expiresAt": 1781038210956,
+    "cachedAt": 1781037910956
+  },
+  "fused:wallet:8yLYmaTVFSWBW3UfiadjbeJXzHfXtS9vwFCUFFP118SF": {
+    "value": {
+      "address": "8yLYmaTVFSWBW3UfiadjbeJXzHfXtS9vwFCUFFP118SF",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910953,
+      "fusionTimeMs": 10516
+    },
+    "expiresAt": 1781038210953,
+    "cachedAt": 1781037910953
+  },
+  "fused:wallet:2pCAzckKN8gRupMNgSHvQabAcNrZE6g2fWetaGyX2WjP": {
+    "value": {
+      "address": "2pCAzckKN8gRupMNgSHvQabAcNrZE6g2fWetaGyX2WjP",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910949,
+      "fusionTimeMs": 10518
+    },
+    "expiresAt": 1781038210949,
+    "cachedAt": 1781037910949
+  },
+  "fused:wallet:8ryctvNwpJTuuap3wuNTfcyEx4DjSuXvhGXSDHNaU8sQ": {
+    "value": {
+      "address": "8ryctvNwpJTuuap3wuNTfcyEx4DjSuXvhGXSDHNaU8sQ",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910946,
+      "fusionTimeMs": 10522
+    },
+    "expiresAt": 1781038210946,
+    "cachedAt": 1781037910946
+  },
+  "fused:wallet:GnuGGWDsPaLgn2H7gxBqF9m6zx7zMph2PXPDZWKJMW5k": {
+    "value": {
+      "address": "GnuGGWDsPaLgn2H7gxBqF9m6zx7zMph2PXPDZWKJMW5k",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910943,
+      "fusionTimeMs": 10525
+    },
+    "expiresAt": 1781038210943,
+    "cachedAt": 1781037910943
+  },
+  "fused:wallet:XB23QJLwiQVaMKVusjrrsg6M1BCdhBo859AQV3eKGgq": {
+    "value": {
+      "address": "XB23QJLwiQVaMKVusjrrsg6M1BCdhBo859AQV3eKGgq",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910939,
+      "fusionTimeMs": 10529
+    },
+    "expiresAt": 1781038210939,
+    "cachedAt": 1781037910939
+  },
+  "fused:wallet:ApfkwW6NyWY84qvQf7ZghFxK3maSwESjLnPRozX5Qp2i": {
+    "value": {
+      "address": "ApfkwW6NyWY84qvQf7ZghFxK3maSwESjLnPRozX5Qp2i",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910936,
+      "fusionTimeMs": 10534
+    },
+    "expiresAt": 1781038210936,
+    "cachedAt": 1781037910936
+  },
+  "fused:wallet:3kg9StbbAGCivucYX9HDdVRDvhRgfX11cfvy3AAQd9ae": {
+    "value": {
+      "address": "3kg9StbbAGCivucYX9HDdVRDvhRgfX11cfvy3AAQd9ae",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910932,
+      "fusionTimeMs": 10537
+    },
+    "expiresAt": 1781038210932,
+    "cachedAt": 1781037910932
+  },
+  "fused:wallet:8GMQjWF7PD76NMf9pTJaeaKKynaykd88Y864rTf3ojYD": {
+    "value": {
+      "address": "8GMQjWF7PD76NMf9pTJaeaKKynaykd88Y864rTf3ojYD",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910929,
+      "fusionTimeMs": 10540
+    },
+    "expiresAt": 1781038210929,
+    "cachedAt": 1781037910929
+  },
+  "fused:wallet:GKydKqAVkbLnJ3LcVfsftoPTP1qLNdkvBgy3xio8Uq4j": {
+    "value": {
+      "address": "GKydKqAVkbLnJ3LcVfsftoPTP1qLNdkvBgy3xio8Uq4j",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910925,
+      "fusionTimeMs": 10543
+    },
+    "expiresAt": 1781038210925,
+    "cachedAt": 1781037910925
+  },
+  "fused:wallet:8mHJ3Qo2edSrX9dptN2TtdnW1oZdyhX4hpMWm7fH6ubN": {
+    "value": {
+      "address": "8mHJ3Qo2edSrX9dptN2TtdnW1oZdyhX4hpMWm7fH6ubN",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910921,
+      "fusionTimeMs": 10545
+    },
+    "expiresAt": 1781038210921,
+    "cachedAt": 1781037910921
+  },
+  "fused:wallet:FNiErXtY1L1eLBpbrtRvbFhUqhKTeopBiVeJJEKASC4V": {
+    "value": {
+      "address": "FNiErXtY1L1eLBpbrtRvbFhUqhKTeopBiVeJJEKASC4V",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910917,
+      "fusionTimeMs": 10549
+    },
+    "expiresAt": 1781038210917,
+    "cachedAt": 1781037910917
+  },
+  "fused:wallet:EmeMjmVQBtbX1tLpoFTFmLwRZxHQT78WncSxPYYyo8qk": {
+    "value": {
+      "address": "EmeMjmVQBtbX1tLpoFTFmLwRZxHQT78WncSxPYYyo8qk",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910914,
+      "fusionTimeMs": 10552
+    },
+    "expiresAt": 1781038210914,
+    "cachedAt": 1781037910914
+  },
+  "fused:wallet:6FhA9nrAbLR7JVeH6jJqj4Dx9HGgFE3WuHBZN2AmpBic": {
+    "value": {
+      "address": "6FhA9nrAbLR7JVeH6jJqj4Dx9HGgFE3WuHBZN2AmpBic",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910910,
+      "fusionTimeMs": 10556
+    },
+    "expiresAt": 1781038210910,
+    "cachedAt": 1781037910910
+  },
+  "fused:wallet:D86JWXiGJjWTLLVsDn6MGqiSpVBbtC87ycSwWSzptiKo": {
+    "value": {
+      "address": "D86JWXiGJjWTLLVsDn6MGqiSpVBbtC87ycSwWSzptiKo",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910906,
+      "fusionTimeMs": 10561
+    },
+    "expiresAt": 1781038210906,
+    "cachedAt": 1781037910906
+  },
+  "fused:wallet:8AVKCPdydSyrhQKUpfYUKmuAHsLXdnWi4fnHjys6iZ4a": {
+    "value": {
+      "address": "8AVKCPdydSyrhQKUpfYUKmuAHsLXdnWi4fnHjys6iZ4a",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910902,
+      "fusionTimeMs": 10565
+    },
+    "expiresAt": 1781038210902,
+    "cachedAt": 1781037910902
+  },
+  "fused:wallet:DirJ256qSVzwnrcL8smxLfBh8mfqE33qpKi8NKL1WTod": {
+    "value": {
+      "address": "DirJ256qSVzwnrcL8smxLfBh8mfqE33qpKi8NKL1WTod",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910898,
+      "fusionTimeMs": 10568
+    },
+    "expiresAt": 1781038210898,
+    "cachedAt": 1781037910898
+  },
+  "fused:wallet:8imzzbo6fam19TR5R1NsJKme3MU1amoNnLbzgmEte9Uw": {
+    "value": {
+      "address": "8imzzbo6fam19TR5R1NsJKme3MU1amoNnLbzgmEte9Uw",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910895,
+      "fusionTimeMs": 10572
+    },
+    "expiresAt": 1781038210895,
+    "cachedAt": 1781037910895
+  },
+  "fused:wallet:H8zG1GJ4V3q8TaGoyqpbq65Ld255ykkmB72eVYXHdP3c": {
+    "value": {
+      "address": "H8zG1GJ4V3q8TaGoyqpbq65Ld255ykkmB72eVYXHdP3c",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910891,
+      "fusionTimeMs": 10582
+    },
+    "expiresAt": 1781038210891,
+    "cachedAt": 1781037910891
+  },
+  "fused:wallet:2u6hXJHajGFQ6KZxydktjyuBCiC9MQc9J4Kz877JTa5t": {
+    "value": {
+      "address": "2u6hXJHajGFQ6KZxydktjyuBCiC9MQc9J4Kz877JTa5t",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910888,
+      "fusionTimeMs": 10586
+    },
+    "expiresAt": 1781038210888,
+    "cachedAt": 1781037910888
+  },
+  "fused:wallet:ALtWFdkrvAkrVbGfTuyiqkmzWhSW3tZfUb42gvru7Ttm": {
+    "value": {
+      "address": "ALtWFdkrvAkrVbGfTuyiqkmzWhSW3tZfUb42gvru7Ttm",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910883,
+      "fusionTimeMs": 10588
+    },
+    "expiresAt": 1781038210883,
+    "cachedAt": 1781037910883
+  },
+  "fused:wallet:J71kArL2oBeepNf7VNVtMDXVXRVWDo1kj9RjaR1n4N7B": {
+    "value": {
+      "address": "J71kArL2oBeepNf7VNVtMDXVXRVWDo1kj9RjaR1n4N7B",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910877,
+      "fusionTimeMs": 10596
+    },
+    "expiresAt": 1781038210877,
+    "cachedAt": 1781037910877
+  },
+  "fused:wallet:4848WiHrYFb3WMEapoAUxvdRfaqoaJK6jbNZywVLPpev": {
+    "value": {
+      "address": "4848WiHrYFb3WMEapoAUxvdRfaqoaJK6jbNZywVLPpev",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910874,
+      "fusionTimeMs": 10600
+    },
+    "expiresAt": 1781038210874,
+    "cachedAt": 1781037910874
+  },
+  "fused:wallet:jikaXZ4fJrtnk1j1vkWK3PKYV3XPS77qnKJPwQfSwuR": {
+    "value": {
+      "address": "jikaXZ4fJrtnk1j1vkWK3PKYV3XPS77qnKJPwQfSwuR",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910872,
+      "fusionTimeMs": 10605
+    },
+    "expiresAt": 1781038210872,
+    "cachedAt": 1781037910872
+  },
+  "fused:wallet:CKs7WHryW6Esk7S65h2Syts8WbL1anW6YBpYBUuehkVc": {
+    "value": {
+      "address": "CKs7WHryW6Esk7S65h2Syts8WbL1anW6YBpYBUuehkVc",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910869,
+      "fusionTimeMs": 10611
+    },
+    "expiresAt": 1781038210869,
+    "cachedAt": 1781037910869
+  },
+  "fused:wallet:68DbUyRNYGFwd9W3FAfHvLY4qfSJ263gjtuseeW4r2Mu": {
+    "value": {
+      "address": "68DbUyRNYGFwd9W3FAfHvLY4qfSJ263gjtuseeW4r2Mu",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910866,
+      "fusionTimeMs": 10616
+    },
+    "expiresAt": 1781038210866,
+    "cachedAt": 1781037910866
+  },
+  "fused:wallet:EBpRY1g5SzRKmJV4ESc6oUzctXyLE1ohrDh3twmcss8c": {
+    "value": {
+      "address": "EBpRY1g5SzRKmJV4ESc6oUzctXyLE1ohrDh3twmcss8c",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910864,
+      "fusionTimeMs": 10622
+    },
+    "expiresAt": 1781038210864,
+    "cachedAt": 1781037910864
+  },
+  "fused:wallet:BSiGcAJ7Xm1Pt4Rjhqkx8MsuStgLmTuaUiGitB9PT5cC": {
+    "value": {
+      "address": "BSiGcAJ7Xm1Pt4Rjhqkx8MsuStgLmTuaUiGitB9PT5cC",
+      "label": null,
+      "type": "unknown",
+      "confidence": 50,
+      "pnl": {
+        "7d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "30d": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "all": {
+          "pnlUsd": null,
+          "roiPct": null,
+          "winRate": null
+        },
+        "sharpeRatio": null,
+        "maxDrawdown": null,
+        "source": "gmgn"
+      },
+      "positions": [],
+      "openPositionCount": 0,
+      "activity": {
+        "totalTransactions": 0,
+        "lpTransactions": 0,
+        "recent24h": 0,
+        "uniqueTokens": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0,
+        "positionsHeld": 0
+      },
+      "risk": {
+        "totalTransactions": 0,
+        "recentActivity24h": 0,
+        "uniqueTokens": 0,
+        "lpTransactions": 0,
+        "deposits": 0,
+        "withdrawals": 0,
+        "swaps": 0
+      },
+      "tokens": [],
+      "sources": {
+        "gmgn": true,
+        "helius": true,
+        "dune": false,
+        "fallback": false
+      },
+      "fetchedAt": 1781037910861,
+      "fusionTimeMs": 10626
+    },
+    "expiresAt": 1781038210861,
+    "cachedAt": 1781037910861
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "trace_id": "SLAB-SOL_2026_06_07_22_41_06",
+  "pool": "SLAB-SOL",
+  "created_at": "2026-06-07T22:41:06.459Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T22:41:06.459Z",
+      "metrics": {
+        "fee_tvl": 0.3903,
+        "organic": 75,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 4.0723,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T22:41:06.459Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T22:41:06.459Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T22:41:06.459Z",
+      "strategy": "spot",
+      "entry_price": 0.005774686083189041,
+      "bins_above": null,
+      "bins_below": 67,
+      "volatility_used": 4.0723,
+      "timing": null,
+      "range_width": 68,
+      "exact": {
+        "active_bin": -518,
+        "lower_bin": -585,
+        "upper_bin": -518,
+        "bin_step": 100,
+        "amount_sol": 0.153
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-08T00:18:06.072Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 96,
+      "active_bin": -517,
+      "entry_bin": -518,
+      "lower_bin": -585,
+      "upper_bin": -518
+    },
+    {
+      "stage": "exit",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-08T00:18:06.072Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 4.43,
+      "duration_minutes": 96,
+      "fees_earned": 0.007381346,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-08T00:18:06.104Z"
+}

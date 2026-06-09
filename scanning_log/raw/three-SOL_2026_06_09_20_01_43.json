@@ -1,0 +1,96 @@
+{
+  "trace_id": "three-SOL_2026_06_09_20_01_43",
+  "pool": "three-SOL",
+  "created_at": "2026-06-09T20:01:43.425Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T20:01:43.425Z",
+      "metrics": {
+        "fee_tvl": 0.1266,
+        "organic": 88,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 1.258,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T20:01:43.425Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T20:01:43.425Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T20:01:43.425Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.04919476186113707,
+      "bins_above": null,
+      "bins_below": 43,
+      "volatility_used": 1.258,
+      "timing": null,
+      "range_width": 44,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -378,
+        "lower_bin": -421,
+        "upper_bin": -378,
+        "bin_step": 80,
+        "amount_sol": 0.397
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T21:06:23.916Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1.61,
+      "minutes_since_entry": 64,
+      "active_bin": -376,
+      "entry_bin": -378,
+      "lower_bin": -421,
+      "upper_bin": -378,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    },
+    {
+      "stage": "exit",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T21:06:23.916Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 3.06,
+      "duration_minutes": 64,
+      "fees_earned": 0.012747228,
+      "exit_side": "above",
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T21:06:23.958Z"
+}

@@ -1,0 +1,2106 @@
+{
+  "version": 1,
+  "trades": [
+    {
+      "key": "dry_1780261340491_resn",
+      "poolAddress": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+      "poolName": "SQUIRE-SOL",
+      "confidence": 0.7525,
+      "organic": 74,
+      "breakdown": {
+        "wallet": 0.1887,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.1341,
+        "organic": 0.111,
+        "age": 0,
+        "total": 0.7525,
+        "raw": {
+          "walletScore": 74,
+          "rangeQuality": 50,
+          "feeTvl": 1.1717,
+          "volatility": 2.1146,
+          "organicScore": 74,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-05-31T21:02:20.500Z",
+          "type": "deploy",
+          "amountSol": 0.191,
+          "confidence": 0.7525,
+          "organic": 74,
+          "regime": "SIDEWAYS",
+          "trust": 89
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780266131917_ffoi",
+      "poolAddress": "5rtYzKec7P8HbrfZ7PwxhLop6Qpkn97GnfsjPUiUi1dv",
+      "poolName": "JTVO-SOL",
+      "confidence": 0.7935,
+      "organic": 89,
+      "breakdown": {
+        "wallet": 0.227,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.1143,
+        "organic": 0.1335,
+        "age": 0,
+        "total": 0.7935,
+        "raw": {
+          "walletScore": 89,
+          "rangeQuality": 50,
+          "feeTvl": 7.968,
+          "volatility": 3.274,
+          "organicScore": 89,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-05-31T22:22:11.918Z",
+          "type": "deploy",
+          "amountSol": 0.17,
+          "confidence": 0.7935,
+          "organic": 89,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780275064033_j11c",
+      "poolAddress": "HxKnk686QhcjSTgKbztBKX4b9GkDUGb9pFT8YkL5HxTC",
+      "poolName": "ZINC-SOL",
+      "confidence": 0.7961,
+      "organic": 86,
+      "breakdown": {
+        "wallet": 0.2193,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.129,
+        "organic": 0.129,
+        "age": 0,
+        "total": 0.7961,
+        "raw": {
+          "walletScore": 86,
+          "rangeQuality": 50,
+          "feeTvl": 3.1687,
+          "volatility": 2.4098,
+          "organicScore": 86,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T00:51:04.035Z",
+          "type": "deploy",
+          "amountSol": 0.186,
+          "confidence": 0.7961,
+          "organic": 86,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780287705376_7io9",
+      "poolAddress": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+      "poolName": "HENRY-SOL",
+      "confidence": 0.7522,
+      "organic": 75,
+      "breakdown": {
+        "wallet": 0.1913,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.1297,
+        "organic": 0.1125,
+        "age": 0,
+        "total": 0.7522,
+        "raw": {
+          "walletScore": 75,
+          "rangeQuality": 50,
+          "feeTvl": 1.3501,
+          "volatility": 2.3721,
+          "organicScore": 75,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T04:21:45.378Z",
+          "type": "deploy",
+          "amountSol": 0.166,
+          "confidence": 0.7522,
+          "organic": 75,
+          "regime": "SIDEWAYS",
+          "trust": 40
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780291251352_ndpa",
+      "poolAddress": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+      "poolName": "HENRY-SOL",
+      "confidence": 0.7491,
+      "organic": 75,
+      "breakdown": {
+        "wallet": 0.1913,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.1266,
+        "organic": 0.1125,
+        "age": 0,
+        "total": 0.7491,
+        "raw": {
+          "walletScore": 75,
+          "rangeQuality": 50,
+          "feeTvl": 1.5467,
+          "volatility": 2.551,
+          "organicScore": 75,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T05:20:51.354Z",
+          "type": "deploy",
+          "amountSol": 0.186,
+          "confidence": 0.7491,
+          "organic": 75,
+          "regime": "SIDEWAYS",
+          "trust": 53
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780299689602_om8c",
+      "poolAddress": "7AqRdscJbVd2m3o3kPnNQHSMHNwFUyWNU2NRctyteADb",
+      "poolName": "unc-SOL",
+      "confidence": 0.763,
+      "organic": 73,
+      "breakdown": {
+        "wallet": 0.1862,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.1486,
+        "organic": 0.1095,
+        "age": 0,
+        "total": 0.763,
+        "raw": {
+          "walletScore": 73,
+          "rangeQuality": 50,
+          "feeTvl": 0.2527,
+          "volatility": 1.2574,
+          "organicScore": 73,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T07:41:29.604Z",
+          "type": "deploy",
+          "amountSol": 0.216,
+          "confidence": 0.763,
+          "organic": 73,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780302716297_gccz",
+      "poolAddress": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+      "poolName": "SQUIRE-SOL",
+      "confidence": 0.7429,
+      "organic": 75,
+      "breakdown": {
+        "wallet": 0.1913,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.1204,
+        "organic": 0.1125,
+        "age": 0,
+        "total": 0.7429,
+        "raw": {
+          "walletScore": 75,
+          "rangeQuality": 50,
+          "feeTvl": 0.5536,
+          "volatility": 2.9204,
+          "organicScore": 75,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T08:31:56.302Z",
+          "type": "deploy",
+          "amountSol": 0.184,
+          "confidence": 0.7429,
+          "organic": 75,
+          "regime": "SIDEWAYS",
+          "trust": 84
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780306330859_6cdu",
+      "poolAddress": "A2Swwe76ZYanviL5KzedZx9BotKmVWv5YayeKAh5nigK",
+      "poolName": "OPAL-SOL",
+      "confidence": 0.7477,
+      "organic": 71,
+      "breakdown": {
+        "wallet": 0.1811,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.1414,
+        "organic": 0.1065,
+        "age": 0,
+        "total": 0.7477,
+        "raw": {
+          "walletScore": 71,
+          "rangeQuality": 50,
+          "feeTvl": 0.5061,
+          "volatility": 1.6831,
+          "organicScore": 71,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T09:32:10.861Z",
+          "type": "deploy",
+          "amountSol": 0.208,
+          "confidence": 0.7477,
+          "organic": 71,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780332911791_4kf6",
+      "poolAddress": "5rtYzKec7P8HbrfZ7PwxhLop6Qpkn97GnfsjPUiUi1dv",
+      "poolName": "JTVO-SOL",
+      "confidence": 0.8029,
+      "organic": 90,
+      "breakdown": {
+        "wallet": 0.2295,
+        "range": 0.1063,
+        "fee_tvl": 0.2125,
+        "volatility": 0.1196,
+        "organic": 0.135,
+        "age": 0,
+        "total": 0.8029,
+        "raw": {
+          "walletScore": 90,
+          "rangeQuality": 50,
+          "feeTvl": 4.3177,
+          "volatility": 2.9628,
+          "organicScore": 90,
+          "organicWeight": 0.15,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T16:55:11.793Z",
+          "type": "deploy",
+          "amountSol": 0.181,
+          "confidence": 0.8029,
+          "organic": 90,
+          "regime": "SIDEWAYS",
+          "trust": 66
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780342946865_ou17",
+      "poolAddress": "8aQBjuutghvFxJaiPiKNSgbmuAQcotyWpcmBFR9pkzsP",
+      "poolName": "SPCX-SOL",
+      "confidence": 0.7506,
+      "organic": 75,
+      "breakdown": {
+        "wallet": 0.1896,
+        "range": 0.1053,
+        "fee_tvl": 0.2107,
+        "volatility": 0.127,
+        "organic": 0.118,
+        "age": 0,
+        "total": 0.7506,
+        "raw": {
+          "walletScore": 75,
+          "rangeQuality": 50,
+          "feeTvl": 2.0025,
+          "volatility": 2.4669,
+          "organicScore": 75,
+          "organicWeight": 0.1573,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T19:42:26.866Z",
+          "type": "deploy",
+          "amountSol": 0.193,
+          "confidence": 0.7506,
+          "organic": 75,
+          "regime": "SIDEWAYS",
+          "trust": 95
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780356167064_o65u",
+      "poolAddress": "5rtYzKec7P8HbrfZ7PwxhLop6Qpkn97GnfsjPUiUi1dv",
+      "poolName": "JTVO-SOL",
+      "confidence": 0.7926,
+      "organic": 87,
+      "breakdown": {
+        "wallet": 0.2201,
+        "range": 0.1054,
+        "fee_tvl": 0.2109,
+        "volatility": 0.1199,
+        "organic": 0.1362,
+        "age": 0,
+        "total": 0.7926,
+        "raw": {
+          "walletScore": 87,
+          "rangeQuality": 50,
+          "feeTvl": 3.6308,
+          "volatility": 2.8895,
+          "organicScore": 87,
+          "organicWeight": 0.1566,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-01T23:22:47.066Z",
+          "type": "deploy",
+          "amountSol": 0.192,
+          "confidence": 0.7926,
+          "organic": 87,
+          "regime": "SIDEWAYS",
+          "trust": 68
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780358799669_0n9i",
+      "poolAddress": "4DfH61nAFphrQNYw8MxkqK2LnLocteWpeTRKVEVCLr2Q",
+      "poolName": "GACHA-SOL",
+      "confidence": 0.8116,
+      "organic": 92,
+      "breakdown": {
+        "wallet": 0.2323,
+        "range": 0.1052,
+        "fee_tvl": 0.2105,
+        "volatility": 0.118,
+        "organic": 0.1455,
+        "age": 0,
+        "total": 0.8116,
+        "raw": {
+          "walletScore": 92,
+          "rangeQuality": 50,
+          "feeTvl": 2.8913,
+          "volatility": 2.9902,
+          "organicScore": 92,
+          "organicWeight": 0.1582,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-02T00:06:39.671Z",
+          "type": "deploy",
+          "amountSol": 0.19,
+          "confidence": 0.8116,
+          "organic": 92,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780361667381_wpuw",
+      "poolAddress": "8aQBjuutghvFxJaiPiKNSgbmuAQcotyWpcmBFR9pkzsP",
+      "poolName": "SPCX-SOL",
+      "confidence": 0.7886,
+      "organic": 84,
+      "breakdown": {
+        "wallet": 0.2116,
+        "range": 0.105,
+        "fee_tvl": 0.2099,
+        "volatility": 0.1274,
+        "organic": 0.1347,
+        "age": 0,
+        "total": 0.7886,
+        "raw": {
+          "walletScore": 84,
+          "rangeQuality": 50,
+          "feeTvl": 1.2887,
+          "volatility": 2.4132,
+          "organicScore": 84,
+          "organicWeight": 0.1603,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-02T00:54:27.383Z",
+          "type": "deploy",
+          "amountSol": 0.202,
+          "confidence": 0.7886,
+          "organic": 84,
+          "regime": "SIDEWAYS",
+          "trust": 97
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780369518409_62pb",
+      "poolAddress": "Bmovbz2FMD3qgTYfKE7wJHJbm8MJDvHCn9ZCAreCA9RR",
+      "poolName": "RKC-SOL",
+      "confidence": 0.7419,
+      "organic": 71,
+      "breakdown": {
+        "wallet": 0.1808,
+        "range": 0.1061,
+        "fee_tvl": 0.2122,
+        "volatility": 0.1354,
+        "organic": 0.1074,
+        "age": 0,
+        "total": 0.7419,
+        "raw": {
+          "walletScore": 71,
+          "rangeQuality": 50,
+          "feeTvl": 0.2818,
+          "volatility": 2.0218,
+          "organicScore": 71,
+          "organicWeight": 0.1513,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-02T03:05:18.411Z",
+          "type": "deploy",
+          "amountSol": 0.21,
+          "confidence": 0.7419,
+          "organic": 71,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780377864960_cosc",
+      "poolAddress": "Bmovbz2FMD3qgTYfKE7wJHJbm8MJDvHCn9ZCAreCA9RR",
+      "poolName": "RKC-SOL",
+      "confidence": 0.7521,
+      "organic": 71,
+      "breakdown": {
+        "wallet": 0.1796,
+        "range": 0.1054,
+        "fee_tvl": 0.2108,
+        "volatility": 0.1449,
+        "organic": 0.1115,
+        "age": 0,
+        "total": 0.7521,
+        "raw": {
+          "walletScore": 71,
+          "rangeQuality": 50,
+          "feeTvl": 0.2506,
+          "volatility": 1.4056,
+          "organicScore": 71,
+          "organicWeight": 0.157,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-02T05:24:24.963Z",
+          "type": "deploy",
+          "amountSol": 0.2,
+          "confidence": 0.7521,
+          "organic": 71,
+          "regime": "SIDEWAYS",
+          "trust": 40
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780436489381_tx4q",
+      "poolAddress": "453Z9ggMEdMnBiMLc5hHthxC3P4qhmhFUoTqkRnHDhqr",
+      "poolName": "Goblin-SOL",
+      "confidence": 0.7762,
+      "organic": 79,
+      "breakdown": {
+        "wallet": 0.2001,
+        "range": 0.1056,
+        "fee_tvl": 0.2111,
+        "volatility": 0.1365,
+        "organic": 0.1229,
+        "age": 0,
+        "total": 0.7762,
+        "raw": {
+          "walletScore": 79,
+          "rangeQuality": 50,
+          "feeTvl": 0.3875,
+          "volatility": 1.9189,
+          "organicScore": 79,
+          "organicWeight": 0.1556,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-02T21:41:29.388Z",
+          "type": "deploy",
+          "amountSol": 0.212,
+          "confidence": 0.7762,
+          "organic": 79,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780440633041_b0i9",
+      "poolAddress": "Bmovbz2FMD3qgTYfKE7wJHJbm8MJDvHCn9ZCAreCA9RR",
+      "poolName": "RKC-SOL",
+      "confidence": 0.7571,
+      "organic": 77,
+      "breakdown": {
+        "wallet": 0.1951,
+        "range": 0.1056,
+        "fee_tvl": 0.2111,
+        "volatility": 0.1256,
+        "organic": 0.1197,
+        "age": 0,
+        "total": 0.7571,
+        "raw": {
+          "walletScore": 77,
+          "rangeQuality": 50,
+          "feeTvl": 0.7681,
+          "volatility": 2.5643,
+          "organicScore": 77,
+          "organicWeight": 0.1555,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-02T22:50:33.048Z",
+          "type": "deploy",
+          "amountSol": 0.199,
+          "confidence": 0.7571,
+          "organic": 77,
+          "regime": "SIDEWAYS",
+          "trust": 66
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780457453788_pqpx",
+      "poolAddress": "6NTWdxDPB7q3TQymGPjdiGVD5DZ3ZW7MmYYHEgJ6WSFB",
+      "poolName": "RKC-SOL",
+      "confidence": 0.7503,
+      "organic": 75,
+      "breakdown": {
+        "wallet": 0.1901,
+        "range": 0.1056,
+        "fee_tvl": 0.2112,
+        "volatility": 0.1271,
+        "organic": 0.1164,
+        "age": 0,
+        "total": 0.7503,
+        "raw": {
+          "walletScore": 75,
+          "rangeQuality": 50,
+          "feeTvl": 1.1138,
+          "volatility": 2.4797,
+          "organicScore": 75,
+          "organicWeight": 0.1552,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-03T03:30:53.794Z",
+          "type": "deploy",
+          "amountSol": 0.2,
+          "confidence": 0.7503,
+          "organic": 75,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780459840195_46pe",
+      "poolAddress": "7AqRdscJbVd2m3o3kPnNQHSMHNwFUyWNU2NRctyteADb",
+      "poolName": "unc-SOL",
+      "confidence": 0.7537,
+      "organic": 75,
+      "breakdown": {
+        "wallet": 0.1899,
+        "range": 0.1055,
+        "fee_tvl": 0.211,
+        "volatility": 0.1303,
+        "organic": 0.117,
+        "age": 0,
+        "total": 0.7537,
+        "raw": {
+          "walletScore": 75,
+          "rangeQuality": 50,
+          "feeTvl": 0.232,
+          "volatility": 2.2787,
+          "organicScore": 75,
+          "organicWeight": 0.156,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-03T04:10:40.203Z",
+          "type": "deploy",
+          "amountSol": 0.201,
+          "confidence": 0.7537,
+          "organic": 75,
+          "regime": "SIDEWAYS",
+          "trust": 65
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780478437279_dylw",
+      "poolAddress": "GeQvmpA4ZyToHPX2x3SrPTBHTNex3xP1ehRwHr3fBkPL",
+      "poolName": "three-SOL",
+      "confidence": 0.797,
+      "organic": 86,
+      "breakdown": {
+        "wallet": 0.2176,
+        "range": 0.1054,
+        "fee_tvl": 0.2109,
+        "volatility": 0.1285,
+        "organic": 0.1346,
+        "age": 0,
+        "total": 0.797,
+        "raw": {
+          "walletScore": 86,
+          "rangeQuality": 50,
+          "feeTvl": 1.2511,
+          "volatility": 2.385,
+          "organicScore": 86,
+          "organicWeight": 0.1565,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-03T09:20:37.288Z",
+          "type": "deploy",
+          "amountSol": 0.202,
+          "confidence": 0.797,
+          "organic": 86,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780490456978_jgob",
+      "poolAddress": "5rtYzKec7P8HbrfZ7PwxhLop6Qpkn97GnfsjPUiUi1dv",
+      "poolName": "JTVO-SOL",
+      "confidence": 0.7701,
+      "organic": 78,
+      "breakdown": {
+        "wallet": 0.1972,
+        "range": 0.1053,
+        "fee_tvl": 0.2107,
+        "volatility": 0.1341,
+        "organic": 0.1228,
+        "age": 0,
+        "total": 0.7701,
+        "raw": {
+          "walletScore": 78,
+          "rangeQuality": 50,
+          "feeTvl": 0.7487,
+          "volatility": 2.0402,
+          "organicScore": 78,
+          "organicWeight": 0.1574,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-03T12:40:56.985Z",
+          "type": "deploy",
+          "amountSol": 0.218,
+          "confidence": 0.7701,
+          "organic": 78,
+          "regime": "SIDEWAYS",
+          "trust": 67
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780494659887_jk7z",
+      "poolAddress": "5rtYzKec7P8HbrfZ7PwxhLop6Qpkn97GnfsjPUiUi1dv",
+      "poolName": "JTVO-SOL",
+      "confidence": 0.7709,
+      "organic": 78,
+      "breakdown": {
+        "wallet": 0.1972,
+        "range": 0.1054,
+        "fee_tvl": 0.2107,
+        "volatility": 0.135,
+        "organic": 0.1226,
+        "age": 0,
+        "total": 0.7709,
+        "raw": {
+          "walletScore": 78,
+          "rangeQuality": 50,
+          "feeTvl": 0.9107,
+          "volatility": 1.9928,
+          "organicScore": 78,
+          "organicWeight": 0.1572,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-03T13:50:59.895Z",
+          "type": "deploy",
+          "amountSol": 0.219,
+          "confidence": 0.7709,
+          "organic": 78,
+          "regime": "SIDEWAYS",
+          "trust": 67
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780501951283_6wtb",
+      "poolAddress": "Bmovbz2FMD3qgTYfKE7wJHJbm8MJDvHCn9ZCAreCA9RR",
+      "poolName": "RKC-SOL",
+      "confidence": 0.775,
+      "organic": 79,
+      "breakdown": {
+        "wallet": 0.1998,
+        "range": 0.1054,
+        "fee_tvl": 0.2108,
+        "volatility": 0.1351,
+        "organic": 0.124,
+        "age": 0,
+        "total": 0.775,
+        "raw": {
+          "walletScore": 79,
+          "rangeQuality": 50,
+          "feeTvl": 0.2591,
+          "volatility": 1.9883,
+          "organicScore": 79,
+          "organicWeight": 0.157,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-03T15:52:31.293Z",
+          "type": "deploy",
+          "amountSol": 0.219,
+          "confidence": 0.775,
+          "organic": 79,
+          "regime": "SIDEWAYS",
+          "trust": 74
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780522871706_hmiq",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": 0.8035,
+      "organic": 88,
+      "breakdown": {
+        "wallet": 0.2226,
+        "range": 0.1054,
+        "fee_tvl": 0.2108,
+        "volatility": 0.1267,
+        "organic": 0.1381,
+        "age": 0,
+        "total": 0.8035,
+        "raw": {
+          "walletScore": 88,
+          "rangeQuality": 50,
+          "feeTvl": 3.1236,
+          "volatility": 2.4883,
+          "organicScore": 88,
+          "organicWeight": 0.1569,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-03T21:41:11.714Z",
+          "type": "deploy",
+          "amountSol": 0.208,
+          "confidence": 0.8035,
+          "organic": 88,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780538450863_am1b",
+      "poolAddress": "5rtYzKec7P8HbrfZ7PwxhLop6Qpkn97GnfsjPUiUi1dv",
+      "poolName": "JTVO-SOL",
+      "confidence": 0.7472,
+      "organic": 74,
+      "breakdown": {
+        "wallet": 0.187,
+        "range": 0.1053,
+        "fee_tvl": 0.2106,
+        "volatility": 0.1277,
+        "organic": 0.1168,
+        "age": 0,
+        "total": 0.7472,
+        "raw": {
+          "walletScore": 74,
+          "rangeQuality": 50,
+          "feeTvl": 1.2503,
+          "volatility": 2.4211,
+          "organicScore": 74,
+          "organicWeight": 0.1578,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-04T02:00:50.870Z",
+          "type": "deploy",
+          "amountSol": 0.21,
+          "confidence": 0.7472,
+          "organic": 74,
+          "regime": "SIDEWAYS",
+          "trust": 67
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780543445003_tx14",
+      "poolAddress": "5rtYzKec7P8HbrfZ7PwxhLop6Qpkn97GnfsjPUiUi1dv",
+      "poolName": "JTVO-SOL",
+      "confidence": 0.7445,
+      "organic": 73,
+      "breakdown": {
+        "wallet": 0.1846,
+        "range": 0.1054,
+        "fee_tvl": 0.2107,
+        "volatility": 0.1291,
+        "organic": 0.1148,
+        "age": 0,
+        "total": 0.7445,
+        "raw": {
+          "walletScore": 73,
+          "rangeQuality": 50,
+          "feeTvl": 1.2735,
+          "volatility": 2.339,
+          "organicScore": 73,
+          "organicWeight": 0.1572,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-04T03:24:05.012Z",
+          "type": "deploy",
+          "amountSol": 0.211,
+          "confidence": 0.7445,
+          "organic": 73,
+          "regime": "SIDEWAYS",
+          "trust": 67
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780546482974_pkr8",
+      "poolAddress": "Bmovbz2FMD3qgTYfKE7wJHJbm8MJDvHCn9ZCAreCA9RR",
+      "poolName": "RKC-SOL",
+      "confidence": 0.7537,
+      "organic": 72,
+      "breakdown": {
+        "wallet": 0.1822,
+        "range": 0.1054,
+        "fee_tvl": 0.2109,
+        "volatility": 0.1425,
+        "organic": 0.1128,
+        "age": 0,
+        "total": 0.7537,
+        "raw": {
+          "walletScore": 72,
+          "rangeQuality": 50,
+          "feeTvl": 0.3854,
+          "volatility": 1.553,
+          "organicScore": 72,
+          "organicWeight": 0.1566,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-04T04:14:42.985Z",
+          "type": "deploy",
+          "amountSol": 0.228,
+          "confidence": 0.7537,
+          "organic": 72,
+          "regime": "SIDEWAYS",
+          "trust": 73
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780548673630_6l19",
+      "poolAddress": "7AqRdscJbVd2m3o3kPnNQHSMHNwFUyWNU2NRctyteADb",
+      "poolName": "unc-SOL",
+      "confidence": 0.754,
+      "organic": 73,
+      "breakdown": {
+        "wallet": 0.1844,
+        "range": 0.1053,
+        "fee_tvl": 0.2105,
+        "volatility": 0.1386,
+        "organic": 0.1153,
+        "age": 0,
+        "total": 0.754,
+        "raw": {
+          "walletScore": 73,
+          "rangeQuality": 50,
+          "feeTvl": 0.7877,
+          "volatility": 1.7723,
+          "organicScore": 73,
+          "organicWeight": 0.158,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-04T04:51:13.639Z",
+          "type": "deploy",
+          "amountSol": 0.217,
+          "confidence": 0.754,
+          "organic": 73,
+          "regime": "SIDEWAYS",
+          "trust": 53
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780561335530_v49l",
+      "poolAddress": "EgGACLzNtvTWfjWopkMbbcRsUPAaSCcgPjbNqUCcLUCJ",
+      "poolName": "BURNIE-SOL",
+      "confidence": 0.7702,
+      "organic": 76,
+      "breakdown": {
+        "wallet": 0.1921,
+        "range": 0.1053,
+        "fee_tvl": 0.2107,
+        "volatility": 0.1425,
+        "organic": 0.1196,
+        "age": 0,
+        "total": 0.7702,
+        "raw": {
+          "walletScore": 76,
+          "rangeQuality": 50,
+          "feeTvl": 0.2225,
+          "volatility": 1.5449,
+          "organicScore": 76,
+          "organicWeight": 0.1574,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-04T08:22:15.539Z",
+          "type": "deploy",
+          "amountSol": 0.237,
+          "confidence": 0.7702,
+          "organic": 76,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780571692132_kpew",
+      "poolAddress": "EgGACLzNtvTWfjWopkMbbcRsUPAaSCcgPjbNqUCcLUCJ",
+      "poolName": "BURNIE-SOL",
+      "confidence": 0.7588,
+      "organic": 77,
+      "breakdown": {
+        "wallet": 0.1947,
+        "range": 0.1054,
+        "fee_tvl": 0.2107,
+        "volatility": 0.127,
+        "organic": 0.121,
+        "age": 0,
+        "total": 0.7588,
+        "raw": {
+          "walletScore": 77,
+          "rangeQuality": 50,
+          "feeTvl": 0.346,
+          "volatility": 2.4655,
+          "organicScore": 77,
+          "organicWeight": 0.1572,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-04T11:14:52.143Z",
+          "type": "deploy",
+          "amountSol": 0.184,
+          "confidence": 0.7588,
+          "organic": 77,
+          "regime": "SIDEWAYS",
+          "trust": 40
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780573949314_ri9w",
+      "poolAddress": "Bmovbz2FMD3qgTYfKE7wJHJbm8MJDvHCn9ZCAreCA9RR",
+      "poolName": "RKC-SOL",
+      "confidence": 0.7424,
+      "organic": 71,
+      "breakdown": {
+        "wallet": 0.1796,
+        "range": 0.1054,
+        "fee_tvl": 0.2108,
+        "volatility": 0.1353,
+        "organic": 0.1113,
+        "age": 0,
+        "total": 0.7424,
+        "raw": {
+          "walletScore": 71,
+          "rangeQuality": 50,
+          "feeTvl": 0.4582,
+          "volatility": 1.9773,
+          "organicScore": 71,
+          "organicWeight": 0.1568,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-04T11:52:29.326Z",
+          "type": "deploy",
+          "amountSol": 0.227,
+          "confidence": 0.7424,
+          "organic": 71,
+          "regime": "SIDEWAYS",
+          "trust": 66
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780578932538_wyqy",
+      "poolAddress": "453Z9ggMEdMnBiMLc5hHthxC3P4qhmhFUoTqkRnHDhqr",
+      "poolName": "Goblin-SOL",
+      "confidence": 0.7628,
+      "organic": 74,
+      "breakdown": {
+        "wallet": 0.1869,
+        "range": 0.1053,
+        "fee_tvl": 0.2105,
+        "volatility": 0.1432,
+        "organic": 0.1168,
+        "age": 0,
+        "total": 0.7628,
+        "raw": {
+          "walletScore": 74,
+          "rangeQuality": 50,
+          "feeTvl": 0.1551,
+          "volatility": 1.498,
+          "organicScore": 74,
+          "organicWeight": 0.1579,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-04T13:15:32.549Z",
+          "type": "deploy",
+          "amountSol": 0.118,
+          "confidence": 0.7628,
+          "organic": 74,
+          "regime": "SIDEWAYS",
+          "trust": 66
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780704263806_r52j",
+      "poolAddress": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+      "poolName": "three-SOL",
+      "confidence": 0.7677,
+      "organic": 75,
+      "breakdown": {
+        "wallet": 0.1894,
+        "range": 0.1052,
+        "fee_tvl": 0.2105,
+        "volatility": 0.144,
+        "organic": 0.1186,
+        "age": 0,
+        "total": 0.7677,
+        "raw": {
+          "walletScore": 75,
+          "rangeQuality": 50,
+          "feeTvl": 0.6555,
+          "volatility": 1.4479,
+          "organicScore": 75,
+          "organicWeight": 0.1581,
+          "ageHours": null
+        }
+      },
+      "timeline": [
+        {
+          "ts": "2026-06-06T00:04:23.820Z",
+          "type": "deploy",
+          "amountSol": 0.115,
+          "confidence": 0.7677,
+          "organic": 75,
+          "regime": "SIDEWAYS",
+          "trust": 50
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780733017293_3bw1",
+      "poolAddress": "Ft1GbAGR13mRnYu9rGNAkSox7CysS6WnAVFw2RWqriPa",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 87,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T08:03:37.307Z",
+          "type": "deploy",
+          "amountSol": 0.229,
+          "confidence": null,
+          "organic": 87,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780734011220_n25l",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 86,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T08:20:11.232Z",
+          "type": "deploy",
+          "amountSol": 0.173,
+          "confidence": null,
+          "organic": 86,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780734668462_l0ik",
+      "poolAddress": "7AqRdscJbVd2m3o3kPnNQHSMHNwFUyWNU2NRctyteADb",
+      "poolName": "unc-SOL",
+      "confidence": null,
+      "organic": 73,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T08:31:08.473Z",
+          "type": "deploy",
+          "amountSol": 0.132,
+          "confidence": null,
+          "organic": 73,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780736478863_zjzu",
+      "poolAddress": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+      "poolName": "HENRY-SOL",
+      "confidence": null,
+      "organic": 72,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T09:01:18.880Z",
+          "type": "deploy",
+          "amountSol": 0.194,
+          "confidence": null,
+          "organic": 72,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780738579404_eala",
+      "poolAddress": "Ft1GbAGR13mRnYu9rGNAkSox7CysS6WnAVFw2RWqriPa",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 87,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T09:36:19.416Z",
+          "type": "deploy",
+          "amountSol": 0.153,
+          "confidence": null,
+          "organic": 87,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780741170827_sah3",
+      "poolAddress": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 86,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T10:19:30.838Z",
+          "type": "deploy",
+          "amountSol": 0.159,
+          "confidence": null,
+          "organic": 86,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780743703141_87m5",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 86,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T11:01:43.152Z",
+          "type": "deploy",
+          "amountSol": 0.195,
+          "confidence": null,
+          "organic": 86,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780747287178_tp74",
+      "poolAddress": "Ft1GbAGR13mRnYu9rGNAkSox7CysS6WnAVFw2RWqriPa",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 87,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T12:01:27.203Z",
+          "type": "deploy",
+          "amountSol": 0.202,
+          "confidence": null,
+          "organic": 87,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780750892840_8ftp",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 86,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T13:01:32.851Z",
+          "type": "deploy",
+          "amountSol": 0.203,
+          "confidence": null,
+          "organic": 86,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780752319766_mkcx",
+      "poolAddress": "Ft1GbAGR13mRnYu9rGNAkSox7CysS6WnAVFw2RWqriPa",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 87,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-06T13:25:19.780Z",
+          "type": "deploy",
+          "amountSol": 0.16,
+          "confidence": null,
+          "organic": 87,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780790813965_rfbo",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 88,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-07T00:06:53.979Z",
+          "type": "deploy",
+          "amountSol": 0.237,
+          "confidence": null,
+          "organic": 88,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780820451489_uglh",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 88,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-07T08:20:51.500Z",
+          "type": "deploy",
+          "amountSol": 0.224,
+          "confidence": null,
+          "organic": 88,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780842667575_hlmt",
+      "poolAddress": "Bka6b2stA1gJMeJ1md6o6R8TyHbcU4D9iwLySc45va5E",
+      "poolName": "HUNTER-SOL",
+      "confidence": null,
+      "organic": 75,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-07T14:31:07.591Z",
+          "type": "deploy",
+          "amountSol": 0.19,
+          "confidence": null,
+          "organic": 75,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780849897116_xyl4",
+      "poolAddress": "69ZsbMHZrWZRrMsoVjt6SKpxxkcSmUbX8gVtBd64BycA",
+      "poolName": "SLAB-SOL",
+      "confidence": null,
+      "organic": 76,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-07T16:31:37.130Z",
+          "type": "deploy",
+          "amountSol": 0.179,
+          "confidence": null,
+          "organic": 76,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780855886055_j1rd",
+      "poolAddress": "ANsLxNuWdYhgNp6uLsSHtyp4LfHjT2G1Fketo5843sPF",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 84,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-07T18:11:26.076Z",
+          "type": "deploy",
+          "amountSol": 0.211,
+          "confidence": null,
+          "organic": 84,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780866919846_6w46",
+      "poolAddress": "2C1XgnTarjmMNZpup44BL3rjsuWLPgsF3pHjzwRiXthS",
+      "poolName": "Bountywork-SOL",
+      "confidence": null,
+      "organic": 86.1887231840703,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-07T21:15:19.856Z",
+          "type": "deploy",
+          "amountSol": 0.115,
+          "confidence": null,
+          "organic": 86.1887231840703,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780872066457_vo0u",
+      "poolAddress": "69ZsbMHZrWZRrMsoVjt6SKpxxkcSmUbX8gVtBd64BycA",
+      "poolName": "SLAB-SOL",
+      "confidence": null,
+      "organic": 75,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-07T22:41:06.470Z",
+          "type": "deploy",
+          "amountSol": 0.153,
+          "confidence": null,
+          "organic": 75,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780879519824_113e",
+      "poolAddress": "J9qgZAYeycmj5Ct9KmC8RfQZZDVzGwf5VfRoN4KNjnME",
+      "poolName": "Magpie-SOL",
+      "confidence": null,
+      "organic": 75,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-08T00:45:19.835Z",
+          "type": "deploy",
+          "amountSol": 0.131,
+          "confidence": null,
+          "organic": 75,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780889424640_6kbb",
+      "poolAddress": "2C1XgnTarjmMNZpup44BL3rjsuWLPgsF3pHjzwRiXthS",
+      "poolName": "Bountywork-SOL",
+      "confidence": null,
+      "organic": 87.60503235154616,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-08T03:30:24.656Z",
+          "type": "deploy",
+          "amountSol": 0.109,
+          "confidence": null,
+          "organic": 87.60503235154616,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780896092842_vv25",
+      "poolAddress": "2cTXTwtcvyZb7mz5UEKYiAhNbNwfbmfBRAYKXNhz8cMc",
+      "poolName": "ASTEROID-SOL",
+      "confidence": null,
+      "organic": 70,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-08T05:21:32.856Z",
+          "type": "deploy",
+          "amountSol": 2.678,
+          "confidence": null,
+          "organic": 70,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780905695540_ndvz",
+      "poolAddress": "J9qgZAYeycmj5Ct9KmC8RfQZZDVzGwf5VfRoN4KNjnME",
+      "poolName": "Magpie-SOL",
+      "confidence": null,
+      "organic": 83,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-08T08:01:35.553Z",
+          "type": "deploy",
+          "amountSol": 2.386,
+          "confidence": null,
+          "organic": 83,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780942750539_jmhm",
+      "poolAddress": "4fAQF2roWPBwWg5Z2pLaBkkxkbmtM94EKeBGNynLcAAW",
+      "poolName": "BABYTROLL-SOL",
+      "confidence": null,
+      "organic": 74,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-08T18:19:10.552Z",
+          "type": "deploy",
+          "amountSol": 2.527,
+          "confidence": null,
+          "organic": 74,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780948918110_yaaf",
+      "poolAddress": "2C1XgnTarjmMNZpup44BL3rjsuWLPgsF3pHjzwRiXthS",
+      "poolName": "Bountywork-SOL",
+      "confidence": null,
+      "organic": 75,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-08T20:01:58.123Z",
+          "type": "deploy",
+          "amountSol": 2.837,
+          "confidence": null,
+          "organic": 75,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780954294802_hioy",
+      "poolAddress": "CAg2vAUeQ7e38diUupLNM7fh3V3Pop3x3L1B7gV8h1a1",
+      "poolName": "grail-SOL",
+      "confidence": null,
+      "organic": 77,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-08T21:31:34.816Z",
+          "type": "deploy",
+          "amountSol": 2.755,
+          "confidence": null,
+          "organic": 77,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780959098390_voba",
+      "poolAddress": "7AqRdscJbVd2m3o3kPnNQHSMHNwFUyWNU2NRctyteADb",
+      "poolName": "unc-SOL",
+      "confidence": null,
+      "organic": 73,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-08T22:51:38.403Z",
+          "type": "deploy",
+          "amountSol": 3.101,
+          "confidence": null,
+          "organic": 73,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780965686737_jujd",
+      "poolAddress": "FRkgppYGB4B2PvaEHio5hTh5BSzu3wyUznyWkYr2cM6v",
+      "poolName": "ROUTER-SOL",
+      "confidence": null,
+      "organic": 67,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T00:41:26.750Z",
+          "type": "deploy",
+          "amountSol": 2.875,
+          "confidence": null,
+          "organic": 67,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780980114636_go86",
+      "poolAddress": "CAg2vAUeQ7e38diUupLNM7fh3V3Pop3x3L1B7gV8h1a1",
+      "poolName": "grail-SOL",
+      "confidence": null,
+      "organic": 81,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T04:41:54.651Z",
+          "type": "deploy",
+          "amountSol": 2.963,
+          "confidence": null,
+          "organic": 81,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1780988355124_hbaw",
+      "poolAddress": "CAg2vAUeQ7e38diUupLNM7fh3V3Pop3x3L1B7gV8h1a1",
+      "poolName": "grail-SOL",
+      "confidence": null,
+      "organic": 81,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T06:59:15.140Z",
+          "type": "deploy",
+          "amountSol": 3.63,
+          "confidence": null,
+          "organic": 81,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781002963703_vova",
+      "poolAddress": "J9qgZAYeycmj5Ct9KmC8RfQZZDVzGwf5VfRoN4KNjnME",
+      "poolName": "Magpie-SOL",
+      "confidence": null,
+      "organic": 78,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T11:02:43.718Z",
+          "type": "deploy",
+          "amountSol": 3.403,
+          "confidence": null,
+          "organic": 78,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781005360203_tz9t",
+      "poolAddress": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 90,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T11:42:40.223Z",
+          "type": "deploy",
+          "amountSol": 3.283,
+          "confidence": null,
+          "organic": 90,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781006611341_f0bs",
+      "poolAddress": "2cTXTwtcvyZb7mz5UEKYiAhNbNwfbmfBRAYKXNhz8cMc",
+      "poolName": "ASTEROID-SOL",
+      "confidence": null,
+      "organic": 66,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T12:03:31.354Z",
+          "type": "deploy",
+          "amountSol": 0.137,
+          "confidence": null,
+          "organic": 66,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781010120383_un3s",
+      "poolAddress": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 89,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T13:02:00.399Z",
+          "type": "deploy",
+          "amountSol": 3.041,
+          "confidence": null,
+          "organic": 89,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781010131475_4rfp",
+      "poolAddress": "2rLXrMvGta3TgveizhDjUgiHShJupw6srEboiAo6JbS2",
+      "poolName": "GO-SOL",
+      "confidence": null,
+      "organic": 75,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T13:02:11.489Z",
+          "type": "deploy",
+          "amountSol": 0.257,
+          "confidence": null,
+          "organic": 75,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781013713119_lrns",
+      "poolAddress": "CpKbsvT2isHiqD6uHrUkScEE6i9Tj97Sd16LUe4MGRH",
+      "poolName": "TOESCOIN-SOL",
+      "confidence": null,
+      "organic": 70,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T14:01:53.132Z",
+          "type": "deploy",
+          "amountSol": 0.257,
+          "confidence": null,
+          "organic": 70,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781015512686_w7xb",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 88,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T14:31:52.713Z",
+          "type": "deploy",
+          "amountSol": 0.137,
+          "confidence": null,
+          "organic": 88,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781020953759_sreh",
+      "poolAddress": "2cTXTwtcvyZb7mz5UEKYiAhNbNwfbmfBRAYKXNhz8cMc",
+      "poolName": "ASTEROID-SOL",
+      "confidence": null,
+      "organic": 68,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T16:02:33.779Z",
+          "type": "deploy",
+          "amountSol": 0.137,
+          "confidence": null,
+          "organic": 68,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781028083869_qgwb",
+      "poolAddress": "CAg2vAUeQ7e38diUupLNM7fh3V3Pop3x3L1B7gV8h1a1",
+      "poolName": "grail-SOL",
+      "confidence": null,
+      "organic": 81,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T18:01:23.885Z",
+          "type": "deploy",
+          "amountSol": 0.397,
+          "confidence": null,
+          "organic": 81,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781031732246_j12s",
+      "poolAddress": "CAg2vAUeQ7e38diUupLNM7fh3V3Pop3x3L1B7gV8h1a1",
+      "poolName": "grail-SOL",
+      "confidence": null,
+      "organic": 80,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T19:02:12.266Z",
+          "type": "deploy",
+          "amountSol": 0.396,
+          "confidence": null,
+          "organic": 80,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781033496848_9cx4",
+      "poolAddress": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 89,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T19:31:36.870Z",
+          "type": "deploy",
+          "amountSol": 3.056,
+          "confidence": null,
+          "organic": 89,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781035303419_1fbz",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 88,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T20:01:43.445Z",
+          "type": "deploy",
+          "amountSol": 0.397,
+          "confidence": null,
+          "organic": 88,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781037187788_iwfd",
+      "poolAddress": "CAg2vAUeQ7e38diUupLNM7fh3V3Pop3x3L1B7gV8h1a1",
+      "poolName": "grail-SOL",
+      "confidence": null,
+      "organic": 80,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T20:33:07.805Z",
+          "type": "deploy",
+          "amountSol": 2.528,
+          "confidence": null,
+          "organic": 80,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781038887885_bdz9",
+      "poolAddress": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+      "poolName": "WORLDCUP-SOL",
+      "confidence": null,
+      "organic": 89,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T21:01:27.902Z",
+          "type": "deploy",
+          "amountSol": 0.531,
+          "confidence": null,
+          "organic": 89,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781042601239_a757",
+      "poolAddress": "4fAQF2roWPBwWg5Z2pLaBkkxkbmtM94EKeBGNynLcAAW",
+      "poolName": "BABYTROLL-SOL",
+      "confidence": null,
+      "organic": 71,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T22:03:21.256Z",
+          "type": "deploy",
+          "amountSol": 0.398,
+          "confidence": null,
+          "organic": 71,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    },
+    {
+      "key": "dry_1781044351819_tqgb",
+      "poolAddress": "8eDUNVrNUZ87SLYeihLTM7hJhckdAKqua6hPztuD57pX",
+      "poolName": "three-SOL",
+      "confidence": null,
+      "organic": 87,
+      "breakdown": null,
+      "timeline": [
+        {
+          "ts": "2026-06-09T22:32:31.834Z",
+          "type": "deploy",
+          "amountSol": 2.52,
+          "confidence": null,
+          "organic": 87,
+          "regime": null,
+          "trust": null
+        }
+      ],
+      "result": null
+    }
+  ]
+}

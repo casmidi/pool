@@ -1,0 +1,96 @@
+{
+  "trace_id": "ASTEROID-SOL_2026_06_09_16_02_33",
+  "pool": "ASTEROID-SOL",
+  "created_at": "2026-06-09T16:02:33.762Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-09T16:02:33.762Z",
+      "metrics": {
+        "fee_tvl": 0.1939,
+        "organic": 68,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 1.9977,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-09T16:02:33.762Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-09T16:02:33.762Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-09T16:02:33.762Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.00009601127142664165,
+      "bins_above": null,
+      "bins_below": 53,
+      "volatility_used": 1.9977,
+      "timing": null,
+      "range_width": 54,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -1161,
+        "lower_bin": -1214,
+        "upper_bin": -1161,
+        "bin_step": 80,
+        "amount_sol": 0.137
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-09T17:40:53.682Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1.61,
+      "minutes_since_entry": 98,
+      "active_bin": -1159,
+      "entry_bin": -1161,
+      "lower_bin": -1214,
+      "upper_bin": -1161,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    },
+    {
+      "stage": "exit",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-09T17:40:53.682Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 4.45,
+      "duration_minutes": 98,
+      "fees_earned": 0.006703844,
+      "exit_side": "above",
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T17:40:53.717Z"
+}

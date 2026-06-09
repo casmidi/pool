@@ -1,0 +1,82 @@
+{
+  "trace_id": "BABYTROLL-SOL_2026_06_09_22_03_21",
+  "pool": "BABYTROLL-SOL",
+  "created_at": "2026-06-09T22:03:21.241Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-09T22:03:21.241Z",
+      "metrics": {
+        "fee_tvl": 0.1339,
+        "organic": 71,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 2.8359,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-09T22:03:21.241Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-09T22:03:21.241Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-09T22:03:21.241Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.008729379911531837,
+      "bins_above": null,
+      "bins_below": 56,
+      "volatility_used": 2.8359,
+      "timing": null,
+      "range_width": 57,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -595,
+        "lower_bin": -651,
+        "upper_bin": -595,
+        "bin_step": 80,
+        "amount_sol": 0.398
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "BABYTROLL-SOL",
+      "timestamp": "2026-06-09T22:05:54.036Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 0.8,
+      "minutes_since_entry": 2,
+      "active_bin": -594,
+      "entry_bin": -595,
+      "lower_bin": -651,
+      "upper_bin": -595,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T22:05:54.054Z"
+}

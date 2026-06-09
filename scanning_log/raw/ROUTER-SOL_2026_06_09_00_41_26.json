@@ -1,0 +1,75 @@
+{
+  "trace_id": "ROUTER-SOL_2026_06_09_00_41_26",
+  "pool": "ROUTER-SOL",
+  "created_at": "2026-06-09T00:41:26.739Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "ROUTER-SOL",
+      "timestamp": "2026-06-09T00:41:26.739Z",
+      "metrics": {
+        "fee_tvl": 0.606,
+        "organic": 67,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 2.4905,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "ROUTER-SOL",
+      "timestamp": "2026-06-09T00:41:26.739Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "ROUTER-SOL",
+      "timestamp": "2026-06-09T00:41:26.739Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "ROUTER-SOL",
+      "timestamp": "2026-06-09T00:41:26.739Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.000021126187019278286,
+      "bins_above": null,
+      "bins_below": 55,
+      "volatility_used": 2.4905,
+      "timing": null,
+      "range_width": 56,
+      "exact": {
+        "active_bin": -1351,
+        "lower_bin": -1406,
+        "upper_bin": -1351,
+        "bin_step": 80,
+        "amount_sol": 2.875
+      }
+    },
+    {
+      "stage": "exit",
+      "pool": "ROUTER-SOL",
+      "timestamp": "2026-06-09T03:24:53.628Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_trailing_take-profit",
+      "pnl_pct": 3.78,
+      "duration_minutes": 163,
+      "fees_earned": 0.234940304,
+      "exit_side": null
+    }
+  ],
+  "updated_at": "2026-06-09T03:24:53.658Z"
+}

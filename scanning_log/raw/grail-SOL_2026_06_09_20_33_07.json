@@ -1,0 +1,81 @@
+{
+  "trace_id": "grail-SOL_2026_06_09_20_33_07",
+  "pool": "grail-SOL",
+  "created_at": "2026-06-09T20:33:07.790Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T20:33:07.790Z",
+      "metrics": {
+        "fee_tvl": 0.2238,
+        "organic": 80,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 3.843,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T20:33:07.790Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T20:33:07.790Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T20:33:07.790Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.014000084187261915,
+      "bins_above": null,
+      "bins_below": 69,
+      "volatility_used": 3.843,
+      "timing": null,
+      "range_width": 70,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -429,
+        "lower_bin": -498,
+        "upper_bin": -429,
+        "bin_step": 100,
+        "amount_sol": 2.528
+      }
+    },
+    {
+      "stage": "exit",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T22:32:23.933Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_trailing_take-profit",
+      "pnl_pct": 2.93,
+      "duration_minutes": 119,
+      "fees_earned": 0.15074857,
+      "exit_side": null,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T22:32:23.977Z"
+}

@@ -1,0 +1,848 @@
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+const DATA_DIR = process.env.MERIDIAN_SHADOW_DATA_DIR || path.join(ROOT, "data");
+const CASES_PATH = path.join(DATA_DIR, "shadow_v2_cases.json");
+const SUMMARY_PATH = path.join(DATA_DIR, "shadow_v2_summary.json");
+const DEFAULT_SIZE_SOL = 0.1;
+const MAX_DURATION_MINUTES = 120;
+const NEUTRAL_PNL_PCT = 0.15;
+const WAIT_RECHECK_MINUTES = 5;
+
+function ensureDataDir() {
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+function readJson(filePath, fallback) {
+  try {
+    if (!fs.existsSync(filePath)) return fallback;
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+function writeJson(filePath, data) {
+  ensureDataDir();
+  const tmp = `${filePath}.tmp`;
+  fs.writeFileSync(tmp, JSON.stringify(data, null, 2), "utf8");
+  fs.renameSync(tmp, filePath);
+}
+
+function num(value, fallback = null) {
+  if (value === null || value === undefined || value === "") return fallback;
+  const n = Number(value);
+  return Number.isFinite(n) ? n : fallback;
+}
+
+function round(value, digits = 4) {
+  const n = num(value, 0);
+  const m = 10 ** digits;
+  return Math.round(n * m) / m;
+}
+
+function firstNum(...values) {
+  for (const value of values) {
+    const n = num(value, null);
+    if (n !== null) return n;
+  }
+  return null;
+}
+
+function firstValue(...values) {
+  for (const value of values) {
+    if (value !== null && value !== undefined && value !== "") return value;
+  }
+  return null;
+}
+
+function dateKey(value = new Date()) {
+  const d = value instanceof Date ? value : new Date(value);
+  return Number.isFinite(d.getTime()) ? d.toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10);
+}
+
+function bucket15m(value = new Date()) {
+  const d = value instanceof Date ? value : new Date(value);
+  const safe = Number.isFinite(d.getTime()) ? d : new Date();
+  const minutes = Math.floor(safe.getUTCMinutes() / 15) * 15;
+  return `${safe.toISOString().slice(0, 13)}:${String(minutes).padStart(2, "0")}`;
+}
+
+function pctFromBins(entryBin, currentBin, binStep) {
+  if (entryBin === null || currentBin === null) return null;
+  const step = num(binStep, null);
+  const delta = currentBin - entryBin;
+  if (step !== null && step > 0) {
+    return (Math.pow(1 + step / 10000, delta) - 1) * 100;
+  }
+  return delta * 0.05;
+}
+
+function minutesBetween(start, end) {
+  const a = new Date(start).getTime();
+  const b = new Date(end).getTime();
+  if (!Number.isFinite(a) || !Number.isFinite(b)) return 0;
+  return (b - a) / 60000;
+}
+
+function severity(status) {
+  const key = String(status || "").toUpperCase();
+  if (["CRITICAL", "NO_ROUTE", "EXHAUSTED"].includes(key)) return 3;
+  if (["HIGH", "THIN", "UNSTABLE", "LATE"].includes(key)) return 2;
+  if (["MEDIUM", "VALID"].includes(key)) return 1;
+  return 0;
+}
+
+function riskStatus(score) {
+  if (score >= 80) return "CRITICAL";
+  if (score >= 55) return "HIGH";
+  if (score >= 30) return "MEDIUM";
+  return "LOW";
+}
+
+function routeStatus(pool = {}) {
+  const liquidity = firstNum(pool.active_tvl, pool.tvl, pool.liquidity, pool.fallback_liquidity_usd);
+  const volume = firstNum(pool.volume_window, pool.volume, pool.volume_24h, pool.fallback_volume_usd);
+  const activePct = firstNum(pool.active_pct, pool.active_positions_pct);
+  const feeRatio = firstNum(pool.fee_active_tvl_ratio, pool.fee_tvl_ratio, pool.feeTvlRatio, 0);
+  const warnings = [];
+
+  if (pool.is_rugpull === true || pool.is_wash === true) warnings.push("hard token risk");
+  if (liquidity === null) warnings.push("liquidity unknown");
+  else if (liquidity < 5000) warnings.push(`liquidity too thin ${Math.round(liquidity)}`);
+  else if (liquidity < 15000) warnings.push(`liquidity thin ${Math.round(liquidity)}`);
+  if (volume !== null && liquidity !== null && liquidity > 0 && volume / liquidity < 0.2) warnings.push("weak volume/liquidity");
+  if (activePct !== null && activePct < 45) warnings.push(`active liquidity low ${round(activePct, 1)}%`);
+  if (feeRatio !== null && feeRatio > 0.75) warnings.push("fee spike may be unstable");
+
+  const positionUsd = firstNum(pool.shadow_position_usd, pool.estimated_position_usd, 18);
+  const slippage = liquidity && liquidity > 0 ? Math.min(99, (positionUsd / liquidity) * 100) : null;
+  const score = Math.max(0, 100 - warnings.length * 22 - (slippage !== null ? Math.min(35, slippage * 10) : 20));
+  let status = "OK";
+  if (warnings.some((w) => w.includes("hard token risk")) || liquidity === 0) status = "NO_ROUTE";
+  else if (liquidity === null || warnings.length >= 3) status = "UNSTABLE";
+  else if (liquidity < 15000 || warnings.length >= 1) status = "THIN";
+
+  return {
+    status,
+    sell_slippage_pct: slippage === null ? null : round(slippage, 3),
+    route_liquidity_usd: liquidity,
+    score: round(score, 1),
+    warnings,
+  };
+}
+
+function clusterRisk(pool = {}) {
+  let score = 0;
+  const reasons = [];
+  const riskLevel = String(pool.risk_level || "").toLowerCase();
+  const bundle = firstNum(pool.bundle_pct, pool.bundlePercent);
+  const sniper = firstNum(pool.sniper_pct, pool.sniperPercent);
+  const suspicious = firstNum(pool.suspicious_pct, pool.suspiciousPercent);
+  const sellRatio = firstNum(pool.fallback_sell_ratio_24h);
+
+  if (riskLevel === "high") { score += 55; reasons.push("risk_level high"); }
+  if (bundle !== null && bundle > 30) { score += 25; reasons.push(`bundle ${round(bundle, 1)}%`); }
+  else if (bundle !== null && bundle > 15) { score += 12; reasons.push(`bundle watch ${round(bundle, 1)}%`); }
+  if (sniper !== null && sniper > 30) { score += 22; reasons.push(`sniper ${round(sniper, 1)}%`); }
+  else if (sniper !== null && sniper > 15) { score += 10; reasons.push(`sniper watch ${round(sniper, 1)}%`); }
+  if (suspicious !== null && suspicious > 25) { score += 25; reasons.push(`suspicious ${round(suspicious, 1)}%`); }
+  if (sellRatio !== null && sellRatio > 0.65) { score += 15; reasons.push(`sell ratio ${round(sellRatio * 100, 1)}%`); }
+  if (pool.kol_in_clusters === true && String(pool.top_cluster_trend || "").toLowerCase() === "sell") {
+    score += 15;
+    reasons.push("top cluster selling");
+  }
+
+  score = Math.min(100, score);
+  return {
+    status: riskStatus(score),
+    score,
+    bundle_pct: bundle,
+    sniper_pct: sniper,
+    suspicious_pct: suspicious,
+    reasons,
+  };
+}
+
+function devRisk(pool = {}) {
+  let score = 0;
+  const reasons = [];
+  const top10 = firstNum(pool.top10_pct, pool.top10Pct, pool.base_token_top10_holders_pct);
+  const botHolders = firstNum(pool.bot_holders_pct, pool.botHoldersPct);
+
+  if (pool.dev_sold_all === true) { score += 60; reasons.push("dev sold all"); }
+  if (pool.is_rugpull === true) { score += 70; reasons.push("rugpull flag"); }
+  if (top10 !== null && top10 > 65) { score += 20; reasons.push(`top10 concentration ${round(top10, 1)}%`); }
+  if (botHolders !== null && botHolders > 30) { score += 15; reasons.push(`bot holders ${round(botHolders, 1)}%`); }
+
+  score = Math.min(100, score);
+  return {
+    status: riskStatus(score),
+    score,
+    top_holder_concentration_pct: top10,
+    bot_holders_pct: botHolders,
+    reasons,
+  };
+}
+
+function timingTruth(pool = {}) {
+  const change = firstNum(pool.price_change_1h_pct, pool.pool_price_change_pct, pool.price_change_24h_pct, pool.fallback_price_change_pct);
+  const volatility = firstNum(pool.volatility, pool.volatility_pct);
+  const activePct = firstNum(pool.active_pct, pool.active_positions_pct);
+  const feeChange = firstNum(pool.fee_change_pct);
+  const volumeChange = firstNum(pool.volume_change_pct);
+  const reasons = [];
+  let score = 80;
+  let status = "VALID";
+
+  if (change !== null && change > 150) { status = "EXHAUSTED"; score -= 55; reasons.push(`already moved ${round(change, 1)}%`); }
+  else if (change !== null && change > 75) { status = "LATE"; score -= 32; reasons.push(`late after ${round(change, 1)}% move`); }
+  else if (change !== null && change > 15) { status = "EARLY"; score += 8; reasons.push(`momentum ${round(change, 1)}%`); }
+  if (volatility !== null && volatility > 5) { score -= 18; reasons.push(`volatility high ${round(volatility, 2)}`); }
+  if (activePct !== null && activePct < 50) { score -= 14; reasons.push(`active liquidity ${round(activePct, 1)}%`); }
+  if (feeChange !== null && feeChange < -20) { score -= 12; reasons.push(`fee trend ${round(feeChange, 1)}%`); }
+  if (volumeChange !== null && volumeChange < -30) { score -= 10; reasons.push(`volume trend ${round(volumeChange, 1)}%`); }
+  if (score < 45 && status === "VALID") status = "LATE";
+
+  return {
+    status,
+    score: Math.max(0, Math.min(100, round(score, 1))),
+    price_change_pct: change,
+    volatility,
+    reasons,
+  };
+}
+
+function dataCompleteness(pool = {}) {
+  const required = {
+    pool_address: firstValue(pool.pool_address, pool.poolAddress, pool.pool),
+    liquidity: firstNum(pool.active_tvl, pool.tvl, pool.liquidity, pool.fallback_liquidity_usd),
+    fee_ratio: firstNum(pool.fee_active_tvl_ratio, pool.fee_tvl_ratio, pool.feeTvlRatio),
+    volatility: firstNum(pool.volatility, pool.volatility_pct),
+    active_bin: firstNum(pool.active_bin, pool.activeBin, pool.current_active_bin, pool.currentActiveBin),
+  };
+  const missing = Object.entries(required).filter(([, value]) => value === null || value === undefined).map(([key]) => key);
+  const score = round(((Object.keys(required).length - missing.length) / Object.keys(required).length) * 100, 1);
+  return { score, missing, usable: score >= 60 };
+}
+
+export function analyzePreTradeTruth(pool = {}) {
+  const exitRoute = routeStatus(pool);
+  const cluster = clusterRisk(pool);
+  const dev = devRisk(pool);
+  const timing = timingTruth(pool);
+  const completeness = dataCompleteness(pool);
+  const penalties =
+    (100 - exitRoute.score) * 0.35 +
+    cluster.score * 0.25 +
+    dev.score * 0.2 +
+    (100 - timing.score) * 0.2 +
+    (100 - completeness.score) * 0.15;
+  const truthScore = Math.max(0, Math.min(100, round(100 - penalties, 1)));
+  const warningReasons = [
+    severity(exitRoute.status) >= 2 ? `exit_route_${exitRoute.status.toLowerCase()}` : null,
+    severity(cluster.status) >= 2 ? `cluster_${cluster.status.toLowerCase()}` : null,
+    severity(dev.status) >= 2 ? `dev_${dev.status.toLowerCase()}` : null,
+    ["LATE", "EXHAUSTED"].includes(timing.status) ? `timing_${timing.status.toLowerCase()}` : null,
+    !completeness.usable ? "data_incomplete" : null,
+  ].filter(Boolean);
+  const warningLevel = warningReasons.some((r) => r.includes("critical") || r.includes("no_route") || r.includes("exhausted"))
+    ? "CRITICAL"
+    : warningReasons.length >= 2 ? "HIGH" : warningReasons.length ? "WATCH" : "CLEAR";
+
+  return {
+    truth_score: truthScore,
+    warning_level: warningLevel,
+    would_warn: warningLevel !== "CLEAR",
+    exit_route: exitRoute,
+    cluster_risk: cluster,
+    dev_risk: dev,
+    timing_truth: timing,
+    data_completeness: completeness,
+    warnings: warningReasons,
+  };
+}
+
+function loadTable() {
+  const table = readJson(CASES_PATH, null);
+  if (table && Array.isArray(table.cases)) {
+    return {
+      table: "shadow_v2_cases",
+      version: 1,
+      updated_at: table.updated_at || null,
+      cases: table.cases,
+    };
+  }
+  return { table: "shadow_v2_cases", version: 1, updated_at: null, cases: [] };
+}
+
+function saveTable(table) {
+  table.updated_at = new Date().toISOString();
+  if (table.cases.length > 2500) table.cases = table.cases.slice(-2500);
+  writeJson(CASES_PATH, table);
+}
+
+function caseId(pool = {}, timestamp = new Date()) {
+  const poolAddress = firstValue(pool.pool_address, pool.poolAddress, pool.pool, "unknown");
+  return `shadowv2_${String(poolAddress).replace(/[^a-z0-9_-]+/gi, "_").slice(0, 48)}_${bucket15m(timestamp).replace(/[^0-9T]+/g, "_")}`;
+}
+
+function readMarketSnapshot(pool = {}) {
+  const activeBin = firstNum(pool.active_bin, pool.activeBin, pool.current_active_bin, pool.currentActiveBin);
+  const price = firstNum(pool.entry_price, pool.entryPrice, pool.current_price, pool.currentPrice, pool.price);
+  const dlmm = pool.dlmm_plan || {};
+  const binsBelow = firstNum(dlmm.bins_below, pool.bins_below);
+  const binsAbove = firstNum(dlmm.bins_above, pool.bins_above, 0);
+  const lowerBin = firstNum(pool.lower_bin, pool.lowerBin, pool.range_lower_bin, activeBin !== null && binsBelow !== null ? activeBin - binsBelow : null);
+  const upperBin = firstNum(pool.upper_bin, pool.upperBin, pool.range_upper_bin, activeBin !== null && binsAbove !== null ? activeBin + binsAbove : null);
+  return {
+    price,
+    active_bin: activeBin,
+    lower_bin: lowerBin,
+    upper_bin: upperBin,
+    bin_step: firstNum(pool.bin_step, pool.binStep, pool.dlmm_params?.bin_step),
+  };
+}
+
+function shiftedUpRange(activeBin, lowerBin, upperBin) {
+  const entry = num(activeBin, null);
+  if (entry === null) return { lower_bin: null, upper_bin: null, width_bins: null };
+  const width = num(upperBin, null) !== null && num(lowerBin, null) !== null
+    ? Math.max(8, Math.abs(Number(upperBin) - Number(lowerBin)))
+    : 28;
+  const widened = Math.ceil(width * 1.5);
+  return {
+    lower_bin: entry - Math.max(2, Math.floor(widened * 0.15)),
+    upper_bin: entry + Math.max(6, Math.ceil(widened * 0.85)),
+    width_bins: widened,
+  };
+}
+
+function makeAdaptiveVariant(name, mode, item, options = {}) {
+  const range = shiftedUpRange(item.entry_bin, item.lower_bin, item.upper_bin);
+  return {
+    name,
+    mode,
+    status: options.status || "OPEN",
+    created_at: item.created_at,
+    activated_at: options.activated_at || (options.status === "WAITING" ? null : item.created_at),
+    wait_minutes: options.wait_minutes || 0,
+    entry_price: options.entry_price ?? item.entry_price ?? null,
+    entry_bin: options.entry_bin ?? item.entry_bin ?? null,
+    lower_bin: options.lower_bin ?? range.lower_bin,
+    upper_bin: options.upper_bin ?? range.upper_bin,
+    width_bins: options.width_bins ?? range.width_bins,
+    bin_step: options.bin_step ?? item.bin_step ?? null,
+    pnl_pct: 0,
+    pnl_sol: 0,
+    impact_sol: 0,
+    out_of_range: false,
+    close_reason: null,
+    closed_at: null,
+  };
+}
+
+function shouldCreateAdaptiveShadow(pool = {}, truth = {}) {
+  const recommendation = String(pool.trade_recommendation || pool.manual_recommendation?.action || "").toUpperCase();
+  return truth.would_warn === true ||
+    ["BUY", "WATCH_SHADOW", "WATCH"].includes(recommendation) ||
+    severity(truth.exit_route?.status) >= 2 ||
+    ["LATE", "EXHAUSTED"].includes(truth.timing_truth?.status);
+}
+
+function initAdaptiveShadow(item, pool = {}, truth = {}) {
+  if (!shouldCreateAdaptiveShadow(pool, truth)) return null;
+  const variants = item.adaptive_shadow?.variants || {};
+  return {
+    mode: "ADAPTIVE_SHADOW",
+    status: "OBSERVING",
+    reason: "adaptive_shadow_production",
+    created_at: item.created_at,
+    updated_at: item.updated_at,
+    rules: {
+      auto_deploy: true,
+      hard_gate: false,
+      production_learning: true,
+    },
+    variants: {
+      widen_shift_up: variants.widen_shift_up || makeAdaptiveVariant(
+        "widen_shift_up",
+        "enter_now_with_wider_shifted_up_range",
+        item,
+      ),
+      wait_5m_recheck: variants.wait_5m_recheck || makeAdaptiveVariant(
+        "wait_5m_recheck",
+        "wait_then_enter_if_market_still_valid",
+        item,
+        { status: "WAITING", wait_minutes: WAIT_RECHECK_MINUTES, entry_price: null, entry_bin: null },
+      ),
+      second_chance_queue: variants.second_chance_queue || makeAdaptiveVariant(
+        "second_chance_queue",
+        "blocked_candidate_recheck_queue",
+        item,
+        { status: "WAITING", wait_minutes: WAIT_RECHECK_MINUTES, entry_price: null, entry_bin: null },
+      ),
+    },
+  };
+}
+
+function updateVariantPnl(variant, market, sizeSol) {
+  const pnlPct = market.price !== null && num(variant.entry_price, null) !== null && num(variant.entry_price, 0) > 0
+    ? ((market.price - Number(variant.entry_price)) / Number(variant.entry_price)) * 100
+    : pctFromBins(num(variant.entry_bin, null), market.active_bin, variant.bin_step);
+  if (pnlPct !== null) {
+    variant.pnl_pct = round(pnlPct, 4);
+    variant.pnl_sol = round(num(sizeSol, DEFAULT_SIZE_SOL) * (pnlPct / 100), 6);
+  }
+  variant.current_price = market.price ?? variant.current_price;
+  variant.current_bin = market.active_bin ?? variant.current_bin;
+}
+
+function activateWaitingVariant(variant, market, nowIso, item) {
+  if (market.price === null && market.active_bin === null) return false;
+  const range = shiftedUpRange(market.active_bin ?? item.entry_bin, item.lower_bin, item.upper_bin);
+  variant.status = "OPEN";
+  variant.activated_at = nowIso;
+  variant.entry_price = market.price ?? item.current_price ?? item.entry_price ?? null;
+  variant.entry_bin = market.active_bin ?? item.current_bin ?? item.entry_bin ?? null;
+  variant.lower_bin = range.lower_bin;
+  variant.upper_bin = range.upper_bin;
+  variant.width_bins = range.width_bins;
+  variant.activation_reason = "shadow_recheck_after_wait";
+  return true;
+}
+
+function classifyVariantOutcome(variant) {
+  const pnlPct = num(variant.pnl_pct, 0);
+  if (variant.status === "DATA_INCOMPLETE") return "DATA_INCOMPLETE";
+  if (pnlPct > NEUTRAL_PNL_PCT) return "ADAPTIVE_WIN";
+  if (pnlPct < -NEUTRAL_PNL_PCT) return "ADAPTIVE_LOSS";
+  return "ADAPTIVE_NEUTRAL";
+}
+
+function closeVariant(variant, nowIso, reason, baselinePnlSol) {
+  if (["CLOSED", "DATA_INCOMPLETE"].includes(variant.status)) return false;
+  variant.status = "CLOSED";
+  variant.closed_at = nowIso;
+  variant.close_reason = reason;
+  variant.outcome = classifyVariantOutcome(variant);
+  variant.impact_sol = round(num(variant.pnl_sol, 0) - num(baselinePnlSol, 0), 6);
+  return true;
+}
+
+function updateAdaptiveShadow(item, market, nowIso) {
+  if (!item.adaptive_shadow?.variants) return { updated: 0, closed: 0 };
+  let updated = 0;
+  let closed = 0;
+  const variants = Object.values(item.adaptive_shadow.variants);
+  for (const variant of variants) {
+    if (!variant || ["CLOSED", "DATA_INCOMPLETE"].includes(variant.status)) continue;
+    if (variant.status === "WAITING") {
+      if (minutesBetween(item.created_at, nowIso) >= num(variant.wait_minutes, WAIT_RECHECK_MINUTES)) {
+        if (!activateWaitingVariant(variant, market, nowIso, item)) {
+          continue;
+        }
+        updated += 1;
+      } else {
+        continue;
+      }
+    }
+
+    updateVariantPnl(variant, market, item.simulated_size_sol);
+    variant.updated_at = nowIso;
+    variant.bin_step = item.bin_step ?? variant.bin_step ?? null;
+    const below = market.active_bin !== null && num(variant.lower_bin, null) !== null && market.active_bin < Number(variant.lower_bin);
+    const above = market.active_bin !== null && num(variant.upper_bin, null) !== null && market.active_bin > Number(variant.upper_bin);
+    variant.out_of_range = below || above;
+    const activeAge = minutesBetween(variant.activated_at || item.created_at, nowIso);
+    if (variant.out_of_range || activeAge >= MAX_DURATION_MINUTES) {
+      const reason = variant.out_of_range
+        ? (above ? "adaptive_shadow_out_of_range_above" : "adaptive_shadow_out_of_range_below")
+        : "adaptive_shadow_max_duration";
+      if (closeVariant(variant, nowIso, reason, item.pnl_sol)) closed += 1;
+    }
+    updated += 1;
+  }
+  item.adaptive_shadow.updated_at = nowIso;
+  const open = variants.filter((variant) => ["OPEN", "WAITING"].includes(variant.status)).length;
+  item.adaptive_shadow.status = open > 0 ? "OBSERVING" : "CLOSED";
+  return { updated, closed };
+}
+
+export function recordShadowV2Candidate(pool = {}, context = {}) {
+  const poolAddress = firstValue(pool.pool_address, pool.poolAddress, pool.pool);
+  if (!poolAddress) return { recorded: false, reason: "missing pool address" };
+  const timestamp = context.timestamp || pool.timestamp || pool.ts || new Date().toISOString();
+  const table = loadTable();
+  const id = caseId({ ...pool, pool_address: poolAddress }, timestamp);
+  const existing = table.cases.find((item) => item.id === id);
+  const truth = analyzePreTradeTruth(pool);
+  const market = readMarketSnapshot(pool);
+  const nowIso = new Date(timestamp).toISOString();
+  const base = existing || {
+    id,
+    pool_name: pool.name || pool.pool_name || pool.poolName || "unknown",
+    pool_address: poolAddress,
+    source: context.source || pool.source || "screening",
+    created_at: nowIso,
+    status: "OPEN",
+    closed_at: null,
+    outcome: null,
+    truth_pnl_sol: 0,
+    simulated_size_sol: num(context.simulated_size_sol ?? pool.simulated_size_sol, DEFAULT_SIZE_SOL),
+    entry_price: market.price,
+    entry_bin: market.active_bin,
+    lower_bin: market.lower_bin,
+    upper_bin: market.upper_bin,
+    bin_step: market.bin_step,
+  };
+
+  base.updated_at = nowIso;
+  base.pool_score = num(pool.pool_score ?? pool.score, base.pool_score ?? null);
+  base.trade_recommendation = pool.trade_recommendation || pool.manual_recommendation?.action || base.trade_recommendation || null;
+  base.truth = truth;
+  base.exit_route_status = truth.exit_route.status;
+  base.cluster_risk = truth.cluster_risk.status;
+  base.timing_status = truth.timing_truth.status;
+  base.warning_level = truth.warning_level;
+  base.current_price = market.price ?? base.current_price ?? base.entry_price;
+  base.current_bin = market.active_bin ?? base.current_bin ?? base.entry_bin;
+  base.data_complete = truth.data_completeness.usable;
+  base.adaptive_shadow = base.adaptive_shadow || initAdaptiveShadow(base, pool, truth);
+  if (base.adaptive_shadow) {
+    base.adaptive_shadow.updated_at = nowIso;
+  }
+
+  if (!existing) table.cases.push(base);
+  saveTable(table);
+  return { recorded: !existing, updated: !!existing, id, case: base };
+}
+
+function classifyOutcome(item) {
+  const pnlPct = num(item.pnl_pct, 0);
+  const warned = item.truth?.would_warn === true;
+  if (item.data_complete === false) return "DATA_INCOMPLETE";
+  if (warned && pnlPct < -NEUTRAL_PNL_PCT) return "TRUE_WARNING";
+  if (warned && pnlPct > NEUTRAL_PNL_PCT) return "FALSE_ALARM";
+  if (!warned && pnlPct < -NEUTRAL_PNL_PCT) return "MISSED_RISK";
+  if (!warned && pnlPct > NEUTRAL_PNL_PCT) return "CLEAN_PASS";
+  return "NEUTRAL";
+}
+
+function truthPnl(item) {
+  const pnlSol = num(item.pnl_sol, 0);
+  if (item.outcome === "TRUE_WARNING") return round(Math.abs(pnlSol), 6);
+  if (item.outcome === "FALSE_ALARM") return round(-Math.abs(pnlSol), 6);
+  if (item.outcome === "MISSED_RISK") return round(-Math.abs(pnlSol), 6);
+  return 0;
+}
+
+export function updateShadowV2FromMarket(pool = {}) {
+  const poolAddress = firstValue(pool.pool_address, pool.poolAddress, pool.pool);
+  if (!poolAddress) return { updated: 0, closed: 0 };
+  const table = loadTable();
+  const timestamp = pool.timestamp || pool.ts || new Date().toISOString();
+  const nowIso = new Date(timestamp).toISOString();
+  const nowMs = new Date(nowIso).getTime();
+  const market = readMarketSnapshot(pool);
+  let updated = 0;
+  let closed = 0;
+  let adaptiveUpdated = 0;
+  let adaptiveClosed = 0;
+
+  for (const item of table.cases) {
+    if (item.pool_address !== poolAddress) continue;
+    if (item.status === "OPEN") {
+      const pnlPct = market.price !== null && num(item.entry_price, null) !== null && num(item.entry_price, 0) > 0
+        ? ((market.price - Number(item.entry_price)) / Number(item.entry_price)) * 100
+        : pctFromBins(num(item.entry_bin, null), market.active_bin, item.bin_step);
+      if (pnlPct !== null) {
+        item.pnl_pct = round(pnlPct, 4);
+        item.pnl_sol = round(num(item.simulated_size_sol, DEFAULT_SIZE_SOL) * (pnlPct / 100), 6);
+      }
+      item.current_price = market.price ?? item.current_price;
+      item.current_bin = market.active_bin ?? item.current_bin;
+      item.updated_at = nowIso;
+      const below = market.active_bin !== null && num(item.lower_bin, null) !== null && market.active_bin < Number(item.lower_bin);
+      const above = market.active_bin !== null && num(item.upper_bin, null) !== null && market.active_bin > Number(item.upper_bin);
+      item.out_of_range = below || above;
+      const ageMinutes = Number.isFinite(nowMs)
+        ? (nowMs - new Date(item.created_at).getTime()) / 60000
+        : 0;
+      if (item.out_of_range || ageMinutes >= MAX_DURATION_MINUTES) {
+        item.status = "CLOSED";
+        item.closed_at = nowIso;
+        item.close_reason = item.out_of_range ? (above ? "shadow_v2_out_of_range_above" : "shadow_v2_out_of_range_below") : "shadow_v2_max_duration";
+        item.outcome = classifyOutcome(item);
+        item.truth_pnl_sol = truthPnl(item);
+        closed += 1;
+      }
+      updated += 1;
+    }
+    const adaptive = updateAdaptiveShadow(item, market, nowIso);
+    adaptiveUpdated += adaptive.updated;
+    adaptiveClosed += adaptive.closed;
+    if (adaptive.updated > 0 || adaptive.closed > 0) {
+      item.updated_at = nowIso;
+      updated += 1;
+    }
+  }
+
+  if (updated) saveTable(table);
+  return { updated, closed, adaptive_updated: adaptiveUpdated, adaptive_closed: adaptiveClosed };
+}
+
+export function observeShadowV2Candidate(pool = {}, context = {}) {
+  const recorded = recordShadowV2Candidate(pool, context);
+  const updated = updateShadowV2FromMarket(pool);
+  return {
+    ...recorded,
+    market_updated: updated.updated,
+    market_closed: updated.closed,
+    adaptive_updated: updated.adaptive_updated,
+    adaptive_closed: updated.adaptive_closed,
+  };
+}
+
+function topCause(items = []) {
+  const counts = {};
+  for (const item of items) {
+    const key = item.truth?.warnings?.[0] || item.exit_route_status || item.cluster_risk || "none";
+    counts[key] = (counts[key] || 0) + 1;
+  }
+  return Object.entries(counts)
+    .map(([cause, count]) => ({ cause, count }))
+    .sort((a, b) => b.count - a.count || a.cause.localeCompare(b.cause))[0] || { cause: "none", count: 0 };
+}
+
+function classifyStatus({ completeCases, closedCases, criticalWarnings, truthPnlSol }) {
+  if (completeCases < 30) return "LEARNING";
+  if (closedCases >= 30 && criticalWarnings >= 10 && truthPnlSol > 0) return "CANDIDATE";
+  if (completeCases >= 50) return "WATCH";
+  return "LEARNING";
+}
+
+function summarizeAdaptiveShadow(cases = []) {
+  const names = ["widen_shift_up", "wait_5m_recheck", "second_chance_queue"];
+  const byVariant = {};
+  for (const name of names) {
+    byVariant[name] = {
+      cases: 0,
+      open: 0,
+      closed: 0,
+      wins: 0,
+      losses: 0,
+      impact_sol: 0,
+      pnl_sol: 0,
+    };
+  }
+
+  for (const item of cases) {
+    const variants = item.adaptive_shadow?.variants || {};
+    for (const name of names) {
+      const variant = variants[name];
+      if (!variant) continue;
+      const bucket = byVariant[name];
+      bucket.cases += 1;
+      if (variant.status === "CLOSED") bucket.closed += 1;
+      else if (["OPEN", "WAITING"].includes(variant.status)) bucket.open += 1;
+      if (variant.outcome === "ADAPTIVE_WIN") bucket.wins += 1;
+      if (variant.outcome === "ADAPTIVE_LOSS") bucket.losses += 1;
+      bucket.impact_sol += num(variant.impact_sol, 0);
+      bucket.pnl_sol += num(variant.pnl_sol, 0);
+    }
+  }
+
+  let best = { name: "none", impact_sol: 0, closed: 0 };
+  for (const [name, stats] of Object.entries(byVariant)) {
+    stats.impact_sol = round(stats.impact_sol, 6);
+    stats.pnl_sol = round(stats.pnl_sol, 6);
+    if (stats.closed > 0 && stats.impact_sol > 0 && (best.name === "none" || stats.impact_sol > best.impact_sol)) {
+      best = { name, impact_sol: stats.impact_sol, closed: stats.closed };
+    }
+  }
+
+  const totals = Object.values(byVariant).reduce((acc, stats) => {
+    acc.cases += stats.cases;
+    acc.open += stats.open;
+    acc.closed += stats.closed;
+    acc.impact_sol += stats.impact_sol;
+    acc.pnl_sol += stats.pnl_sol;
+    return acc;
+  }, { cases: 0, open: 0, closed: 0, impact_sol: 0, pnl_sol: 0 });
+  totals.impact_sol = round(totals.impact_sol, 6);
+  totals.pnl_sol = round(totals.pnl_sol, 6);
+
+  return {
+    totals,
+    best,
+    by_variant: byVariant,
+  };
+}
+
+export function buildShadowV2Summary({ date = dateKey(), persist = true } = {}) {
+  const table = loadTable();
+  const cases = table.cases.filter((item) => dateKey(item.created_at) === date || dateKey(item.updated_at) === date);
+  const closed = cases.filter((item) => item.status === "CLOSED");
+  const complete = cases.filter((item) => item.data_complete !== false);
+  const critical = cases.filter((item) => ["HIGH", "CRITICAL"].includes(item.warning_level));
+  const root = topCause(cases);
+  const truthPnlSol = closed.reduce((sum, item) => sum + num(item.truth_pnl_sol, 0), 0);
+  const adaptive = summarizeAdaptiveShadow(cases);
+  const summary = {
+    table: "shadow_v2_summary",
+    date,
+    generated_at: new Date().toISOString(),
+    status: classifyStatus({
+      completeCases: complete.length,
+      closedCases: closed.length,
+      criticalWarnings: critical.length,
+      truthPnlSol,
+    }),
+    truth_pnl_sol: round(truthPnlSol, 6),
+    cases: cases.length,
+    open_cases: cases.filter((item) => item.status === "OPEN").length,
+    closed_cases: closed.length,
+    complete_cases: complete.length,
+    data_incomplete_count: cases.length - complete.length,
+    critical_warning_count: cases.filter((item) => item.warning_level === "CRITICAL").length,
+    high_warning_count: cases.filter((item) => item.warning_level === "HIGH").length,
+    true_warning_count: closed.filter((item) => item.outcome === "TRUE_WARNING").length,
+    false_alarm_count: closed.filter((item) => item.outcome === "FALSE_ALARM").length,
+    missed_risk_count: closed.filter((item) => item.outcome === "MISSED_RISK").length,
+    clean_pass_count: closed.filter((item) => item.outcome === "CLEAN_PASS").length,
+    adaptive_shadow_cases: cases.filter((item) => item.adaptive_shadow).length,
+    adaptive_open_variants: adaptive.totals.open,
+    adaptive_closed_variants: adaptive.totals.closed,
+    adaptive_impact_sol: adaptive.totals.impact_sol,
+    adaptive_pnl_sol: adaptive.totals.pnl_sol,
+    adaptive_best_route: adaptive.best.name,
+    adaptive_best_impact_sol: adaptive.best.impact_sol,
+    adaptive_by_variant: adaptive.by_variant,
+    exit_route_top: topCause(cases.map((item) => ({ ...item, truth: { warnings: [item.exit_route_status] } }))).cause,
+    cluster_risk_top: topCause(cases.map((item) => ({ ...item, truth: { warnings: [item.cluster_risk] } }))).cause,
+    top_cause: root.cause,
+    top_cause_count: root.count,
+  };
+
+  if (persist) {
+    const store = readJson(SUMMARY_PATH, { table: "shadow_v2_summary", version: 1, summaries: [] });
+    const list = Array.isArray(store.summaries) ? store.summaries : [];
+    const idx = list.findIndex((item) => item.date === date);
+    if (idx >= 0) list[idx] = summary;
+    else list.push(summary);
+    writeJson(SUMMARY_PATH, {
+      table: "shadow_v2_summary",
+      version: 1,
+      updated_at: new Date().toISOString(),
+      summaries: list.slice(-400),
+    });
+  }
+  return summary;
+}
+
+export function buildShadowV2Payload({ date = dateKey(), limit = 12 } = {}) {
+  const table = loadTable();
+  const summary = buildShadowV2Summary({ date, persist: true });
+  const cases = table.cases
+    .filter((item) => dateKey(item.created_at) === date || dateKey(item.updated_at) === date)
+    .slice()
+    .sort((a, b) => new Date(b.updated_at || b.created_at || 0) - new Date(a.updated_at || a.created_at || 0))
+    .slice(0, limit);
+  return {
+    ok: true,
+    summary,
+    cases,
+    tables: {
+      shadow_v2_cases: "data/shadow_v2_cases.json",
+      shadow_v2_summary: "data/shadow_v2_summary.json",
+    },
+    rules: {
+      auto_deploy: true,
+      hard_gate: false,
+      production_learning: true,
+    },
+    ts: new Date().toISOString(),
+  };
+}
+
+
+/**
+ * Get adaptive close advice for a position based on Shadow V2 data.
+ * Returns advice on whether to wait (adaptive says hold) or proceed with close.
+ * @param {string} poolAddress - The pool address
+ * @param {string} poolName - The pool name
+ * @param {string} closeRule - The deterministic close rule that triggered (e.g. "oor_timeout")
+ * @returns {{ shouldDelay: boolean, delayMinutes: number, reason: string, adaptiveBestRoute: string }}
+ */
+export function getAdaptiveCloseAdvice(poolAddress, poolName, closeRule) {
+  try {
+    const summaryData = readJson(SUMMARY_PATH, { summaries: [] });
+    const today = new Date().toISOString().slice(0, 10);
+    const todaySummary = (summaryData.summaries || []).find(s => s.date === today);
+    
+    if (!todaySummary || !todaySummary.adaptive_by_variant) {
+      return { shouldDelay: false, delayMinutes: 0, reason: "no_adaptive_data", adaptiveBestRoute: "none" };
+    }
+
+    const bestRoute = todaySummary.adaptive_best_route || "none";
+    const bestImpact = todaySummary.adaptive_best_impact_sol || 0;
+    
+    // Only delay if adaptive shows positive impact and the best route is wait_5m_recheck
+    if (bestRoute === "wait_5m_recheck" && bestImpact > 0.1) {
+      // For OOR timeout close rule, add adaptive delay of 5 minutes
+      if (closeRule === "oor_timeout") {
+        return {
+          shouldDelay: true,
+          delayMinutes: 5,
+          reason: "adaptive_wait_5m_recheck_positive_impact",
+          adaptiveBestRoute: bestRoute,
+        };
+      }
+      // For low yield, add a shorter delay
+      if (closeRule === "low_yield") {
+        return {
+          shouldDelay: true,
+          delayMinutes: 3,
+          reason: "adaptive_wait_low_yield_recheck",
+          adaptiveBestRoute: bestRoute,
+        };
+      }
+    }
+
+    // Check if this specific pool has shadow cases with positive adaptive data
+    const casesData = readJson(CASES_PATH, { cases: [] });
+    const poolCase = (casesData.cases || []).find(
+      c => c.pool_address === poolAddress && c.adaptive_shadow
+    );
+    
+    if (poolCase && poolCase.adaptive_shadow) {
+      const variants = poolCase.adaptive_shadow;
+      // Check if wait_5m_recheck variant shows positive impact for this specific pool
+      const waitVariant = variants.find(v => v.name === "wait_5m_recheck");
+      if (waitVariant && waitVariant.impact_sol > 0.05 && closeRule === "oor_timeout") {
+        return {
+          shouldDelay: true,
+          delayMinutes: 5,
+          reason: "pool_specific_adaptive_wait_positive",
+          adaptiveBestRoute: "wait_5m_recheck",
+        };
+      }
+    }
+
+    return { shouldDelay: false, delayMinutes: 0, reason: "adaptive_no_delay", adaptiveBestRoute: bestRoute };
+  } catch (err) {
+    console.error("[shadow_v2] getAdaptiveCloseAdvice error:", err.message);
+    return { shouldDelay: false, delayMinutes: 0, reason: "error", adaptiveBestRoute: "none" };
+  }
+}
+
+export function resetShadowV2TablesForTest(baseDir) {
+  const filePath = baseDir ? path.join(baseDir, "shadow_v2_cases.json") : CASES_PATH;
+  writeJson(filePath, { table: "shadow_v2_cases", version: 1, updated_at: new Date().toISOString(), cases: [] });
+}
+
+export const SHADOW_V2_CASES_PATH = CASES_PATH;
+export const SHADOW_V2_SUMMARY_PATH = SUMMARY_PATH;

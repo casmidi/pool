@@ -1,0 +1,87 @@
+{
+  "trace_id": "ASTEROID-SOL_2026_06_08_05_21_32",
+  "pool": "ASTEROID-SOL",
+  "created_at": "2026-06-08T05:21:32.844Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-08T05:21:32.844Z",
+      "metrics": {
+        "fee_tvl": 0.2228,
+        "organic": 70,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 3.0167,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-08T05:21:32.844Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-08T05:21:32.844Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-08T05:21:32.844Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.00012893235310571953,
+      "bins_above": null,
+      "bins_below": 56,
+      "volatility_used": 3.0167,
+      "timing": null,
+      "range_width": 57,
+      "exact": {
+        "active_bin": -1124,
+        "lower_bin": -1180,
+        "upper_bin": -1124,
+        "bin_step": 80,
+        "amount_sol": 2.678
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-08T05:22:10.058Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1.61,
+      "minutes_since_entry": 0,
+      "active_bin": -1122,
+      "entry_bin": -1124,
+      "lower_bin": -1180,
+      "upper_bin": -1124
+    },
+    {
+      "stage": "exit",
+      "pool": "ASTEROID-SOL",
+      "timestamp": "2026-06-08T05:55:29.775Z",
+      "result": "LOSS",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": -0.01,
+      "duration_minutes": 33,
+      "fees_earned": 0,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-08T05:55:29.805Z"
+}

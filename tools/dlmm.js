@@ -22,12 +22,17 @@ import {
   getTrackedPosition,
   minutesOutOfRange,
   syncOpenPositions,
+  saveWalletAddress,
 } from "../state.js";
 import { recordPerformance } from "../lessons.js";
 import { isBaseMintOnCooldown, isPoolOnCooldown } from "../pool-memory.js";
-import { normalizeMint } from "./wallet.js";
+import { normalizeMint, getWalletBalances } from "./wallet.js";
 import { appendDecision } from "../decision-log.js";
 import { agentMeridianJson, getAgentIdForRequests, getAgentMeridianHeaders } from "./agent-meridian.js";
+import crypto from "crypto";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 // ─── Lazy SDK loader ───────────────────────────────────────────
 // @meteora-ag/dlmm → @coral-xyz/anchor uses CJS directory imports
@@ -77,12 +82,302 @@ async function getDLMM() {
 // (e.g. during screening-only tests).
 let _connection = null;
 let _wallet = null;
+let _rpcHealthCache = null;
+let _rpcHealthCacheAt = 0;
+let _rpcEndpointIndex = 0;
+const _rpcConnections = new Map();
+
+const RPC_HEALTH_TTL_MS = 15_000;
+const RPC_HEALTH_TIMEOUT_MS = Number(process.env.RPC_HEALTH_TIMEOUT_MS || 8_000);
+const TX_RECONCILE_DELAY_MS = Number(process.env.TX_RECONCILE_DELAY_MS || 5_000);
+const TX_MIN_INTERVAL_MS = Number(process.env.DLMM_TX_MIN_INTERVAL_MS || 1_500);
+const TX_VERIFY_COMMITMENT = process.env.DLMM_TX_VERIFY_COMMITMENT || "finalized";
+let _nextTxSendAt = 0;
+let _txRateLimitTail = Promise.resolve();
+
+// P1: Per-API circuit breaker — opens after N consecutive failures, pauses for cooldown.
+// Prevents hammering a degraded external API and avoids making decisions from stale/failed data.
+const API_CIRCUIT_MAX_FAILURES = Number(process.env.API_CIRCUIT_MAX_FAILURES || 3);
+const API_CIRCUIT_COOLDOWN_MS  = Number(process.env.API_CIRCUIT_COOLDOWN_MS  || 120_000); // 2 min
+const _apiCircuit = new Map(); // name → { failures, pausedUntil }
+
+function _apiCircuitCheck(name) {
+  const s = _apiCircuit.get(name) || { failures: 0, pausedUntil: 0 };
+  if (s.pausedUntil > Date.now()) {
+    const secsLeft = Math.ceil((s.pausedUntil - Date.now()) / 1000);
+    throw new Error(`${name} API circuit open — ${secsLeft}s cooldown remaining after ${s.failures} consecutive failures`);
+  }
+}
+
+function _apiCircuitSuccess(name) {
+  if (_apiCircuit.has(name)) _apiCircuit.set(name, { failures: 0, pausedUntil: 0 });
+}
+
+function _apiCircuitFailure(name) {
+  const s = _apiCircuit.get(name) || { failures: 0, pausedUntil: 0 };
+  const failures = s.failures + 1;
+  if (failures >= API_CIRCUIT_MAX_FAILURES) {
+    const pausedUntil = Date.now() + API_CIRCUIT_COOLDOWN_MS;
+    _apiCircuit.set(name, { failures, pausedUntil });
+    log("api_circuit_warn", `${name} circuit opened after ${failures} consecutive failures — pausing ${API_CIRCUIT_COOLDOWN_MS / 1000}s`);
+  } else {
+    _apiCircuit.set(name, { failures, pausedUntil: 0 });
+    log("api_circuit_warn", `${name} failure ${failures}/${API_CIRCUIT_MAX_FAILURES}`);
+  }
+}
+
+function envFlag(...names) {
+  return names.some((name) => /^(1|true|yes|on)$/i.test(String(process.env[name] || "").trim()));
+}
+
+function getCircuitBreakerReason({ deployOnly = false } = {}) {
+  if (envFlag("DLMM_EMERGENCY_HALT")) return "DLMM_EMERGENCY_HALT is enabled";
+  if (deployOnly && envFlag("DLMM_PAUSE_DEPLOYS", "PAUSE_DEPLOYS")) return "deploy circuit breaker is enabled";
+  return null;
+}
+
+function assertTransactionCircuitClosed(label) {
+  if (process.env.DRY_RUN === "true") return;
+  const reason = getCircuitBreakerReason();
+  if (reason) {
+    throw new Error(`Circuit breaker open before ${label}: ${reason}`);
+  }
+}
+
+function assertDeployCircuitClosed(poolAddress) {
+  if (process.env.DRY_RUN === "true") return;
+  const reason = getCircuitBreakerReason({ deployOnly: true });
+  if (reason) {
+    throw new Error(`Deploy paused for ${poolAddress?.slice?.(0, 8) || "pool"}: ${reason}`);
+  }
+}
+
+function getRpcEndpoints() {
+  const endpoints = [
+    process.env.RPC_URL,
+    ...(process.env.RPC_FALLBACK_URLS || "")
+      .split(",")
+      .map((entry) => entry.trim())
+      .filter(Boolean),
+  ].filter(Boolean);
+  return [...new Set(endpoints)];
+}
+
+function createRpcConnection(endpoint) {
+  if (!_rpcConnections.has(endpoint)) {
+    _rpcConnections.set(endpoint, new Connection(endpoint, "confirmed"));
+  }
+  return _rpcConnections.get(endpoint);
+}
 
 function getConnection() {
-  if (!_connection) {
-    _connection = new Connection(process.env.RPC_URL, "confirmed");
+  const endpoints = getRpcEndpoints();
+  if (endpoints.length === 0) {
+    throw new Error("RPC_URL not set — cannot create Solana connection. Check your .env file.");
   }
+  if (_rpcEndpointIndex >= endpoints.length) _rpcEndpointIndex = 0;
+  const endpoint = endpoints[_rpcEndpointIndex];
+  if (!_connection) _connection = createRpcConnection(endpoint);
   return _connection;
+}
+
+function switchRpcEndpoint(index, reason = "manual") {
+  const endpoints = getRpcEndpoints();
+  if (index < 0 || index >= endpoints.length) return false;
+  if (index === _rpcEndpointIndex && _connection) return true;
+  _rpcEndpointIndex = index;
+  _connection = createRpcConnection(endpoints[_rpcEndpointIndex]);
+  _rpcHealthCache = null;
+  _rpcHealthCacheAt = 0;
+  const endpointLabel = endpoints[_rpcEndpointIndex].replace(/\?.*$/, "?...");
+  log("rpc_failover", `Using RPC endpoint ${_rpcEndpointIndex + 1}/${endpoints.length} (${reason}): ${endpointLabel}`);
+  return true;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function withTimeout(promise, timeoutMs, label) {
+  let timer;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error(`${label} timed out after ${timeoutMs}ms`)), timeoutMs);
+      }),
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+async function fetchJsonWithRetry(url, {
+  label = "fetch",
+  attempts = 3,
+  timeoutMs = 5_000,
+  backoffMs = 500,
+} = {}) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, { signal: controller.signal });
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        throw new Error(`${label} HTTP ${res.status}: ${body.slice(0, 160)}`);
+      }
+      return await res.json();
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) {
+        log("fetch_retry", `${label} attempt ${attempt}/${attempts} failed: ${error.message}`);
+        await sleep(backoffMs * attempt);
+      }
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  throw lastError;
+}
+
+async function waitForTxRateLimit(label) {
+  if (process.env.DRY_RUN === "true") return;
+  if (!Number.isFinite(TX_MIN_INTERVAL_MS) || TX_MIN_INTERVAL_MS <= 0) return;
+
+  let release;
+  const previous = _txRateLimitTail;
+  _txRateLimitTail = new Promise((resolve) => { release = resolve; });
+  await previous;
+  try {
+    const waitMs = Math.max(0, _nextTxSendAt - Date.now());
+    if (waitMs > 0) {
+      log("tx_rate_limit", `${label}: waiting ${waitMs}ms before next tx send`);
+      await sleep(waitMs);
+    }
+    _nextTxSendAt = Date.now() + TX_MIN_INTERVAL_MS;
+  } finally {
+    release();
+  }
+}
+
+// P1: Quality-scored RPC health check.
+// Probes all endpoints in parallel, then picks the one with the highest confirmed slot.
+// Ties are broken by lowest latency. Prevents defaulting to a slow or stale endpoint just
+// because it responded first.
+async function checkRpcHealth({ force = false, label = "rpc" } = {}) {
+  const now = Date.now();
+  if (!force && _rpcHealthCache && now - _rpcHealthCacheAt < RPC_HEALTH_TTL_MS) {
+    return _rpcHealthCache;
+  }
+
+  const endpoints = getRpcEndpoints();
+  if (endpoints.length === 0) {
+    throw new Error("RPC_URL not set — cannot create Solana connection. Check your .env file.");
+  }
+
+  const probes = await Promise.allSettled(
+    endpoints.map(async (endpoint, index) => {
+      const started = Date.now();
+      const connection = createRpcConnection(endpoint);
+      const [slot, blockhash] = await withTimeout(
+        Promise.all([
+          connection.getSlot("confirmed"),
+          connection.getLatestBlockhash("confirmed"),
+        ]),
+        RPC_HEALTH_TIMEOUT_MS,
+        `${label} health check endpoint ${index + 1}`,
+      );
+      return { index, slot, blockhash, latency_ms: Date.now() - started };
+    })
+  );
+
+  const healthy = probes
+    .map((r, i) => (r.status === "fulfilled" ? r.value : null))
+    .filter(Boolean);
+
+  probes.forEach((r, i) => {
+    if (r.status === "rejected") {
+      log("rpc_health_warn", `${label}: endpoint ${i + 1}/${endpoints.length} failed: ${r.reason?.message}`);
+    }
+  });
+
+  if (healthy.length === 0) {
+    const failed = {
+      ok: false,
+      endpoint_index: _rpcEndpointIndex,
+      endpoint_count: endpoints.length,
+      error: "All RPC endpoints failed health check.",
+      latency_ms: 0,
+      checked_at: Date.now(),
+    };
+    _rpcHealthCache = failed;
+    _rpcHealthCacheAt = Date.now();
+    return _rpcHealthCache;
+  }
+
+  // Sort: highest slot first, then lowest latency
+  healthy.sort((a, b) => b.slot - a.slot || a.latency_ms - b.latency_ms);
+  const best = healthy[0];
+
+  if (healthy.length > 1) {
+    const slotSpread = healthy[0].slot - healthy[healthy.length - 1].slot;
+    if (slotSpread > 5) {
+      log("rpc_health", `Slot spread: ${slotSpread} slots across ${healthy.length} endpoints — using endpoint ${best.index + 1} (slot ${best.slot}, ${best.latency_ms}ms)`);
+    }
+  }
+
+  if (best.index !== _rpcEndpointIndex || !_connection) {
+    switchRpcEndpoint(best.index, healthy.length === 1 ? "only healthy endpoint" : "quality scoring");
+  }
+
+  _rpcHealthCache = {
+    ok: true,
+    endpoint_index: best.index,
+    endpoint_count: endpoints.length,
+    slot: best.slot,
+    blockhash: best.blockhash?.blockhash || null,
+    latency_ms: best.latency_ms,
+    checked_at: Date.now(),
+    endpoint_scores: healthy.map(h => ({ index: h.index, slot: h.slot, latency_ms: h.latency_ms })),
+  };
+  _rpcHealthCacheAt = Date.now();
+  return _rpcHealthCache;
+}
+
+async function sendAndConfirmOnHealthyRpc(tx, signers, label) {
+  assertTransactionCircuitClosed(label);
+  const endpoints = getRpcEndpoints();
+  const startIndex = _rpcEndpointIndex < endpoints.length ? _rpcEndpointIndex : 0;
+  let lastError;
+
+  for (let offset = 0; offset < endpoints.length; offset++) {
+    const index = (startIndex + offset) % endpoints.length;
+    try {
+      switchRpcEndpoint(index, offset === 0 ? "tx preflight" : "tx preflight retry");
+      await assertRpcHealthy(`${label}:rpc${index + 1}`);
+      await waitForTxRateLimit(label);
+      return await sendAndConfirmTransaction(getConnection(), tx, signers);
+    } catch (error) {
+      lastError = error;
+      _rpcHealthCache = null;
+      _rpcHealthCacheAt = 0;
+      log("rpc_failover", `${label}: endpoint ${index + 1}/${endpoints.length} failed: ${error.message}`);
+      if (!/RPC unhealthy before/i.test(error.message)) break;
+      if (endpoints.length <= 1) break;
+    }
+  }
+
+  throw lastError;
+}
+
+async function assertRpcHealthy(label) {
+  if (process.env.DRY_RUN === "true") return;
+  const health = await checkRpcHealth({ label });
+  if (!health.ok) {
+    throw new Error(`RPC unhealthy before ${label}: ${health.error}`);
+  }
 }
 
 function getWallet() {
@@ -92,6 +387,7 @@ function getWallet() {
     }
     _wallet = Keypair.fromSecretKey(bs58.decode(process.env.WALLET_PRIVATE_KEY));
     log("init", `Wallet: ${_wallet.publicKey.toString()}`);
+    saveWalletAddress(_wallet.publicKey.toString());
   }
   return _wallet;
 }
@@ -398,7 +694,11 @@ async function getPool(poolAddress) {
   return poolCache.get(key);
 }
 
-setInterval(() => poolCache.clear(), 5 * 60 * 1000);
+// P1: Reduce poolCache TTL to 60s — 5 minutes was too long for close/claim/activeBin lookups.
+// Deploy already force-clears the cache per-pool before use, but close and activeBin queries
+// were still reading SDK objects up to 5 minutes stale.
+// poolMetadataCache (name/symbols only) is less time-sensitive; keep at 15 minutes.
+setInterval(() => poolCache.clear(), 60 * 1000);
 setInterval(() => poolMetadataCache.clear(), 15 * 60 * 1000);
 
 async function getPoolMetadata(poolAddress) {
@@ -408,12 +708,11 @@ async function getPoolMetadata(poolAddress) {
   }
 
   try {
-    const res = await fetch(`https://dlmm.datapi.meteora.ag/pools/${key}`);
-    if (!res.ok) {
-      throw new Error(`Pool metadata API ${res.status}`);
-    }
-
-    const data = await res.json();
+    const data = await fetchJsonWithRetry(`https://dlmm.datapi.meteora.ag/pools/${key}`, {
+      label: `pool metadata ${key.slice(0, 8)}`,
+      attempts: 3,
+      timeoutMs: 5_000,
+    });
     const tokenX = data?.token_x?.symbol || null;
     const tokenY = data?.token_y?.symbol || null;
     const pair = data?.name || (tokenX && tokenY ? `${tokenX}-${tokenY}` : null);
@@ -422,12 +721,15 @@ async function getPoolMetadata(poolAddress) {
       name: pair,
       token_x_symbol: tokenX,
       token_y_symbol: tokenY,
+      metadata_quality: "complete",
     };
     poolMetadataCache.set(key, meta);
     return meta;
   } catch (error) {
     log("pool_meta_warn", `Pool metadata lookup failed for ${key.slice(0, 8)}: ${error.message}`);
-    const fallback = { address: key, name: null, token_x_symbol: null, token_y_symbol: null };
+    // P3: metadata_quality flag — callers can detect silent API failure rather than
+    // assuming null name/symbols mean the pool has no metadata.
+    const fallback = { address: key, name: null, token_x_symbol: null, token_y_symbol: null, metadata_quality: "fallback" };
     poolMetadataCache.set(key, fallback);
     return fallback;
   }
@@ -483,6 +785,9 @@ export async function deployPosition({
   }
 
   const { StrategyType, getBinIdFromPrice, getPriceOfBinByBinId } = await getDLMM();
+  // P2: Always fetch fresh pool object for deploy — stale SDK state could hold
+  // outdated active-bin or price data from up to 5 minutes ago.
+  poolCache.delete(pool_address);
   const pool = await getPool(pool_address);
   const baseMint = pool.lbPair.tokenXMint.toString();
   if (isBaseMintOnCooldown(baseMint)) {
@@ -542,6 +847,22 @@ export async function deployPosition({
     throw new Error("Invalid deploy amount: provide a positive amount_y/amount_sol.");
   }
   const isSingleSidedSol = finalAmountX <= 0 && finalAmountY > 0;
+
+  // P0: Verify tokenY is SOL/wSOL before single-side SOL deploy.
+  // Hard-coding 1e9 is only safe when tokenY is confirmed to be SOL (decimals=9).
+  // Reject early if pool tokenY is something else (e.g. USDC=6 decimals would cause
+  // a 1000× nominal error).
+  if (isSingleSidedSol) {
+    const SOL_MINT = "So11111111111111111111111111111111111111112";
+    const tokenYMint = pool.lbPair.tokenYMint.toString();
+    if (tokenYMint !== SOL_MINT) {
+      throw new Error(
+        `Single-side SOL deploy requires tokenY to be SOL/wSOL. ` +
+        `Got tokenY=${tokenYMint}. Refusing deploy to avoid decimal mismatch.`
+      );
+    }
+  }
+
   if (isSingleSidedSol && (Number(bins_above ?? 0) > 0 || Number(upside_pct ?? 0) > 0)) {
     throw new Error(
       "Single-side SOL deploy cannot use bins_above or upside_pct. Use amount_y with bins_below only; the upper bin is the SDK active bin.",
@@ -569,24 +890,6 @@ export async function deployPosition({
     );
   }
 
-  if (process.env.DRY_RUN === "true") {
-    return {
-      dry_run: true,
-      would_deploy: {
-        pool_address,
-        strategy: activeStrategy,
-        bins_below: activeBinsBelow,
-        bins_above: activeBinsAbove,
-        downside_pct: downside_pct ?? null,
-        upside_pct: upside_pct ?? null,
-        amount_x: finalAmountX,
-        amount_y: finalAmountY,
-        wide_range: totalBins > 69,
-      },
-      message: "DRY RUN — no transaction sent",
-    };
-  }
-
   const isWideRange = totalBins > 69;
   const minBinId = activeBin.binId - activeBinsBelow;
   const maxBinId = isSingleSidedSol ? activeBin.binId : activeBin.binId + activeBinsAbove;
@@ -600,18 +903,97 @@ export async function deployPosition({
     );
   }
 
-  await assertRangeDoesNotRequireBinArrayInitialization(pool, minBinId, maxBinId);
-
   const minPrice = Number(getPriceOfBinByBinId(minBinId, actualBinStep).toString());
   const maxPrice = Number(getPriceOfBinByBinId(maxBinId, actualBinStep).toString());
   const downsideCoveragePct = activePrice > 0 ? ((activePrice - minPrice) / activePrice) * 100 : null;
   const upsideCoveragePct = activePrice > 0 ? ((maxPrice - activePrice) / activePrice) * 100 : null;
   const totalWidthPct = minPrice > 0 ? ((maxPrice - minPrice) / minPrice) * 100 : null;
-
-  // Read base fee directly from pool — baseFactor * binStep / 10^6 gives fee in %
   const baseFactor = pool.lbPair.parameters?.baseFactor ?? 0;
   const actualBaseFee = base_fee ?? (baseFactor > 0 ? parseFloat((baseFactor * actualBinStep / 1e6 * 100).toFixed(4)) : null);
+  if (process.env.DRY_RUN === "true") {
+    return {
+      dry_run: true,
+      pool: pool_address,
+      pool_name,
+      strategy: activeStrategy,
+      amount_x: finalAmountX,
+      amount_y: finalAmountY,
+      active_bin: activeBin.binId,
+      bin_range: {
+        min: minBinId,
+        max: maxBinId,
+        active: activeBin.binId,
+      },
+      price_range: { min: minPrice, max: maxPrice },
+      range_coverage: {
+        downside_pct: downsideCoveragePct,
+        upside_pct: upsideCoveragePct,
+        width_pct: totalWidthPct,
+        active_price: activePrice,
+      },
+      bin_step: actualBinStep,
+      base_fee: actualBaseFee,
+      simulated_ledger: {
+        event: "deploy",
+        wallet_delta_sol: -finalAmountY,
+        locked_in_pool_sol: finalAmountY,
+        note: "Dry-run simulation only; no on-chain balance changed.",
+      },
+      would_deploy: {
+        pool_address,
+        pool_name,
+        strategy: activeStrategy,
+        bins_below: activeBinsBelow,
+        bins_above: activeBinsAbove,
+        active_bin: activeBin.binId,
+        downside_pct: downside_pct ?? null,
+        upside_pct: upside_pct ?? null,
+        amount_x: finalAmountX,
+        amount_y: finalAmountY,
+        wide_range: isWideRange,
+      },
+      message: "DRY RUN — no transaction sent",
+    };
+  }
 
+  assertDeployCircuitClosed(pool_address);
+
+  // P1: Deploy pending lock — prevents duplicate deploy to same pool in concurrent calls.
+  // Phase 1: Acquire atomic O_CREAT|O_EXCL fs lock to eliminate TOCTOU race between processes.
+  // Phase 2: With fs lock held, reload from disk + check Map (serialized check-and-set).
+  // Phase 3: Release fs lock — Map+persistence guard the rest of the deploy duration.
+  const _deployFsLock = _acquireFsLock(`deploy:${pool_address}`);
+  if (!_deployFsLock.acquired) {
+    return {
+      success: false,
+      error: "Deploy already in progress for this pool — lock held by another process.",
+    };
+  }
+  _reloadPendingFromDisk();
+  if (_deployPending.has(pool_address)) {
+    _releaseFsLock(_deployFsLock);
+    return {
+      success: false,
+      error: "Deploy already in progress for this pool — wait for current deploy to complete.",
+    };
+  }
+  _deployPending.set(pool_address, Date.now());
+  _savePendingState();
+  _releaseFsLock(_deployFsLock);
+  try {
+
+  // P1: Deploy slippage configurable and capped at 500 bps (5%).
+  // Default 300 bps (3%) — enough for single-side SOL into an existing pool.
+  // 1000 bps (10%) was too loose; validate before clamp to catch NaN configs.
+  const _rawDeploySlippage = Number(config.management?.deploySlippageBps ?? 300);
+  if (!Number.isFinite(_rawDeploySlippage)) {
+    throw new Error("Invalid deploySlippageBps — must be a finite number.");
+  }
+  const deploySlippageBps = Math.min(Math.max(1, _rawDeploySlippage), 500);
+
+  await assertRangeDoesNotRequireBinArrayInitialization(pool, minBinId, maxBinId);
+
+  // Read base fee directly from pool — baseFactor * binStep / 10^6 gives fee in %
   const totalYLamports = new BN(Math.floor(finalAmountY * 1e9));
   // Token X amount uses mint decimals when available, falling back to 9.
   let totalXLamports = new BN(0);
@@ -723,6 +1105,7 @@ export async function deployPosition({
         },
       });
 
+      const _relayTxs = normalizeExecutionSignatures(submit);
       return {
         success: true,
         relay: true,
@@ -744,7 +1127,8 @@ export async function deployPosition({
         wide_range: isWideRange,
         amount_x: finalAmountX,
         amount_y: finalAmountY,
-        txs: normalizeExecutionSignatures(submit),
+        txs: _relayTxs,
+        ...syntheticFlag(_relayTxs),
       };
     } catch (error) {
       log("deploy_error", `Relay deploy failed: ${error.message}`);
@@ -780,7 +1164,10 @@ export async function deployPosition({
       const createTxArray = Array.isArray(createTxs) ? createTxs : [createTxs];
       for (let i = 0; i < createTxArray.length; i++) {
         const signers = i === 0 ? [wallet, newPosition] : [wallet];
-        const txHash = await sendAndConfirmTransaction(getConnection(), createTxArray[i], signers);
+        const txHash = await sendAndConfirmWithReconciliation(createTxArray[i], signers, {
+          label: `deploy:create:${pool_address.slice(0, 8)}:${i + 1}`,
+          verify: () => verifyAccountExists(newPosition.publicKey),
+        });
         txHashes.push(txHash);
         log("deploy", `Create tx ${i + 1}/${createTxArray.length}: ${txHash}`);
       }
@@ -792,11 +1179,14 @@ export async function deployPosition({
         totalXAmount: totalXLamports,
         totalYAmount: totalYLamports,
         strategy: { minBinId, maxBinId, strategyType },
-        slippage: 10, // 10%
+        slippage: deploySlippageBps,
       });
       const addTxArray = Array.isArray(addTxs) ? addTxs : [addTxs];
       for (let i = 0; i < addTxArray.length; i++) {
-        const txHash = await sendAndConfirmTransaction(getConnection(), addTxArray[i], [wallet]);
+        const txHash = await sendAndConfirmWithReconciliation(addTxArray[i], [wallet], {
+          label: `deploy:add-liquidity:${pool_address.slice(0, 8)}:${i + 1}`,
+          verify: () => verifyPositionHasLiquidity(newPosition.publicKey.toString(), pool_address),
+        });
         txHashes.push(txHash);
         log("deploy", `Add liquidity tx ${i + 1}/${addTxArray.length}: ${txHash}`);
       }
@@ -808,9 +1198,16 @@ export async function deployPosition({
         totalXAmount: totalXLamports,
         totalYAmount: totalYLamports,
         strategy: { maxBinId, minBinId, strategyType },
-        slippage: 1000, // 10% in bps
+        slippage: deploySlippageBps,
       });
-      const txHash = await sendAndConfirmTransaction(getConnection(), tx, [wallet, newPosition]);
+      const txHash = await sendAndConfirmWithReconciliation(tx, [wallet, newPosition], {
+        label: `deploy:init-add:${pool_address.slice(0, 8)}`,
+        verify: async () => (
+          await verifyAccountExists(newPosition.publicKey)
+          && await verifyPositionOpen(newPosition.publicKey.toString(), { poolAddress: pool_address, minBinId, maxBinId })
+          && await verifyPositionHasLiquidity(newPosition.publicKey.toString(), pool_address)
+        ),
+      });
       txHashes.push(txHash);
     }
 
@@ -876,23 +1273,344 @@ export async function deployPosition({
       amount_x: finalAmountX,
       amount_y: finalAmountY,
       txs: txHashes,
+      ...syntheticFlag(txHashes),
     };
   } catch (error) {
     log("deploy_error", error.message);
     return { success: false, error: error.message };
   }
+
+  } finally {
+    _deployPending.delete(pool_address);
+    _savePendingState();
+  }
 }
 
-const POSITIONS_CACHE_TTL = 5 * 60_000; // 5 minutes
+// P1: 1-minute cache — 5 minutes was too stale for volatile DLMM pools.
+// Active bin can shift significantly in 5 min; manager could think it's in-range when OOR.
+const POSITIONS_CACHE_TTL = 60_000; // 1 minute
+// P1: Near-edge positions get a shorter TTL — active bin within 2 bins of range boundary
+// means an OOR event could happen within seconds; stale data would miss it.
+const POSITIONS_NEAR_EDGE_CACHE_TTL = 15_000; // 15 seconds
 
 let _positionsCache = null;
 let _positionsCacheAt = 0;
 let _positionsInflight = null; // deduplicates concurrent calls
+
+// P1: Pending operation guards — prevent race-condition double-deploy/double-close.
+// Stored as Map<address, timestamp> and persisted to pending_operations.json so the guard
+// survives PM2 restart, VPS reboot, or Node crash. Entries auto-expire after 30 minutes
+// (covers the longest realistic transaction confirmation window on Solana).
+// P1: Anchor pending state to process.cwd() (project root) rather than relative to this file.
+// If dlmm.js is ever moved to a subdirectory the path stays correct.
+// Override via DLMM_PENDING_STATE_FILE env var for non-standard setups.
+const PENDING_STATE_FILE =
+  process.env.DLMM_PENDING_STATE_FILE ||
+  path.resolve(process.cwd(), "pending_operations.json");
+const PENDING_TTL_MS = 30 * 60 * 1000; // 30 minutes
+
+const _deployPending = new Map(); // pool_address → started_at timestamp
+const _closePending  = new Map(); // position_address → started_at timestamp
+const _claimPending  = new Map(); // position_address → started_at timestamp
+
+function _pendingStateChecksum(state) {
+  return crypto
+    .createHash("sha256")
+    .update(JSON.stringify(state))
+    .digest("hex");
+}
+
+function _isPlainObject(value) {
+  return value != null && typeof value === "object" && !Array.isArray(value);
+}
+
+function _quarantinePendingState(reason) {
+  const quarantinePath = `${PENDING_STATE_FILE}.corrupt.${Date.now()}`;
+  try {
+    fs.renameSync(PENDING_STATE_FILE, quarantinePath);
+    log("pending_state_warn", `Quarantined pending state (${reason}) to ${path.basename(quarantinePath)}`);
+  } catch (error) {
+    log("pending_state_warn", `Failed to quarantine pending state after ${reason}: ${error.message}`);
+  }
+}
+
+// Check whether a PID is still alive using signal 0 (no actual signal sent).
+// Returns true when pid is unknown/unverifiable — never blocks on doubt.
+function _isPidAlive(pid) {
+  if (!pid || typeof pid !== "number") return true;
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (e) {
+    return e.code !== "ESRCH"; // ESRCH = no such process; other errors = process exists
+  }
+}
+
+// ─── OS-level atomic file lock (O_CREAT|O_EXCL) ──────────────────
+// Uses a per-key .oplock file alongside pending_operations.json.
+// fs.writeFileSync with flag:'wx' maps to open(O_CREAT|O_EXCL|O_WRONLY) which is a
+// single atomic syscall on Linux ext4/NTFS — only one process wins the race.
+// Returns { acquired: true, file: path } on success, { acquired: false } on contention.
+function _acquireFsLock(key) {
+  const lockFile = `${PENDING_STATE_FILE}.${key.slice(0, 12).replace(/[^a-zA-Z0-9]/g, "_")}.oplock`;
+  const content  = JSON.stringify({ pid: process.pid, key, ts: Date.now() });
+  try {
+    fs.writeFileSync(lockFile, content, { flag: "wx" }); // atomic O_CREAT|O_EXCL
+    return { acquired: true, file: lockFile };
+  } catch (e) {
+    if (e.code !== "EEXIST") return { acquired: true }; // unexpected error — don't block
+    // Lock file exists; check whether owner is still alive
+    try {
+      const existing = JSON.parse(fs.readFileSync(lockFile, "utf8"));
+      if (!_isPidAlive(existing.pid)) {
+        // Owner is dead — steal the stale lock (unlink is also atomic at dir level)
+        fs.unlinkSync(lockFile);
+        log("pending_state", `Stole stale oplock for ${key.slice(0, 8)} from dead PID ${existing.pid}`);
+        return _acquireFsLock(key); // single retry after steal
+      }
+    } catch { /* can't read lock file — don't block */ return { acquired: true }; }
+    return { acquired: false }; // live owner holds the lock
+  }
+}
+
+function _releaseFsLock(lockResult) {
+  if (lockResult?.file) try { fs.unlinkSync(lockResult.file); } catch { /* silent */ }
+}
+
+function _savePendingState() {
+  try {
+    // Embed pid alongside ts so other processes can detect stale locks from dead workers.
+    const pid = process.pid;
+    const toEntry = (ts) => ({ ts, pid });
+    const state = {
+      deploy:  Object.fromEntries([..._deployPending].map(([k, ts]) => [k, toEntry(ts)])),
+      close:   Object.fromEntries([..._closePending].map(([k, ts])  => [k, toEntry(ts)])),
+      claim:   Object.fromEntries([..._claimPending].map(([k, ts])  => [k, toEntry(ts)])),
+      updated: Date.now(),
+    };
+    const envelope = {
+      version: 1,
+      checksum: _pendingStateChecksum(state),
+      state,
+    };
+    // P1: Atomic write — write to .tmp then rename so a mid-write crash
+    // (VPS reboot, OOM kill) cannot corrupt the live pending_operations.json.
+    // rename() is atomic on NTFS and ext4.
+    const tmp = PENDING_STATE_FILE + ".tmp";
+    fs.writeFileSync(tmp, JSON.stringify(envelope, null, 2), "utf8");
+    fs.renameSync(tmp, PENDING_STATE_FILE);
+  } catch (e) {
+    log("pending_state_warn", `Failed to save pending state: ${e.message}`);
+  }
+}
+
+function _loadPendingState() {
+  try {
+    if (!fs.existsSync(PENDING_STATE_FILE)) return;
+    const raw = JSON.parse(fs.readFileSync(PENDING_STATE_FILE, "utf8"));
+    let state = raw;
+    if (raw?.version === 1 || raw?.checksum || raw?.state) {
+      if (!_isPlainObject(raw.state) || typeof raw.checksum !== "string") {
+        _quarantinePendingState("invalid envelope");
+        return;
+      }
+      const expected = _pendingStateChecksum(raw.state);
+      if (expected !== raw.checksum) {
+        _quarantinePendingState("checksum mismatch");
+        return;
+      }
+      state = raw.state;
+    } else {
+      log("pending_state_warn", "Loaded legacy pending state without checksum; it will be rewritten with checksum on next save.");
+    }
+
+    if (!_isPlainObject(state.deploy) || !_isPlainObject(state.close) ||
+        (state.claim != null && !_isPlainObject(state.claim))) {
+      _quarantinePendingState("invalid schema");
+      return;
+    }
+
+    const now = Date.now();
+    let loaded = 0, skippedDead = 0;
+    // Support both old format (plain number ts) and new format ({ts, pid}).
+    const parseEntry = (entry) => {
+      if (typeof entry === "number") return { ts: entry, pid: null };
+      if (_isPlainObject(entry))     return { ts: Number(entry.ts ?? 0), pid: entry.pid ?? null };
+      return { ts: 0, pid: null };
+    };
+    for (const [pool, raw] of Object.entries(state.deploy || {})) {
+      const { ts, pid } = parseEntry(raw);
+      if (now - ts >= PENDING_TTL_MS) continue;
+      if (pid && !_isPidAlive(pid)) { skippedDead++; continue; }
+      _deployPending.set(pool, ts); loaded++;
+    }
+    for (const [pos, raw] of Object.entries(state.close || {})) {
+      const { ts, pid } = parseEntry(raw);
+      if (now - ts >= PENDING_TTL_MS) continue;
+      if (pid && !_isPidAlive(pid)) { skippedDead++; continue; }
+      _closePending.set(pos, ts); loaded++;
+    }
+    for (const [pos, raw] of Object.entries(state.claim || {})) {
+      const { ts, pid } = parseEntry(raw);
+      if (now - ts >= PENDING_TTL_MS) continue;
+      if (pid && !_isPidAlive(pid)) { skippedDead++; continue; }
+      _claimPending.set(pos, ts); loaded++;
+    }
+    if (loaded > 0)      log("pending_state", `Loaded ${loaded} pending op(s) — will block re-deploy/re-close/re-claim for up to 30 min.`);
+    if (skippedDead > 0) log("pending_state", `Released ${skippedDead} stale lock(s) from dead process(es).`);
+  } catch (e) {
+    log("pending_state_warn", `Failed to load pending state: ${e.message}`);
+  }
+}
+log("pending_state", `Using pending state file: ${PENDING_STATE_FILE}`);
+_loadPendingState();
+
+// Re-read pending state from disk to pick up locks set by other processes (e.g. PM2 cluster).
+// Clears and re-populates all Maps. Reduces (but cannot eliminate) multi-process TOCTOU window.
+function _reloadPendingFromDisk() {
+  try {
+    if (!fs.existsSync(PENDING_STATE_FILE)) return;
+    const raw = JSON.parse(fs.readFileSync(PENDING_STATE_FILE, "utf8"));
+    let state = raw;
+    if (raw?.version === 1 || raw?.checksum || raw?.state) {
+      if (!_isPlainObject(raw.state) || typeof raw.checksum !== "string") return;
+      if (_pendingStateChecksum(raw.state) !== raw.checksum) return;
+      state = raw.state;
+    }
+    if (!_isPlainObject(state.deploy) || !_isPlainObject(state.close)) return;
+    const now = Date.now();
+    _deployPending.clear();
+    _closePending.clear();
+    _claimPending.clear();
+    const parseEntry = (entry) => {
+      if (typeof entry === "number") return { ts: entry, pid: null };
+      if (_isPlainObject(entry))     return { ts: Number(entry.ts ?? 0), pid: entry.pid ?? null };
+      return { ts: 0, pid: null };
+    };
+    for (const [k, raw] of Object.entries(state.deploy || {})) {
+      const { ts, pid } = parseEntry(raw);
+      if (now - ts < PENDING_TTL_MS && _isPidAlive(pid)) _deployPending.set(k, ts);
+    }
+    for (const [k, raw] of Object.entries(state.close || {})) {
+      const { ts, pid } = parseEntry(raw);
+      if (now - ts < PENDING_TTL_MS && _isPidAlive(pid)) _closePending.set(k, ts);
+    }
+    for (const [k, raw] of Object.entries(state.claim || {})) {
+      const { ts, pid } = parseEntry(raw);
+      if (now - ts < PENDING_TTL_MS && _isPidAlive(pid)) _claimPending.set(k, ts);
+    }
+  } catch { /* silent — never block operations */ }
+}
+
+async function verifyAccountExists(account) {
+  try {
+    const pubkey = account instanceof PublicKey ? account : new PublicKey(account);
+    const info = await getConnection().getAccountInfo(pubkey, TX_VERIFY_COMMITMENT);
+    return !!info;
+  } catch (error) {
+    log("tx_reconcile_warn", `Account verification failed: ${error.message}`);
+    return false;
+  }
+}
+
+async function verifyPositionOpen(positionAddress, {
+  poolAddress = null,
+  minBinId = null,
+  maxBinId = null,
+} = {}) {
+  try {
+    _positionsCacheAt = 0;
+    const refreshed = await getMyPositions({ force: true, silent: true });
+    const matching = refreshed?.positions?.find((position) => {
+      if (position.position !== positionAddress) return false;
+      if (poolAddress && position.pool !== poolAddress) return false;
+      if (minBinId != null && position.lower_bin != null && position.lower_bin !== minBinId) return false;
+      if (maxBinId != null && position.upper_bin != null && position.upper_bin !== maxBinId) return false;
+      return true;
+    });
+    return !!matching;
+  } catch (error) {
+    log("tx_reconcile_warn", `Open-position verification failed for ${positionAddress.slice(0, 8)}: ${error.message}`);
+    return false;
+  }
+}
+
+// P1: Retry up to 3 times with 2s delay — RPC indexing lag or account propagation delay
+// can cause false-negatives right after a deploy tx confirms on-chain.
+async function verifyPositionHasLiquidity(positionAddress, poolAddress) {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      poolCache.delete(String(poolAddress));
+      const pool = await getPool(poolAddress);
+      const positionData = await pool.getPosition(new PublicKey(positionAddress));
+      const bins = positionData?.positionData?.positionBinData || [];
+      if (bins.some((bin) => new BN(bin.positionLiquidity || "0").gt(new BN(0)))) {
+        return true;
+      }
+      if (attempt < 2) {
+        log("tx_reconcile_warn", `Liquidity not visible yet for ${positionAddress.slice(0, 8)} (attempt ${attempt + 1}/3) — RPC may still be indexing`);
+        await sleep(2000);
+      }
+    } catch (error) {
+      log("tx_reconcile_warn", `Liquidity verification failed for ${positionAddress.slice(0, 8)} (attempt ${attempt + 1}/3): ${error.message}`);
+      if (attempt < 2) await sleep(2000);
+    }
+  }
+  return false;
+}
+
+async function verifyPositionClosed(positionAddress) {
+  try {
+    _positionsCacheAt = 0;
+    const refreshed = await getMyPositions({ force: true, silent: true });
+    return !refreshed?.positions?.some((position) => position.position === positionAddress);
+  } catch (error) {
+    log("tx_reconcile_warn", `Close verification failed for ${positionAddress.slice(0, 8)}: ${error.message}`);
+    return false;
+  }
+}
+
+async function sendAndConfirmWithReconciliation(tx, signers, {
+  label,
+  verify = null,
+  reconcileDelayMs = TX_RECONCILE_DELAY_MS,
+} = {}) {
+  const txLabel = label || "transaction";
+  try {
+    return await sendAndConfirmOnHealthyRpc(tx, signers, txLabel);
+  } catch (error) {
+    log("tx_ambiguous", `${txLabel} send/confirm failed: ${error.message}. Verifying chain state before treating as failed.`);
+    if (typeof verify === "function") {
+      await sleep(reconcileDelayMs);
+      const reconciled = await verify();
+      if (reconciled) {
+        const syntheticSignature = `reconciled:${txLabel}:${Date.now()}`;
+        log("tx_reconciled", `${txLabel} appears applied on-chain after confirm failure.`);
+        return syntheticSignature;
+      }
+    }
+    throw error;
+  }
+}
+
+// P1: Synthetic reconciliation IDs are not real Solana signatures.
+// Use this guard before displaying tx hashes as explorer links or passing to RPC.
+export function isSyntheticTxId(sig) {
+  return typeof sig === "string" && sig.startsWith("reconciled:");
+}
+
+// Returns {has_synthetic_txs: true} if any tx across the given arrays is synthetic.
+// Spread into result objects so callers can detect and skip explorer links.
+function syntheticFlag(...arrays) {
+  return arrays.some(arr => arr?.some?.(isSyntheticTxId)) ? { has_synthetic_txs: true } : {};
+}
+
 const LPAGENT_API = "https://api.lpagent.io/open-api/v1";
 
 async function fetchLpAgentOpenPositions(walletAddress) {
   if (!process.env.LPAGENT_API_KEY) return {};
 
+  _apiCircuitCheck("lpagent");
   const url = `${LPAGENT_API}/lp-positions/opening?owner=${walletAddress}`;
   try {
     const res = await fetch(url, {
@@ -903,6 +1621,7 @@ async function fetchLpAgentOpenPositions(walletAddress) {
     if (!res.ok) {
       const body = await res.text().catch(() => "");
       log("lpagent_api", `HTTP ${res.status} for owner ${walletAddress.slice(0, 8)}: ${body.slice(0, 160)}`);
+      _apiCircuitFailure("lpagent");
       return {};
     }
     const data = await res.json();
@@ -912,21 +1631,25 @@ async function fetchLpAgentOpenPositions(walletAddress) {
       const addr = p.position || p.id || p.tokenId;
       if (addr) byAddress[addr] = p;
     }
+    _apiCircuitSuccess("lpagent");
     return byAddress;
   } catch (e) {
     log("lpagent_api", `Fetch error for owner ${walletAddress.slice(0, 8)}: ${e.message}`);
+    _apiCircuitFailure("lpagent");
     return {};
   }
 }
 
 // ─── Fetch DLMM PnL API for all positions in a pool ────────────
 async function fetchDlmmPnlForPool(poolAddress, walletAddress) {
+  _apiCircuitCheck("meteora_pnl");
   const url = `https://dlmm.datapi.meteora.ag/positions/${poolAddress}/pnl?user=${walletAddress}&status=open&pageSize=100&page=1`;
   try {
     const res = await fetch(url);
     if (!res.ok) {
       const body = await res.text().catch(() => "");
       log("pnl_api", `HTTP ${res.status} for pool ${poolAddress.slice(0, 8)}: ${body.slice(0, 120)}`);
+      _apiCircuitFailure("meteora_pnl");
       return {};
     }
     const data = await res.json();
@@ -939,9 +1662,11 @@ async function fetchDlmmPnlForPool(poolAddress, walletAddress) {
       const addr = p.positionAddress || p.address || p.position;
       if (addr) byAddress[addr] = p;
     }
+    _apiCircuitSuccess("meteora_pnl");
     return byAddress;
   } catch (e) {
     log("pnl_api", `Fetch error for pool ${poolAddress.slice(0, 8)}: ${e.message}`);
+    _apiCircuitFailure("meteora_pnl");
     return {};
   }
 }
@@ -953,22 +1678,32 @@ export async function getPositionPnl({ pool_address, position_address }) {
   const walletAddress = getWallet().publicKey.toString();
   if (shouldUseLpAgentRelay()) {
     try {
-      const payload = await getMyPositions({ force: true, silent: true });
+      const payload = await fetchOpenPositionsFromMeridian({
+        walletAddress,
+        agentId: getAgentIdForRequests(),
+      });
       const p = payload?.positions?.find((position) => position.position === position_address);
       if (p) {
+        // P2: Pass through quality fields already computed by getMyPositions relay path.
         return {
-          pnl_usd: p.pnl_usd,
-          pnl_pct: p.pnl_pct,
-          current_value_usd: p.total_value_usd,
-          unclaimed_fee_usd: p.unclaimed_fees_usd,
-          all_time_fees_usd: p.collected_fees_usd,
-          fee_per_tvl_24h: p.fee_per_tvl_24h,
-          in_range: p.in_range,
-          lower_bin: p.lower_bin,
-          upper_bin: p.upper_bin,
-          active_bin: p.active_bin,
-          age_minutes: p.age_minutes,
-          request_id: payload?.request_id || null,
+          pnl_usd:             p.pnl_usd,
+          pnl_pct:             p.pnl_pct,
+          pnl_pct_derived:     p.pnl_pct_derived ?? null,
+          pnl_pct_diff:        p.pnl_pct_diff ?? null,
+          pnl_pct_suspicious:  p.pnl_pct_suspicious ?? false,
+          current_value_usd:   p.total_value_usd,
+          unclaimed_fee_usd:   p.unclaimed_fees_usd,
+          all_time_fees_usd:   p.collected_fees_usd,
+          fee_per_tvl_24h:     p.fee_per_tvl_24h,
+          in_range:            p.in_range,
+          lower_bin:           p.lower_bin,
+          upper_bin:           p.upper_bin,
+          active_bin:          p.active_bin,
+          age_minutes:         p.age_minutes,
+          data_quality:        p.data_quality ?? "complete",
+          pnl_source:          "relay_api",
+          pnl_confidence:      p.data_quality === "portfolio_only" ? "low" : "high",
+          request_id:          payload?.requestId || null,
         };
       }
       log("pnl_warn", "Relay positions API did not include requested position; falling back to Meteora PnL path");
@@ -983,18 +1718,34 @@ export async function getPositionPnl({ pool_address, position_address }) {
 
     const unclaimedUsd    = parseFloat(p.unrealizedPnl?.unclaimedFeeTokenX?.usd || 0) + parseFloat(p.unrealizedPnl?.unclaimedFeeTokenY?.usd || 0);
     const currentValueUsd = parseFloat(p.unrealizedPnl?.balances || 0);
+
+    // P2: Align PnL integrity fields with getMyPositions output.
+    const _rawPnlPct = parseFloat(p.pnlPctChange ?? 0);
+    const pnlPct = Number.isFinite(_rawPnlPct) ? _rawPnlPct : null;
+    const derivedPnlPct = Number.isFinite(parseFloat(p.pnlUsd)) && currentValueUsd > 0
+      ? parseFloat(p.pnlUsd) / currentValueUsd * 100
+      : null;
+    const pnlDiff = pnlPct != null && derivedPnlPct != null ? Math.abs(pnlPct - derivedPnlPct) : null;
+    const hasFullData = p.lowerBinId != null && p.upperBinId != null;
+
     return {
-      pnl_usd:           Math.round((p.pnlUsd ?? 0) * 100) / 100,
-      pnl_pct:           Math.round((p.pnlPctChange ?? 0) * 100) / 100,
-      current_value_usd: Math.round(currentValueUsd * 100) / 100,
-      unclaimed_fee_usd: Math.round(unclaimedUsd * 100) / 100,
-      all_time_fees_usd: Math.round(parseFloat(p.allTimeFees?.total?.usd || 0) * 100) / 100,
-      fee_per_tvl_24h:   Math.round(parseFloat(p.feePerTvl24h || 0) * 100) / 100,
-      in_range:    !p.isOutOfRange,
-      lower_bin:   p.lowerBinId      ?? null,
-      upper_bin:   p.upperBinId      ?? null,
-      active_bin:  p.poolActiveBinId ?? null,
-      age_minutes: p.createdAt ? Math.floor((Date.now() - p.createdAt * 1000) / 60000) : null,
+      pnl_usd:             Math.round((p.pnlUsd ?? 0) * 100) / 100,
+      pnl_pct:             pnlPct != null ? Math.round(pnlPct * 100) / 100 : null,
+      pnl_pct_derived:     derivedPnlPct != null ? Math.round(derivedPnlPct * 100) / 100 : null,
+      pnl_pct_diff:        pnlDiff != null ? Math.round(pnlDiff * 100) / 100 : null,
+      pnl_pct_suspicious:  pnlDiff != null && pnlDiff > (config.management.pnlSanityMaxDiffPct ?? 5),
+      current_value_usd:   Math.round(currentValueUsd * 100) / 100,
+      unclaimed_fee_usd:   Math.round(unclaimedUsd * 100) / 100,
+      all_time_fees_usd:   Math.round(parseFloat(p.allTimeFees?.total?.usd || 0) * 100) / 100,
+      fee_per_tvl_24h:     Math.round(parseFloat(p.feePerTvl24h || 0) * 100) / 100,
+      in_range:            !p.isOutOfRange,
+      lower_bin:           p.lowerBinId      ?? null,
+      upper_bin:           p.upperBinId      ?? null,
+      active_bin:          p.poolActiveBinId ?? null,
+      age_minutes:         p.createdAt ? Math.floor((Date.now() - p.createdAt * 1000) / 60000) : null,
+      data_quality:        hasFullData ? "complete" : "portfolio_only",
+      pnl_source:          "meteora_api",
+      pnl_confidence:      hasFullData ? "high" : "low",
     };
   } catch (error) {
     log("pnl_error", error.message);
@@ -1005,6 +1756,26 @@ export async function getPositionPnl({ pool_address, position_address }) {
 function safeNum(value) {
   const n = parseFloat(value ?? 0);
   return Number.isFinite(n) ? n : 0;
+}
+
+function normalizeRelayPosition(position) {
+  if (!position || typeof position !== "object") return position;
+  if (!config.management.solMode) return position;
+
+  const totalValueNative = position.total_value_native ?? position.total_value_usd;
+  const unclaimedFeesNative = position.unclaimed_fees_native ?? position.unclaimed_fees_usd;
+  const collectedFeesNative = position.collected_fees_native ?? position.collected_fees_usd;
+  const pnlNative = position.pnl_native ?? position.pnl_usd;
+  const derivedPnlPct = position.pnl_pct_derived_native ?? position.pnl_pct_derived;
+
+  return {
+    ...position,
+    total_value_usd: totalValueNative,
+    unclaimed_fees_usd: unclaimedFeesNative,
+    collected_fees_usd: collectedFeesNative,
+    pnl_usd: pnlNative,
+    pnl_pct_derived: derivedPnlPct,
+  };
 }
 
 function deriveOpenPnlPct(binData, solMode = false) {
@@ -1043,35 +1814,46 @@ function deriveLpAgentPnlPct(lpData, solMode = false) {
   return (pnl / deposit) * 100;
 }
 
-async function fetchRawOpenPositionsFromMeridian({ walletAddress, agentId }) {
+async function fetchOpenPositionsFromMeridian({ walletAddress, agentId }) {
+  _apiCircuitCheck("meridian_relay");
   const search = new URLSearchParams({
     owner: walletAddress,
     agentId: agentId || "agent-local",
   });
-  const payload = await agentMeridianJson(`/positions/open/raw?${search.toString()}`, {
-    headers: getAgentMeridianHeaders(),
-    retry: {
-      maxElapsedMs: 30_000,
-      perAttemptTimeoutMs: 10_000,
-    },
-  });
-  const rows = Array.isArray(payload?.data) ? payload.data : [];
-  const byPosition = {};
-  for (const row of rows) {
-    const addr = row?.position || row?.id || row?.tokenId;
-    if (addr) byPosition[addr] = row;
+  try {
+    const payload = await agentMeridianJson(`/positions/open?${search.toString()}`, {
+      headers: getAgentMeridianHeaders(),
+      retry: {
+        maxElapsedMs: 30_000,
+        perAttemptTimeoutMs: 10_000,
+      },
+    });
+    _apiCircuitSuccess("meridian_relay");
+    return {
+      ...payload,
+      positions: Array.isArray(payload?.positions)
+        ? payload.positions.map((position) => normalizeRelayPosition(position))
+        : [],
+    };
+  } catch (e) {
+    _apiCircuitFailure("meridian_relay");
+    throw e;
   }
-  return {
-    ...payload,
-    data: rows,
-    byPosition,
-  };
 }
 
 // ─── Get My Positions ──────────────────────────────────────────
 export async function getMyPositions({ force = false, silent = false } = {}) {
-  if (!force && _positionsCache && Date.now() - _positionsCacheAt < POSITIONS_CACHE_TTL) {
-    return _positionsCache;
+  if (!force && _positionsCache) {
+    const age = Date.now() - _positionsCacheAt;
+    const hasNearEdge = _positionsCache.positions?.some(p =>
+      p.lower_bin != null && p.upper_bin != null && p.active_bin != null &&
+      (p.active_bin <= p.lower_bin + 2 || p.active_bin >= p.upper_bin - 2)
+    );
+    // P2: portfolio_only positions have no bin data — we can't tell if they're near edge.
+    // Use short TTL to avoid staying stale when the real state is unknown.
+    const hasWeakData = _positionsCache.positions?.some(p => p.data_quality !== "complete");
+    const ttl = (hasNearEdge || hasWeakData) ? POSITIONS_NEAR_EDGE_CACHE_TTL : POSITIONS_CACHE_TTL;
+    if (age < ttl) return _positionsCache;
   }
   if (_positionsInflight) return _positionsInflight;
 
@@ -1083,28 +1865,45 @@ export async function getMyPositions({ force = false, silent = false } = {}) {
   }
 
   _positionsInflight = (async () => { try {
-    let relayLpAgentByPosition = null;
-    let relayRequestId = null;
     if (shouldUseLpAgentRelay()) {
       try {
-        if (!silent) log("positions", "Fetching raw LPAgent open positions via Agent Meridian relay...");
-        const result = await fetchRawOpenPositionsFromMeridian({
+        if (!silent) log("positions", "Fetching open positions via Agent Meridian relay...");
+        const result = await fetchOpenPositionsFromMeridian({
           walletAddress,
           agentId: getAgentIdForRequests(),
         });
-        relayLpAgentByPosition = result.byPosition || {};
-        relayRequestId = result.requestId || result.request_id || null;
+        const normalizedPositions = Array.isArray(result.positions) ? result.positions : [];
+        syncOpenPositions(normalizedPositions.map((p) => p.position));
+        _positionsCache = {
+          wallet: walletAddress,
+          total_positions: Number(result.total_positions || 0),
+          positions: normalizedPositions,
+          request_id: result.requestId || null,
+        };
+        _positionsCacheAt = Date.now();
+        return _positionsCache;
       } catch (error) {
-        log("positions_warn", `Agent Meridian raw relay failed; falling back to direct LPAgent fetch: ${error.message}`);
+        log("positions_warn", `Agent Meridian relay failed; falling back to Meteora/local positions path: ${error.message}`);
       }
     }
 
     // Portfolio API discovers open pools/positions for this wallet.
     // Detailed range data stays on Meteora PnL API; value/PnL can be overridden by LPAgent below.
     if (!silent) log("positions", "Fetching portfolio via Meteora portfolio API...");
+    _apiCircuitCheck("meteora_portfolio");
     const portfolioUrl = `https://dlmm.datapi.meteora.ag/portfolio/open?user=${walletAddress}`;
-    const res = await fetch(portfolioUrl);
-    if (!res.ok) throw new Error(`Portfolio API ${res.status}: ${await res.text().catch(() => "")}`);
+    let res;
+    try {
+      res = await fetch(portfolioUrl);
+    } catch (e) {
+      _apiCircuitFailure("meteora_portfolio");
+      throw e;
+    }
+    if (!res.ok) {
+      _apiCircuitFailure("meteora_portfolio");
+      throw new Error(`Portfolio API ${res.status}: ${await res.text().catch(() => "")}`);
+    }
+    _apiCircuitSuccess("meteora_portfolio");
     const portfolio = await res.json();
 
     const pools = portfolio.pools || [];
@@ -1115,7 +1914,7 @@ export async function getMyPositions({ force = false, silent = false } = {}) {
     const binDataByPool = {};
     const pnlMaps = await Promise.all(pools.map(pool => fetchDlmmPnlForPool(pool.poolAddress, walletAddress)));
     pools.forEach((pool, i) => { binDataByPool[pool.poolAddress] = pnlMaps[i]; });
-    const lpAgentByPosition = relayLpAgentByPosition || await fetchLpAgentOpenPositions(walletAddress);
+    const lpAgentByPosition = await fetchLpAgentOpenPositions(walletAddress);
 
     const positions = [];
     for (const pool of pools) {
@@ -1139,16 +1938,21 @@ export async function getMyPositions({ force = false, silent = false } = {}) {
         const ageFromState = tracked?.deployed_at
           ? Math.floor((Date.now() - new Date(tracked.deployed_at).getTime()) / 60000)
           : null;
-        const reportedPnlPct = lpData
-          ? parseFloat(config.management.solMode ? (lpData.pnl?.percentNative || 0) : (lpData.pnl?.percent || 0))
+        // P2: Use null (not 0) when API doesn't send percent — prevents hiding real loss/gain
+        // as zero and corrupting PnL sanity check (pnlPctDiff would always be 0 vs derived).
+        const _rawReportedPct = lpData
+          ? (config.management.solMode ? lpData.pnl?.percentNative : lpData.pnl?.percent)
           : binData
-            ? parseFloat(config.management.solMode ? (binData.pnlSolPctChange || 0) : (binData.pnlPctChange || 0))
+            ? (config.management.solMode ? binData.pnlSolPctChange : binData.pnlPctChange)
             : null;
-        const derivedPnlPct = lpData
+        const _parsedReportedPnlPct = _rawReportedPct == null ? null : parseFloat(_rawReportedPct);
+        const reportedPnlPct = Number.isFinite(_parsedReportedPnlPct) ? _parsedReportedPnlPct : null;
+        const _rawDerivedPnlPct = lpData
           ? deriveLpAgentPnlPct(lpData, config.management.solMode)
           : binData
             ? deriveOpenPnlPct(binData, config.management.solMode)
             : null;
+        const derivedPnlPct = Number.isFinite(_rawDerivedPnlPct) ? _rawDerivedPnlPct : null;
         const pnlPctDiff = reportedPnlPct != null && derivedPnlPct != null
           ? Math.abs(reportedPnlPct - derivedPnlPct)
           : null;
@@ -1226,7 +2030,7 @@ export async function getMyPositions({ force = false, silent = false } = {}) {
             : binData
             ? Math.round(parseFloat(binData.pnlUsd || 0) * 10000) / 10000
             : null,
-          pnl_pct:            (lpData || binData)
+          pnl_pct:            reportedPnlPct != null
             ? Math.round(reportedPnlPct * 100) / 100
             : null,
           pnl_pct_derived:    derivedPnlPct != null ? Math.round(derivedPnlPct * 100) / 100 : null,
@@ -1243,16 +2047,14 @@ export async function getMyPositions({ force = false, silent = false } = {}) {
           age_minutes:        binData?.createdAt ? Math.floor((Date.now() - binData.createdAt * 1000) / 60000) : ageFromState,
           minutes_out_of_range: minutesOutOfRange(positionAddress),
           instruction:        tracked?.instruction ?? null,
+          // P2: data_quality flag — manager should avoid automated close/hold decisions
+          // when only portfolio data is available (missing lower_bin, upper_bin, pnl_pct).
+          data_quality:       binData ? "complete" : "portfolio_only",
         });
       }
     }
 
-    const result = {
-      wallet: walletAddress,
-      total_positions: positions.length,
-      positions,
-      request_id: relayRequestId,
-    };
+    const result = { wallet: walletAddress, total_positions: positions.length, positions, data_fetched_at: new Date().toISOString() };
     syncOpenPositions(positions.map(p => p.position));
     _positionsCache = result;
     _positionsCacheAt = Date.now();
@@ -1351,6 +2153,21 @@ export async function claimFees({ position_address }) {
     return { success: false, error: "Position already closed — fees were claimed during close" };
   }
 
+  // P1: Claim pending lock — prevents duplicate claim attempt on same position.
+  // Atomic fs lock + Map check-and-set (same TOCTOU-safe pattern as deployPosition).
+  const _claimFsLock = _acquireFsLock(`claim:${position_address}`);
+  if (!_claimFsLock.acquired) {
+    return { success: false, error: "Claim already in progress for this position — lock held by another process." };
+  }
+  _reloadPendingFromDisk();
+  if (_claimPending.has(position_address) || _closePending.has(position_address)) {
+    _releaseFsLock(_claimFsLock);
+    return { success: false, error: "Claim/close already in progress for this position — wait for current operation to complete." };
+  }
+  _claimPending.set(position_address, Date.now());
+  _savePendingState();
+  _releaseFsLock(_claimFsLock);
+
   try {
     log("claim", `Claiming fees for position: ${position_address}`);
     const wallet = getWallet();
@@ -1370,18 +2187,23 @@ export async function claimFees({ position_address }) {
     }
 
     const txHashes = [];
-    for (const tx of txs) {
-      const txHash = await sendAndConfirmTransaction(getConnection(), tx, [wallet]);
+    for (const [index, tx] of txs.entries()) {
+      const txHash = await sendAndConfirmWithReconciliation(tx, [wallet], {
+        label: `claim:${position_address.slice(0, 8)}:${index + 1}`,
+      });
       txHashes.push(txHash);
     }
     log("claim", `SUCCESS txs: ${txHashes.join(", ")}`);
     _positionsCacheAt = 0; // invalidate cache after claim
     recordClaim(position_address);
 
-    return { success: true, position: position_address, txs: txHashes, base_mint: pool.lbPair.tokenXMint.toString() };
+    return { success: true, position: position_address, txs: txHashes, base_mint: pool.lbPair.tokenXMint.toString(), ...syntheticFlag(txHashes) };
   } catch (error) {
     log("claim_error", error.message);
     return { success: false, error: error.message };
+  } finally {
+    _claimPending.delete(position_address);
+    _savePendingState();
   }
 }
 
@@ -1393,6 +2215,27 @@ export async function closePosition({ position_address, reason }) {
   }
 
   const tracked = getTrackedPosition(position_address);
+
+  // P1: Close pending lock — prevents duplicate close attempt to same position.
+  // Atomic fs lock + Map check-and-set (same TOCTOU-safe pattern as deployPosition).
+  const _closeFsLock = _acquireFsLock(`close:${position_address}`);
+  if (!_closeFsLock.acquired) {
+    return {
+      success: false,
+      error: "Close already in progress for this position — lock held by another process.",
+    };
+  }
+  _reloadPendingFromDisk();
+  if (_closePending.has(position_address)) {
+    _releaseFsLock(_closeFsLock);
+    return {
+      success: false,
+      error: "Close already in progress for this position — wait for current close to complete.",
+    };
+  }
+  _closePending.set(position_address, Date.now());
+  _savePendingState();
+  _releaseFsLock(_closeFsLock);
 
   try {
     log("close", `Closing position: ${position_address}`);
@@ -1410,20 +2253,55 @@ export async function closePosition({ position_address, reason }) {
       ];
       const livePositions = await getMyPositions({ force: true, silent: true });
       const livePosition = livePositions?.positions?.find((position) => position.position === position_address);
-      const closeFromBinId = livePosition?.lower_bin ?? tracked?.bin_range?.min ?? -887272;
-      const closeToBinId = livePosition?.upper_bin ?? tracked?.bin_range?.max ?? 887272;
-      const closeOutput = "allToken1";
+      // P1: Refuse relay close if bin range is completely unknown — extreme fallback
+      // (-887272/887272) could cause the relay to generate a dangerously wide transaction.
+      const _relayFromBin = livePosition?.lower_bin ?? tracked?.bin_range?.min;
+      const _relayToBin   = livePosition?.upper_bin ?? tracked?.bin_range?.max;
+      if (_relayFromBin == null || _relayToBin == null) {
+        throw new Error(
+          `Cannot close safely via relay: bin range unknown for position ${position_address.slice(0, 8)}. ` +
+          `Neither live portfolio nor state registry has lower/upper bin. ` +
+          `Try closing manually or wait for portfolio API to sync.`
+        );
+      }
+      const closeFromBinId = _relayFromBin;
+      const closeToBinId   = _relayToBin;
+      // P1: Determine close output based on which token is SOL — not hard-coded to token1.
+      // allToken0 if tokenX is SOL, allToken1 if tokenY is SOL.
+      const _closeTokenXMint = pool.lbPair.tokenXMint.toString();
+      const _closeTokenYMint = pool.lbPair.tokenYMint.toString();
+      const SOL_MINT = "So11111111111111111111111111111111111111112";
+      let closeOutput;
+      if (_closeTokenXMint === SOL_MINT) {
+        closeOutput = "allToken0";
+      } else if (_closeTokenYMint === SOL_MINT) {
+        closeOutput = "allToken1";
+      } else {
+        throw new Error(
+          `Cannot determine close output: neither tokenX (${_closeTokenXMint.slice(0, 8)}) ` +
+          `nor tokenY (${_closeTokenYMint.slice(0, 8)}) is SOL. Cannot auto-close to SOL.`
+        );
+      }
+
+      // P0: Cap relay close slippage at 500 bps (5%) max — 5000 bps (50%) is dangerously high.
+      // P1: Validate before clamp so NaN config is caught before Math.min/max silently passes NaN.
+      // Configurable via config.management.closeSlippageBps, default 300 bps (3%).
+      const _rawCloseSlippageBps = Number(config.management?.closeSlippageBps ?? 300);
+      if (!Number.isFinite(_rawCloseSlippageBps)) {
+        throw new Error("Invalid closeSlippageBps — must be a finite number.");
+      }
+      const closeSlippageBps = Math.min(Math.max(1, _rawCloseSlippageBps), 500);
 
       const order = await agentMeridianJson("/execution/zap-out/order", {
         method: "POST",
         headers: getAgentMeridianHeaders({ json: true }),
         body: JSON.stringify({
           agentId: getAgentIdForRequests(),
-          idempotencyKey: `close:${position_address}:10000`,
+          idempotencyKey: `close:${position_address}:${tracked?.deployed_at || "unknown"}`,
           positionId: position_address,
           owner: wallet.publicKey.toString(),
           bps: 10000,
-          slippageBps: 5000,
+          slippageBps: closeSlippageBps,
           output: closeOutput,
           provider: "OKX",
           type: "meteora",
@@ -1438,16 +2316,24 @@ export async function closePosition({ position_address, reason }) {
         throw new Error("LPAgent close order returned no transactions. Check the position, selected output, and relay order response.");
       }
 
+      // P1: Dynamic maxSolLoss — 3% of deployed position size, capped at 0.05 SOL.
+      // Fixed 0.05 was too tight for large positions and too loose for small ones.
+      const _deployedSol = Number(tracked?.amount_sol ?? config.management?.deployAmountSol ?? 0.5);
+      const _dynSolLoss  = _deployedSol * 0.03;
+      const closeMaxSolLoss = Number.isFinite(_dynSolLoss) && _dynSolLoss > 0
+        ? Math.min(_dynSolLoss, 0.05)
+        : 0.05;
+
       const closeSigned = await signAndSimulateRelayTransactions(closeUnsigned, wallet, {
         label: "zap-out close",
         allowedDebitMints: relayAllowedDebitMints,
-        maxSolLoss: 0.05,
+        maxSolLoss: closeMaxSolLoss,
         requiredStaticAccounts: [wallet.publicKey.toString(), position_address],
       });
       const swapSigned = await signAndSimulateRelayTransactions(swapUnsigned, wallet, {
         label: "zap-out swap",
         allowedDebitMints: relayAllowedDebitMints,
-        maxSolLoss: 0.05,
+        maxSolLoss: closeMaxSolLoss,
         requiredStaticAccounts: [wallet.publicKey.toString()],
       });
 
@@ -1489,9 +2375,12 @@ export async function closePosition({ position_address, reason }) {
       }
 
       if (!closedConfirmed) {
+        // P1: Tx was already submitted — don't return success:false which implies a hard failure.
+        // Return a distinct status so the caller knows not to retry the close.
         return {
-          success: false,
-          error: "Close submit succeeded but position still appears open after verification window",
+          success: null,
+          status: "submitted_unconfirmed",
+          warning: "Close tx submitted but position still appears open in portfolio API — may still be settling.",
           position: position_address,
           pool: poolAddress,
           close_txs: closeTxHashes,
@@ -1588,7 +2477,11 @@ export async function closePosition({ position_address, reason }) {
           txs: txHashes,
           pnl_usd: pnlUsd,
           pnl_pct: pnlPct,
+          active_bin: livePosition?.active_bin ?? null,
+          exit_bin: livePosition?.active_bin ?? null,
+          exit_side: livePosition?.out_of_range_side ?? null,
           base_mint: livePosition?.base_mint || null,
+          ...syntheticFlag(txHashes, claimTxHashes, closeTxHashes),
         };
       }
 
@@ -1613,10 +2506,26 @@ export async function closePosition({ position_address, reason }) {
         claim_txs: claimTxHashes,
         close_txs: closeTxHashes,
         txs: txHashes,
+        active_bin: livePosition?.active_bin ?? null,
+        exit_bin: livePosition?.active_bin ?? null,
+        exit_side: livePosition?.out_of_range_side ?? null,
         base_mint: livePosition?.base_mint || null,
+        ...syntheticFlag(txHashes, claimTxHashes, closeTxHashes),
       };
       } catch (relayError) {
-        if (relaySubmitted) throw relayError;
+        if (relaySubmitted) {
+          // P3: Error occurred after relay was already submitted — don't rethrow into
+          // the outer catch (which would return success:false) and don't fall through
+          // to local close (which would attempt a duplicate close on-chain).
+          log("close_warn", `Error after relay submit: ${relayError.message}`);
+          return {
+            success: null,
+            status: "submitted_error_after_submit",
+            warning: `Close tx was submitted but an error occurred after: ${relayError.message}`,
+            position: position_address,
+            pool: poolAddress,
+          };
+        }
         log("close_warn", `Relay zap-out failed before submit; falling back to local close + Jupiter autoswap: ${relayError.message}`);
       }
     }
@@ -1642,8 +2551,10 @@ export async function closePosition({ position_address, reason }) {
           position: positionData,
         });
         if (claimTxs && claimTxs.length > 0) {
-          for (const tx of claimTxs) {
-            const claimHash = await sendAndConfirmTransaction(getConnection(), tx, [wallet]);
+          for (const [index, tx] of claimTxs.entries()) {
+            const claimHash = await sendAndConfirmWithReconciliation(tx, [wallet], {
+              label: `close:claim:${position_address.slice(0, 8)}:${index + 1}`,
+            });
             claimTxHashes.push(claimHash);
           }
           log("close", `Step 1 OK (claim only): ${claimTxHashes.join(", ")}`);
@@ -1681,8 +2592,12 @@ export async function closePosition({ position_address, reason }) {
         shouldClaimAndClose: true,
       });
 
-      for (const tx of Array.isArray(closeTx) ? closeTx : [closeTx]) {
-        const txHash = await sendAndConfirmTransaction(getConnection(), tx, [wallet]);
+      const closeTxArray = Array.isArray(closeTx) ? closeTx : [closeTx];
+      for (const [index, tx] of closeTxArray.entries()) {
+        const txHash = await sendAndConfirmWithReconciliation(tx, [wallet], {
+          label: `close:remove:${position_address.slice(0, 8)}:${index + 1}`,
+          verify: () => verifyPositionClosed(position_address),
+        });
         closeTxHashes.push(txHash);
       }
     } else {
@@ -1691,7 +2606,10 @@ export async function closePosition({ position_address, reason }) {
         owner: wallet.publicKey,
         position: { publicKey: positionPubKey },
       });
-      const txHash = await sendAndConfirmTransaction(getConnection(), closeTx, [wallet]);
+      const txHash = await sendAndConfirmWithReconciliation(closeTx, [wallet], {
+        label: `close:account:${position_address.slice(0, 8)}`,
+        verify: () => verifyPositionClosed(position_address),
+      });
       closeTxHashes.push(txHash);
     }
     const txHashes = [...claimTxHashes, ...closeTxHashes];
@@ -1719,9 +2637,13 @@ export async function closePosition({ position_address, reason }) {
     }
 
     if (!closedConfirmed) {
+      // P1: Txs were sent on-chain — return submitted_unconfirmed, not success:false.
+      // Prevents the manager from treating a submitted close as a hard failure
+      // and attempting a duplicate close or making wrong decisions.
       return {
-        success: false,
-        error: "Close transactions sent but position still appears open after verification window",
+        success: null,
+        status: "submitted_unconfirmed",
+        warning: "Close txs sent but position still appears open in portfolio API — may still be settling.",
         position: position_address,
         pool: poolAddress,
         claim_txs: claimTxHashes,
@@ -1757,6 +2679,9 @@ export async function closePosition({ position_address, reason }) {
       let finalValueUsd = 0;
       let initialUsd = 0;
       let feesUsd = tracked.total_fees_claimed_usd || 0;
+      let pnlSource = "closed_api";
+      let pnlConfidence = "high";
+      const cachedPos = _positionsCache?.positions?.find(p => p.position === position_address);
       try {
         const closedUrl = `https://dlmm.datapi.meteora.ag/positions/${poolAddress}/pnl?user=${wallet.publicKey.toString()}&status=closed&pageSize=50&page=1`;
         for (let attempt = 0; attempt < 6; attempt++) {
@@ -1793,7 +2718,6 @@ export async function closePosition({ position_address, reason }) {
       }
       // Fallback to pre-close cache snapshot if closed API had no data
       if (finalValueUsd === 0) {
-        const cachedPos = _positionsCache?.positions?.find(p => p.position === position_address);
         if (cachedPos) {
           pnlUsd        = cachedPos.pnl_true_usd ?? cachedPos.pnl_usd ?? 0;
           pnlPct        = cachedPos.pnl_pct   ?? 0;
@@ -1807,6 +2731,8 @@ export async function closePosition({ position_address, reason }) {
             finalValueUsd = cachedPos.total_value_true_usd ?? cachedPos.total_value_usd ?? 0;
             initialUsd = Math.max(0, finalValueUsd + feesUsd - pnlUsd);
           }
+          pnlSource = "preclose_cache_fallback";
+          pnlConfidence = "low";
           log("close_warn", `Using cached pnl fallback because closed API has not settled yet`);
         }
       }
@@ -1829,6 +2755,8 @@ export async function closePosition({ position_address, reason }) {
         minutes_in_range: minutesHeld - minutesOOR,
         minutes_held: minutesHeld,
         close_reason: reason || "agent decision",
+        pnl_source: pnlSource,
+        pnl_confidence: pnlConfidence,
       });
 
       appendDecision({
@@ -1861,7 +2789,11 @@ export async function closePosition({ position_address, reason }) {
         txs: txHashes,
         pnl_usd: pnlUsd,
         pnl_pct: pnlPct,
+        active_bin: cachedPos?.active_bin ?? null,
+        exit_bin: cachedPos?.active_bin ?? null,
+        exit_side: cachedPos?.out_of_range_side ?? null,
         base_mint: pool.lbPair.tokenXMint.toString(),
+        ...syntheticFlag(txHashes, claimTxHashes, closeTxHashes),
       };
     }
 
@@ -1884,11 +2816,18 @@ export async function closePosition({ position_address, reason }) {
       claim_txs: claimTxHashes,
       close_txs: closeTxHashes,
       txs: txHashes,
+      active_bin: null,
+      exit_bin: null,
+      exit_side: null,
       base_mint: pool.lbPair.tokenXMint.toString(),
+      ...syntheticFlag(txHashes, claimTxHashes, closeTxHashes),
     };
   } catch (error) {
     log("close_error", error.message);
     return { success: false, error: error.message };
+  } finally {
+    _closePending.delete(position_address);
+    _savePendingState();
   }
 }
 

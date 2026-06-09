@@ -1,0 +1,95 @@
+{
+  "trace_id": "Goblin-SOL_2026_06_02_21_41_29",
+  "pool": "Goblin-SOL",
+  "created_at": "2026-06-02T21:41:29.385Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "Goblin-SOL",
+      "timestamp": "2026-06-02T21:41:29.385Z",
+      "metrics": {
+        "fee_tvl": 0.3875,
+        "organic": 79,
+        "wallet_score": null,
+        "confidence": 0.7762,
+        "volatility": 1.9189,
+        "alpha": "PASS"
+      },
+      "decision": "COPY",
+      "why_pass": [
+        "Wallet score 79 >= 50",
+        "Range quality 50% ok",
+        "Fee/TVL 0.3875 ok",
+        "Organic 79% ok",
+        "Volatility 1.9189 ok",
+        "In range ok",
+        "All quality checks passed"
+      ],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "Goblin-SOL",
+      "timestamp": "2026-06-02T21:41:29.385Z",
+      "score": 79,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": 0.7762
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "Goblin-SOL",
+      "timestamp": "2026-06-02T21:41:29.385Z",
+      "momentum_state": "MOMENTUM_BREAKOUT_UP",
+      "predicted_direction": "UPWARD",
+      "wait_minutes": 5,
+      "timing_action": "WAIT_5_MIN",
+      "range_action": "WIDEN_AND_SHIFT_UP",
+      "risk_level": "CRITICAL",
+      "oor_prediction": "NO_DEPLOY_OR_SANDBOX_ONLY"
+    },
+    {
+      "stage": "deploy",
+      "pool": "Goblin-SOL",
+      "timestamp": "2026-06-02T21:41:29.385Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.05815539862103306,
+      "bins_above": 0,
+      "bins_below": 69,
+      "volatility_used": 1.9189,
+      "timing": "WAIT_5_MIN",
+      "range_width": 70,
+      "exact": {
+        "active_bin": -357,
+        "lower_bin": -426,
+        "upper_bin": -357,
+        "bin_step": 80,
+        "amount_sol": 0.212
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "Goblin-SOL",
+      "timestamp": "2026-06-02T21:42:05.498Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 0.8,
+      "minutes_since_entry": 0,
+      "active_bin": -356,
+      "entry_bin": -357,
+      "lower_bin": -426,
+      "upper_bin": -357
+    },
+    {
+      "stage": "exit",
+      "pool": "Goblin-SOL",
+      "timestamp": "2026-06-02T22:43:05.482Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 0.86,
+      "duration_minutes": 61,
+      "fees_earned": 0.002318129,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-02T22:43:05.495Z"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Quantum Pool Dashboard",
+  "short_name": "Q Pool",
+  "description": "Meridian pool dashboard",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d0b14",
+  "theme_color": "#0d0b14",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/pool-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

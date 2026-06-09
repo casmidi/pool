@@ -1,0 +1,421 @@
+function num(value, fallback = 0) {
+  if (value === null || value === undefined || value === "") return fallback;
+  const n = Number(value);
+  return Number.isFinite(n) ? n : fallback;
+}
+
+function round(value, digits = 2) {
+  const m = 10 ** digits;
+  return Math.round(num(value) * m) / m;
+}
+
+function tradeTime(trade = {}) {
+  return new Date(trade.close_time || trade.deploy_time || trade.open_time || 0).getTime();
+}
+
+function isClosed(trade = {}) {
+  return trade.status === "closed" || Boolean(trade.close_time);
+}
+
+function isOorTrade(trade = {}) {
+  const reason = String(trade.close_reason || trade.reason || "").toLowerCase();
+  return num(trade.minutes_out_of_range, 0) > 0
+    || Boolean(trade.out_of_range_side || trade.exit_side)
+    || reason.includes("out-of-range")
+    || reason.includes("out of range")
+    || reason.includes("oor");
+}
+
+function oorSide(trade = {}) {
+  const direct = String(trade.out_of_range_side || trade.exit_side || "").toLowerCase();
+  if (direct.includes("above") || direct.includes("up")) return "ABOVE";
+  if (direct.includes("below") || direct.includes("down")) return "BELOW";
+  const active = num(trade.exit_bin ?? trade.active_bin, null);
+  const upper = num(trade.upper_bin, null);
+  const lower = num(trade.lower_bin, null);
+  if (active !== null && upper !== null && active > upper) return "ABOVE";
+  if (active !== null && lower !== null && active < lower) return "BELOW";
+  const reason = String(trade.close_reason || "").toLowerCase();
+  if (reason.includes("above")) return "ABOVE";
+  if (reason.includes("below")) return "BELOW";
+  return "UNKNOWN";
+}
+
+function minutesHeld(trade = {}) {
+  const held = num(trade.minutes_held, null);
+  if (held !== null) return held;
+  const start = new Date(trade.deploy_time || trade.open_time || 0).getTime();
+  const end = new Date(trade.close_time || 0).getTime();
+  if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return null;
+  return round((end - start) / 60000);
+}
+
+function timeToOor(trade = {}) {
+  const held = minutesHeld(trade);
+  const oor = num(trade.minutes_out_of_range, null);
+  if (held === null || oor === null || oor <= 0) return null;
+  return Math.max(0, round(held - oor));
+}
+
+function rangeWidthBins(trade = {}) {
+  const direct = num(trade.range_width_bins ?? trade.rangeWidth, null);
+  if (direct !== null) return direct;
+  const lower = num(trade.lower_bin, null);
+  const upper = num(trade.upper_bin, null);
+  if (lower !== null && upper !== null && upper >= lower) return upper - lower + 1;
+  const below = num(trade.bins_below, null);
+  const above = num(trade.bins_above, 0);
+  if (below !== null) return below + above + 1;
+  return null;
+}
+
+function poolName(trade = {}) {
+  return trade.pool_name || trade.pool || trade.pool_address || "unknown";
+}
+
+function isSandbox(trade = {}) {
+  const mode = String(trade.execution_mode || trade.mode || trade.entry_truth?.decision?.executionMode || "").toUpperCase();
+  return Boolean(trade.is_dry_run || trade.sandbox_evidence || trade.sandbox_mode || mode.includes("SANDBOX"));
+}
+
+function isTinySize(trade = {}) {
+  const pct = num(trade.position_pct ?? trade.size_pct ?? trade.entry_truth?.decision?.positionPct, null);
+  if (pct !== null) return pct <= 1;
+  const amount = num(trade.amount_sol, null);
+  return amount !== null && amount <= 0.02;
+}
+
+function recentClosed(trades = [], limit = 30) {
+  return trades
+    .filter(isClosed)
+    .sort((a, b) => tradeTime(b) - tradeTime(a))
+    .slice(0, limit);
+}
+
+function recentOor(trades = [], limit = 30) {
+  return recentClosed(trades, limit).filter(isOorTrade);
+}
+
+function riskTier(score) {
+  if (score >= 80) return "CRITICAL";
+  if (score >= 60) return "HIGH";
+  if (score >= 35) return "MEDIUM";
+  return "LOW";
+}
+
+export function buildMomentumEscapeDetector(trades = []) {
+  const recent = recentOor(trades, 30);
+  const fast = recent.filter((trade) => {
+    const tto = timeToOor(trade);
+    const oor = num(trade.minutes_out_of_range, null);
+    return (tto !== null && tto <= 30) || (oor !== null && oor <= 30);
+  });
+  const above = fast.filter((trade) => oorSide(trade) === "ABOVE");
+  const below = fast.filter((trade) => oorSide(trade) === "BELOW");
+  const avgFee = recent.length ? round(recent.reduce((sum, trade) => sum + num(trade.fee_tvl_ratio ?? trade.feeTvlRatio, 0), 0) / recent.length, 4) : 0;
+  const avgWidth = recent
+    .map(rangeWidthBins)
+    .filter((v) => v !== null);
+  const narrowRate = avgWidth.length
+    ? round((avgWidth.filter((width) => width <= 35).length / avgWidth.length) * 100, 1)
+    : 0;
+
+  let state = "MOMENTUM_STABLE";
+  if (above.length >= 2 && above.length >= below.length) state = "MOMENTUM_BREAKOUT_UP";
+  else if (below.length >= 2) state = "MOMENTUM_BREAKOUT_DOWN";
+
+  return {
+    state,
+    sample: {
+      recentOor: recent.length,
+      fastOor: fast.length,
+      fastAbove: above.length,
+      fastBelow: below.length,
+      avgOorFeeTvlRatio: avgFee,
+      narrowRangeRatePct: narrowRate,
+    },
+    signals: [
+      above.length >= 2 ? "rapid upward OOR cluster" : null,
+      below.length >= 2 ? "rapid downward OOR cluster" : null,
+      narrowRate >= 50 ? "narrow range repeatedly failed" : null,
+      avgFee > 1 ? "high fee activity during OOR" : null,
+    ].filter(Boolean),
+    rule: "breakout active means avoid narrow mean-reversion deployment",
+  };
+}
+
+export function buildAntiOorIntelligence(trades = []) {
+  const recent = recentClosed(trades, 50);
+  const oor = recent.filter(isOorTrade);
+  const above = oor.filter((trade) => oorSide(trade) === "ABOVE");
+  const below = oor.filter((trade) => oorSide(trade) === "BELOW");
+  const fast = oor.filter((trade) => {
+    const tto = timeToOor(trade);
+    return tto !== null && tto <= 30;
+  });
+  const losingOor = oor.filter((trade) => num(trade.pnl_pct ?? trade.pnlPct, 0) < 0);
+  const narrow = oor.filter((trade) => {
+    const width = rangeWidthBins(trade);
+    return width !== null && width <= 35;
+  });
+
+  let pattern = "NO_OOR_PATTERN";
+  if (above.length >= 2 && above.length >= below.length) pattern = "UPWARD_ESCAPE";
+  else if (below.length >= 2) pattern = "DOWNWARD_ESCAPE";
+  else if (fast.length >= 2) pattern = "LATE_ENTRY";
+  else if (narrow.length >= 2) pattern = "BAD_RANGE";
+
+  return {
+    oorPattern: pattern,
+    evidenceType: "OBSERVATIONAL_UNTIL_TRUTH_VALID_SAMPLE",
+    metrics: {
+      closedSample: recent.length,
+      oorCount: oor.length,
+      oorRatePct: recent.length ? round((oor.length / recent.length) * 100, 1) : 0,
+      oorAbove: above.length,
+      oorBelow: below.length,
+      fastOorUnder30m: fast.length,
+      losingOor: losingOor.length,
+      narrowRangeOor: narrow.length,
+      avgTimeToOorMin: fast.length
+        ? round(fast.reduce((sum, trade) => sum + num(timeToOor(trade), 0), 0) / fast.length)
+        : null,
+    },
+    rootCauses: [
+      above.length >= 2 ? "range deployed too low for upward momentum" : null,
+      below.length >= 2 ? "range deployed too high for downward momentum" : null,
+      fast.length >= 2 ? "entry happened during acceleration window" : null,
+      narrow.length >= 2 ? "range width was too narrow for regime" : null,
+    ].filter(Boolean),
+  };
+}
+
+export function buildOorPredictionEngine(trades = [], candidate = {}, momentum = null, antiOor = null) {
+  const m = momentum || buildMomentumEscapeDetector(trades);
+  const anti = antiOor || buildAntiOorIntelligence(trades);
+  const reasons = [];
+  let score = 0;
+
+  if (m.state === "MOMENTUM_BREAKOUT_UP" || m.state === "MOMENTUM_BREAKOUT_DOWN") {
+    score += 35;
+    reasons.push(m.state);
+  }
+  if (anti.metrics?.fastOorUnder30m >= 2) {
+    score += 20;
+    reasons.push("recent fast OOR cluster");
+  }
+  if (anti.metrics?.oorRatePct >= 50) {
+    score += 15;
+    reasons.push("high recent OOR rate");
+  }
+  if (anti.metrics?.losingOor >= 2) {
+    score += 15;
+    reasons.push("OOR has produced repeated losses");
+  }
+
+  const volatility = num(candidate.volatility ?? candidate.poolVolatility, null);
+  if (volatility !== null && volatility >= 5) {
+    score += 15;
+    reasons.push("high candidate volatility");
+  } else if (volatility !== null && volatility >= 3) {
+    score += 8;
+    reasons.push("elevated candidate volatility");
+  }
+
+  const width = rangeWidthBins(candidate);
+  if (width !== null && width <= 35) {
+    score += 10;
+    reasons.push("candidate range is narrow");
+  }
+
+  const active = num(candidate.active_bin ?? candidate.activeBin ?? candidate.current_bin, null);
+  const upper = num(candidate.upper_bin ?? candidate.upperBin ?? candidate.bin_range?.max, null);
+  const lower = num(candidate.lower_bin ?? candidate.lowerBin ?? candidate.bin_range?.min, null);
+  if (active !== null && upper !== null && active >= upper - 2) {
+    score += 10;
+    reasons.push("active bin near upper edge");
+  }
+  if (active !== null && lower !== null && active <= lower + 2) {
+    score += 10;
+    reasons.push("active bin near lower edge");
+  }
+
+  score = Math.max(0, Math.min(100, score));
+  const tier = riskTier(score);
+  return {
+    oorRisk: tier,
+    score,
+    reasons,
+    action: tier === "CRITICAL" ? "NO_DEPLOY_OR_SANDBOX_ONLY" : tier === "HIGH" ? "SANDBOX_ONLY_OR_DELAY" : tier === "MEDIUM" ? "DELAY_AND_RECHECK" : "NORMAL_DEFENSIVE_GATES",
+    rule: "HIGH/CRITICAL OOR risk cannot promote live aggressive deployment",
+  };
+}
+
+export function buildEntryTimingDelayEngine(oorPrediction = {}, momentum = {}) {
+  const risk = oorPrediction.oorRisk || "LOW";
+  let action = "ENTER_ALLOWED_BY_TIMING";
+  let waitMinutes = 0;
+  if (risk === "CRITICAL") {
+    action = "WAIT_5_MIN";
+    waitMinutes = 5;
+  } else if (risk === "HIGH" || momentum.state === "MOMENTUM_BREAKOUT_UP" || momentum.state === "MOMENTUM_BREAKOUT_DOWN") {
+    action = "WAIT_5_MIN";
+    waitMinutes = 5;
+  } else if (risk === "MEDIUM") {
+    action = "WAIT_2_MIN";
+    waitMinutes = 2;
+  }
+  return {
+    action,
+    waitMinutes,
+    recheck: ["spread quality", "FeeTVL", "momentum persistence", "OOR probability"],
+    rule: "delay is timing optimization, not permanent rejection",
+  };
+}
+
+export function buildDynamicRangeWidth(momentum = {}, antiOor = {}, candidate = {}) {
+  const baseWidth = rangeWidthBins(candidate);
+  const state = momentum.state || "MOMENTUM_STABLE";
+  let recommendation = "KEEP_STANDARD_RANGE";
+  let widthMultiplier = 1;
+  let directionalBias = "NEUTRAL";
+  if (state === "MOMENTUM_BREAKOUT_UP") {
+    recommendation = "WIDEN_AND_SHIFT_UP";
+    widthMultiplier = 1.5;
+    directionalBias = "UPWARD";
+  } else if (state === "MOMENTUM_BREAKOUT_DOWN") {
+    recommendation = "WIDEN_AND_SHIFT_DOWN";
+    widthMultiplier = 1.5;
+    directionalBias = "DOWNWARD";
+  } else if (antiOor.oorPattern === "BAD_RANGE") {
+    recommendation = "WIDEN_RANGE";
+    widthMultiplier = 1.25;
+  }
+  return {
+    recommendation,
+    directionalBias,
+    currentWidthBins: baseWidth,
+    suggestedWidthBins: baseWidth !== null ? Math.ceil(baseWidth * widthMultiplier) : null,
+    widthMultiplier,
+    rule: "range adapts to regime; it does not override defensive gates",
+  };
+}
+
+export function buildActiveLearningPriority(trades = [], antiOor = {}, sandboxEvidence = {}) {
+  const reasons = [];
+  let score = 0;
+  if (antiOor.oorPattern === "UPWARD_ESCAPE" || antiOor.oorPattern === "DOWNWARD_ESCAPE") {
+    score += 35;
+    reasons.push(`repeated ${antiOor.oorPattern}`);
+  }
+  if (antiOor.metrics?.fastOorUnder30m >= 2) {
+    score += 25;
+    reasons.push("fast OOR should be learned first");
+  }
+  if (antiOor.metrics?.losingOor >= 2) {
+    score += 20;
+    reasons.push("OOR losses are recurring");
+  }
+  const shadowCandidates = sandboxEvidence.highInformationValueTrades?.candidates?.length || 0;
+  if (shadowCandidates > 0) {
+    score += 10;
+    reasons.push("shadow/candidate disagreement available");
+  }
+  score = Math.max(0, Math.min(100, score));
+  return {
+    learningPriority: riskTier(score),
+    score,
+    reasons,
+    nextQuestions: [
+      "did active bin escape before entry confirmation?",
+      "was range too narrow for volatility?",
+      "did FeeTVL spike indicate chasing flow?",
+      "would delay have avoided the OOR?",
+    ],
+  };
+}
+
+export function buildLossQualityEngine(trades = [], antiOor = {}, oorPrediction = {}) {
+  const losses = recentClosed(trades, 50).filter((trade) => num(trade.pnl_pct ?? trade.pnlPct, 0) < 0);
+  const classified = losses.map((trade) => {
+    const oor = isOorTrade(trade);
+    const side = oorSide(trade);
+    const repeatedKnownMistake = oor
+      && ((side === "ABOVE" && antiOor.oorPattern === "UPWARD_ESCAPE")
+        || (side === "BELOW" && antiOor.oorPattern === "DOWNWARD_ESCAPE")
+        || antiOor.oorPattern === "BAD_RANGE");
+    const warningIgnored = ["HIGH", "CRITICAL"].includes(oorPrediction.oorRisk);
+    const smart = isSandbox(trade) && isTinySize(trade) && !repeatedKnownMistake;
+    let quality = "WARNING";
+    if (smart) quality = "SMART";
+    if (repeatedKnownMistake || warningIgnored) quality = "STUPID";
+    return {
+      id: trade.id || poolName(trade),
+      pool: poolName(trade),
+      pnlPct: num(trade.pnl_pct ?? trade.pnlPct),
+      closeReason: trade.close_reason || null,
+      oor,
+      oorSide: side,
+      lossQuality: quality,
+      reasons: [
+        smart ? "sandbox/tiny/new evidence loss" : null,
+        repeatedKnownMistake ? "repeated avoidable OOR pattern" : null,
+        warningIgnored ? `current OOR risk ${oorPrediction.oorRisk}` : null,
+        oor ? "OOR-related loss" : null,
+      ].filter(Boolean),
+    };
+  });
+  const counts = classified.reduce((acc, item) => {
+    acc[item.lossQuality] = (acc[item.lossQuality] || 0) + 1;
+    return acc;
+  }, {});
+  return {
+    state: (counts.STUPID || 0) >= 2 ? "REPEATED_STUPID_LOSS_WARNING" : "LOSS_QUALITY_TRACKING",
+    counts: {
+      SMART: counts.SMART || 0,
+      WARNING: counts.WARNING || 0,
+      STUPID: counts.STUPID || 0,
+    },
+    losses: classified.slice(0, 20),
+    rule: "smart loss can be allowed in sandbox; repeated avoidable OOR loss must trigger warning",
+  };
+}
+
+export function buildAntiOorPayload({ trades = [], candidate = {}, sandboxEvidence = {} } = {}) {
+  const momentumEscape = buildMomentumEscapeDetector(trades);
+  const antiOorIntelligence = buildAntiOorIntelligence(trades);
+  const oorPrediction = buildOorPredictionEngine(trades, candidate, momentumEscape, antiOorIntelligence);
+  const entryTimingDelay = buildEntryTimingDelayEngine(oorPrediction, momentumEscape);
+  const dynamicRangeWidth = buildDynamicRangeWidth(momentumEscape, antiOorIntelligence, candidate);
+  const activeLearningPriority = buildActiveLearningPriority(trades, antiOorIntelligence, sandboxEvidence);
+  const lossQuality = buildLossQualityEngine(trades, antiOorIntelligence, oorPrediction);
+
+  return {
+    ok: true,
+    layer: "ACTIVE_LEARNING_AND_ANTI_OOR_MOMENTUM_INTELLIGENCE",
+    principle: "smart loss allowed; stupid loss not allowed",
+    defensiveTruth: {
+      alwaysWins: true,
+      sandboxFirst: true,
+      noAggressiveDeployment: true,
+      noFakeConfidence: true,
+    },
+    evidenceCaveat: "OOR history is observational until enough truth-valid samples exist",
+    momentumEscape,
+    antiOorIntelligence,
+    entryTimingDelay,
+    dynamicRangeWidth,
+    oorPrediction,
+    activeLearningPriority,
+    lossQuality,
+    finalRecommendation: oorPrediction.oorRisk === "CRITICAL"
+      ? "NO_DEPLOY_OR_SANDBOX_ONLY"
+      : oorPrediction.oorRisk === "HIGH"
+        ? "SANDBOX_ONLY_OR_DELAY"
+        : entryTimingDelay.action,
+  };
+}
+
+export function evaluateAntiOorCandidate(candidate = {}, trades = []) {
+  return buildAntiOorPayload({ trades, candidate });
+}

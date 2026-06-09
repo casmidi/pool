@@ -1,0 +1,87 @@
+{
+  "trace_id": "Bountywork-SOL_2026_06_08_03_30_24",
+  "pool": "Bountywork-SOL",
+  "created_at": "2026-06-08T03:30:24.643Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-08T03:30:24.643Z",
+      "metrics": {
+        "fee_tvl": 0.32594504915149797,
+        "organic": 87.60503235154616,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 2.900995027131322,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-08T03:30:24.643Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-08T03:30:24.643Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-08T03:30:24.643Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.023024983962864287,
+      "bins_above": null,
+      "bins_below": 96,
+      "volatility_used": 2.900995027131322,
+      "timing": null,
+      "range_width": 97,
+      "exact": {
+        "active_bin": -379,
+        "lower_bin": -475,
+        "upper_bin": -379,
+        "bin_step": 100,
+        "amount_sol": 0.109
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-08T04:25:30.997Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 55,
+      "active_bin": -378,
+      "entry_bin": -379,
+      "lower_bin": -475,
+      "upper_bin": -379
+    },
+    {
+      "stage": "exit",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-08T04:30:50.828Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 2.17,
+      "duration_minutes": 60,
+      "fees_earned": 0.002975785,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-08T04:30:50.857Z"
+}

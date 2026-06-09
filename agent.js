@@ -1,12 +1,23 @@
 import OpenAI from "openai";
 import { jsonrepair } from "jsonrepair";
+import fs from "fs";
 import { buildSystemPrompt } from "./prompt.js";
 import { executeTool } from "./tools/executor.js";
 import { tools } from "./tools/definitions.js";
 
-const MANAGER_TOOLS  = new Set(["close_position", "claim_fees", "swap_token", "get_position_pnl", "get_my_positions", "get_wallet_balance"]);
+const MANAGER_TOOLS  = new Set(["close_position", "claim_fees", "close_all_positions", "swap_token", "get_position_pnl", "get_my_positions", "get_wallet_balance"]);
 const SCREENER_TOOLS = new Set(["deploy_position", "get_active_bin", "get_top_candidates", "check_smart_wallets_on_pool", "get_token_holders", "get_token_narrative", "get_token_info", "search_pools", "get_pool_memory", "get_wallet_balance", "get_my_positions"]);
 const GENERAL_INTENT_ONLY_TOOLS = new Set([
+  "run_ranking_cycle",
+  "score_wallet",
+  "score_wallet_advanced",
+  "select_top_wallets",
+  "run_copy_engine",
+  "get_copy_signals",
+  "fuse_wallet_data",
+  "fuse_multiple_wallets",
+  "get_provider_status",
+  "get_top_performer_candidates",
   "self_update",
   "update_config",
   "add_to_blacklist",
@@ -30,7 +41,7 @@ const GENERAL_INTENT_ONLY_TOOLS = new Set([
 const INTENT_TOOLS = {
   decisions:   new Set(["get_recent_decisions"]),
   deploy:      new Set(["deploy_position", "get_top_candidates", "get_active_bin", "get_pool_memory", "check_smart_wallets_on_pool", "get_token_holders", "get_token_narrative", "get_token_info", "search_pools", "get_wallet_balance", "get_my_positions", "add_pool_note"]),
-  close:       new Set(["close_position", "get_my_positions", "get_position_pnl", "get_wallet_balance", "swap_token"]),
+  close:       new Set(["close_position", "close_all_positions", "get_my_positions", "get_position_pnl", "get_wallet_balance", "swap_token"]),
   claim:       new Set(["claim_fees", "get_my_positions", "get_position_pnl", "get_wallet_balance"]),
   swap:        new Set(["swap_token", "get_wallet_balance"]),
   config:      new Set(["update_config"]),
@@ -44,6 +55,9 @@ const INTENT_TOOLS = {
   smartwallet: new Set(["add_smart_wallet", "remove_smart_wallet", "list_smart_wallets", "check_smart_wallets_on_pool"]),
   study:       new Set(["study_top_lpers", "get_top_lpers", "get_pool_detail", "search_pools", "get_token_info", "discover_pools", "add_smart_wallet", "list_smart_wallets"]),
   performance: new Set(["get_performance_history", "get_my_positions", "get_position_pnl"]),
+  ranking:    new Set(["run_ranking_cycle", "score_wallet", "score_wallet_advanced", "select_top_wallets"]),
+  copy:       new Set(["run_copy_engine", "get_copy_signals", "run_ranking_cycle", "select_top_wallets", "get_my_positions", "get_wallet_balance"]),
+  fusion:     new Set(["fuse_wallet_data", "fuse_multiple_wallets", "get_provider_status", "get_top_performer_candidates"]),
   lessons:     new Set(["add_lesson", "pin_lesson", "unpin_lesson", "list_lessons", "clear_lessons"]),
 };
 
@@ -64,6 +78,9 @@ const INTENT_PATTERNS = [
   { intent: "smartwallet", re: /\b(smart wallet|kol|whale|watch.?list|add wallet|remove wallet|list wallet|tracked wallet|check pool|who.?s in|wallets in|add to (smart|watch|kol))\b/i },
   { intent: "study",       re: /\b(study top|top lpers?|best lpers?|who.?s lping|lp behavior|lpers?)\b/i },
   { intent: "performance", re: /\b(performance|history|how.?s the bot|how.?s it doing|stats|report)\b/i },
+  { intent: "ranking",     re: /\b(rank|ranking|top wallet|score wallet|wallet score|leaderboard|top performer|best wallet|select wallet|wallet selection|strategy mode|scoring mode|conservative|aggressive|momentum|hybrid|profile)\b/i },
+  { intent: "copy",        re: /\b(copy engine|copy.?trade|copy signal|copy signals|master wallet|top wallet positions?|follow wallet|follow position)\b/i },
+  { intent: "fusion",      re: /\b(fuse|fusion|intelligence|aggregate wallet|provider status|top candidate|multi.?source|gmgn|dune|helius|birdeye|dexscreener)\b/i },
   { intent: "lessons",     re: /\b(lesson|learned|teach|pin|unpin|clear lesson|what did you learn)\b/i },
 ];
 
@@ -87,9 +104,19 @@ import { getWalletBalances } from "./tools/wallet.js";
 import { getMyPositions } from "./tools/dlmm.js";
 import { log } from "./logger.js";
 import { config } from "./config.js";
+import { canCallAI, estimateAICost, recordAIUsage } from "./ai-budget.js";
+import {
+  assessAIEligibility,
+  getCachedAIResponse,
+  recordAIQualityEvent,
+  routeAIModels,
+  storeAIResponse,
+} from "./lib/ai_optimizer.js";
 import { getStateSummary } from "./state.js";
 import { getLessonsForPrompt, getPerformanceSummary } from "./lessons.js";
 import { getDecisionSummary } from "./decision-log.js";
+import { isEnabled as telegramEnabled, sendMessage } from "./telegram.js";
+import { appendAIScreeningLog } from "./lib/intelligence_ledger.js";
 
 // Supports OpenRouter (default) or any OpenAI-compatible local server (e.g. LM Studio)
 // To use LM Studio: set LLM_BASE_URL=http://localhost:1234/v1 and LLM_API_KEY=lm-studio in .env
@@ -99,7 +126,132 @@ const client = new OpenAI({
   timeout: 5 * 60 * 1000,
 });
 
-const DEFAULT_MODEL = process.env.LLM_MODEL || "openrouter/healer-alpha";
+// Ordered fallback chain — tries each model in order on 404/401/429/model-not-found.
+// deepseek/deepseek-v4-flash:free is the primary choice: free, fast, good quality.
+// Falls back through the openrouter/free router (auto-routes to any working free model)
+// and then individual known-working models.
+// openrouter/free is the most reliable fallback — it dynamically selects from available free models.
+const MODEL_CHAIN = [
+  process.env.LLM_MODEL || "deepseek/deepseek-v4-flash:free",
+  "openrouter/free",
+  "google/gemini-2.0-flash-lite:free",
+  "deepseek/deepseek-chat:free",
+].filter(Boolean);
+const DEFAULT_MODEL = MODEL_CHAIN[0];
+const FREE_MODEL_CHAIN = MODEL_CHAIN.filter((model) => /(^openrouter\/free$|:free$)/i.test(model));
+let lastAIBudgetTelegramWarn = 0;
+let lastOpenRouterBudgetTelegramWarn = 0;
+const AI_PROVIDER_ALERT_PATH = new URL("./data/ai_provider_alert.json", import.meta.url);
+
+function getErrorMessage(error) {
+  return String(error?.message || error?.error?.message || error?.response?.data?.error?.message || error || "");
+}
+
+function getOpenRouterBudgetReason(error) {
+  const message = getErrorMessage(error);
+  const status = Number(error?.status || error?.response?.status || 0);
+  const code = String(error?.code || error?.error?.code || "");
+  if (
+    status === 402 ||
+    /\b(insufficient|not enough|exhausted|out of)\b.*\b(credit|credits|balance|budget|quota)\b/i.test(message) ||
+    /\b(payment required|billing|quota exceeded|credits exhausted|insufficient credits)\b/i.test(message) ||
+    /\b(insufficient_credits|quota_exceeded|billing)\b/i.test(code)
+  ) {
+    return `OpenRouter budget/credits blocked: ${message.slice(0, 240) || `HTTP ${status}`}`;
+  }
+  return null;
+}
+
+function writeAIProviderAlert(reason) {
+  try {
+    fs.mkdirSync(new URL("./data/", import.meta.url), { recursive: true });
+    fs.writeFileSync(AI_PROVIDER_ALERT_PATH, JSON.stringify({
+      active: true,
+      type: "openrouter_budget",
+      reason,
+      ts: new Date().toISOString(),
+    }, null, 2));
+  } catch (_) {}
+}
+
+function notifyAIBudgetBlocked(reason) {
+  const now = Date.now();
+  if (now - lastAIBudgetTelegramWarn < 60 * 60 * 1000) return;
+  lastAIBudgetTelegramWarn = now;
+  if (!telegramEnabled()) return;
+  sendMessage([
+    "AI BUDGET WARNING",
+    "",
+    reason,
+    "",
+    "Bot masih hidup, tapi keputusan AI/deploy akan tertahan sampai budget/call cap direset atau setting dinaikkan.",
+  ].join("\n")).catch(() => {});
+}
+
+function notifyOpenRouterBudgetBlocked(reason) {
+  writeAIProviderAlert(reason);
+  const now = Date.now();
+  if (now - lastOpenRouterBudgetTelegramWarn < 60 * 60 * 1000) return;
+  lastOpenRouterBudgetTelegramWarn = now;
+  if (!telegramEnabled()) return;
+  sendMessage([
+    "OPENROUTER BUDGET WARNING",
+    "",
+    reason,
+    "",
+    "Bot masih hidup, tapi AI/deploy akan tertahan sampai credit/budget OpenRouter ditambah atau model/provider diganti.",
+  ].join("\n")).catch(() => {});
+}
+
+function uniqueModels(models) {
+  return [...new Set(models.filter(Boolean))];
+}
+
+function isFreeModel(model) {
+  return /(^openrouter\/free$|:free$)/i.test(String(model || ""));
+}
+
+function modelCandidates(preferredModel, agentType, context = {}) {
+  const candidates = uniqueModels([
+    ...routeAIModels({ preferredModel, agentType, context }),
+    ...FREE_MODEL_CHAIN,
+    ...MODEL_CHAIN,
+  ]);
+  return agentType === "SCREENER"
+    ? uniqueModels([preferredModel, ...candidates.filter((candidate) => !isFreeModel(candidate))])
+    : candidates;
+}
+
+function writeScreeningTelemetry({ model, startedAt, usage = {}, success, error = null, context = {} }) {
+  const estimated = estimateAICost(model, usage);
+  appendAIScreeningLog({
+    screening_model: model,
+    latency_ms: Math.max(0, Date.now() - startedAt),
+    token_count: estimated.total_tokens,
+    estimated_cost_usd: Math.round(estimated.cost_usd * 1_000_000) / 1_000_000,
+    success,
+    error: error ? String(error).slice(0, 500) : null,
+    output_confidence: context.output_confidence ?? context.confidence ?? null,
+    candidate_count: context.candidate_count ?? context.candidateCount ?? null,
+    approved_count: context.approved_count ?? context.approvedCount ?? null,
+    rejected_count: context.rejected_count ?? context.rejectedCount ?? null,
+  });
+}
+
+function budgetAllowedModel(preferredModel, agentType, context = {}) {
+  let firstBlocked = null;
+  for (const candidate of modelCandidates(preferredModel, agentType, context)) {
+    const budgetCheck = canCallAI({ model: candidate, agentType });
+    if (budgetCheck.allowed) {
+      if (candidate !== preferredModel && firstBlocked) {
+        log("ai_budget_fallback", `${firstBlocked.reason} — using fallback model ${candidate}`);
+      }
+      return { model: candidate, budgetCheck };
+    }
+    firstBlocked ??= budgetCheck;
+  }
+  return { model: preferredModel, budgetCheck: firstBlocked || canCallAI({ model: preferredModel, agentType }) };
+}
 
 const MUTATING_TOOL_INTENTS = /\b(deploy|open position|add liquidity|lp into|invest in|close|exit|withdraw|remove liquidity|claim|harvest|collect|swap|convert|sell|exchange|block|unblock|blacklist|add smart wallet|remove smart wallet|add wallet|remove wallet|pin|unpin|clear lesson|add lesson|set active strategy|remove strategy|add strategy|set |change |update |self.?update|pull latest|git pull|update yourself)\b/i;
 const LIVE_DATA_TOOL_INTENTS = /\b(balance|wallet|position|portfolio|pnl|yield|range|show positions|open positions|screen|candidate|find pool|search|research|analyze|check pool|token holders|narrative|study top|top lpers?|lp behavior|who.?s lping|performance|history|stats|report|list smart wallets|list blacklist|list blocked deployers|list lessons)\b/i;
@@ -149,8 +301,108 @@ function isToolChoiceRequiredError(error) {
  * @param {number} maxSteps - Safety limit on iterations (default 20)
  * @returns {string} - The agent's final text response
  */
+export async function completeAI({
+  model = null,
+  agentType = "GENERAL",
+  messages = [],
+  maxTokens = 512,
+  temperature = config.llm.temperature,
+  context = {},
+  useCache = true,
+} = {}) {
+  const preferredModel = model || DEFAULT_MODEL;
+  const gate = assessAIEligibility({ ...context, agentType });
+  if (!gate.eligible) {
+    recordAIQualityEvent({ type: "skip", agentType, model: preferredModel, reason: gate.reason, action: gate.deterministicAction });
+    return {
+      content: JSON.stringify({
+        decision: gate.deterministicAction === "COPY" ? "APPROVE" : "REJECT",
+        reason: `AI skipped: ${gate.reason}`,
+      }),
+      ai_skipped: true,
+      deterministicAction: gate.deterministicAction,
+      reason: gate.reason,
+    };
+  }
+
+  const cached = useCache ? getCachedAIResponse({ ...context, agentType }) : null;
+  if (cached) {
+    recordAIQualityEvent({ type: "cache_hit", agentType, model: cached.model || preferredModel, reason: cached.cache_reason });
+    return cached;
+  }
+
+  const { model: activeModel, budgetCheck } = budgetAllowedModel(preferredModel, agentType, context);
+  if (!budgetCheck.allowed) {
+    log("ai_budget_warn", budgetCheck.reason);
+    notifyAIBudgetBlocked(budgetCheck.reason);
+    return {
+      content: `AI paused by budget guard: ${budgetCheck.reason}`,
+      budget_blocked: true,
+    };
+  }
+
+  let response;
+  let usedModel = activeModel;
+  const fallbackModels = uniqueModels([activeModel, ...modelCandidates(preferredModel, agentType, context)]);
+  const screeningStartedAt = Date.now();
+  for (let i = 0; i < fallbackModels.length; i++) {
+    usedModel = fallbackModels[i];
+    try {
+      response = await client.chat.completions.create({
+        model: usedModel,
+        messages,
+        temperature,
+        max_tokens: maxTokens,
+      });
+      break;
+    } catch (error) {
+      const openRouterBudgetReason = getOpenRouterBudgetReason(error);
+      if (openRouterBudgetReason) notifyOpenRouterBudgetBlocked(openRouterBudgetReason);
+      const errMsg = getErrorMessage(error);
+      if (i < fallbackModels.length - 1) {
+        log("agent", `Model ${usedModel} error: ${errMsg.slice(0, 80)} — falling back to ${fallbackModels[i + 1]}`);
+        continue;
+      }
+      if (agentType === "SCREENER") {
+        writeScreeningTelemetry({
+          model: usedModel,
+          startedAt: screeningStartedAt,
+          success: false,
+          error: errMsg,
+          context,
+        });
+      }
+      throw error;
+    }
+  }
+
+  if (!response.choices?.length) {
+    throw new Error(`API returned no choices: ${response.error?.message || JSON.stringify(response)}`);
+  }
+  recordAIUsage({ model: usedModel, agentType, usage: response.usage || {} });
+  if (agentType === "SCREENER") {
+    writeScreeningTelemetry({
+      model: usedModel,
+      startedAt: screeningStartedAt,
+      usage: response.usage || {},
+      success: true,
+      context,
+    });
+    log("ai", `ai_screening_log_written model=${usedModel}`);
+  }
+  recordAIQualityEvent({ type: "call", agentType, model: usedModel });
+  const result = {
+    content: response.choices[0].message?.content || "",
+    usage: response.usage || {},
+    model: usedModel,
+  };
+  storeAIResponse({ ...context, agentType }, result);
+  return result;
+}
+
 export async function agentLoop(goal, maxSteps = config.llm.maxSteps, sessionHistory = [], agentType = "GENERAL", model = null, maxOutputTokens = null, options = {}) {
-  const { interactive = false, onToolStart = null, onToolFinish = null } = options;
+  const { interactive = false, onToolStart = null, onToolFinish = null, beforeToolCall = null } = options;
+  const aiContext = options.aiContext || {};
   // Build dynamic system prompt with current portfolio state
   const [portfolio, positions] = await Promise.all([getWalletBalances(), getMyPositions()]);
   const stateSummary = getStateSummary();
@@ -172,7 +424,7 @@ export async function agentLoop(goal, maxSteps = config.llm.maxSteps, sessionHis
 
   // Track write tools fired this session — prevent the model from calling the same
   // destructive tool twice (e.g. deploy twice, swap twice after auto-swap)
-  const ONCE_PER_SESSION = new Set(["deploy_position", "swap_token", "close_position"]);
+  const ONCE_PER_SESSION = new Set(["deploy_position", "swap_token", "close_position", "close_all_positions"]);
   // These lock after first attempt regardless of success — retrying them is always wrong
   const NO_RETRY_TOOLS = new Set(["deploy_position"]);
   const firedOnce = new Set();
@@ -185,17 +437,32 @@ export async function agentLoop(goal, maxSteps = config.llm.maxSteps, sessionHis
     log("agent", `Step ${step + 1}/${maxSteps}`);
 
     try {
-      const activeModel = model || DEFAULT_MODEL;
+      const preferredModel = model || DEFAULT_MODEL;
+      const { model: activeModel, budgetCheck } = budgetAllowedModel(preferredModel, agentType, aiContext);
+      if (!budgetCheck.allowed) {
+        log("ai_budget_warn", budgetCheck.reason);
+        notifyAIBudgetBlocked(budgetCheck.reason);
+        return {
+          content: `AI paused by budget guard: ${budgetCheck.reason}`,
+          userMessage: goal,
+          budget_blocked: true,
+        };
+      }
 
-      // Retry up to 3 times on transient provider errors (502, 503, 529)
-      const FALLBACK_MODEL = "stepfun/step-3.5-flash:free";
-      let response;
+      // Retry with model fallback chain on transient errors or 404 (model not found)
+      const routedChain = modelCandidates(preferredModel, agentType, aiContext);
       let usedModel = activeModel;
+      let modelChainIndex = routedChain.indexOf(usedModel);
+      if (modelChainIndex === -1) modelChainIndex = 0;
+      let response;
+      const screeningStartedAt = Date.now();
       // Force a tool call on step 0 for action intents — prevents the model from inventing deploy/close outcomes
       const ACTION_INTENTS = /\b(deploy|open|add liquidity|close|exit|withdraw|claim|swap|block|unblock)\b/i;
       let toolChoice = (step === 0 && (ACTION_INTENTS.test(goal) || mustUseRealTool)) ? "required" : "auto";
 
-      for (let attempt = 0; attempt < 3; attempt++) {
+      // Try up to 5 attempts with model fallback — if a model returns 404/not-found,
+      // try the next in the chain instead of crashing.
+      for (let attempt = 0; attempt < 5; attempt++) {
         try {
           response = await client.chat.completions.create({
             model: usedModel,
@@ -206,6 +473,23 @@ export async function agentLoop(goal, maxSteps = config.llm.maxSteps, sessionHis
             max_tokens: maxOutputTokens ?? config.llm.maxTokens,
           });
         } catch (error) {
+          const openRouterBudgetReason = getOpenRouterBudgetReason(error);
+          if (openRouterBudgetReason) notifyOpenRouterBudgetBlocked(openRouterBudgetReason);
+          // Model not found (404) — try next in chain
+          const errMsg = getErrorMessage(error);
+          const isModelNotFound = errMsg.includes('404') || errMsg.includes('model not found') || errMsg.includes('not found') || error?.status === 404;
+          
+          if (isModelNotFound && modelChainIndex < routedChain.length - 1) {
+            modelChainIndex++;
+            usedModel = routedChain[modelChainIndex];
+            log("agent", `Model ${routedChain[modelChainIndex - 1]} not found — falling back to ${usedModel}`);
+            attempt -= 1; // don't count this as an attempt, retry with new model
+            continue;
+          } else if (isModelNotFound) {
+            log("error", `All ${routedChain.length} models exhausted — last error: ${errMsg}`);
+            throw new Error(`All models exhausted: ${errMsg}`);
+          }
+          
           if (providerMode === "system" && isSystemRoleError(error)) {
             providerMode = "user_embedded";
             messages = buildMessages(systemPrompt, sessionHistory, goal, providerMode);
@@ -219,17 +503,36 @@ export async function agentLoop(goal, maxSteps = config.llm.maxSteps, sessionHis
             attempt -= 1;
             continue;
           }
+          // For other errors (auth, rate limit, etc.), try next model in chain
+          if (modelChainIndex < routedChain.length - 1) {
+            modelChainIndex++;
+            usedModel = routedChain[modelChainIndex];
+            log("agent", `Model ${routedChain[modelChainIndex - 1]} error: ${errMsg.slice(0, 80)} — falling back to ${usedModel}`);
+            attempt -= 1;
+            continue;
+          }
+          if (agentType === "SCREENER") {
+            writeScreeningTelemetry({
+              model: usedModel,
+              startedAt: screeningStartedAt,
+              success: false,
+              error: errMsg,
+              context: aiContext,
+            });
+          }
           throw error;
         }
         if (response.choices?.length) break;
         const errCode = response.error?.code;
-        if (errCode === 502 || errCode === 503 || errCode === 529) {
-          const wait = (attempt + 1) * 5000;
-          if (attempt === 1 && usedModel !== FALLBACK_MODEL) {
-            usedModel = FALLBACK_MODEL;
-            log("agent", `Switching to fallback model ${FALLBACK_MODEL}`);
+        if (errCode === 502 || errCode === 503 || errCode === 529 || errCode === 404) {
+          const wait = (attempt + 1) * 3000;
+          // Try next model in chain for server errors too
+          if (modelChainIndex < routedChain.length - 1) {
+            modelChainIndex++;
+            usedModel = routedChain[modelChainIndex];
+            log("agent", `HTTP ${errCode} — falling back to ${usedModel}`);
           } else {
-            log("agent", `Provider error ${errCode}, retrying in ${wait / 1000}s (attempt ${attempt + 1}/3)`);
+            log("agent", `Provider error ${errCode}, retrying in ${wait / 1000}s (attempt ${attempt + 1}/5)`);
             await new Promise((r) => setTimeout(r, wait));
           }
         } else {
@@ -241,6 +544,18 @@ export async function agentLoop(goal, maxSteps = config.llm.maxSteps, sessionHis
         log("error", `Bad API response: ${JSON.stringify(response).slice(0, 200)}`);
         throw new Error(`API returned no choices: ${response.error?.message || JSON.stringify(response)}`);
       }
+      recordAIUsage({ model: usedModel, agentType, usage: response.usage || {} });
+      if (agentType === "SCREENER") {
+        writeScreeningTelemetry({
+          model: usedModel,
+          startedAt: screeningStartedAt,
+          usage: response.usage || {},
+          success: true,
+          context: aiContext,
+        });
+        log("ai", `ai_screening_log_written model=${usedModel}`);
+      }
+      recordAIQualityEvent({ type: "call", agentType, model: usedModel });
       const msg = response.choices[0].message;
       const invalidToolArgErrors = new Map();
       // Keep tool-call history API-valid, but never execute unrecoverable args.
@@ -355,6 +670,25 @@ export async function agentLoop(goal, maxSteps = config.llm.maxSteps, sessionHis
           };
         }
 
+        if (beforeToolCall) {
+          const gate = await beforeToolCall({ name: functionName, args: functionArgs, step });
+          if (gate?.allowed === false) {
+            const result = {
+              success: false,
+              blocked: true,
+              reason: gate.reason || `${functionName} blocked by pre-tool gate`,
+            };
+            log("agent", `Blocked ${functionName}: ${result.reason}`);
+            await onToolFinish?.({ name: functionName, args: functionArgs, result, success: false, step });
+            if (NO_RETRY_TOOLS.has(functionName)) firedOnce.add(functionName);
+            return {
+              role: "tool",
+              tool_call_id: toolCall.id,
+              content: JSON.stringify(result),
+            };
+          }
+        }
+
         await onToolStart?.({ name: functionName, args: functionArgs, step });
         const result = await executeTool(functionName, functionArgs);
         await onToolFinish?.({
@@ -379,6 +713,8 @@ export async function agentLoop(goal, maxSteps = config.llm.maxSteps, sessionHis
 
       messages.push(...toolResults);
     } catch (error) {
+      const openRouterBudgetReason = getOpenRouterBudgetReason(error);
+      if (openRouterBudgetReason) notifyOpenRouterBudgetBlocked(openRouterBudgetReason);
       log("error", `Agent loop error at step ${step}: ${error.message}`);
 
       // If it's a rate limit, wait and retry

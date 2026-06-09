@@ -1,0 +1,87 @@
+{
+  "trace_id": "Bountywork-SOL_2026_06_07_21_15_19",
+  "pool": "Bountywork-SOL",
+  "created_at": "2026-06-07T21:15:19.848Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-07T21:15:19.848Z",
+      "metrics": {
+        "fee_tvl": 0.3895820542715455,
+        "organic": 86.1887231840703,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 2.9249615968329996,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-07T21:15:19.848Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-07T21:15:19.848Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-07T21:15:19.848Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.02754127644490606,
+      "bins_above": null,
+      "bins_below": 57,
+      "volatility_used": 2.9249615968329996,
+      "timing": null,
+      "range_width": 58,
+      "exact": {
+        "active_bin": -361,
+        "lower_bin": -418,
+        "upper_bin": -361,
+        "bin_step": 100,
+        "amount_sol": 0.115
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-07T21:16:16.035Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 0,
+      "active_bin": -360,
+      "entry_bin": -361,
+      "lower_bin": -418,
+      "upper_bin": -361
+    },
+    {
+      "stage": "exit",
+      "pool": "Bountywork-SOL",
+      "timestamp": "2026-06-07T21:53:16.572Z",
+      "result": "LOSS",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": -0.07,
+      "duration_minutes": 37,
+      "fees_earned": 0.000542254,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-07T21:53:16.600Z"
+}

@@ -1,0 +1,67 @@
+{
+  "trace_id": "three-SOL_2026_06_09_22_32_31",
+  "pool": "three-SOL",
+  "created_at": "2026-06-09T22:32:31.821Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T22:32:31.821Z",
+      "metrics": {
+        "fee_tvl": 0.0461,
+        "organic": 87,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 1.9291,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T22:32:31.821Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T22:32:31.821Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-09T22:32:31.821Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.048032729476875015,
+      "bins_above": null,
+      "bins_below": 48,
+      "volatility_used": 1.9291,
+      "timing": null,
+      "range_width": 49,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -381,
+        "lower_bin": -429,
+        "upper_bin": -381,
+        "bin_step": 80,
+        "amount_sol": 2.52
+      }
+    }
+  ],
+  "updated_at": "2026-06-09T22:32:31.850Z"
+}

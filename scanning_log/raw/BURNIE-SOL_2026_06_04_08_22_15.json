@@ -1,0 +1,95 @@
+{
+  "trace_id": "BURNIE-SOL_2026_06_04_08_22_15",
+  "pool": "BURNIE-SOL",
+  "created_at": "2026-06-04T08:22:15.532Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "BURNIE-SOL",
+      "timestamp": "2026-06-04T08:22:15.532Z",
+      "metrics": {
+        "fee_tvl": 0.2225,
+        "organic": 76,
+        "wallet_score": null,
+        "confidence": 0.7702,
+        "volatility": 1.5449,
+        "alpha": "PASS"
+      },
+      "decision": "COPY",
+      "why_pass": [
+        "Wallet score 76 >= 50",
+        "Range quality 50% ok",
+        "Fee/TVL 0.2225 ok",
+        "Organic 76% ok",
+        "Volatility 1.5449 ok",
+        "In range ok",
+        "All quality checks passed"
+      ],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "BURNIE-SOL",
+      "timestamp": "2026-06-04T08:22:15.532Z",
+      "score": 76,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": 0.7702
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "BURNIE-SOL",
+      "timestamp": "2026-06-04T08:22:15.532Z",
+      "momentum_state": "MOMENTUM_BREAKOUT_UP",
+      "predicted_direction": "UPWARD",
+      "wait_minutes": 5,
+      "timing_action": "WAIT_5_MIN",
+      "range_action": "WIDEN_AND_SHIFT_UP",
+      "risk_level": "CRITICAL",
+      "oor_prediction": "NO_DEPLOY_OR_SANDBOX_ONLY"
+    },
+    {
+      "stage": "deploy",
+      "pool": "BURNIE-SOL",
+      "timestamp": "2026-06-04T08:22:15.532Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.05364337673018674,
+      "bins_above": 0,
+      "bins_below": 69,
+      "volatility_used": 1.5449,
+      "timing": "WAIT_5_MIN",
+      "range_width": 70,
+      "exact": {
+        "active_bin": -294,
+        "lower_bin": -363,
+        "upper_bin": -294,
+        "bin_step": 100,
+        "amount_sol": 0.237
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "BURNIE-SOL",
+      "timestamp": "2026-06-04T08:26:29.928Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 4,
+      "active_bin": -293,
+      "entry_bin": -294,
+      "lower_bin": -363,
+      "upper_bin": -294
+    },
+    {
+      "stage": "exit",
+      "pool": "BURNIE-SOL",
+      "timestamp": "2026-06-04T08:52:29.929Z",
+      "result": "LOSS",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": -0.13,
+      "duration_minutes": 30,
+      "fees_earned": 0.000255638,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-04T08:52:29.952Z"
+}

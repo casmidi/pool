@@ -1,0 +1,96 @@
+{
+  "trace_id": "WORLDCUP-SOL_2026_06_09_11_42_40",
+  "pool": "WORLDCUP-SOL",
+  "created_at": "2026-06-09T11:42:40.206Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T11:42:40.206Z",
+      "metrics": {
+        "fee_tvl": 0.0744,
+        "organic": 90,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 1.4072,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T11:42:40.206Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T11:42:40.206Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T11:42:40.206Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.14654630070904473,
+      "bins_above": null,
+      "bins_below": 49,
+      "volatility_used": 1.4072,
+      "timing": null,
+      "range_width": 50,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -193,
+        "lower_bin": -242,
+        "upper_bin": -193,
+        "bin_step": 100,
+        "amount_sol": 3.283
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T12:02:51.056Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 20,
+      "active_bin": -192,
+      "entry_bin": -193,
+      "lower_bin": -242,
+      "upper_bin": -193,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    },
+    {
+      "stage": "exit",
+      "pool": "WORLDCUP-SOL",
+      "timestamp": "2026-06-09T12:48:55.799Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_low-yield",
+      "pnl_pct": 2.34,
+      "duration_minutes": 66,
+      "fees_earned": 0.077538577,
+      "exit_side": "above",
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T12:48:55.812Z"
+}

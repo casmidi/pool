@@ -1,0 +1,90 @@
+{
+  "trace_id": "grail-SOL_2026_06_09_06_59_15",
+  "pool": "grail-SOL",
+  "created_at": "2026-06-09T06:59:15.127Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T06:59:15.127Z",
+      "metrics": {
+        "fee_tvl": 0.2588,
+        "organic": 81,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 6.7119,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T06:59:15.127Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T06:59:15.127Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T06:59:15.127Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.014568543745602342,
+      "bins_above": null,
+      "bins_below": 69,
+      "volatility_used": 6.7119,
+      "timing": null,
+      "range_width": 70,
+      "exact": {
+        "active_bin": -425,
+        "lower_bin": -494,
+        "upper_bin": -425,
+        "bin_step": 100,
+        "amount_sol": 3.63
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T07:11:49.735Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 2.01,
+      "minutes_since_entry": 12,
+      "active_bin": -423,
+      "entry_bin": -425,
+      "lower_bin": -494,
+      "upper_bin": -425
+    },
+    {
+      "stage": "exit",
+      "pool": "grail-SOL",
+      "timestamp": "2026-06-09T10:41:38.486Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_take-profit",
+      "pnl_pct": 9.28,
+      "duration_minutes": 222,
+      "fees_earned": 0.369718902,
+      "exit_side": null,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T10:41:38.520Z"
+}

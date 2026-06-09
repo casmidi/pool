@@ -1,0 +1,87 @@
+{
+  "trace_id": "three-SOL_2026_06_07_08_20_51",
+  "pool": "three-SOL",
+  "created_at": "2026-06-07T08:20:51.491Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-07T08:20:51.491Z",
+      "metrics": {
+        "fee_tvl": 0.409,
+        "organic": 88,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 1.7409,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-07T08:20:51.491Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-07T08:20:51.491Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-07T08:20:51.491Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.08525023368956886,
+      "bins_above": null,
+      "bins_below": 50,
+      "volatility_used": 1.7409,
+      "timing": null,
+      "range_width": 51,
+      "exact": {
+        "active_bin": -309,
+        "lower_bin": -359,
+        "upper_bin": -309,
+        "bin_step": 80,
+        "amount_sol": 0.224
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-07T08:24:10.618Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 0.8,
+      "minutes_since_entry": 3,
+      "active_bin": -308,
+      "entry_bin": -309,
+      "lower_bin": -359,
+      "upper_bin": -309
+    },
+    {
+      "stage": "exit",
+      "pool": "three-SOL",
+      "timestamp": "2026-06-07T12:13:08.518Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_trailing_take-profit",
+      "pnl_pct": 2.28,
+      "duration_minutes": 232,
+      "fees_earned": 0.014301733,
+      "exit_side": null
+    }
+  ],
+  "updated_at": "2026-06-07T12:13:08.548Z"
+}

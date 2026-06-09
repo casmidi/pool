@@ -1,0 +1,87 @@
+{
+  "trace_id": "SLAB-SOL_2026_06_07_16_31_37",
+  "pool": "SLAB-SOL",
+  "created_at": "2026-06-07T16:31:37.118Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T16:31:37.118Z",
+      "metrics": {
+        "fee_tvl": 0.2577,
+        "organic": 76,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 2.7807,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T16:31:37.118Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T16:31:37.118Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T16:31:37.118Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.007554495602367051,
+      "bins_above": null,
+      "bins_below": 63,
+      "volatility_used": 2.7807,
+      "timing": null,
+      "range_width": 64,
+      "exact": {
+        "active_bin": -491,
+        "lower_bin": -554,
+        "upper_bin": -491,
+        "bin_step": 100,
+        "amount_sol": 0.179
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T16:50:24.238Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 1,
+      "minutes_since_entry": 18,
+      "active_bin": -490,
+      "entry_bin": -491,
+      "lower_bin": -554,
+      "upper_bin": -491
+    },
+    {
+      "stage": "exit",
+      "pool": "SLAB-SOL",
+      "timestamp": "2026-06-07T17:22:24.468Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": 1.03,
+      "duration_minutes": 50,
+      "fees_earned": 0.002460772,
+      "exit_side": "above"
+    }
+  ],
+  "updated_at": "2026-06-07T17:22:24.503Z"
+}

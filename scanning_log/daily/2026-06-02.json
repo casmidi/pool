@@ -1,0 +1,2054 @@
+{
+  "date": "2026-06-02",
+  "generated_at": "2026-06-02T23:45:02.565Z",
+  "summary": {
+    "total_trades": 1,
+    "profit_count": 1,
+    "loss_count": 0,
+    "pf": 99,
+    "oor_above": 0,
+    "oor_below": 0
+  },
+  "loss_analysis": [],
+  "rejection_analysis": {
+    "total_blocked": 350,
+    "total_watch": 57,
+    "good_rejections": 12,
+    "false_negatives": 254,
+    "unclear": 141,
+    "top_false_negative_causes": [
+      {
+        "logic": "wallet_filter_too_strict",
+        "count": 254
+      }
+    ],
+    "items": [
+      {
+        "trace_id": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo_2026_06_02_23_45_02",
+        "pool": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "pool_address": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "timestamp": "2026-06-02T23:45:02.208Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "HATCHER-SOL_2026_06_02_23_45_02",
+        "pool": "HATCHER-SOL",
+        "pool_address": "AVAaAmgHMzv9GTm8d3RgdghHetGs1B19jopQ19SiPiw8",
+        "timestamp": "2026-06-02T23:45:02.188Z",
+        "status": "BLOCKED",
+        "score": 82,
+        "confidence": 0.1235,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780443902172_3YfBH9Rn_AVAaAmgH"
+      },
+      {
+        "trace_id": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv_2026_06_02_23_45_02",
+        "pool": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "pool_address": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "timestamp": "2026-06-02T23:45:02.069Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "three-SOL_2026_06_02_23_45_02",
+        "pool": "three-SOL",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T23:45:02.050Z",
+        "status": "BLOCKED",
+        "score": 75,
+        "confidence": 0.10350000000000001,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780443902036_68DbUyRN_CnK82s8e"
+      },
+      {
+        "trace_id": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme_2026_06_02_23_45_01",
+        "pool": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "pool_address": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "timestamp": "2026-06-02T23:45:01.974Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "memecoin-SOL_2026_06_02_23_45_01",
+        "pool": "memecoin-SOL",
+        "pool_address": "6b56mFU6GPopawa6hHtkpf5KYKGWPgGUuGNytCMvcZEp",
+        "timestamp": "2026-06-02T23:45:01.957Z",
+        "status": "BLOCKED",
+        "score": 79,
+        "confidence": 0.1115,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780443901944_3YfBH9Rn_6b56mFU6"
+      },
+      {
+        "trace_id": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA_2026_06_02_23_45_01",
+        "pool": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA",
+        "pool_address": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA",
+        "timestamp": "2026-06-02T23:45:01.886Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3_2026_06_02_23_45_01",
+        "pool": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "pool_address": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "timestamp": "2026-06-02T23:45:01.763Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x_2026_06_02_23_45_01",
+        "pool": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+        "pool_address": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+        "timestamp": "2026-06-02T23:45:01.743Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "three-SOL_2026_06_02_23_45_01",
+        "pool": "three-SOL",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T23:45:01.716Z",
+        "status": "BLOCKED",
+        "score": 79,
+        "confidence": 0.10750000000000001,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780443901703_mRsihzPg_CnK82s8e"
+      },
+      {
+        "trace_id": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa_2026_06_02_23_45_01",
+        "pool": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T23:45:01.644Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "GACHA-SOL_2026_06_02_23_45_01",
+        "pool": "GACHA-SOL",
+        "pool_address": "4DfH61nAFphrQNYw8MxkqK2LnLocteWpeTRKVEVCLr2Q",
+        "timestamp": "2026-06-02T23:45:01.623Z",
+        "status": "WATCH",
+        "score": 70,
+        "confidence": 0.386,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "range_filter",
+            "value": "out_of_range",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780443901608_2zGFkAPF_4DfH61nA"
+      },
+      {
+        "trace_id": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo_2026_06_02_23_15_01",
+        "pool": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "pool_address": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "timestamp": "2026-06-02T23:15:01.811Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme_2026_06_02_23_15_01",
+        "pool": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "pool_address": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "timestamp": "2026-06-02T23:15:01.793Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv_2026_06_02_23_15_01",
+        "pool": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "pool_address": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "timestamp": "2026-06-02T23:15:01.685Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3_2026_06_02_23_15_01",
+        "pool": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "pool_address": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "timestamp": "2026-06-02T23:15:01.668Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA_2026_06_02_23_15_01",
+        "pool": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA",
+        "pool_address": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA",
+        "timestamp": "2026-06-02T23:15:01.574Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "HATCHER-SOL_2026_06_02_23_15_01",
+        "pool": "HATCHER-SOL",
+        "pool_address": "AVAaAmgHMzv9GTm8d3RgdghHetGs1B19jopQ19SiPiw8",
+        "timestamp": "2026-06-02T23:15:01.433Z",
+        "status": "BLOCKED",
+        "score": 82,
+        "confidence": 0.1235,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780442101422_3YfBH9Rn_AVAaAmgH"
+      },
+      {
+        "trace_id": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x_2026_06_02_23_15_01",
+        "pool": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+        "pool_address": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+        "timestamp": "2026-06-02T23:15:01.360Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "GACHA-SOL_2026_06_02_23_15_01",
+        "pool": "GACHA-SOL",
+        "pool_address": "4DfH61nAFphrQNYw8MxkqK2LnLocteWpeTRKVEVCLr2Q",
+        "timestamp": "2026-06-02T23:15:01.330Z",
+        "status": "WATCH",
+        "score": 70,
+        "confidence": 0.386,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "range_filter",
+            "value": "out_of_range",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780442101317_2zGFkAPF_4DfH61nA"
+      },
+      {
+        "trace_id": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa_2026_06_02_23_15_01",
+        "pool": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T23:15:01.239Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "memecoin-SOL_2026_06_02_23_15_01",
+        "pool": "memecoin-SOL",
+        "pool_address": "6b56mFU6GPopawa6hHtkpf5KYKGWPgGUuGNytCMvcZEp",
+        "timestamp": "2026-06-02T23:15:01.208Z",
+        "status": "BLOCKED",
+        "score": 79,
+        "confidence": 0.1115,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780442101192_3YfBH9Rn_6b56mFU6"
+      },
+      {
+        "trace_id": "three-SOL_2026_06_02_23_15_01",
+        "pool": "three-SOL",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T23:15:01.125Z",
+        "status": "BLOCKED",
+        "score": 78,
+        "confidence": 0.10750000000000001,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780442101107_mRsihzPg_CnK82s8e"
+      },
+      {
+        "trace_id": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme_2026_06_02_22_45_01",
+        "pool": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "pool_address": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "timestamp": "2026-06-02T22:45:01.507Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "HATCHER-SOL_2026_06_02_22_45_01",
+        "pool": "HATCHER-SOL",
+        "pool_address": "AVAaAmgHMzv9GTm8d3RgdghHetGs1B19jopQ19SiPiw8",
+        "timestamp": "2026-06-02T22:45:01.488Z",
+        "status": "BLOCKED",
+        "score": 82,
+        "confidence": 0.1235,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780440301464_3YfBH9Rn_AVAaAmgH"
+      },
+      {
+        "trace_id": "three-SOL_2026_06_02_22_45_01",
+        "pool": "three-SOL",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T22:45:01.390Z",
+        "status": "BLOCKED",
+        "score": 80,
+        "confidence": 0.10350000000000001,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780440301377_68DbUyRN_CnK82s8e"
+      },
+      {
+        "trace_id": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3_2026_06_02_22_45_01",
+        "pool": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "pool_address": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "timestamp": "2026-06-02T22:45:01.309Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo_2026_06_02_22_45_01",
+        "pool": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "pool_address": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "timestamp": "2026-06-02T22:45:01.289Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "memecoin-SOL_2026_06_02_22_45_01",
+        "pool": "memecoin-SOL",
+        "pool_address": "6b56mFU6GPopawa6hHtkpf5KYKGWPgGUuGNytCMvcZEp",
+        "timestamp": "2026-06-02T22:45:01.268Z",
+        "status": "BLOCKED",
+        "score": 78,
+        "confidence": 0.1115,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780440301254_3YfBH9Rn_6b56mFU6"
+      },
+      {
+        "trace_id": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA_2026_06_02_22_45_01",
+        "pool": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA",
+        "pool_address": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA",
+        "timestamp": "2026-06-02T22:45:01.200Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv_2026_06_02_22_45_01",
+        "pool": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "pool_address": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "timestamp": "2026-06-02T22:45:01.144Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x_2026_06_02_22_45_01",
+        "pool": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+        "pool_address": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+        "timestamp": "2026-06-02T22:45:01.123Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa_2026_06_02_22_45_01",
+        "pool": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T22:45:01.038Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "GACHA-SOL_2026_06_02_22_45_00",
+        "pool": "GACHA-SOL",
+        "pool_address": "4DfH61nAFphrQNYw8MxkqK2LnLocteWpeTRKVEVCLr2Q",
+        "timestamp": "2026-06-02T22:45:00.989Z",
+        "status": "WATCH",
+        "score": 69,
+        "confidence": 0.386,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "range_filter",
+            "value": "out_of_range",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780440300974_2zGFkAPF_4DfH61nA"
+      },
+      {
+        "trace_id": "three-SOL_2026_06_02_22_45_00",
+        "pool": "three-SOL",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T22:45:00.863Z",
+        "status": "BLOCKED",
+        "score": 80,
+        "confidence": 0.11950000000000001,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780440300849_mRsihzPg_CnK82s8e"
+      },
+      {
+        "trace_id": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme_2026_06_02_22_15_01",
+        "pool": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "pool_address": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "timestamp": "2026-06-02T22:15:01.705Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo_2026_06_02_22_15_01",
+        "pool": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "pool_address": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "timestamp": "2026-06-02T22:15:01.681Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3_2026_06_02_22_15_01",
+        "pool": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "pool_address": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "timestamp": "2026-06-02T22:15:01.647Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv_2026_06_02_22_15_01",
+        "pool": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "pool_address": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "timestamp": "2026-06-02T22:15:01.628Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa_2026_06_02_22_15_01",
+        "pool": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T22:15:01.372Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "HATCHER-SOL_2026_06_02_22_15_01",
+        "pool": "HATCHER-SOL",
+        "pool_address": "AVAaAmgHMzv9GTm8d3RgdghHetGs1B19jopQ19SiPiw8",
+        "timestamp": "2026-06-02T22:15:01.262Z",
+        "status": "BLOCKED",
+        "score": 82,
+        "confidence": 0.1235,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780438501248_3YfBH9Rn_AVAaAmgH"
+      },
+      {
+        "trace_id": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA_2026_06_02_22_15_01",
+        "pool": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA",
+        "pool_address": "ATzd4Tb1Cn1R6hn8GxyHuR25oCdwdNzctMNb4gqhaMnA",
+        "timestamp": "2026-06-02T22:15:01.187Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "three-SOL_2026_06_02_22_15_01",
+        "pool": "three-SOL",
+        "pool_address": "CnK82s8exdsK9nwqQ55kd9wcxoA22NwTchZJCBdu8LDa",
+        "timestamp": "2026-06-02T22:15:01.160Z",
+        "status": "BLOCKED",
+        "score": 80,
+        "confidence": 0.10350000000000001,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780438501141_68DbUyRN_CnK82s8e"
+      },
+      {
+        "trace_id": "memecoin-SOL_2026_06_02_22_15_01",
+        "pool": "memecoin-SOL",
+        "pool_address": "6b56mFU6GPopawa6hHtkpf5KYKGWPgGUuGNytCMvcZEp",
+        "timestamp": "2026-06-02T22:15:01.083Z",
+        "status": "BLOCKED",
+        "score": 79,
+        "confidence": 0.1115,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780438501069_3YfBH9Rn_6b56mFU6"
+      },
+      {
+        "trace_id": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x_2026_06_02_22_15_00",
+        "pool": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+        "pool_address": "6eR5rRdexbht8aiiQmYq7yKb7EhdD3af22B4mHDmCp8x",
+        "timestamp": "2026-06-02T22:15:00.990Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "GACHA-SOL_2026_06_02_22_15_00",
+        "pool": "GACHA-SOL",
+        "pool_address": "4DfH61nAFphrQNYw8MxkqK2LnLocteWpeTRKVEVCLr2Q",
+        "timestamp": "2026-06-02T22:15:00.951Z",
+        "status": "WATCH",
+        "score": 68,
+        "confidence": 0.29600000000000004,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "range_filter",
+            "value": "out_of_range",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780438500932_2zGFkAPF_4DfH61nA"
+      },
+      {
+        "trace_id": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme_2026_06_02_21_45_01",
+        "pool": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "pool_address": "9Ux4vtd8juEH4NMF4ae3tXYpKBdeCUUipX8z3EficKme",
+        "timestamp": "2026-06-02T21:45:01.816Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo_2026_06_02_21_45_01",
+        "pool": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "pool_address": "Eb8yELeCoKBsy4Hfmo3HQ72ZaCs1N4AWWhuZPSPnXRGo",
+        "timestamp": "2026-06-02T21:45:01.787Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3_2026_06_02_21_45_01",
+        "pool": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "pool_address": "9bL8Pptpb8M2jEAb63EoarA6Po6Akarpha3JPzQfXGS3",
+        "timestamp": "2026-06-02T21:45:01.718Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      },
+      {
+        "trace_id": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv_2026_06_02_21_45_01",
+        "pool": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "pool_address": "Diy8bJcVUqwEtXaRXBADEKBYSpH8MJNwmJ9vodMsHyKv",
+        "timestamp": "2026-06-02T21:45:01.689Z",
+        "status": "BLOCKED",
+        "score": null,
+        "confidence": null,
+        "rejection_stage": "decision_filter",
+        "reasons": [],
+        "after_30m": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_1h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "after_2h": {
+          "status": "PENDING_OBSERVATION",
+          "price_change_pct": null,
+          "fee_quality": null,
+          "estimated_profitability": null,
+          "survival": null,
+          "oor_probability": null
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": null
+      }
+    ]
+  }
+}

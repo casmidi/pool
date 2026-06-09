@@ -1,0 +1,96 @@
+{
+  "trace_id": "GO-SOL_2026_06_09_13_02_11",
+  "pool": "GO-SOL",
+  "created_at": "2026-06-09T13:02:11.478Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "GO-SOL",
+      "timestamp": "2026-06-09T13:02:11.478Z",
+      "metrics": {
+        "fee_tvl": 0.5068,
+        "organic": 75,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 2.3289,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "GO-SOL",
+      "timestamp": "2026-06-09T13:02:11.478Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "GO-SOL",
+      "timestamp": "2026-06-09T13:02:11.478Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "GO-SOL",
+      "timestamp": "2026-06-09T13:02:11.478Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.0048277375495642825,
+      "bins_above": null,
+      "bins_below": 58,
+      "volatility_used": 2.3289,
+      "timing": null,
+      "range_width": 59,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -536,
+        "lower_bin": -594,
+        "upper_bin": -536,
+        "bin_step": 100,
+        "amount_sol": 0.257
+      }
+    },
+    {
+      "stage": "runtime",
+      "pool": "GO-SOL",
+      "timestamp": "2026-06-09T13:08:21.374Z",
+      "event": "BREAKOUT_UP",
+      "pct_move": 2.01,
+      "minutes_since_entry": 6,
+      "active_bin": -534,
+      "entry_bin": -536,
+      "lower_bin": -594,
+      "upper_bin": -536,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    },
+    {
+      "stage": "exit",
+      "pool": "GO-SOL",
+      "timestamp": "2026-06-09T13:42:21.595Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_out-of-range_above",
+      "pnl_pct": 0.21,
+      "duration_minutes": 40,
+      "fees_earned": 0.001144716,
+      "exit_side": "above",
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T13:42:21.670Z"
+}

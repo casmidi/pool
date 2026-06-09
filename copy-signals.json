@@ -1,0 +1,2969 @@
+{
+  "signals": [
+    {
+      "id": "1781045150631_CL1kvg2m_8UYCgRrx",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "walletLabel": "Rank2_CL1k",
+      "walletRank": 2,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+      "poolName": "WORLDCUP-SOL",
+      "position": "4pYsbRH6wqvYrmPhWjB3q3cPWmwYFWdzH5EfaPfhhKmk",
+      "activeBin": null,
+      "active_bin": null,
+      "currentActiveBin": null,
+      "current_active_bin": null,
+      "lowerBin": null,
+      "lower_bin": null,
+      "upperBin": null,
+      "upper_bin": null,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "COPY",
+      "confidence": 0.6159,
+      "breakdown": {
+        "wallet": 0.1016,
+        "range": 0.1058,
+        "fee_tvl": 0.1463,
+        "volatility": 0.1467,
+        "organic": 0.1364,
+        "age": 0,
+        "total": 0.6159,
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0.03456400367722253,
+          "volatility": 1.3349769711774422,
+          "organicScore": 88.98173481094278,
+          "organicWeight": 0.1533,
+          "ageHours": null
+        },
+        "alpha_edge": -0.021
+      },
+      "confidenceBreakdown": {
+        "wallet": 0.1016,
+        "range": 0.1058,
+        "fee_tvl": 0.1463,
+        "volatility": 0.1467,
+        "organic": 0.1364,
+        "age": 0,
+        "total": 0.6159,
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0.03456400367722253,
+          "volatility": 1.3349769711774422,
+          "organicScore": 88.98173481094278,
+          "organicWeight": 0.1533,
+          "ageHours": null
+        },
+        "alpha_edge": -0.021
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "COPY",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.021,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 46,
+          "expectedMinutes": 83,
+          "expectedHours": 1.38,
+          "penalty": -0.06,
+          "hold": false,
+          "reason": "vol=1.3349769711774422, accel=0, width=1, oor=33.3%"
+        },
+        "euphoria": {
+          "score": 5,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=88.98173481094278, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 54.47,
+          "positive": true,
+          "reason": "fee=57.24%, ilRisk=2.76%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 74,
+      "alphaRank": "B",
+      "organicScore": 88.98173481094278,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0.03456400367722253,
+      "volatility": 1.3349769711774422,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 50% ok",
+        "Fee/TVL 0.03456400367722253 ok",
+        "Organic 88.98173481094278% ok",
+        "Volatility 1.3349769711774422 ok",
+        "In range ok",
+        "All quality checks passed"
+      ],
+      "risks": [],
+      "deployArgs": {
+        "pool_address": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+        "pool_name": "WORLDCUP-SOL",
+        "amount_y": 0.218,
+        "amount_sol": 0.218,
+        "amount_x": 0,
+        "bins_below": null,
+        "bins_above": 0,
+        "active_bin": null,
+        "lower_bin": null,
+        "upper_bin": null,
+        "bin_step": 100,
+        "fee_tvl_ratio": 0.03456400367722253,
+        "volatility": 1.3349769711774422,
+        "organic_score": 88.98173481094278,
+        "organic_source": "detail.token_x.organic_score",
+        "wallet_score": 40,
+        "wallet_grade": "C",
+        "source_wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+        "source_wallet_rank": 2,
+        "source_wallet_type": "ranked_wallet",
+        "source_wallet_confidence": 40,
+        "source_signal_id": "1781045150631_CL1kvg2m_8UYCgRrx",
+        "source": "copy_engine",
+        "decision_confidence": 0.6159,
+        "decision_breakdown": {
+          "wallet": 0.1016,
+          "range": 0.1058,
+          "fee_tvl": 0.1463,
+          "volatility": 0.1467,
+          "organic": 0.1364,
+          "age": 0,
+          "total": 0.6159,
+          "raw": {
+            "walletScore": 40,
+            "rangeQuality": 50,
+            "feeTvl": 0.03456400367722253,
+            "volatility": 1.3349769711774422,
+            "organicScore": 88.98173481094278,
+            "organicWeight": 0.1533,
+            "ageHours": null
+          },
+          "alpha_edge": -0.021
+        },
+        "decision_result": {
+          "action": "COPY",
+          "confidence": 0.6159,
+          "breakdown": {
+            "wallet": 0.1016,
+            "range": 0.1058,
+            "fee_tvl": 0.1463,
+            "volatility": 0.1467,
+            "organic": 0.1364,
+            "age": 0,
+            "total": 0.6159,
+            "raw": {
+              "walletScore": 40,
+              "rangeQuality": 50,
+              "feeTvl": 0.03456400367722253,
+              "volatility": 1.3349769711774422,
+              "organicScore": 88.98173481094278,
+              "organicWeight": 0.1533,
+              "ageHours": null
+            },
+            "alpha_edge": -0.021
+          },
+          "reasons": [
+            "Wallet score 40 >= 40",
+            "Range quality 50% ok",
+            "Fee/TVL 0.03456400367722253 ok",
+            "Organic 88.98173481094278% ok",
+            "Volatility 1.3349769711774422 ok",
+            "In range ok",
+            "All quality checks passed"
+          ],
+          "risks": []
+        },
+        "reasons": [
+          "Wallet score 40 >= 40",
+          "Range quality 50% ok",
+          "Fee/TVL 0.03456400367722253 ok",
+          "Organic 88.98173481094278% ok",
+          "Volatility 1.3349769711774422 ok",
+          "In range ok",
+          "All quality checks passed"
+        ],
+        "risks": [],
+        "shadow_decision": {
+          "engine": "conservative_shadow_v1",
+          "action": "COPY",
+          "threshold": 0.48,
+          "wouldDiffer": false,
+          "reasons": [
+            "requires confidence >= 0.48"
+          ]
+        },
+        "alpha_edge": {
+          "action": "PASS",
+          "confidenceAdjustment": -0.021,
+          "alphaScore": 74,
+          "alphaRank": "B",
+          "walletTiming": {
+            "score": 70,
+            "boost": 0.039,
+            "reason": "rank=2, walletScore=40, age=?h, pnl=0%"
+          },
+          "crowd": {
+            "score": 0,
+            "walletCount": 0,
+            "minutesSinceFirst": 0,
+            "velocity": 0,
+            "penalty": 0,
+            "hold": false,
+            "reason": "0 smart/copy wallet(s), 0m since first copy"
+          },
+          "survival": {
+            "score": 46,
+            "expectedMinutes": 83,
+            "expectedHours": 1.38,
+            "penalty": -0.06,
+            "hold": false,
+            "reason": "vol=1.3349769711774422, accel=0, width=1, oor=33.3%"
+          },
+          "euphoria": {
+            "score": 5,
+            "penalty": 0,
+            "hold": false,
+            "reason": "priceAccel=0, volumeChange=0, organic=88.98173481094278, ath=0, crowd=0"
+          },
+          "cluster": {
+            "score": 12,
+            "walletCount": 1,
+            "boost": 0,
+            "reason": "1 wallet(s) in recent cluster"
+          },
+          "expectancy": {
+            "score": 100,
+            "expectancyPct": 54.47,
+            "positive": true,
+            "reason": "fee=57.24%, ilRisk=2.76%"
+          },
+          "holdReasons": []
+        }
+      },
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T22:45:50.700Z",
+      "deployResult": {
+        "blocked": true,
+        "reason": "Already have an open position in pool 8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy. Cannot open duplicate."
+      }
+    },
+    {
+      "id": "1781046903688_CL1kvg2m_8UYCgRrx",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "walletLabel": "Rank2_CL1k",
+      "walletRank": 2,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+      "poolName": "WORLDCUP-SOL",
+      "position": "4pYsbRH6wqvYrmPhWjB3q3cPWmwYFWdzH5EfaPfhhKmk",
+      "activeBin": -211,
+      "active_bin": -211,
+      "currentActiveBin": -211,
+      "current_active_bin": -211,
+      "lowerBin": -244,
+      "lower_bin": -244,
+      "upperBin": -175,
+      "upper_bin": -175,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "COPY",
+      "confidence": 0.7184,
+      "breakdown": {
+        "wallet": 0.1016,
+        "range": 0.2011,
+        "fee_tvl": 0.1054,
+        "volatility": 0.0847,
+        "organic": 0.1366,
+        "age": 0.05,
+        "total": 0.7184,
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 95,
+          "feeTvl": 0.024906605427574356,
+          "volatility": 0,
+          "organicScore": 89.12149684737794,
+          "organicWeight": 0.1533,
+          "ageHours": 17.05
+        },
+        "alpha_edge": 0.039
+      },
+      "confidenceBreakdown": {
+        "wallet": 0.1016,
+        "range": 0.2011,
+        "fee_tvl": 0.1054,
+        "volatility": 0.0847,
+        "organic": 0.1366,
+        "age": 0.05,
+        "total": 0.7184,
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 95,
+          "feeTvl": 0.024906605427574356,
+          "volatility": 0,
+          "organicScore": 89.12149684737794,
+          "organicWeight": 0.1533,
+          "ageHours": 17.05
+        },
+        "alpha_edge": 0.039
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "COPY",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 83,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=-4.58%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 84,
+          "expectedMinutes": 261,
+          "expectedHours": 4.35,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=69, oor=33.3%"
+        },
+        "euphoria": {
+          "score": 5,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=89.12149684737794, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 129.61,
+          "positive": true,
+          "reason": "fee=130.01%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 83,
+      "alphaRank": "A",
+      "organicScore": 89.12149684737794,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0.024906605427574356,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 95% ok",
+        "Fee/TVL 0.024906605427574356 ok",
+        "Organic 89.12149684737794% ok",
+        "Volatility 0 ok",
+        "In range ok",
+        "All quality checks passed"
+      ],
+      "risks": [],
+      "deployArgs": {
+        "pool_address": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+        "pool_name": "WORLDCUP-SOL",
+        "amount_y": 2.88,
+        "amount_sol": 2.88,
+        "amount_x": 0,
+        "bins_below": 33,
+        "bins_above": 0,
+        "active_bin": -211,
+        "lower_bin": -244,
+        "upper_bin": -175,
+        "bin_step": 100,
+        "fee_tvl_ratio": 0.024906605427574356,
+        "volatility": 0,
+        "organic_score": 89.12149684737794,
+        "organic_source": "detail.token_x.organic_score",
+        "wallet_score": 40,
+        "wallet_grade": "C",
+        "source_wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+        "source_wallet_rank": 2,
+        "source_wallet_type": "ranked_wallet",
+        "source_wallet_confidence": 40,
+        "source_signal_id": "1781046903688_CL1kvg2m_8UYCgRrx",
+        "source": "copy_engine",
+        "decision_confidence": 0.7184,
+        "decision_breakdown": {
+          "wallet": 0.1016,
+          "range": 0.2011,
+          "fee_tvl": 0.1054,
+          "volatility": 0.0847,
+          "organic": 0.1366,
+          "age": 0.05,
+          "total": 0.7184,
+          "raw": {
+            "walletScore": 40,
+            "rangeQuality": 95,
+            "feeTvl": 0.024906605427574356,
+            "volatility": 0,
+            "organicScore": 89.12149684737794,
+            "organicWeight": 0.1533,
+            "ageHours": 17.05
+          },
+          "alpha_edge": 0.039
+        },
+        "decision_result": {
+          "action": "COPY",
+          "confidence": 0.7184,
+          "breakdown": {
+            "wallet": 0.1016,
+            "range": 0.2011,
+            "fee_tvl": 0.1054,
+            "volatility": 0.0847,
+            "organic": 0.1366,
+            "age": 0.05,
+            "total": 0.7184,
+            "raw": {
+              "walletScore": 40,
+              "rangeQuality": 95,
+              "feeTvl": 0.024906605427574356,
+              "volatility": 0,
+              "organicScore": 89.12149684737794,
+              "organicWeight": 0.1533,
+              "ageHours": 17.05
+            },
+            "alpha_edge": 0.039
+          },
+          "reasons": [
+            "Wallet score 40 >= 40",
+            "Range quality 95% ok",
+            "Fee/TVL 0.024906605427574356 ok",
+            "Organic 89.12149684737794% ok",
+            "Volatility 0 ok",
+            "In range ok",
+            "All quality checks passed"
+          ],
+          "risks": []
+        },
+        "reasons": [
+          "Wallet score 40 >= 40",
+          "Range quality 95% ok",
+          "Fee/TVL 0.024906605427574356 ok",
+          "Organic 89.12149684737794% ok",
+          "Volatility 0 ok",
+          "In range ok",
+          "All quality checks passed"
+        ],
+        "risks": [],
+        "shadow_decision": {
+          "engine": "conservative_shadow_v1",
+          "action": "COPY",
+          "threshold": 0.48,
+          "wouldDiffer": false,
+          "reasons": [
+            "requires confidence >= 0.48"
+          ]
+        },
+        "alpha_edge": {
+          "action": "PASS",
+          "confidenceAdjustment": 0.039,
+          "alphaScore": 83,
+          "alphaRank": "A",
+          "walletTiming": {
+            "score": 70,
+            "boost": 0.039,
+            "reason": "rank=2, walletScore=40, age=?h, pnl=-4.58%"
+          },
+          "crowd": {
+            "score": 0,
+            "walletCount": 0,
+            "minutesSinceFirst": 0,
+            "velocity": 0,
+            "penalty": 0,
+            "hold": false,
+            "reason": "0 smart/copy wallet(s), 0m since first copy"
+          },
+          "survival": {
+            "score": 84,
+            "expectedMinutes": 261,
+            "expectedHours": 4.35,
+            "penalty": 0,
+            "hold": false,
+            "reason": "vol=0, accel=0, width=69, oor=33.3%"
+          },
+          "euphoria": {
+            "score": 5,
+            "penalty": 0,
+            "hold": false,
+            "reason": "priceAccel=0, volumeChange=0, organic=89.12149684737794, ath=0, crowd=0"
+          },
+          "cluster": {
+            "score": 12,
+            "walletCount": 1,
+            "boost": 0,
+            "reason": "1 wallet(s) in recent cluster"
+          },
+          "expectancy": {
+            "score": 100,
+            "expectancyPct": 129.61,
+            "positive": true,
+            "reason": "fee=130.01%, ilRisk=0.4%"
+          },
+          "holdReasons": []
+        },
+        "_overridden": true
+      },
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:03.789Z",
+      "deployResult": {
+        "error": "Invalid volatility 0 — refusing deploy because the volatility feed is unusable.",
+        "tool": "deploy_position"
+      }
+    }
+  ],
+  "ignored": [
+    {
+      "id": "1781045136435_2XrNyNEW_ANCx141S",
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "walletLabel": "2XrNyNEW",
+      "walletRank": 1,
+      "walletScore": 42,
+      "walletGrade": "C",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": null,
+      "position": "44oSH9hSX3nkQqbpMK8qjDzDZX4Scqm4S1vFCE8H84Qf",
+      "activeBin": null,
+      "active_bin": null,
+      "currentActiveBin": null,
+      "current_active_bin": null,
+      "lowerBin": null,
+      "lower_bin": null,
+      "upperBin": null,
+      "upper_bin": null,
+      "binStep": null,
+      "bin_step": null,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.314,
+      "breakdown": {
+        "raw": {
+          "walletScore": 42,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.314,
+        "alpha_edge": -0.036
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 42,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.314,
+        "alpha_edge": -0.036
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 67,
+          "expectedMinutes": 121,
+          "expectedHours": 2.02,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 41,
+          "expectancyPct": -1.1,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.1%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 69,
+      "alphaRank": "B",
+      "organicScore": null,
+      "organicSource": null,
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 42 >= 40",
+        "Range quality 50% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T22:45:36.504Z"
+    },
+    {
+      "id": "1781045145035_CL1kvg2m_2N1KNuLS",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "walletLabel": "Rank2_CL1k",
+      "walletRank": 2,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "2N1KNuLSt167P6p9P8HYcisTvTTv4vYTM8QJBbtv1xYU",
+      "poolName": null,
+      "position": "4aWRrAumEGUqBhLUwim4T8oWpUyZfGcqronkJfkU4CXo",
+      "activeBin": null,
+      "active_bin": null,
+      "currentActiveBin": null,
+      "current_active_bin": null,
+      "lowerBin": null,
+      "lower_bin": null,
+      "upperBin": null,
+      "upper_bin": null,
+      "binStep": null,
+      "bin_step": null,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.309,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.309,
+        "alpha_edge": -0.041
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.309,
+        "alpha_edge": -0.041
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.041,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 67,
+          "expectedMinutes": 121,
+          "expectedHours": 2.02,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 41,
+          "expectancyPct": -1.1,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.1%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 69,
+      "alphaRank": "B",
+      "organicScore": null,
+      "organicSource": null,
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 50% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T22:45:45.074Z"
+    },
+    {
+      "id": "1781045146075_DRpaJDur_AvpjYo2a",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "walletLabel": "DRpaJDur",
+      "walletRank": 3,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": null,
+      "position": "85zaqUe8URHNiKUFSY5EENQHxqswJUpwo7ScsWpz5MEp",
+      "activeBin": null,
+      "active_bin": null,
+      "currentActiveBin": null,
+      "current_active_bin": null,
+      "lowerBin": null,
+      "lower_bin": null,
+      "upperBin": null,
+      "upper_bin": null,
+      "binStep": null,
+      "bin_step": null,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.305,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.305,
+        "alpha_edge": -0.045
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.305,
+        "alpha_edge": -0.045
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.045,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 68,
+          "boost": 0.035,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 67,
+          "expectedMinutes": 121,
+          "expectedHours": 2.02,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 41,
+          "expectancyPct": -1.1,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.1%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 69,
+      "alphaRank": "B",
+      "organicScore": null,
+      "organicSource": null,
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 50% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T22:45:46.119Z"
+    },
+    {
+      "id": "1781045150769_DRpaJDur_2e3dimMU",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "walletLabel": "DRpaJDur",
+      "walletRank": 3,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "position": "8hRDgEm5xyaunC6YDiniFQd2mtvMqB8nCNdjgFHty2cb",
+      "activeBin": null,
+      "active_bin": null,
+      "currentActiveBin": null,
+      "current_active_bin": null,
+      "lowerBin": null,
+      "lower_bin": null,
+      "upperBin": null,
+      "upper_bin": null,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.305,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.305,
+        "alpha_edge": -0.045
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.305,
+        "alpha_edge": -0.045
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.045,
+        "alphaScore": 68,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 68,
+          "boost": 0.035,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 66,
+          "expectedMinutes": 119,
+          "expectedHours": 1.98,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=59.36268002982, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 40,
+          "expectancyPct": -1.22,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.22%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 68,
+      "alphaRank": "B",
+      "organicScore": 59.36268002982,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 50% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T22:45:50.802Z"
+    },
+    {
+      "id": "1781045150949_CL1kvg2m_DRWNnjNp",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "walletLabel": "Rank2_CL1k",
+      "walletRank": 2,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "DRWNnjNpmrWTs7mmNYyH8d9qmPmcVQHenKh369cwUiLp",
+      "poolName": "Clude-SOL",
+      "position": "5hX3TL5vvqW2MCorrejJ93G5MT2hdizvar5uHj7aHKVC",
+      "activeBin": null,
+      "active_bin": null,
+      "currentActiveBin": null,
+      "current_active_bin": null,
+      "lowerBin": null,
+      "lower_bin": null,
+      "upperBin": null,
+      "upper_bin": null,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.33899999999999997,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0.04380164494566391,
+          "organicScore": 52.06622782630752
+        },
+        "total": 0.33899999999999997,
+        "alpha_edge": 0.039
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0.04380164494566391,
+          "organicScore": 52.06622782630752
+        },
+        "total": 0.33899999999999997,
+        "alpha_edge": 0.039
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "hard risk present"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 79,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 66,
+          "expectedMinutes": 119,
+          "expectedHours": 1.98,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=52.06622782630752, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 102.86,
+          "positive": true,
+          "reason": "fee=104.07%, ilRisk=1.22%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 79,
+      "alphaRank": "A",
+      "organicScore": 52.06622782630752,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0.04380164494566391,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 50% ok",
+        "Fee/TVL 0.04380164494566391 ok",
+        "Organic 52.06622782630752% below threshold 70%"
+      ],
+      "risks": [
+        "low_organic"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T22:45:50.984Z"
+    },
+    {
+      "id": "1781045151257_DRpaJDur_13RUiTWi",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "walletLabel": "DRpaJDur",
+      "walletRank": 3,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "position": "AAHQNWxjgpN7rdLsKnrDrXLWQQdumEFe18WRUUoFQR5H",
+      "activeBin": null,
+      "active_bin": null,
+      "currentActiveBin": null,
+      "current_active_bin": null,
+      "lowerBin": null,
+      "lower_bin": null,
+      "upperBin": null,
+      "upper_bin": null,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.305,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.305,
+        "alpha_edge": -0.045
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 50,
+          "feeTvl": 0
+        },
+        "total": 0.305,
+        "alpha_edge": -0.045
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.045,
+        "alphaScore": 68,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 68,
+          "boost": 0.035,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 66,
+          "expectedMinutes": 119,
+          "expectedHours": 1.98,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 40,
+          "expectancyPct": -1.22,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.22%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 68,
+      "alphaRank": "B",
+      "organicScore": 0,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 50% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T22:45:51.291Z"
+    },
+    {
+      "id": "1781046902087_2XrNyNEW_ANCx141S",
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "walletLabel": "2XrNyNEW",
+      "walletRank": 1,
+      "walletScore": 42,
+      "walletGrade": "C",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": "HYPE-USDC",
+      "position": "44oSH9hSX3nkQqbpMK8qjDzDZX4Scqm4S1vFCE8H84Qf",
+      "activeBin": -1429,
+      "active_bin": -1429,
+      "currentActiveBin": -1429,
+      "current_active_bin": -1429,
+      "lowerBin": -1410,
+      "lower_bin": -1410,
+      "upperBin": -1338,
+      "upper_bin": -1338,
+      "binStep": 20,
+      "bin_step": 20,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.39399999999999996,
+      "breakdown": {
+        "raw": {
+          "walletScore": 42,
+          "rangeQuality": 85,
+          "feeTvl": 0.0016487988121180453
+        },
+        "total": 0.39399999999999996,
+        "alpha_edge": 0.044
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 42,
+          "rangeQuality": 85,
+          "feeTvl": 0.0016487988121180453
+        },
+        "total": 0.39399999999999996,
+        "alpha_edge": 0.044
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.044,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=-3.45%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 94,
+          "expectedMinutes": 305,
+          "expectedHours": 5.08,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=4.1159031748919954e-9, accel=0, width=72, oor=0%"
+        },
+        "euphoria": {
+          "score": 11,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=94.43366455214594, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 9.97,
+          "positive": true,
+          "reason": "fee=10.05%, ilRisk=0.08%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 84,
+      "alphaRank": "A",
+      "organicScore": 94.43366455214594,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0.0016487988121180453,
+      "volatility": 4.1159031748919954e-9,
+      "reasons": [
+        "Wallet score 42 >= 40",
+        "Range quality 85% ok",
+        "Fee/TVL 0.0016487988121180453 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:02.156Z"
+    },
+    {
+      "id": "1781046902367_Dnz6L9sV_EDeuGoVF",
+      "wallet": "Dnz6L9sVo9ZvMMqUq4xzwTQXNtcFKsBqhPKYaZkwp5Mx",
+      "walletLabel": "Dnz6L9sV",
+      "walletRank": 9,
+      "walletScore": 38,
+      "walletGrade": "D",
+      "pool": "EDeuGoVFTEUvWZvNGQH6UvSs5uk6RLgKTvr3MgY32ouw",
+      "poolName": "Jotchua-SOL",
+      "position": "2c3LectsoJqj4vKreyUUMpmpkAC8NgSJW6ZhavNtBSvp",
+      "activeBin": -456,
+      "active_bin": -456,
+      "currentActiveBin": -456,
+      "current_active_bin": -456,
+      "lowerBin": -500,
+      "lower_bin": -500,
+      "upperBin": -432,
+      "upper_bin": -432,
+      "binStep": 50,
+      "bin_step": 50,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "SKIP",
+      "confidence": 0.098,
+      "breakdown": {
+        "raw": {
+          "walletScore": 38
+        },
+        "total": 0.098,
+        "alpha_edge": -0.002
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 38
+        },
+        "total": 0.098,
+        "alpha_edge": -0.002
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": true,
+        "reasons": [
+          "hard risk present"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.002,
+        "alphaScore": 77,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 49,
+          "boost": -0.002,
+          "reason": "rank=9, walletScore=38, age=?h, pnl=15.95%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 80,
+          "expectedMinutes": 245,
+          "expectedHours": 4.08,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.6307412188229804, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 9,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=92.3268659220571, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 1863.08,
+          "positive": true,
+          "reason": "fee=1864.59%, ilRisk=1.5%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 77,
+      "alphaRank": "A",
+      "organicScore": 92.3268659220571,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0.3808393023656315,
+      "volatility": 1.6307412188229804,
+      "reasons": [
+        "Wallet score 38 below minimum 40"
+      ],
+      "risks": [
+        "low_wallet_score"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:02.441Z"
+    },
+    {
+      "id": "1781046902633_DRpaJDur_AvpjYo2a",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "walletLabel": "DRpaJDur",
+      "walletRank": 3,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": "MET-SOL",
+      "position": "85zaqUe8URHNiKUFSY5EENQHxqswJUpwo7ScsWpz5MEp",
+      "activeBin": 55,
+      "active_bin": 55,
+      "currentActiveBin": 55,
+      "current_active_bin": 55,
+      "lowerBin": 46,
+      "lower_bin": 46,
+      "upperBin": 114,
+      "upper_bin": 114,
+      "binStep": 80,
+      "bin_step": 80,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.293,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 95,
+          "feeTvl": 0
+        },
+        "total": 0.293,
+        "alpha_edge": -0.057
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 95,
+          "feeTvl": 0
+        },
+        "total": 0.293,
+        "alpha_edge": -0.057
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-18.66%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 87,
+          "expectedMinutes": 266,
+          "expectedHours": 4.43,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=72.03053590437491, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.32,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 73,
+      "alphaRank": "B",
+      "organicScore": 72.03053590437491,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 95% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:02.823Z"
+    },
+    {
+      "id": "1781046903053_5hehGjee_Gebfag18",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "walletLabel": "5hehGjee",
+      "walletRank": 6,
+      "walletScore": 39,
+      "walletGrade": "D",
+      "pool": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+      "poolName": "STICK-SOL",
+      "position": "uNXZzk2uF21gWxEH9FNoHMWmUqcB8pBfyGd7Sxo4S89",
+      "activeBin": -650,
+      "active_bin": -650,
+      "currentActiveBin": -650,
+      "current_active_bin": -650,
+      "lowerBin": -650,
+      "lower_bin": -650,
+      "upperBin": -573,
+      "upper_bin": -573,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "SKIP",
+      "confidence": 0.0305,
+      "breakdown": {
+        "raw": {
+          "walletScore": 39
+        },
+        "total": 0.0305,
+        "alpha_edge": -0.0695
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 39
+        },
+        "total": 0.0305,
+        "alpha_edge": -0.0695
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": true,
+        "reasons": [
+          "hard risk present"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0695,
+        "alphaScore": 72,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.0105,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=-98.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=77, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 72,
+      "alphaRank": "B",
+      "organicScore": 0,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 39 below minimum 40"
+      ],
+      "risks": [
+        "low_wallet_score"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:03.127Z"
+    },
+    {
+      "id": "1781046903260_DRpaJDur_2e3dimMU",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "walletLabel": "DRpaJDur",
+      "walletRank": 3,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "position": "8hRDgEm5xyaunC6YDiniFQd2mtvMqB8nCNdjgFHty2cb",
+      "activeBin": 377,
+      "active_bin": 377,
+      "currentActiveBin": 377,
+      "current_active_bin": 377,
+      "lowerBin": 360,
+      "lower_bin": 360,
+      "upperBin": 428,
+      "upper_bin": 428,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.293,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 95,
+          "feeTvl": 0
+        },
+        "total": 0.293,
+        "alpha_edge": -0.057
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 95,
+          "feeTvl": 0
+        },
+        "total": 0.293,
+        "alpha_edge": -0.057
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-16.68%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 272,
+          "expectedHours": 4.53,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=59.36801885369576, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 74,
+      "alphaRank": "B",
+      "organicScore": 59.36801885369576,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 95% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:03.333Z"
+    },
+    {
+      "id": "1781046903460_CL1kvg2m_2N1KNuLS",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "walletLabel": "Rank2_CL1k",
+      "walletRank": 2,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "2N1KNuLSt167P6p9P8HYcisTvTTv4vYTM8QJBbtv1xYU",
+      "poolName": "CARDS-USDC",
+      "position": "4aWRrAumEGUqBhLUwim4T8oWpUyZfGcqronkJfkU4CXo",
+      "activeBin": -838,
+      "active_bin": -838,
+      "currentActiveBin": -838,
+      "current_active_bin": -838,
+      "lowerBin": -1042,
+      "lower_bin": -1042,
+      "upperBin": -824,
+      "upper_bin": -824,
+      "binStep": 20,
+      "bin_step": 20,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.38899999999999996,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 80,
+          "feeTvl": 0.010325434106259636
+        },
+        "total": 0.38899999999999996,
+        "alpha_edge": 0.039
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 80,
+          "feeTvl": 0.010325434106259636
+        },
+        "total": 0.38899999999999996,
+        "alpha_edge": 0.039
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0.09%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 94,
+          "expectedMinutes": 922,
+          "expectedHours": 15.37,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0.5881960575671181, accel=0, width=218, oor=0%"
+        },
+        "euphoria": {
+          "score": 9,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=92.8579948297683, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 189.89,
+          "positive": true,
+          "reason": "fee=190.44%, ilRisk=0.55%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 84,
+      "alphaRank": "A",
+      "organicScore": 92.8579948297683,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0.010325434106259636,
+      "volatility": 0.5881960575671181,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 80% ok",
+        "Fee/TVL 0.010325434106259636 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:03.532Z"
+    },
+    {
+      "id": "1781046903850_zbmg9d5x_2FDHGS4g",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "walletLabel": "zbmg9d5x",
+      "walletRank": 10,
+      "walletScore": 38,
+      "walletGrade": "D",
+      "pool": "2FDHGS4gs1VYnp73bMfkb7zDAkHCS3h3DbP1WQAGVnsv",
+      "poolName": "ZEREBRO-SOL",
+      "position": "66T48mqQMTCbogzAVMLapJAQ6p1ipmd5Jow9oscWBcWN",
+      "activeBin": -86,
+      "active_bin": -86,
+      "currentActiveBin": -86,
+      "current_active_bin": -86,
+      "lowerBin": -151,
+      "lower_bin": -151,
+      "upperBin": -71,
+      "upper_bin": -71,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "SKIP",
+      "confidence": 0.02600000000000001,
+      "breakdown": {
+        "raw": {
+          "walletScore": 38
+        },
+        "total": 0.02600000000000001,
+        "alpha_edge": -0.074
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 38
+        },
+        "total": 0.02600000000000001,
+        "alpha_edge": -0.074
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": true,
+        "reasons": [
+          "hard risk present"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.074,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=-3.11%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 328,
+          "expectedHours": 5.47,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=80, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=75, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 73,
+      "alphaRank": "B",
+      "organicScore": 75,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 38 below minimum 40"
+      ],
+      "risks": [
+        "low_wallet_score"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:03.922Z"
+    },
+    {
+      "id": "1781046904043_5hehGjee_DxrXBQxp",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "walletLabel": "5hehGjee",
+      "walletRank": 6,
+      "walletScore": 39,
+      "walletGrade": "D",
+      "pool": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+      "poolName": "SKR-SOL",
+      "position": "2xaBwCChKDKcfiwYC2PRShksPCaTcxbB3BbkTYbjyo7a",
+      "activeBin": -188,
+      "active_bin": -188,
+      "currentActiveBin": -188,
+      "current_active_bin": -188,
+      "lowerBin": -158,
+      "lower_bin": -158,
+      "upperBin": -90,
+      "upper_bin": -90,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "SKIP",
+      "confidence": 0.0305,
+      "breakdown": {
+        "raw": {
+          "walletScore": 39
+        },
+        "total": 0.0305,
+        "alpha_edge": -0.0695
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 39
+        },
+        "total": 0.0305,
+        "alpha_edge": -0.0695
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": true,
+        "reasons": [
+          "hard risk present"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0695,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.0105,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=12.53%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=79.89946528649426, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 74,
+      "alphaRank": "B",
+      "organicScore": 79.89946528649426,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 39 below minimum 40"
+      ],
+      "risks": [
+        "low_wallet_score"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:04.116Z"
+    },
+    {
+      "id": "1781046904239_DRpaJDur_13RUiTWi",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "walletLabel": "DRpaJDur",
+      "walletRank": 3,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "position": "AAHQNWxjgpN7rdLsKnrDrXLWQQdumEFe18WRUUoFQR5H",
+      "activeBin": 222,
+      "active_bin": 222,
+      "currentActiveBin": 222,
+      "current_active_bin": 222,
+      "lowerBin": 183,
+      "lower_bin": 183,
+      "upperBin": 251,
+      "upper_bin": 251,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.293,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 95,
+          "feeTvl": 0
+        },
+        "total": 0.293,
+        "alpha_edge": -0.057
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 95,
+          "feeTvl": 0
+        },
+        "total": 0.293,
+        "alpha_edge": -0.057
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-7.93%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 75,
+      "alphaRank": "B",
+      "organicScore": 0,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 95% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:04.304Z"
+    },
+    {
+      "id": "1781046904444_CL1kvg2m_DRWNnjNp",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "walletLabel": "Rank2_CL1k",
+      "walletRank": 2,
+      "walletScore": 40,
+      "walletGrade": "C",
+      "pool": "DRWNnjNpmrWTs7mmNYyH8d9qmPmcVQHenKh369cwUiLp",
+      "poolName": "Clude-SOL",
+      "position": "5hX3TL5vvqW2MCorrejJ93G5MT2hdizvar5uHj7aHKVC",
+      "activeBin": -362,
+      "active_bin": -362,
+      "currentActiveBin": -362,
+      "current_active_bin": -362,
+      "lowerBin": -354,
+      "lower_bin": -354,
+      "upperBin": -285,
+      "upper_bin": -285,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "HOLD",
+      "confidence": 0.309,
+      "breakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 85,
+          "feeTvl": 0
+        },
+        "total": 0.309,
+        "alpha_edge": -0.041
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 40,
+          "rangeQuality": 85,
+          "feeTvl": 0
+        },
+        "total": 0.309,
+        "alpha_edge": -0.041
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": false,
+        "reasons": [
+          "requires confidence >= 0.48"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.041,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=1.62%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 86,
+          "expectedMinutes": 267,
+          "expectedHours": 4.45,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=69, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=52.14839524254861, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 75,
+      "alphaRank": "B",
+      "organicScore": 52.14839524254861,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 40 >= 40",
+        "Range quality 85% ok",
+        "Fee/TVL 0 low yield"
+      ],
+      "risks": [
+        "low_fee_tvl"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:04.508Z"
+    },
+    {
+      "id": "1781046904623_zbmg9d5x_8sQZ4H4j",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "walletLabel": "zbmg9d5x",
+      "walletRank": 10,
+      "walletScore": 38,
+      "walletGrade": "D",
+      "pool": "8sQZ4H4jqnFwUG8e2Y9Sbr3gJxL4cVssc7eQz7M19t7y",
+      "poolName": "KINS-SOL",
+      "position": "6Pzw5RkYzDPNRCEq1KHPnX17R4zZrDvNJhwq5xgBukCB",
+      "activeBin": -292,
+      "active_bin": -292,
+      "currentActiveBin": -292,
+      "current_active_bin": -292,
+      "lowerBin": -357,
+      "lower_bin": -357,
+      "upperBin": -276,
+      "upper_bin": -276,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "SKIP",
+      "confidence": 0.10600000000000001,
+      "breakdown": {
+        "raw": {
+          "walletScore": 38
+        },
+        "total": 0.10600000000000001,
+        "alpha_edge": 0.006
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 38
+        },
+        "total": 0.10600000000000001,
+        "alpha_edge": 0.006
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": true,
+        "reasons": [
+          "hard risk present"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 83,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=1.47%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 92,
+          "expectedMinutes": 335,
+          "expectedHours": 5.58,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=81, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=84.64027907114685, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 31.51,
+          "positive": true,
+          "reason": "fee=31.91%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 83,
+      "alphaRank": "A",
+      "organicScore": 84.64027907114685,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0.004765193844319484,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 38 below minimum 40"
+      ],
+      "risks": [
+        "low_wallet_score"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:04.686Z"
+    },
+    {
+      "id": "1781046904828_5hehGjee_F1DSFU7w",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "walletLabel": "5hehGjee",
+      "walletRank": 6,
+      "walletScore": 39,
+      "walletGrade": "D",
+      "pool": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+      "poolName": "PVE-SOL",
+      "position": "9kLHKZjcZbU1KzFagn3T9viYmeYpmHQLkUMbkhTavnzT",
+      "activeBin": -1502,
+      "active_bin": -1502,
+      "currentActiveBin": -1502,
+      "current_active_bin": -1502,
+      "lowerBin": -1573,
+      "lower_bin": -1573,
+      "upperBin": -1544,
+      "upper_bin": -1544,
+      "binStep": 50,
+      "bin_step": 50,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "SKIP",
+      "confidence": 0.0425,
+      "breakdown": {
+        "raw": {
+          "walletScore": 39
+        },
+        "total": 0.0425,
+        "alpha_edge": -0.0575
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 39
+        },
+        "total": 0.0425,
+        "alpha_edge": -0.0575
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": true,
+        "reasons": [
+          "hard risk present"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0575,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 61,
+          "boost": 0.0225,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=3.37%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 160,
+          "expectedHours": 2.67,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=29, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 46,
+          "expectancyPct": -0.46,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.46%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 74,
+      "alphaRank": "B",
+      "organicScore": 0,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0,
+      "volatility": 0,
+      "reasons": [
+        "Wallet score 39 below minimum 40"
+      ],
+      "risks": [
+        "low_wallet_score"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:04.900Z"
+    },
+    {
+      "id": "1781046905072_zbmg9d5x_8aQBjuut",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "walletLabel": "zbmg9d5x",
+      "walletRank": 10,
+      "walletScore": 38,
+      "walletGrade": "D",
+      "pool": "8aQBjuutghvFxJaiPiKNSgbmuAQcotyWpcmBFR9pkzsP",
+      "poolName": "SPCX-SOL",
+      "position": "6r3H7hJkJXiZ1dhhDX94NTG1sRFumL7q8WPB1gxPDr7v",
+      "activeBin": -260,
+      "active_bin": -260,
+      "currentActiveBin": -260,
+      "current_active_bin": -260,
+      "lowerBin": -324,
+      "lower_bin": -324,
+      "upperBin": -244,
+      "upper_bin": -244,
+      "binStep": 100,
+      "bin_step": 100,
+      "entryPrice": null,
+      "entry_price": null,
+      "currentPrice": null,
+      "current_price": null,
+      "action": "SKIP",
+      "confidence": 0.10600000000000001,
+      "breakdown": {
+        "raw": {
+          "walletScore": 38
+        },
+        "total": 0.10600000000000001,
+        "alpha_edge": 0.006
+      },
+      "confidenceBreakdown": {
+        "raw": {
+          "walletScore": 38
+        },
+        "total": 0.10600000000000001,
+        "alpha_edge": 0.006
+      },
+      "shadow": {
+        "engine": "conservative_shadow_v1",
+        "action": "HOLD",
+        "threshold": 0.48,
+        "wouldDiffer": true,
+        "reasons": [
+          "hard risk present"
+        ]
+      },
+      "adaptiveCalibration": {
+        "enabled": true,
+        "organicWeight": 0.1533,
+        "samples": 75,
+        "lift": 1.67,
+        "reason": "winner organic lift 1.67 pts"
+      },
+      "alphaEdge": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 78,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=-0.71%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 71,
+          "expectedMinutes": 256,
+          "expectedHours": 4.27,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.1489652393216256, accel=0, width=80, oor=37.5%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=75.75381610113683, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 62.82,
+          "positive": true,
+          "reason": "fee=64.13%, ilRisk=1.32%"
+        },
+        "holdReasons": []
+      },
+      "alphaScore": 78,
+      "alphaRank": "A",
+      "organicScore": 75.75381610113683,
+      "organicSource": "detail.token_x.organic_score",
+      "feeTvlRatio": 0.012516453679401216,
+      "volatility": 1.1489652393216256,
+      "reasons": [
+        "Wallet score 38 below minimum 40"
+      ],
+      "risks": [
+        "low_wallet_score"
+      ],
+      "deployArgs": null,
+      "dryRun": true,
+      "source": "copy_engine",
+      "ts": "2026-06-09T23:15:05.111Z"
+    }
+  ],
+  "meta": {
+    "lastRun": "2026-06-09T23:15:05.268Z",
+    "totalRuns": 502,
+    "lastSummary": {
+      "wallets": 10,
+      "positions": 14,
+      "signals": 1,
+      "deployed": 0,
+      "ignored": 13,
+      "mode": "balanced",
+      "rankingSnapshotTs": "2026-06-09T20:45:59.060Z",
+      "ignoredRiskSummary": {
+        "low_wallet_score": 7,
+        "low_fee_tvl": 6
+      }
+    }
+  }
+}

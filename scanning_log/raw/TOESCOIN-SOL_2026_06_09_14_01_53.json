@@ -1,0 +1,81 @@
+{
+  "trace_id": "TOESCOIN-SOL_2026_06_09_14_01_53",
+  "pool": "TOESCOIN-SOL",
+  "created_at": "2026-06-09T14:01:53.121Z",
+  "stages": [
+    {
+      "stage": "screening",
+      "pool": "TOESCOIN-SOL",
+      "timestamp": "2026-06-09T14:01:53.121Z",
+      "metrics": {
+        "fee_tvl": 0.4065,
+        "organic": 70,
+        "wallet_score": null,
+        "confidence": null,
+        "volatility": 2.0148,
+        "alpha": null
+      },
+      "decision": "DEPLOY_RECORDED",
+      "why_pass": [],
+      "why_blocked": []
+    },
+    {
+      "stage": "candidate",
+      "pool": "TOESCOIN-SOL",
+      "timestamp": "2026-06-09T14:01:53.121Z",
+      "score": null,
+      "grade": null,
+      "status": "DEPLOYED",
+      "confidence": null
+    },
+    {
+      "stage": "anti_oor",
+      "pool": "TOESCOIN-SOL",
+      "timestamp": "2026-06-09T14:01:53.121Z",
+      "momentum_state": null,
+      "predicted_direction": null,
+      "wait_minutes": null,
+      "timing_action": null,
+      "range_action": null,
+      "risk_level": null,
+      "oor_prediction": null
+    },
+    {
+      "stage": "deploy",
+      "pool": "TOESCOIN-SOL",
+      "timestamp": "2026-06-09T14:01:53.121Z",
+      "strategy": "bid_ask",
+      "entry_price": 0.18607491562445116,
+      "bins_above": null,
+      "bins_below": 52,
+      "volatility_used": 2.0148,
+      "timing": null,
+      "range_width": 53,
+      "probe_candidate": false,
+      "overridden": false,
+      "fee_velocity_boost": null,
+      "exact": {
+        "active_bin": -169,
+        "lower_bin": -221,
+        "upper_bin": -169,
+        "bin_step": 100,
+        "amount_sol": 0.257
+      }
+    },
+    {
+      "stage": "exit",
+      "pool": "TOESCOIN-SOL",
+      "timestamp": "2026-06-09T17:29:23.903Z",
+      "result": "PROFIT",
+      "exit_reason": "paper_trailing_take-profit",
+      "pnl_pct": 5.61,
+      "duration_minutes": 207,
+      "fees_earned": 0.02666405,
+      "exit_side": null,
+      "oor_classification": null,
+      "oor_action": null,
+      "oor_reason": null
+    }
+  ],
+  "updated_at": "2026-06-09T17:29:23.943Z"
+}

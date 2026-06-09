@@ -1,0 +1,4793 @@
+{
+  "version": 1,
+  "opportunities": [
+    {
+      "ts": "2026-06-09T21:45:01.324Z",
+      "pool": "EDeuGoVFTEUvWZvNGQH6UvSs5uk6RLgKTvr3MgY32ouw",
+      "poolName": "Jotchua-SOL",
+      "wallet": "Dnz6L9sVo9ZvMMqUq4xzwTQXNtcFKsBqhPKYaZkwp5Mx",
+      "confidence": 0.07400000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.026,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 37,
+          "boost": -0.026,
+          "reason": "rank=9, walletScore=38, age=?h, pnl=20.16%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 76,
+          "expectedMinutes": 233,
+          "expectedHours": 3.88,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.9339980445825624, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 8,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=91.90180517946088, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 2560.59,
+          "positive": true,
+          "reason": "fee=2562.34%, ilRisk=1.75%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:01.630Z",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": "HYPE-USDC",
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "confidence": 0.1145,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.0145,
+        "alphaScore": 81,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=8, walletScore=39, age=?h, pnl=-2.78%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0.15720200883342028, accel=0, width=72, oor=0%"
+        },
+        "euphoria": {
+          "score": 12,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=94.82804440246734, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 75.93,
+          "positive": true,
+          "reason": "fee=76.14%, ilRisk=0.21%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:01.637Z",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": "HYPE-USDC",
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "confidence": 0.39399999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.044,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=-2.78%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0.15720200883342028, accel=0, width=72, oor=0%"
+        },
+        "euphoria": {
+          "score": 12,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=94.82804440246734, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 75.93,
+          "positive": true,
+          "reason": "fee=76.14%, ilRisk=0.21%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 85% ok; Fee/TVL 0.012896387670539073 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:01.851Z",
+      "pool": "3WY9N19nTtPSqrbWTeaFn2HfJ9MfdyLRSrRvy97GnDgY",
+      "poolName": "TripleT-SOL",
+      "wallet": "4fSJmRxRF5uQctx4PWnahoqoF7VPtvp7FXvHqQM5v71c",
+      "confidence": 0.38899999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 86,
+        "alphaRank": "A+",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=3.39%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 92,
+          "expectedMinutes": 327,
+          "expectedHours": 5.45,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=79, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=78.66048650539103, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 18.93,
+          "positive": true,
+          "reason": "fee=19.25%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0.002943234281331107 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:01.860Z",
+      "pool": "2N1KNuLSt167P6p9P8HYcisTvTTv4vYTM8QJBbtv1xYU",
+      "poolName": "CARDS-USDC",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.38899999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0.09%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 912,
+          "expectedHours": 15.2,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0.28256024632098303, accel=0, width=218, oor=0%"
+        },
+        "euphoria": {
+          "score": 10,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=92.9829011905591, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 18.36,
+          "positive": true,
+          "reason": "fee=18.66%, ilRisk=0.31%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 80% ok; Fee/TVL 0.0010232831130546787 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:02.165Z",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": "MET-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-18.15%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 87,
+          "expectedMinutes": 266,
+          "expectedHours": 4.43,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=72.03303130380124, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.32,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:02.208Z",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": "MET-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-18.15%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 87,
+          "expectedMinutes": 266,
+          "expectedHours": 4.43,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=72.03303130380124, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.32,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:02.436Z",
+      "pool": "8UYCgRrxZc3XKY8PBJDSKubAUP4mpbxoj1EZJ7A5G9wy",
+      "poolName": "WORLDCUP-SOL",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.38899999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 80,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=-3.01%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 72,
+          "expectedMinutes": 224,
+          "expectedHours": 3.73,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.4071892842648277, accel=0, width=69, oor=33.3%"
+        },
+        "euphoria": {
+          "score": 5,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=88.94586605842306, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 20,
+          "positive": true,
+          "reason": "fee=21.53%, ilRisk=1.53%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0.004809950930332422 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:02.477Z",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-16.4%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 272,
+          "expectedHours": 4.53,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=58.97427537109063, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:02.658Z",
+      "pool": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+      "poolName": "STICK-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0695,
+        "alphaScore": 72,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.0105,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=-98.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=77, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:02.738Z",
+      "pool": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+      "poolName": "STICK-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0345,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0655,
+        "alphaScore": 72,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=-98.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=77, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:02.839Z",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-16.4%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 272,
+          "expectedHours": 4.53,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=58.97427537109063, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:02.934Z",
+      "pool": "DwU9qPZXEcMx8rRfR71N5hdw5GQQGPyCKDnqegLpY4vW",
+      "poolName": "StrSzn-USDC",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.264,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 79,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 100,
+          "expectedMinutes": 2678,
+          "expectedHours": 44.63,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=595, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 50,
+          "expectancyPct": -0.02,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.02%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 40% below threshold",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.045Z",
+      "pool": "2FDHGS4gs1VYnp73bMfkb7zDAkHCS3h3DbP1WQAGVnsv",
+      "poolName": "ZEREBRO-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.02600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.074,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=-2.67%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 328,
+          "expectedHours": 5.47,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=80, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=75, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.145Z",
+      "pool": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+      "poolName": "SKR-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0345,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0655,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=12.53%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=79.82249148564912, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.251Z",
+      "pool": "DRWNnjNpmrWTs7mmNYyH8d9qmPmcVQHenKh369cwUiLp",
+      "poolName": "Clude-SOL",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.38899999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=4.74%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 264,
+          "expectedHours": 4.4,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=69, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=52.980298931337, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 12.98,
+          "positive": true,
+          "reason": "fee=13.38%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 85% ok; Fee/TVL 0.0025344949659020064 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.373Z",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-7.71%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.465Z",
+      "pool": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+      "poolName": "SKR-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0695,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.0105,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=12.53%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=79.82249148564912, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.603Z",
+      "pool": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+      "poolName": "gork-titcoin",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.314,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 76,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 164,
+          "expectedHours": 2.73,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=40, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 45,
+          "expectancyPct": -0.62,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.62%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 65% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.681Z",
+      "pool": "8sQZ4H4jqnFwUG8e2Y9Sbr3gJxL4cVssc7eQz7M19t7y",
+      "poolName": "KINS-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.10600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 78,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=2.13%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 73,
+          "expectedMinutes": 266,
+          "expectedHours": 4.43,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=2.1107839263967683, accel=0, width=81, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=84.88562664315188, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 108.46,
+          "positive": true,
+          "reason": "fee=110.55%, ilRisk=2.09%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.809Z",
+      "pool": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+      "poolName": "PVE-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.04650000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0535,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 63,
+          "boost": 0.0265,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=3.37%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 160,
+          "expectedHours": 2.67,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=29, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 46,
+          "expectancyPct": -0.46,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.46%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:03.902Z",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-7.71%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:04.013Z",
+      "pool": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+      "poolName": "diVINE-SOL",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.302,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.048,
+        "alphaScore": 78,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 66,
+          "boost": 0.032,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=-95.35%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 100,
+          "expectedMinutes": 311,
+          "expectedHours": 5.18,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=69, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 49,
+          "expectancyPct": -0.08,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.08%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 65% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:04.113Z",
+      "pool": "8aQBjuutghvFxJaiPiKNSgbmuAQcotyWpcmBFR9pkzsP",
+      "poolName": "SPCX-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.10600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 79,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=-0.71%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 79,
+          "expectedMinutes": 284,
+          "expectedHours": 4.73,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=80, oor=37.5%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=75.97873871595604, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 50.35,
+          "positive": true,
+          "reason": "fee=50.75%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T21:45:04.402Z",
+      "pool": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+      "poolName": "PVE-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0425,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0575,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 61,
+          "boost": 0.0225,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=3.37%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 160,
+          "expectedHours": 2.67,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=29, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 46,
+          "expectancyPct": -0.46,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.46%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:01.916Z",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": "HYPE-USDC",
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "confidence": 0.39399999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.044,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=-2.38%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0.19980026626729347, accel=0, width=72, oor=0%"
+        },
+        "euphoria": {
+          "score": 12,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=94.83879607388158, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 41.78,
+          "positive": true,
+          "reason": "fee=42.02%, ilRisk=0.24%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 85% ok; Fee/TVL 0.007117277430377515 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:01.971Z",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": "HYPE-USDC",
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "confidence": 0.1145,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.0145,
+        "alphaScore": 81,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=8, walletScore=39, age=?h, pnl=-2.38%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0.19980026626729347, accel=0, width=72, oor=0%"
+        },
+        "euphoria": {
+          "score": 12,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=94.83879607388158, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 41.78,
+          "positive": true,
+          "reason": "fee=42.02%, ilRisk=0.24%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:02.226Z",
+      "pool": "EDeuGoVFTEUvWZvNGQH6UvSs5uk6RLgKTvr3MgY32ouw",
+      "poolName": "Jotchua-SOL",
+      "wallet": "Dnz6L9sVo9ZvMMqUq4xzwTQXNtcFKsBqhPKYaZkwp5Mx",
+      "confidence": 0.11,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.01,
+        "alphaScore": 77,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.01,
+          "reason": "rank=9, walletScore=38, age=?h, pnl=3.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 74,
+          "expectedMinutes": 226,
+          "expectedHours": 3.77,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=2.6776796957723943, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 8,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=91.9020296667328, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 7971.63,
+          "positive": true,
+          "reason": "fee=7973.97%, ilRisk=2.34%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:02.336Z",
+      "pool": "EDeuGoVFTEUvWZvNGQH6UvSs5uk6RLgKTvr3MgY32ouw",
+      "poolName": "Jotchua-SOL",
+      "wallet": "Dnz6L9sVo9ZvMMqUq4xzwTQXNtcFKsBqhPKYaZkwp5Mx",
+      "confidence": 0.10600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 77,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=3.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 74,
+          "expectedMinutes": 226,
+          "expectedHours": 3.77,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=2.6776796957723943, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 8,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=91.9020296667328, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 7971.63,
+          "positive": true,
+          "reason": "fee=7973.97%, ilRisk=2.34%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:02.690Z",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": "MET-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-18.24%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 87,
+          "expectedMinutes": 266,
+          "expectedHours": 4.43,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=71.97372605447676, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.32,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:02.738Z",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": "MET-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-18.24%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 87,
+          "expectedMinutes": 266,
+          "expectedHours": 4.43,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=71.97372605447676, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.32,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:02.958Z",
+      "pool": "3WY9N19nTtPSqrbWTeaFn2HfJ9MfdyLRSrRvy97GnDgY",
+      "poolName": "TripleT-SOL",
+      "wallet": "4fSJmRxRF5uQctx4PWnahoqoF7VPtvp7FXvHqQM5v71c",
+      "confidence": 0.38899999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 85,
+        "alphaRank": "A+",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=2.84%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 324,
+          "expectedHours": 5.4,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=79, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=78.77087689524502, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 58.91,
+          "positive": true,
+          "reason": "fee=59.23%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0.009140547189510548 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:02.985Z",
+      "pool": "2N1KNuLSt167P6p9P8HYcisTvTTv4vYTM8QJBbtv1xYU",
+      "poolName": "CARDS-USDC",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.38899999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0.09%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 92,
+          "expectedMinutes": 903,
+          "expectedHours": 15.05,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0.3517846697078954, accel=0, width=218, oor=0%"
+        },
+        "euphoria": {
+          "score": 9,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=92.73689281764342, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 109.8,
+          "positive": true,
+          "reason": "fee=110.17%, ilRisk=0.36%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 80% ok; Fee/TVL 0.0060999837622403045 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:03.188Z",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-16.66%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 272,
+          "expectedHours": 4.53,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=59.19839011120941, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:03.198Z",
+      "pool": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+      "poolName": "STICK-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0695,
+        "alphaScore": 72,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.0105,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=-98.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=77, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:03.410Z",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-16.66%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 272,
+          "expectedHours": 4.53,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=59.19839011120941, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:03.452Z",
+      "pool": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+      "poolName": "STICK-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0345,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0655,
+        "alphaScore": 72,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=-98.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=77, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:03.678Z",
+      "pool": "DwU9qPZXEcMx8rRfR71N5hdw5GQQGPyCKDnqegLpY4vW",
+      "poolName": "StrSzn-USDC",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.264,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 79,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 100,
+          "expectedMinutes": 2678,
+          "expectedHours": 44.63,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=595, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 50,
+          "expectancyPct": -0.02,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.02%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 40% below threshold",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:03.780Z",
+      "pool": "2FDHGS4gs1VYnp73bMfkb7zDAkHCS3h3DbP1WQAGVnsv",
+      "poolName": "ZEREBRO-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.02600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.074,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=-2.78%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 328,
+          "expectedHours": 5.47,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=80, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=75, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:03.911Z",
+      "pool": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+      "poolName": "SKR-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0345,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0655,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=12.53%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=79.67431265355881, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:03.985Z",
+      "pool": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+      "poolName": "SKR-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0695,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.0105,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=12.53%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=79.67431265355881, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:04.169Z",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-7.82%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:04.184Z",
+      "pool": "DRWNnjNpmrWTs7mmNYyH8d9qmPmcVQHenKh369cwUiLp",
+      "poolName": "Clude-SOL",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.38899999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 76,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=4.8%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 264,
+          "expectedHours": 4.4,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=69, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=52.96082012971115, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 56,
+          "expectancyPct": 0.75,
+          "positive": true,
+          "reason": "fee=1.15%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 85% ok; Fee/TVL 0.0002175161990703602 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:04.408Z",
+      "pool": "8sQZ4H4jqnFwUG8e2Y9Sbr3gJxL4cVssc7eQz7M19t7y",
+      "poolName": "KINS-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.10600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 80,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=1.71%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 82,
+          "expectedMinutes": 299,
+          "expectedHours": 4.98,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.148965239320833, accel=0, width=81, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=84.59200543618581, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 229.72,
+          "positive": true,
+          "reason": "fee=231.04%, ilRisk=1.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:04.472Z",
+      "pool": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+      "poolName": "gork-titcoin",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.314,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 76,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 164,
+          "expectedHours": 2.73,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=40, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 45,
+          "expectancyPct": -0.62,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.62%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 65% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:04.634Z",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-7.82%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:04.692Z",
+      "pool": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+      "poolName": "PVE-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.04650000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0535,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 63,
+          "boost": 0.0265,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=3.37%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 160,
+          "expectedHours": 2.67,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=29, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 46,
+          "expectancyPct": -0.46,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.46%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:04.921Z",
+      "pool": "8aQBjuutghvFxJaiPiKNSgbmuAQcotyWpcmBFR9pkzsP",
+      "poolName": "SPCX-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.10600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 78,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=-1%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 72,
+          "expectedMinutes": 259,
+          "expectedHours": 4.32,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.1489652393209326, accel=0, width=80, oor=37.5%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=75.78864716152945, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 318.88,
+          "positive": true,
+          "reason": "fee=320.2%, ilRisk=1.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:04.976Z",
+      "pool": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+      "poolName": "diVINE-SOL",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.302,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.048,
+        "alphaScore": 78,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 66,
+          "boost": 0.032,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=-95.38%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 100,
+          "expectedMinutes": 311,
+          "expectedHours": 5.18,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=69, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 49,
+          "expectancyPct": -0.08,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.08%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 65% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:15:05.257Z",
+      "pool": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+      "poolName": "PVE-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0425,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0575,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 61,
+          "boost": 0.0225,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=3.37%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 160,
+          "expectedHours": 2.67,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=29, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 46,
+          "expectancyPct": -0.46,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.46%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:36.503Z",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": null,
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "confidence": 0.314,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 67,
+          "expectedMinutes": 121,
+          "expectedHours": 2.02,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 41,
+          "expectancyPct": -1.1,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.1%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:41.701Z",
+      "pool": "DwU9qPZXEcMx8rRfR71N5hdw5GQQGPyCKDnqegLpY4vW",
+      "poolName": null,
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.314,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 67,
+          "expectedMinutes": 121,
+          "expectedHours": 2.02,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 41,
+          "expectancyPct": -1.1,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.1%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:42.975Z",
+      "pool": "3WY9N19nTtPSqrbWTeaFn2HfJ9MfdyLRSrRvy97GnDgY",
+      "poolName": null,
+      "wallet": "4fSJmRxRF5uQctx4PWnahoqoF7VPtvp7FXvHqQM5v71c",
+      "confidence": 0.309,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.041,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 67,
+          "expectedMinutes": 121,
+          "expectedHours": 2.02,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 41,
+          "expectancyPct": -1.1,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.1%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:45.073Z",
+      "pool": "2N1KNuLSt167P6p9P8HYcisTvTTv4vYTM8QJBbtv1xYU",
+      "poolName": null,
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.309,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.041,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 67,
+          "expectedMinutes": 121,
+          "expectedHours": 2.02,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 41,
+          "expectancyPct": -1.1,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.1%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:46.118Z",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": null,
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.045,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 68,
+          "boost": 0.035,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 67,
+          "expectedMinutes": 121,
+          "expectedHours": 2.02,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 41,
+          "expectancyPct": -1.1,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.1%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:50.801Z",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.045,
+        "alphaScore": 68,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 68,
+          "boost": 0.035,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 66,
+          "expectedMinutes": 119,
+          "expectedHours": 1.98,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=59.36268002982, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 40,
+          "expectancyPct": -1.22,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.22%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:50.983Z",
+      "pool": "DRWNnjNpmrWTs7mmNYyH8d9qmPmcVQHenKh369cwUiLp",
+      "poolName": "Clude-SOL",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.33899999999999997,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 79,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 66,
+          "expectedMinutes": 119,
+          "expectedHours": 1.98,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=52.06622782630752, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 102.86,
+          "positive": true,
+          "reason": "fee=104.07%, ilRisk=1.22%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 50% ok; Fee/TVL 0.04380164494566391 ok; Organic 52.06622782630752% below threshold 70%",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:51.290Z",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.045,
+        "alphaScore": 68,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 68,
+          "boost": 0.035,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 66,
+          "expectedMinutes": 119,
+          "expectedHours": 1.98,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 40,
+          "expectancyPct": -1.22,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.22%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:52.354Z",
+      "pool": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+      "poolName": "gork-titcoin",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.314,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 69,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 66,
+          "expectedMinutes": 119,
+          "expectedHours": 1.98,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 40,
+          "expectancyPct": -1.22,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=1.22%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T22:45:52.643Z",
+      "pool": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+      "poolName": "diVINE-SOL",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.314,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 70,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 69,
+          "expectedMinutes": 124,
+          "expectedHours": 2.07,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=1, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 43,
+          "expectancyPct": -0.82,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.82%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 50% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:02.095Z",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": "HYPE-USDC",
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "confidence": 0.1145,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.0145,
+        "alphaScore": 82,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=8, walletScore=39, age=?h, pnl=-3.45%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 94,
+          "expectedMinutes": 305,
+          "expectedHours": 5.08,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=4.1159031748919954e-9, accel=0, width=72, oor=0%"
+        },
+        "euphoria": {
+          "score": 11,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=94.43366455214594, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 9.97,
+          "positive": true,
+          "reason": "fee=10.05%, ilRisk=0.08%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:02.154Z",
+      "pool": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+      "poolName": "HYPE-USDC",
+      "wallet": "2XrNyNEW5P7ggE1asvKdoqi71Fbt5BActnEjiLaAb82q",
+      "confidence": 0.39399999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.044,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=-3.45%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 94,
+          "expectedMinutes": 305,
+          "expectedHours": 5.08,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=4.1159031748919954e-9, accel=0, width=72, oor=0%"
+        },
+        "euphoria": {
+          "score": 11,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=94.43366455214594, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 9.97,
+          "positive": true,
+          "reason": "fee=10.05%, ilRisk=0.08%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 85% ok; Fee/TVL 0.0016487988121180453 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:02.440Z",
+      "pool": "EDeuGoVFTEUvWZvNGQH6UvSs5uk6RLgKTvr3MgY32ouw",
+      "poolName": "Jotchua-SOL",
+      "wallet": "Dnz6L9sVo9ZvMMqUq4xzwTQXNtcFKsBqhPKYaZkwp5Mx",
+      "confidence": 0.098,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.002,
+        "alphaScore": 77,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 49,
+          "boost": -0.002,
+          "reason": "rank=9, walletScore=38, age=?h, pnl=15.95%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 80,
+          "expectedMinutes": 245,
+          "expectedHours": 4.08,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.6307412188229804, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 9,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=92.3268659220571, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 1863.08,
+          "positive": true,
+          "reason": "fee=1864.59%, ilRisk=1.5%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:02.496Z",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": "MET-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-18.66%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 87,
+          "expectedMinutes": 266,
+          "expectedHours": 4.43,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=72.03053590437491, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.32,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:02.794Z",
+      "pool": "EDeuGoVFTEUvWZvNGQH6UvSs5uk6RLgKTvr3MgY32ouw",
+      "poolName": "Jotchua-SOL",
+      "wallet": "Dnz6L9sVo9ZvMMqUq4xzwTQXNtcFKsBqhPKYaZkwp5Mx",
+      "confidence": 0.094,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.006,
+        "alphaScore": 77,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 47,
+          "boost": -0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=15.95%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 80,
+          "expectedMinutes": 245,
+          "expectedHours": 4.08,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.6307412188229804, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 9,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=92.3268659220571, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 1863.08,
+          "positive": true,
+          "reason": "fee=1864.59%, ilRisk=1.5%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:02.822Z",
+      "pool": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+      "poolName": "MET-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-18.66%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 87,
+          "expectedMinutes": 266,
+          "expectedHours": 4.43,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=72.03053590437491, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.32,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.036Z",
+      "pool": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+      "poolName": "STICK-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0345,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0655,
+        "alphaScore": 72,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=-98.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=77, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.126Z",
+      "pool": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+      "poolName": "STICK-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0695,
+        "alphaScore": 72,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.0105,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=-98.7%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 85,
+          "expectedMinutes": 295,
+          "expectedHours": 4.92,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=77, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.227Z",
+      "pool": "DwU9qPZXEcMx8rRfR71N5hdw5GQQGPyCKDnqegLpY4vW",
+      "poolName": "StrSzn-USDC",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.264,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 79,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 100,
+          "expectedMinutes": 2678,
+          "expectedHours": 44.63,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=595, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 50,
+          "expectancyPct": -0.02,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.02%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 40% below threshold",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.333Z",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-16.68%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 272,
+          "expectedHours": 4.53,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=59.36801885369576, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.429Z",
+      "pool": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+      "poolName": "META-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-16.68%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 272,
+          "expectedHours": 4.53,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=59.36801885369576, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.530Z",
+      "pool": "2N1KNuLSt167P6p9P8HYcisTvTTv4vYTM8QJBbtv1xYU",
+      "poolName": "CARDS-USDC",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.38899999999999996,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.039,
+        "alphaScore": 84,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=0.09%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 94,
+          "expectedMinutes": 922,
+          "expectedHours": 15.37,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0.5881960575671181, accel=0, width=218, oor=0%"
+        },
+        "euphoria": {
+          "score": 9,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=92.8579948297683, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 189.89,
+          "positive": true,
+          "reason": "fee=190.44%, ilRisk=0.55%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 80% ok; Fee/TVL 0.010325434106259636 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.634Z",
+      "pool": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+      "poolName": "SKR-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0345,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0655,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 57,
+          "boost": 0.0145,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=12.53%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=79.89946528649426, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.892Z",
+      "pool": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+      "poolName": "gork-titcoin",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.314,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.036,
+        "alphaScore": 76,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 72,
+          "boost": 0.044,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=0%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 164,
+          "expectedHours": 2.73,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=40, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 45,
+          "expectancyPct": -0.62,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.62%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 65% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:03.921Z",
+      "pool": "2FDHGS4gs1VYnp73bMfkb7zDAkHCS3h3DbP1WQAGVnsv",
+      "poolName": "ZEREBRO-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.02600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.074,
+        "alphaScore": 73,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=-3.11%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 91,
+          "expectedMinutes": 328,
+          "expectedHours": 5.47,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=80, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=75, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:04.115Z",
+      "pool": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+      "poolName": "SKR-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0305,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0695,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 55,
+          "boost": 0.0105,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=12.53%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=79.89946528649426, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:04.157Z",
+      "pool": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+      "poolName": "PVE-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.04650000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0535,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 63,
+          "boost": 0.0265,
+          "reason": "rank=5, walletScore=39, age=?h, pnl=3.37%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 160,
+          "expectedHours": 2.67,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=29, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 46,
+          "expectancyPct": -0.46,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.46%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:04.303Z",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-7.93%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:04.336Z",
+      "pool": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+      "poolName": "SOLO-SOL",
+      "wallet": "DRpaJDurGtinzUPWSYnripFsJTBXm4HG7AC3LSgJNtNB",
+      "confidence": 0.293,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.057,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 62,
+          "boost": 0.023,
+          "reason": "rank=3, walletScore=40, age=?h, pnl=-7.93%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 93,
+          "expectedMinutes": 285,
+          "expectedHours": 4.75,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=68, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 95% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:04.506Z",
+      "pool": "DRWNnjNpmrWTs7mmNYyH8d9qmPmcVQHenKh369cwUiLp",
+      "poolName": "Clude-SOL",
+      "wallet": "CL1kvg2mAfRyEbeMFeBVwJimmj7BXB5ymRpiuMYBFPvb",
+      "confidence": 0.309,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.041,
+        "alphaScore": 75,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 70,
+          "boost": 0.039,
+          "reason": "rank=2, walletScore=40, age=?h, pnl=1.62%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 86,
+          "expectedMinutes": 267,
+          "expectedHours": 4.45,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=69, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=52.14839524254861, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 47,
+          "expectancyPct": -0.4,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 40 >= 40; Range quality 85% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:04.529Z",
+      "pool": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+      "poolName": "diVINE-SOL",
+      "wallet": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "confidence": 0.302,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.048,
+        "alphaScore": 78,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 66,
+          "boost": 0.032,
+          "reason": "rank=1, walletScore=42, age=?h, pnl=-95.38%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 100,
+          "expectedMinutes": 311,
+          "expectedHours": 5.18,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=69, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 49,
+          "expectancyPct": -0.08,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.08%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 42 >= 40; Range quality 65% ok; Fee/TVL 0 low yield",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:04.684Z",
+      "pool": "8sQZ4H4jqnFwUG8e2Y9Sbr3gJxL4cVssc7eQz7M19t7y",
+      "poolName": "KINS-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.10600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 83,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=1.47%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 92,
+          "expectedMinutes": 335,
+          "expectedHours": 5.58,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=81, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=84.64027907114685, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 31.51,
+          "positive": true,
+          "reason": "fee=31.91%, ilRisk=0.4%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:04.899Z",
+      "pool": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+      "poolName": "PVE-SOL",
+      "wallet": "5hehGjeegAmwmaSw2r69GPbag6jwJ2YjBSKtgrXzqTWZ",
+      "confidence": 0.0425,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": -0.0575,
+        "alphaScore": 74,
+        "alphaRank": "B",
+        "walletTiming": {
+          "score": 61,
+          "boost": 0.0225,
+          "reason": "rank=6, walletScore=39, age=?h, pnl=3.37%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 89,
+          "expectedMinutes": 160,
+          "expectedHours": 2.67,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=0, accel=0, width=29, oor=0%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=0, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 46,
+          "expectancyPct": -0.46,
+          "positive": false,
+          "reason": "fee=0%, ilRisk=0.46%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 39 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    },
+    {
+      "ts": "2026-06-09T23:15:05.110Z",
+      "pool": "8aQBjuutghvFxJaiPiKNSgbmuAQcotyWpcmBFR9pkzsP",
+      "poolName": "SPCX-SOL",
+      "wallet": "zbmg9d5xHtouvKtFGqASdKbHEQ4bQdJwqtQPkdvc3Ud",
+      "confidence": 0.10600000000000001,
+      "alpha": {
+        "action": "PASS",
+        "confidenceAdjustment": 0.006,
+        "alphaScore": 78,
+        "alphaRank": "A",
+        "walletTiming": {
+          "score": 53,
+          "boost": 0.006,
+          "reason": "rank=10, walletScore=38, age=?h, pnl=-0.71%"
+        },
+        "crowd": {
+          "score": 0,
+          "walletCount": 0,
+          "minutesSinceFirst": 0,
+          "velocity": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "0 smart/copy wallet(s), 0m since first copy"
+        },
+        "survival": {
+          "score": 71,
+          "expectedMinutes": 256,
+          "expectedHours": 4.27,
+          "penalty": 0,
+          "hold": false,
+          "reason": "vol=1.1489652393216256, accel=0, width=80, oor=37.5%"
+        },
+        "euphoria": {
+          "score": 0,
+          "penalty": 0,
+          "hold": false,
+          "reason": "priceAccel=0, volumeChange=0, organic=75.75381610113683, ath=0, crowd=0"
+        },
+        "cluster": {
+          "score": 12,
+          "walletCount": 1,
+          "boost": 0,
+          "reason": "1 wallet(s) in recent cluster"
+        },
+        "expectancy": {
+          "score": 100,
+          "expectancyPct": 62.82,
+          "positive": true,
+          "reason": "fee=64.13%, ilRisk=1.32%"
+        },
+        "holdReasons": []
+      },
+      "reasonSkipped": "Wallet score 38 below minimum 40",
+      "actualPnl": null,
+      "status": "pending"
+    }
+  ]
+}

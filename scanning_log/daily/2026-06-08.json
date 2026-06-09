@@ -1,0 +1,2344 @@
+{
+  "date": "2026-06-08",
+  "generated_at": "2026-06-09T01:45:11.423Z",
+  "summary": {
+    "total_trades": 9,
+    "profit_count": 7,
+    "loss_count": 2,
+    "pf": 662.33,
+    "oor_above": 3,
+    "oor_below": 0
+  },
+  "range_failure_analysis": {
+    "active_bin_escape_count": 3,
+    "fast_oor_under_30m": 0,
+    "oor_above_rate": 100,
+    "avg_time_to_oor": null,
+    "widen_recommendation_used_count": 0,
+    "wait_recheck_count": 0,
+    "recheck_success_count": 0,
+    "recheck_still_critical_count": 0,
+    "shift_up_not_supported_count": 0,
+    "widen_range_safety_count": 0,
+    "single_side_bins_above_violation_count": 0
+  },
+  "loss_analysis": [
+    {
+      "pool": "ASTEROID-SOL",
+      "result": "LOSS",
+      "loss_reason": "paper_out-of-range_above",
+      "timeline": [
+        "screening_deploy_recorded",
+        "candidate_deployed",
+        "anti_oor",
+        "deploy_bid_ask",
+        "breakout_up",
+        "paper_out-of-range_above"
+      ],
+      "logic_failure_stage": "deploy",
+      "root_cause_probability": {
+        "late_entry": 0.05,
+        "range_too_low": 0.5,
+        "range_too_high": 0.05,
+        "momentum_breakout": 0.3,
+        "wallet_issue": 0.03,
+        "screening_error": 0.05,
+        "candidate_error": 0.05,
+        "variance": 0.25
+      },
+      "verdict": "Likely upward breakout while deployment range sat too low."
+    },
+    {
+      "pool": "Bountywork-SOL",
+      "result": "LOSS",
+      "loss_reason": "paper_out-of-range_above",
+      "timeline": [
+        "screening_deploy_recorded",
+        "candidate_deployed",
+        "anti_oor",
+        "deploy_bid_ask",
+        "breakout_up",
+        "paper_out-of-range_above"
+      ],
+      "logic_failure_stage": "deploy",
+      "root_cause_probability": {
+        "late_entry": 0.05,
+        "range_too_low": 0.5,
+        "range_too_high": 0.05,
+        "momentum_breakout": 0.3,
+        "wallet_issue": 0.03,
+        "screening_error": 0.05,
+        "candidate_error": 0.05,
+        "variance": 0.25
+      },
+      "verdict": "Likely upward breakout while deployment range sat too low."
+    }
+  ],
+  "rejection_analysis": {
+    "total_blocked": 21,
+    "total_watch": 41,
+    "good_rejections": 15,
+    "false_negatives": 3,
+    "potential_false_negatives": 0,
+    "unclear": 44,
+    "top_false_negative_causes": [
+      {
+        "logic": "wallet_filter_too_strict",
+        "count": 3
+      }
+    ],
+    "top_potential_false_negative_causes": [],
+    "items": [
+      {
+        "trace_id": "PVE-SOL_2026_06_08_23_45_08",
+        "pool": "PVE-SOL",
+        "pool_address": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+        "timestamp": "2026-06-08T23:45:08.114Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0425,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780962307604_5hehGjee_F1DSFU7w"
+      },
+      {
+        "trace_id": "diVINE-SOL_2026_06_08_23_45_07",
+        "pool": "diVINE-SOL",
+        "pool_address": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+        "timestamp": "2026-06-08T23:45:07.348Z",
+        "status": "WATCH",
+        "score": 78,
+        "confidence": 0.302,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780962306855_EwTNPYTu_Fr96ofhh"
+      },
+      {
+        "trace_id": "SOLO-SOL_2026_06_08_23_45_06",
+        "pool": "SOLO-SOL",
+        "pool_address": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+        "timestamp": "2026-06-08T23:45:06.697Z",
+        "status": "WATCH",
+        "score": 75,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780962306246_DRpaJDur_13RUiTWi"
+      },
+      {
+        "trace_id": "SKR-SOL_2026_06_08_23_45_06",
+        "pool": "SKR-SOL",
+        "pool_address": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+        "timestamp": "2026-06-08T23:45:06.129Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780962305730_5hehGjee_DxrXBQxp"
+      },
+      {
+        "trace_id": "gork-titcoin_2026_06_08_23_45_05",
+        "pool": "gork-titcoin",
+        "pool_address": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+        "timestamp": "2026-06-08T23:45:05.600Z",
+        "status": "WATCH",
+        "score": 76,
+        "confidence": 0.314,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780962305200_EwTNPYTu_D3hURNyP"
+      },
+      {
+        "trace_id": "STICK-SOL_2026_06_08_23_45_05",
+        "pool": "STICK-SOL",
+        "pool_address": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+        "timestamp": "2026-06-08T23:45:05.098Z",
+        "status": "BLOCKED",
+        "score": 72,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780962304675_5hehGjee_Gebfag18"
+      },
+      {
+        "trace_id": "META-SOL_2026_06_08_23_45_04",
+        "pool": "META-SOL",
+        "pool_address": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+        "timestamp": "2026-06-08T23:45:04.525Z",
+        "status": "WATCH",
+        "score": 74,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0.9999999999999613,
+          "fee_quality": 0.0164,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780962304011_DRpaJDur_2e3dimMU"
+      },
+      {
+        "trace_id": "StrSzn-USDC_2026_06_08_23_45_03",
+        "pool": "StrSzn-USDC",
+        "pool_address": "DwU9qPZXEcMx8rRfR71N5hdw5GQQGPyCKDnqegLpY4vW",
+        "timestamp": "2026-06-08T23:45:03.878Z",
+        "status": "WATCH",
+        "score": 79,
+        "confidence": 0.264,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "range_filter",
+            "value": "poor_range_quality",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780962303469_EwTNPYTu_DwU9qPZX"
+      },
+      {
+        "trace_id": "MET-SOL_2026_06_08_23_45_03",
+        "pool": "MET-SOL",
+        "pool_address": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+        "timestamp": "2026-06-08T23:45:03.332Z",
+        "status": "WATCH",
+        "score": 73,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780962302883_DRpaJDur_AvpjYo2a"
+      },
+      {
+        "trace_id": "TripleT-SOL_2026_06_08_23_45_02",
+        "pool": "TripleT-SOL",
+        "pool_address": "3WY9N19nTtPSqrbWTeaFn2HfJ9MfdyLRSrRvy97GnDgY",
+        "timestamp": "2026-06-08T23:45:02.003Z",
+        "status": "WATCH",
+        "score": 83,
+        "confidence": 0.373,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0.0033,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 1.6064000000007197,
+          "fee_quality": 0.0155,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": -0.7936507936505814,
+          "fee_quality": 0.1135,
+          "estimated_profitability": 0.1135,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780962301364_4fSJmRxR_3WY9N19n"
+      },
+      {
+        "trace_id": "diVINE-SOL_2026_06_08_23_15_22",
+        "pool": "diVINE-SOL",
+        "pool_address": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+        "timestamp": "2026-06-08T23:15:22.892Z",
+        "status": "WATCH",
+        "score": 70,
+        "confidence": 0.314,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780960522485_EwTNPYTu_Fr96ofhh"
+      },
+      {
+        "trace_id": "gork-titcoin_2026_06_08_23_15_22",
+        "pool": "gork-titcoin",
+        "pool_address": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+        "timestamp": "2026-06-08T23:15:22.301Z",
+        "status": "WATCH",
+        "score": 69,
+        "confidence": 0.314,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780960521848_EwTNPYTu_D3hURNyP"
+      },
+      {
+        "trace_id": "StrSzn-USDC_2026_06_08_23_15_21",
+        "pool": "StrSzn-USDC",
+        "pool_address": "DwU9qPZXEcMx8rRfR71N5hdw5GQQGPyCKDnqegLpY4vW",
+        "timestamp": "2026-06-08T23:15:21.700Z",
+        "status": "WATCH",
+        "score": 71,
+        "confidence": 0.314,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780960521140_EwTNPYTu_DwU9qPZX"
+      },
+      {
+        "trace_id": "SOLO-SOL_2026_06_08_22_45_08",
+        "pool": "SOLO-SOL",
+        "pool_address": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+        "timestamp": "2026-06-08T22:45:08.187Z",
+        "status": "WATCH",
+        "score": 75,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780958707702_DRpaJDur_13RUiTWi"
+      },
+      {
+        "trace_id": "PVE-SOL_2026_06_08_22_45_07",
+        "pool": "PVE-SOL",
+        "pool_address": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+        "timestamp": "2026-06-08T22:45:07.552Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0425,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780958707141_5hehGjee_F1DSFU7w"
+      },
+      {
+        "trace_id": "diVINE-SOL_2026_06_08_22_45_06",
+        "pool": "diVINE-SOL",
+        "pool_address": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+        "timestamp": "2026-06-08T22:45:06.955Z",
+        "status": "WATCH",
+        "score": 78,
+        "confidence": 0.302,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780958706516_EwTNPYTu_Fr96ofhh"
+      },
+      {
+        "trace_id": "SKR-SOL_2026_06_08_22_45_06",
+        "pool": "SKR-SOL",
+        "pool_address": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+        "timestamp": "2026-06-08T22:45:06.412Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780958705974_5hehGjee_DxrXBQxp"
+      },
+      {
+        "trace_id": "META-SOL_2026_06_08_22_45_05",
+        "pool": "META-SOL",
+        "pool_address": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+        "timestamp": "2026-06-08T22:45:05.806Z",
+        "status": "WATCH",
+        "score": 74,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0.9999999999999613,
+          "fee_quality": 0.0164,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780958705359_DRpaJDur_2e3dimMU"
+      },
+      {
+        "trace_id": "STICK-SOL_2026_06_08_22_45_05",
+        "pool": "STICK-SOL",
+        "pool_address": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+        "timestamp": "2026-06-08T22:45:05.243Z",
+        "status": "BLOCKED",
+        "score": 72,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780958704835_5hehGjee_Gebfag18"
+      },
+      {
+        "trace_id": "MET-SOL_2026_06_08_22_45_04",
+        "pool": "MET-SOL",
+        "pool_address": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+        "timestamp": "2026-06-08T22:45:04.704Z",
+        "status": "WATCH",
+        "score": 73,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780958704222_DRpaJDur_AvpjYo2a"
+      },
+      {
+        "trace_id": "TripleT-SOL_2026_06_08_22_45_04",
+        "pool": "TripleT-SOL",
+        "pool_address": "3WY9N19nTtPSqrbWTeaFn2HfJ9MfdyLRSrRvy97GnDgY",
+        "timestamp": "2026-06-08T22:45:04.038Z",
+        "status": "WATCH",
+        "score": 83,
+        "confidence": 0.373,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0.0018,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": -0.7936507936504467,
+          "fee_quality": 0.0058,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 1.6064000000007197,
+          "fee_quality": 0.0155,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780958703596_4fSJmRxR_3WY9N19n"
+      },
+      {
+        "trace_id": "gork-titcoin_2026_06_08_22_45_03",
+        "pool": "gork-titcoin",
+        "pool_address": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+        "timestamp": "2026-06-08T22:45:03.458Z",
+        "status": "WATCH",
+        "score": 76,
+        "confidence": 0.314,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780958702988_EwTNPYTu_D3hURNyP"
+      },
+      {
+        "trace_id": "PVE-SOL_2026_06_08_22_15_07",
+        "pool": "PVE-SOL",
+        "pool_address": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+        "timestamp": "2026-06-08T22:15:07.970Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0425,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780956907535_5hehGjee_F1DSFU7w"
+      },
+      {
+        "trace_id": "diVINE-SOL_2026_06_08_22_15_07",
+        "pool": "diVINE-SOL",
+        "pool_address": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+        "timestamp": "2026-06-08T22:15:07.361Z",
+        "status": "WATCH",
+        "score": 78,
+        "confidence": 0.302,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780956906957_EwTNPYTu_Fr96ofhh"
+      },
+      {
+        "trace_id": "SKR-SOL_2026_06_08_22_15_06",
+        "pool": "SKR-SOL",
+        "pool_address": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+        "timestamp": "2026-06-08T22:15:06.808Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780956906395_5hehGjee_DxrXBQxp"
+      },
+      {
+        "trace_id": "SOLO-SOL_2026_06_08_22_15_06",
+        "pool": "SOLO-SOL",
+        "pool_address": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+        "timestamp": "2026-06-08T22:15:06.241Z",
+        "status": "WATCH",
+        "score": 75,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780956905814_DRpaJDur_13RUiTWi"
+      },
+      {
+        "trace_id": "STICK-SOL_2026_06_08_22_15_05",
+        "pool": "STICK-SOL",
+        "pool_address": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+        "timestamp": "2026-06-08T22:15:05.660Z",
+        "status": "BLOCKED",
+        "score": 72,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780956905205_5hehGjee_Gebfag18"
+      },
+      {
+        "trace_id": "gork-titcoin_2026_06_08_22_15_05",
+        "pool": "gork-titcoin",
+        "pool_address": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+        "timestamp": "2026-06-08T22:15:05.071Z",
+        "status": "WATCH",
+        "score": 76,
+        "confidence": 0.314,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780956904640_EwTNPYTu_D3hURNyP"
+      },
+      {
+        "trace_id": "META-SOL_2026_06_08_22_15_04",
+        "pool": "META-SOL",
+        "pool_address": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+        "timestamp": "2026-06-08T22:15:04.492Z",
+        "status": "WATCH",
+        "score": 74,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780956904039_DRpaJDur_2e3dimMU"
+      },
+      {
+        "trace_id": "StrSzn-USDC_2026_06_08_22_15_03",
+        "pool": "StrSzn-USDC",
+        "pool_address": "DwU9qPZXEcMx8rRfR71N5hdw5GQQGPyCKDnqegLpY4vW",
+        "timestamp": "2026-06-08T22:15:03.932Z",
+        "status": "WATCH",
+        "score": 79,
+        "confidence": 0.264,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "range_filter",
+            "value": "poor_range_quality",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780956903453_EwTNPYTu_DwU9qPZX"
+      },
+      {
+        "trace_id": "MET-SOL_2026_06_08_22_15_03",
+        "pool": "MET-SOL",
+        "pool_address": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+        "timestamp": "2026-06-08T22:15:03.198Z",
+        "status": "WATCH",
+        "score": 73,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780956902745_DRpaJDur_AvpjYo2a"
+      },
+      {
+        "trace_id": "TripleT-SOL_2026_06_08_22_15_02",
+        "pool": "TripleT-SOL",
+        "pool_address": "3WY9N19nTtPSqrbWTeaFn2HfJ9MfdyLRSrRvy97GnDgY",
+        "timestamp": "2026-06-08T22:15:02.571Z",
+        "status": "WATCH",
+        "score": 83,
+        "confidence": 0.373,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": -0.7936507936518431,
+          "fee_quality": 0.0068,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0.0018,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0.0033,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780956901957_4fSJmRxR_3WY9N19n"
+      },
+      {
+        "trace_id": "HYPE-USDC_2026_06_08_22_15_01",
+        "pool": "HYPE-USDC",
+        "pool_address": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+        "timestamp": "2026-06-08T22:15:01.759Z",
+        "status": "BLOCKED",
+        "score": 81,
+        "confidence": 0.10650000000000001,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0.2000000000000207,
+          "fee_quality": 0.009,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0.40039999999996995,
+          "fee_quality": 0.0051,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0.601200800000042,
+          "fee_quality": 0.0089,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780956901141_2XrNyNEW_ANCx141S"
+      },
+      {
+        "trace_id": "PVE-SOL_2026_06_08_21_45_08",
+        "pool": "PVE-SOL",
+        "pool_address": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+        "timestamp": "2026-06-08T21:45:08.429Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0425,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780955107934_5hehGjee_F1DSFU7w"
+      },
+      {
+        "trace_id": "SOLO-SOL_2026_06_08_21_45_07",
+        "pool": "SOLO-SOL",
+        "pool_address": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+        "timestamp": "2026-06-08T21:45:07.727Z",
+        "status": "WATCH",
+        "score": 75,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780955107200_DRpaJDur_13RUiTWi"
+      },
+      {
+        "trace_id": "diVINE-SOL_2026_06_08_21_45_07",
+        "pool": "diVINE-SOL",
+        "pool_address": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+        "timestamp": "2026-06-08T21:45:07.071Z",
+        "status": "WATCH",
+        "score": 78,
+        "confidence": 0.302,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780955106659_EwTNPYTu_Fr96ofhh"
+      },
+      {
+        "trace_id": "META-SOL_2026_06_08_21_45_06",
+        "pool": "META-SOL",
+        "pool_address": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+        "timestamp": "2026-06-08T21:45:06.489Z",
+        "status": "WATCH",
+        "score": 74,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780955106072_DRpaJDur_2e3dimMU"
+      },
+      {
+        "trace_id": "SKR-SOL_2026_06_08_21_45_05",
+        "pool": "SKR-SOL",
+        "pool_address": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+        "timestamp": "2026-06-08T21:45:05.945Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780955105490_5hehGjee_DxrXBQxp"
+      },
+      {
+        "trace_id": "gork-titcoin_2026_06_08_21_45_05",
+        "pool": "gork-titcoin",
+        "pool_address": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+        "timestamp": "2026-06-08T21:45:05.298Z",
+        "status": "WATCH",
+        "score": 76,
+        "confidence": 0.314,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780955104849_EwTNPYTu_D3hURNyP"
+      },
+      {
+        "trace_id": "MET-SOL_2026_06_08_21_45_04",
+        "pool": "MET-SOL",
+        "pool_address": "AvpjYo2akRt8xCSWHVgcnXD6JwjiSdMK3gBFwCERWEyB",
+        "timestamp": "2026-06-08T21:45:04.705Z",
+        "status": "WATCH",
+        "score": 73,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780955104264_DRpaJDur_AvpjYo2a"
+      },
+      {
+        "trace_id": "STICK-SOL_2026_06_08_21_45_04",
+        "pool": "STICK-SOL",
+        "pool_address": "Gebfag18mXrHeMrUB3AzZNv7n875rWy3oLYNMN525ATi",
+        "timestamp": "2026-06-08T21:45:04.168Z",
+        "status": "BLOCKED",
+        "score": 72,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780955103709_5hehGjee_Gebfag18"
+      },
+      {
+        "trace_id": "StrSzn-USDC_2026_06_08_21_45_03",
+        "pool": "StrSzn-USDC",
+        "pool_address": "DwU9qPZXEcMx8rRfR71N5hdw5GQQGPyCKDnqegLpY4vW",
+        "timestamp": "2026-06-08T21:45:03.574Z",
+        "status": "WATCH",
+        "score": 79,
+        "confidence": 0.264,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "range_filter",
+            "value": "poor_range_quality",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780955103152_EwTNPYTu_DwU9qPZX"
+      },
+      {
+        "trace_id": "HYPE-USDC_2026_06_08_21_45_02",
+        "pool": "HYPE-USDC",
+        "pool_address": "ANCx141SujgVdbKz9NTEH8F38qWsnyyXsVju64aU3qLB",
+        "timestamp": "2026-06-08T21:45:02.991Z",
+        "status": "BLOCKED",
+        "score": 81,
+        "confidence": 0.10650000000000001,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": -1.7821312120992756,
+          "fee_quality": 0.0144,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0.2000000000000207,
+          "fee_quality": 0.009,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": -0.19960079840319184,
+          "fee_quality": 0.009,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "FALSE_NEGATIVE",
+        "likely_logic_failure": "wallet_filter_too_strict",
+        "signal_id": "1780955102538_2XrNyNEW_ANCx141S"
+      },
+      {
+        "trace_id": "TripleT-SOL_2026_06_08_21_45_02",
+        "pool": "TripleT-SOL",
+        "pool_address": "3WY9N19nTtPSqrbWTeaFn2HfJ9MfdyLRSrRvy97GnDgY",
+        "timestamp": "2026-06-08T21:45:02.335Z",
+        "status": "WATCH",
+        "score": 74,
+        "confidence": 0.293,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": -1.5810027714782091,
+          "fee_quality": 0.0094,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": -0.7936507936518431,
+          "fee_quality": 0.0068,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": -0.7936507936504467,
+          "fee_quality": 0.0058,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780955101664_4fSJmRxR_3WY9N19n"
+      },
+      {
+        "trace_id": "diVINE-SOL_2026_06_08_21_15_07",
+        "pool": "diVINE-SOL",
+        "pool_address": "Fr96ofhhRi1Wg6KTQYjr4D446e5v8vs95vc3Hn3G3etV",
+        "timestamp": "2026-06-08T21:15:07.768Z",
+        "status": "WATCH",
+        "score": 78,
+        "confidence": 0.302,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780953307311_EwTNPYTu_Fr96ofhh"
+      },
+      {
+        "trace_id": "PVE-SOL_2026_06_08_21_15_07",
+        "pool": "PVE-SOL",
+        "pool_address": "F1DSFU7wJYUkHyEwLMj3p3kenwZwsegJXvWprJpP5nZ1",
+        "timestamp": "2026-06-08T21:15:07.183Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0425,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780953306742_5hehGjee_F1DSFU7w"
+      },
+      {
+        "trace_id": "SOLO-SOL_2026_06_08_21_15_06",
+        "pool": "SOLO-SOL",
+        "pool_address": "13RUiTWiiALPo1BXo7A1bqsw9WsLmCcQfYoB8aC6UHPv",
+        "timestamp": "2026-06-08T21:15:06.551Z",
+        "status": "WATCH",
+        "score": 75,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780953306133_DRpaJDur_13RUiTWi"
+      },
+      {
+        "trace_id": "gork-titcoin_2026_06_08_21_15_05",
+        "pool": "gork-titcoin",
+        "pool_address": "D3hURNyP1WAFw4pApAyYzmUgi1GLEicJpMKXqBZxgC8m",
+        "timestamp": "2026-06-08T21:15:05.999Z",
+        "status": "WATCH",
+        "score": 76,
+        "confidence": 0.314,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "HIGH"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780953305551_EwTNPYTu_D3hURNyP"
+      },
+      {
+        "trace_id": "SKR-SOL_2026_06_08_21_15_04",
+        "pool": "SKR-SOL",
+        "pool_address": "DxrXBQxpMXmcM9SQKQHLkKoXEym8xny2GnX9XwDexdJy",
+        "timestamp": "2026-06-08T21:15:04.747Z",
+        "status": "BLOCKED",
+        "score": 74,
+        "confidence": 0.0305,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "wallet_filter",
+            "value": "low_wallet_score",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "UNCLEAR",
+        "likely_logic_failure": null,
+        "signal_id": "1780953304320_5hehGjee_DxrXBQxp"
+      },
+      {
+        "trace_id": "META-SOL_2026_06_08_21_15_04",
+        "pool": "META-SOL",
+        "pool_address": "2e3dimMUyj67E8GELwcD96HiJeXa4diKVkmn8A5wf4rt",
+        "timestamp": "2026-06-08T21:15:04.182Z",
+        "status": "WATCH",
+        "score": 74,
+        "confidence": 0.289,
+        "rejection_stage": "wallet_filter",
+        "reasons": [
+          {
+            "logic": "fee_filter",
+            "value": "low_fee_tvl",
+            "threshold": null,
+            "verdict": "OBSERVED"
+          }
+        ],
+        "after_30m": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_1h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "after_2h": {
+          "status": "OBSERVED",
+          "price_change_pct": 0,
+          "fee_quality": 0,
+          "estimated_profitability": null,
+          "survival": true,
+          "oor_probability": "LOW"
+        },
+        "verdict": "GOOD_REJECTION",
+        "likely_logic_failure": null,
+        "signal_id": "1780953303763_DRpaJDur_2e3dimMU"
+      }
+    ]
+  }
+}
